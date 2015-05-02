@@ -7,7 +7,7 @@ public class Budget : MonoBehaviour {
 	public int miscCost;
 	public int projectRewards;
 	public int monthlyAmount;
-	public int balance;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -19,6 +19,6 @@ public class Budget : MonoBehaviour {
 	}
 
 	private int getBalance () {
-		return 0;
+		return (monthlyAmount + projectRewards - totalSalaries - miscCost);
 	}
 }

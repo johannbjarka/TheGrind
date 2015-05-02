@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class Month : MonoBehaviour {
-
-	public int allowance;
+	
 	public int numberOfProjectsFinished;
 	public int totalQuality;
 

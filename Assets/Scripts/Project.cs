@@ -53,6 +53,8 @@ public class Project : MonoBehaviour {
 		proj.skill = Random.Range (0, 12);
 		// TODO: Possibly add other factors, like length of project and work amount
 		proj.expectedQuality = Random.Range(10, 80);
+
+		return proj;
 	}
 
 	char calcGrade () {

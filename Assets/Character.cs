@@ -8,11 +8,11 @@ public class Character : MonoBehaviour {
 	public char gender;
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 }

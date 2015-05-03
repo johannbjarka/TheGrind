@@ -7,6 +7,11 @@ public class Employee : Applicant {
 	public float movSpeed;
 
 	Animator anim;
+
+	void Awake () {
+		morale = Random.Range(3, 7);
+	}
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();

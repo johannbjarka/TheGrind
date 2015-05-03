@@ -6,9 +6,9 @@ public class Company : MonoBehaviour {
 
 	public Budget budget;
 	public Month month;
-	//public Character[] characters;
-	public Dictionary<string, Character> characters = new Dictionary<string, Character>();
-	public Applicant[] applicants;
+	public Player player;
+	public Dictionary<string, Employee> characters = new Dictionary<string, Employee>();
+	public Dictionary<string, Applicant> applicants = new Dictionary<string, Applicant>();
 	public Project[] projects;
 	public Project[] completedProjects;
 
@@ -26,13 +26,20 @@ public class Company : MonoBehaviour {
 		month.numberOfProjectsFinished = 0;
 		month.totalQuality = 0;
 
-		// Initialize employees
-		Player player = gameObject.AddComponent<Player>() as Player;
+		//Initialize player
+		player = gameObject.AddComponent<Player>() as Player;
 		player.salary = 150;
 		player.characterName = "Bill Lumbergh";
 		player.gender = 'M';
 		player.jobSecurity = 75;
-		characters[player.characterName] = player;
+
+		// Initialize employees
+		/*Player player = gameObject.AddComponent<Player>() as Player;
+		player.salary = 150;
+		player.characterName = "Bill Lumbergh";
+		player.gender = 'M';
+		player.jobSecurity = 75;
+		characters[player.characterName] = player;*/
 
 		Applicant appl = gameObject.AddComponent<Applicant>() as Applicant;
 		appl = appl.createApplicant();
@@ -72,8 +79,9 @@ public class Company : MonoBehaviour {
 	}
 
 	int getTotalSalaries () {
-		int totalSalaries = 0;
-		foreach(KeyValuePair<string, Character> c in characters) {
+		// 150 is the player characters salary
+		int totalSalaries = 150;
+		foreach(KeyValuePair<string, Employee> c in characters) {
 			totalSalaries += c.Value.salary; 
 		}
 		return totalSalaries;

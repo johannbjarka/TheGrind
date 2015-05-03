@@ -18,7 +18,7 @@ public class Budget : MonoBehaviour {
 	
 	}
 
-	private int getBalance () {
+	public int getBalance () {
 		return (monthlyAmount + projectRewards - totalSalaries - miscCost);
 	}
 }

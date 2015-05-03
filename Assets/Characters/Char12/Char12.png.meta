@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 9753e0d4a46cbfc4db2ec7a589c5da59
+timeCreated: 1430616497
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Char12_0
+    21300002: Char12_1
+    21300004: Char12_2
+    21300006: Char12_3
+    21300008: Char12_4
+    21300010: Char12_5
+    21300012: Char12_6
+    21300014: Char12_7
+    21300016: Char12_8
+    21300018: Char12_9
+    21300020: Char12_10
+    21300022: Char12_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Char12_0
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 288
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char12_1
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 288
+        width: 56
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char12_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 288
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char12_3
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 212
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char12_4
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 212
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char12_5
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 212
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char12_6
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 136
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char12_7
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 136
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char12_8
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 136
+        width: 48
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char12_9
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 60
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char12_10
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 60
+        width: 56
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char12_11
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 60
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 299394fb806ac5646ac4bd888e7f61eb
+timeCreated: 1430616537
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Char15_0
+    21300002: Char15_1
+    21300004: Char15_2
+    21300006: Char15_3
+    21300008: Char15_4
+    21300010: Char15_5
+    21300012: Char15_6
+    21300014: Char15_7
+    21300016: Char15_8
+    21300018: Char15_9
+    21300020: Char15_10
+    21300022: Char15_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Char15_0
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 288
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char15_1
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 288
+        width: 56
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char15_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 288
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char15_3
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 212
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char15_4
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 212
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char15_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 212
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char15_6
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 136
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char15_7
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 136
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char15_8
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 136
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char15_9
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 60
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char15_10
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 60
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Char15_11
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 60
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

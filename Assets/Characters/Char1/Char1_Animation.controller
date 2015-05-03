@@ -13,13 +13,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Moving
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -443,7 +443,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Char1_Stopped
+  m_Name: Char_Stopped
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -464,7 +464,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Char1_Controller
+  m_Name: Char_Walk_South
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -484,7 +484,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Char1_Walk_North
+  m_Name: Char_Walk_North
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -504,7 +504,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Char1_Walk_East
+  m_Name: Char_Walk_East
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -524,7 +524,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Char1_Walk_West
+  m_Name: Char_Walk_West
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

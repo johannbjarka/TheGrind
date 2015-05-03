@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Employee : Applicant {
 	
 	public int morale;
+	public float movSpeed;
+
 	Animator anim;
 	// Use this for initialization
 	void Start () {
@@ -22,5 +24,25 @@ public class Employee : Applicant {
 		}
 		anim.SetInteger ("Direction", dir);
 		anim.SetBool ("Moving", mov1);
+		anim.IsInTransition (0);
+		//if (mov1 == true) {
+			//if (dir == 0) {
+		if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_South")){
+				transform.position += -Vector3.up * movSpeed;
+				//transform.Translate (-Vector2.up * movSpeed);
+			} //else if (dir == 1) {
+		else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_West")){
+				transform.position += -Vector3.right * movSpeed;
+				//transform.Translate (-Vector2.right * movSpeed);
+			} else //if (dir == 2) {
+		if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_North")){
+				transform.position += Vector3.up * movSpeed;
+				//transform.Translate (Vector2.up * movSpeed);
+			} else// if (dir == 3) {
+		if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_East")){
+				transform.position += Vector3.right * movSpeed;
+				//transform.Translate (Vector2.right * movSpeed);
+			}
+		//}
 	}
 }

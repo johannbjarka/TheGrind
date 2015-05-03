@@ -46,8 +46,38 @@ public class Month : MonoBehaviour {
 		}
 	}
 
-	int nextAllowance () {
-		//TODO implement functionality
-		return 0;
+	int getNextAllowance () {
+		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		int oldAllowance = myCompany.budget.monthlyAmount;
+		int newAllowance;
+		char grade = getGrade();
+		switch (grade)
+		{
+		case 'A':
+			newAllowance = oldAllowance + 100;
+			break;
+		case 'B':
+			newAllowance = oldAllowance + 50;
+			break;
+		case 'C':
+			newAllowance = oldAllowance;
+			break;
+		case 'D':
+			newAllowance = oldAllowance - 50;
+			break;
+		case 'E':
+			newAllowance = oldAllowance - 100;
+			break;
+		case 'F':
+			newAllowance = oldAllowance - 150;
+			break;
+		default:
+			newAllowance = oldAllowance;
+			break;
+		}
+		if(calcFinalBalance() > 0) {
+			newAllowance -= calcFinalBalance() / 2;
+		}
+		return newAllowance;
 	}
 }

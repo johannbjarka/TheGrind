@@ -6,7 +6,6 @@ public class Company : MonoBehaviour {
 
 	public Budget budget;
 	public Month month;
-	//public Character[] characters;
 	public Player player;
 	public Dictionary<string, Employee> characters = new Dictionary<string, Employee>();
 	public Dictionary<string, Applicant> applicants = new Dictionary<string, Applicant>();
@@ -82,7 +81,7 @@ public class Company : MonoBehaviour {
 	int getTotalSalaries () {
 		// 150 is the player characters salary
 		int totalSalaries = 150;
-		foreach(KeyValuePair<string, Character> c in characters) {
+		foreach(KeyValuePair<string, Employee> c in characters) {
 			totalSalaries += c.Value.salary; 
 		}
 		return totalSalaries;

@@ -10,8 +10,8 @@ public class Company : MonoBehaviour {
 	public Player player;
 	public Dictionary<string, Employee> characters = new Dictionary<string, Employee>();
 	public Dictionary<string, Applicant> applicants = new Dictionary<string, Applicant>();
-	public Project[] projects;
-	public Project[] completedProjects;
+	public List<Project> projects;
+	public List<Project> completedProjects;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +20,7 @@ public class Company : MonoBehaviour {
 		budget.totalSalaries = 0;
 		budget.miscCost = 200;
 		budget.projectRewards = 0;
+		budget.projectPenalties = 0;
 		budget.monthlyAmount = 500;
 
 		// Initialize month
@@ -29,6 +30,10 @@ public class Company : MonoBehaviour {
 
 		//Initialize weeks
 		weeksPassed = 0;
+
+		//Initialize project lists
+		projects = new List<Project>();
+		completedProjects = new List<Project>();
 
 		//Initialize player
 		player = gameObject.AddComponent<Player>() as Player;

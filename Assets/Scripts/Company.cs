@@ -6,6 +6,7 @@ public class Company : MonoBehaviour {
 
 	public Budget budget;
 	public Month month;
+	public int weeksPassed;
 	public Player player;
 	public Dictionary<string, Employee> characters = new Dictionary<string, Employee>();
 	public Dictionary<string, Applicant> applicants = new Dictionary<string, Applicant>();
@@ -26,6 +27,9 @@ public class Company : MonoBehaviour {
 		month.numberOfProjectsFinished = 0;
 		month.totalQuality = 0;
 
+		//Initialize weeks
+		weeksPassed = 0;
+
 		//Initialize player
 		player = gameObject.AddComponent<Player>() as Player;
 		player.salary = 150;
@@ -42,7 +46,6 @@ public class Company : MonoBehaviour {
 		characters[player.characterName] = player;*/
 
 		Applicant appl = gameObject.AddComponent<Applicant>() as Applicant;
-		appl = appl.createApplicant();
 		Employee emp1 = gameObject.AddComponent<Employee>() as Employee;
 		emp1.salary = 100;
 		emp1.characterName = "Ron Jones";
@@ -51,6 +54,8 @@ public class Company : MonoBehaviour {
 		emp1.speed = appl.speed;
 		emp1.morale = 5;
 		characters [emp1.characterName] = emp1;
+		// Don't need the applicant script anymore
+		Destroy(appl);
 
 		appl = appl.createApplicant ();
 		Employee emp2 = gameObject.AddComponent<Employee>() as Employee;
@@ -61,6 +66,8 @@ public class Company : MonoBehaviour {
 		emp2.speed = appl.speed;
 		emp2.morale = 5;
 		characters [emp2.characterName] = emp2;
+		// Don't need the applicant script anymore
+		Destroy(appl);
 
 		appl = appl.createApplicant ();
 		Employee emp3 = gameObject.AddComponent<Employee>() as Employee;
@@ -71,6 +78,8 @@ public class Company : MonoBehaviour {
 		emp3.speed = appl.speed;
 		emp3.morale = 5;
 		characters [emp3.characterName] = emp3;
+		// Don't need the applicant script anymore
+		Destroy(appl);
 	}
 	
 	// Update is called once per frame

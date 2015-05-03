@@ -52,7 +52,8 @@ public class Project : MonoBehaviour {
 		proj.penalty = Random.Range (100, 300);
 		proj.skill = Random.Range (0, 12);
 		// TODO: Possibly add other factors, like length of project and work amount
-		proj.expectedQuality = Random.Range(10, 80);
+		//proj.expectedQuality = Random.Range(10, 80);
+		proj.expectedQuality = (int)((double)(proj.deadline / proj.workAmount) * Random.Range(200, 400));
 
 		return proj;
 	}
@@ -70,17 +71,24 @@ public class Project : MonoBehaviour {
 		myMonth.totalQuality += ratio;
 		myMonth.numberOfProjectsFinished++;
 
+		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+
 		if (ratio >= 9) {
+			myCompany.player.jobSecurity += 2;
 			return 'A';
 		} else if (ratio == 8) {
+			myCompany.player.jobSecurity += 1;
 			return 'B';
 		} else if (ratio == 7) {
 			return 'C';
 		} else if (ratio == 6) {
+			myCompany.player.jobSecurity -= 1;
 			return 'D';
 		} else if (ratio == 5) {
+			myCompany.player.jobSecurity -= 2;
 			return 'E';
 		} else {
+			myCompany.player.jobSecurity -= 3;
 			return 'F';
 		}
 	}

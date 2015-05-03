@@ -29,19 +29,24 @@ public class Month : MonoBehaviour {
 	}
 
 	char getGrade () {
-		//TODO implement functionality
+		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int ratio = totalQuality / numberOfProjectsFinished;
 		if (ratio >= 9) {
+			myCompany.player.jobSecurity += 4;
 			return 'A';
 		} else if (ratio == 8) {
+			myCompany.player.jobSecurity += 2;
 			return 'B';
 		} else if (ratio == 7) {
 			return 'C';
 		} else if (ratio == 6) {
+			myCompany.player.jobSecurity -= 2;
 			return 'D';
 		} else if (ratio == 5) {
+			myCompany.player.jobSecurity -= 4;
 			return 'E';
 		} else {
+			myCompany.player.jobSecurity -= 6;
 			return 'F';
 		}
 	}

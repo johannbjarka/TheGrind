@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 enum Skills {
 	Graphic,
@@ -26,11 +27,11 @@ public class Project : MonoBehaviour {
 	// What kind of project it is
 	public int skill;
 	public int expectedQuality;
-	public Employee[] employees;
+	public List<Employee> employees;
 
 	// Use this for initialization
 	void Start () {
-	
+		employees = new List<Employee>();
 	}
 	
 	// Update is called once per frame
@@ -67,15 +68,15 @@ public class Project : MonoBehaviour {
 		foreach (Employee emp in employees) {
 			totalQuality += emp.skills[this.skill] * emp.speed;
 		}
-		int quality = totalQuality / employees.Length;
+		int quality = totalQuality / employees.Count;
 		int ratio = (quality / this.expectedQuality) * 10;
 
 		//Month myMonth = GetComponent<Month>();
-		Month myMonth = GameObject.Find("Month").GetComponent<Month>();
+		Month myMonth = gameObject.GetComponent<Month>();
 		myMonth.totalQuality += ratio;
 		myMonth.numberOfProjectsFinished++;
 
-		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		Company myCompany = gameObject.GetComponent<Company>();
 
 		if (ratio >= 9) {
 			myCompany.player.jobSecurity += 2;

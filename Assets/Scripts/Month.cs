@@ -17,7 +17,7 @@ public class Month : MonoBehaviour {
 	}
 
 	public int calcFinalBalance () {
-		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		Company myCompany = gameObject.GetComponent<Company>();
 		int balance = myCompany.budget.getBalance();
 		if(balance < 0){
 			myCompany.player.jobSecurity -= balance / 20;
@@ -29,7 +29,7 @@ public class Month : MonoBehaviour {
 	}
 
 	public char getGrade () {
-		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		Company myCompany = gameObject.GetComponent<Company>();
 		int ratio = totalQuality / numberOfProjectsFinished;
 		if (ratio >= 9) {
 			myCompany.player.jobSecurity += 8;
@@ -52,7 +52,7 @@ public class Month : MonoBehaviour {
 	}
 
 	public int getNextAllowance () {
-		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		Company myCompany = gameObject.GetComponent<Company>();
 		int oldAllowance = myCompany.budget.monthlyAmount;
 		int newAllowance;
 		char grade = getGrade();

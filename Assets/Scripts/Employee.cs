@@ -6,6 +6,7 @@ public class Employee : Applicant {
 	public int morale;
 	public float movSpeed;
 
+	Rigidbody2D rigid;
 	Animator anim;
 
 	void Awake () {
@@ -15,6 +16,7 @@ public class Employee : Applicant {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+		rigid = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
@@ -33,18 +35,22 @@ public class Employee : Applicant {
 		//if (mov1 == true) {
 			//if (dir == 0) {
 		if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_South")){
-				transform.position += -Vector3.up * movSpeed;
+			//rigid.AddForce(-(Vector2.up * movSpeed));
+			    transform.position += -Vector3.up * movSpeed;
 				//transform.Translate (-Vector2.up * movSpeed);
 			} //else if (dir == 1) {
 		else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_West")){
+			//rigid.AddForce(-Vector2.right * movSpeed);
 				transform.position += -Vector3.right * movSpeed;
 				//transform.Translate (-Vector2.right * movSpeed);
 			} else //if (dir == 2) {
 		if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_North")){
+			//rigid.AddForce(Vector2.up * movSpeed);
 				transform.position += Vector3.up * movSpeed;
 				//transform.Translate (Vector2.up * movSpeed);
 			} else// if (dir == 3) {
 		if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_East")){
+			//rigid.AddForce(Vector2.right * movSpeed);
 				transform.position += Vector3.right * movSpeed;
 				//transform.Translate (Vector2.right * movSpeed);
 			}

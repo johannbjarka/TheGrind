@@ -16,7 +16,7 @@ public class Month : MonoBehaviour {
 	
 	}
 
-	int calcFinalBalance () {
+	public int calcFinalBalance () {
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int balance = myCompany.budget.getBalance();
 		if(balance < 0){
@@ -28,7 +28,7 @@ public class Month : MonoBehaviour {
 		return balance;
 	}
 
-	char getGrade () {
+	public char getGrade () {
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int ratio = totalQuality / numberOfProjectsFinished;
 		if (ratio >= 9) {
@@ -51,7 +51,7 @@ public class Month : MonoBehaviour {
 		}
 	}
 
-	int getNextAllowance () {
+	public int getNextAllowance () {
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int oldAllowance = myCompany.budget.monthlyAmount;
 		int newAllowance;

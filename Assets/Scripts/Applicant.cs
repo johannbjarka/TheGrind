@@ -24,7 +24,22 @@ public class Applicant : Character {
 	}
 
 	public void hire () {
-		//Employee emp = new Employee(this.skills, this.speed);
+		Employee emp = gameObject.AddComponent<Employee>() as Employee;
+		for (int i = 0; i < skills.Length; i++) {
+			emp.skills[i] = this.skills[i];
+		}
+		emp.speed = this.speed;
+		emp.salary = this.salary;
+		emp.characterName = this.characterName;
+		emp.gender = this.gender;
+
+		// Add the applicant to the employee roster and remove it from the pool of applicants.
+		Company myCompany = GetComponent<Company>();
+		myCompany.characters.Add(emp.characterName, emp);
+		myCompany.applicants.Remove(this.characterName);
+
+		// Destroy this instance of the Applicant script, since it will not be used again.
+		Destroy(this);
 	}
 
 	public Applicant createApplicant () {

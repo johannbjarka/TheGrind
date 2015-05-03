@@ -8,7 +8,7 @@ public class Company : MonoBehaviour {
 	public Month month;
 	//public Character[] characters;
 	public Dictionary<string, Character> characters = new Dictionary<string, Character>();
-	public Applicant[] applicants;
+	public Dictionary<string, Applicant> applicants = new Dictionary<string, Applicant>();
 	public Project[] projects;
 	public Project[] completedProjects;
 

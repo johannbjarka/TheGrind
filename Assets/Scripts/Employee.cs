@@ -5,6 +5,11 @@ public class Employee : Applicant {
 	
 	public int morale;
 	Animator anim;
+
+	void Awake () {
+		morale = Random.Range(3, 7);
+	}
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();

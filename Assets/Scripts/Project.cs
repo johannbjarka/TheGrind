@@ -58,6 +58,10 @@ public class Project : MonoBehaviour {
 		return proj;
 	}
 
+	void pickProject () {
+
+	}
+
 	char calcGrade () {
 		int totalQuality = 0;
 		foreach (Employee emp in employees) {

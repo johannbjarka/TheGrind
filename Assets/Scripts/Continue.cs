@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Continue : MonoBehaviour {
 
@@ -29,12 +30,14 @@ public class Continue : MonoBehaviour {
 				myCompany.completedProjects.Add(proj);
 				myCompany.projects.Remove(proj);
 				myCompany.budget.projectRewards += proj.reward;
+				//TODO: Remove employees from the project
 			}
 			// If a project's deadline has passed and it's not finished we 
 			// remove it from projects and add the penalty to projectPenalties. 
 			if(proj.deadline == 0 && proj.workAmount > 0) {
 				myCompany.projects.Remove(proj);
 				myCompany.budget.projectPenalties += proj.penalty;
+				//TODO: Remove employees from the project
 			}
 		}
 
@@ -47,6 +50,13 @@ public class Continue : MonoBehaviour {
 			myCompany.budget.projectRewards = 0;
 			myCompany.budget.projectPenalties = 0;
 			myCompany.budget.monthlyAmount = newBudget;
+		}
+
+		foreach(KeyValuePair<string, Employee> emp in myCompany.characters) {
+			if(emp.Value.morale <= 0) {
+				// TODO: send message that employee quit
+				myCompany.characters.Remove(emp.Value.characterName);
+			}
 		}
 	}
 }

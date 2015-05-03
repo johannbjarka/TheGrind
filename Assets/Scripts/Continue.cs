@@ -14,8 +14,8 @@ public class Continue : MonoBehaviour {
 	
 	}
 
-	void continueToNextWeek () {
-		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+	void OnMouseDown () {
+		Company myCompany = GameObject.Find("Main Camera").GetComponent<Company>();
 		myCompany.weeksPassed++;
 
 		foreach(Project proj in myCompany.projects) {
@@ -30,14 +30,23 @@ public class Continue : MonoBehaviour {
 				myCompany.completedProjects.Add(proj);
 				myCompany.projects.Remove(proj);
 				myCompany.budget.projectRewards += proj.reward;
-				//TODO: Remove employees from the project
+
+				// Remove employees from the project
+				foreach(Employee emp in proj.employees) {
+					emp.onProject = false;
+				}
 			}
 			// If a project's deadline has passed and it's not finished we 
 			// remove it from projects and add the penalty to projectPenalties. 
 			if(proj.deadline == 0 && proj.workAmount > 0) {
 				myCompany.projects.Remove(proj);
 				myCompany.budget.projectPenalties += proj.penalty;
-				//TODO: Remove employees from the project
+
+				// Remove employees from the project
+				foreach(Employee emp in proj.employees) {
+					emp.onProject = false;
+				}
+
 			}
 		}
 

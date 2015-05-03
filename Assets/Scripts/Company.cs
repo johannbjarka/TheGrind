@@ -99,5 +99,5 @@ public class Company : MonoBehaviour {
 			totalSalaries += c.Value.salary; 
 		}
 		return totalSalaries;
-	}	
+	}
 }

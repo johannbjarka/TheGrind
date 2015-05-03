@@ -64,6 +64,12 @@ public class Project : MonoBehaviour {
 		}
 		int quality = totalQuality / employees.Length;
 		int ratio = (quality / this.expectedQuality) * 10;
+
+		//Month myMonth = GetComponent<Month>();
+		Month myMonth = GameObject.Find("Month").GetComponent<Month>();
+		myMonth.totalQuality += ratio;
+		myMonth.numberOfProjectsFinished++;
+
 		if (ratio >= 9) {
 			return 'A';
 		} else if (ratio == 8) {

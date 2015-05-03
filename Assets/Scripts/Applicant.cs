@@ -34,7 +34,8 @@ public class Applicant : Character {
 		emp.gender = this.gender;
 
 		// Add the applicant to the employee roster and remove it from the pool of applicants.
-		Company myCompany = GetComponent<Company>();
+		//Company myCompany = GetComponent<Company>();
+		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.characters.Add(emp.characterName, emp);
 		myCompany.applicants.Remove(this.characterName);
 

@@ -8,6 +8,8 @@ public class Company : MonoBehaviour {
 	public Month month;
 	public int weeksPassed;
 	public Player player;
+	private int projectID = 0;
+	private int applicantID = 3;
 	public Dictionary<string, Employee> characters = new Dictionary<string, Employee>();
 	public Dictionary<string, Applicant> applicants = new Dictionary<string, Applicant>();
 	public List<Project> projects;
@@ -52,6 +54,7 @@ public class Company : MonoBehaviour {
 
 		Applicant appl = gameObject.AddComponent<Applicant>() as Applicant;
 		Employee emp1 = gameObject.AddComponent<Employee>() as Employee;
+		emp1.ID = 0;
 		emp1.salary = 100;
 		emp1.characterName = "Ron Jones";
 		emp1.gender = 'M';
@@ -64,6 +67,7 @@ public class Company : MonoBehaviour {
 
 		appl = appl.createApplicant ();
 		Employee emp2 = gameObject.AddComponent<Employee>() as Employee;
+		emp2.ID = 1;
 		emp2.salary = 80;
 		emp2.characterName = "Philomena Cunk";
 		emp2.gender = 'F';
@@ -76,6 +80,7 @@ public class Company : MonoBehaviour {
 
 		appl = appl.createApplicant ();
 		Employee emp3 = gameObject.AddComponent<Employee>() as Employee;
+		emp3.ID = 2;
 		emp3.salary = 110;
 		emp3.characterName = "Phyllis Harris";
 		emp3.gender = 'F';
@@ -99,5 +104,15 @@ public class Company : MonoBehaviour {
 			totalSalaries += c.Value.salary; 
 		}
 		return totalSalaries;
+	}
+
+	void setProjectID (Project proj) {
+		proj.ID = projectID;
+		projectID++;
+	}
+
+	void setApplicantID (Applicant appl) {
+		appl.ID = applicantID;
+		applicantID++;
 	}
 }

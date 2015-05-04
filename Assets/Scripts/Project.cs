@@ -2,24 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-enum Skills {
-	Graphic,
-	AI,
-	Algorithms,
-	Databases,
-	Debugging,
-	Design,
-	DistributedProgramming,
-	EnterpriseResourcePlanning,
-	Hacking,
-	ProgrammingParadigms,
-	Recursion,
-	StateMachines,
-	WebDevelopment
-}
-
 public class Project : MonoBehaviour {
 
+	public int ID;
 	public int deadline;
 	public int workAmount;
 	public int reward;
@@ -27,11 +12,14 @@ public class Project : MonoBehaviour {
 	// What kind of project it is
 	public int skill;
 	public int expectedQuality;
+	public ProjectMenu menu;
 	public List<Employee> employees;
 
 	// Use this for initialization
 	void Start () {
 		employees = new List<Employee>();
+		menu = gameObject.AddComponent<ProjectMenu>() as ProjectMenu;
+		menu.projectID = this.ID;
 	}
 	
 	// Update is called once per frame

@@ -4,6 +4,7 @@ using System.Collections;
 public class Employee : Applicant {
 	
 	public int morale;
+	public EmployeeMenu menu;
 	public bool onProject = false;
 	public float movSpeed;
 
@@ -12,6 +13,8 @@ public class Employee : Applicant {
 
 	void Awake () {
 		morale = Random.Range(3, 7);
+		menu = gameObject.AddComponent<EmployeeMenu>() as EmployeeMenu;
+		menu.employeeID = this.ID;
 	}
 
 	// Use this for initialization

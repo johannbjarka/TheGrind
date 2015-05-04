@@ -6,12 +6,16 @@ public class Applicant : Character {
 	private static int numberOfSkills = 13;
 	public int[] skills = new int[numberOfSkills];
 	public int speed;
+	public int ID;
+	public ApplicantMenu menu;
 
 	void Awake () {
 		for (int i = 0; i < skills.Length; i++) {
 			skills[i] = Random.Range(0, 20);
 		}
 		speed = Random.Range(0, 5);
+		menu = gameObject.AddComponent<ApplicantMenu>() as ApplicantMenu;
+		menu.applicantID = this.ID;
 	}
 	// Use this for initialization
 	void Start () {

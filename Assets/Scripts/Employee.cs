@@ -7,7 +7,7 @@ public class Employee : Applicant {
 	public bool onProject = false;
 	public float movSpeed;
 
-	Rigidbody2D rigid;
+	//Rigidbody2D rigid;
 	Animator anim;
 
 	void Awake () {
@@ -17,7 +17,7 @@ public class Employee : Applicant {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
-		rigid = GetComponent<Rigidbody2D> ();
+		//rigid = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame

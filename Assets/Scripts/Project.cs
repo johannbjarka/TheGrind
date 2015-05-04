@@ -29,20 +29,20 @@ public class Project : MonoBehaviour {
 
 	Project createProject () {
 		Project proj = gameObject.AddComponent<Project>() as Project;
-		proj.deadline = Random.Range (1, 10);
+		proj.deadline = Random.Range (1, 11);
 		if (proj.deadline < 3) {
-			proj.workAmount = Random.Range (5, 20);
+			proj.workAmount = Random.Range (5, 21);
 		} else if (proj.deadline < 6) {
-			proj.workAmount = Random.Range (20, 60);
+			proj.workAmount = Random.Range (20, 61);
 		} else {
-			proj.workAmount = Random.Range (50, 100);
+			proj.workAmount = Random.Range (50, 101);
 		}
-		proj.reward = Random.Range (workAmount - 5, workAmount + 5) * 10;
-		proj.penalty = Random.Range (100, 300);
-		proj.skill = Random.Range (0, 12);
+		proj.reward = Random.Range (workAmount - 5, workAmount + 6) * 10;
+		proj.penalty = Random.Range (100, 301);
+		proj.skill = Random.Range (0, 13);
 		// TODO: Possibly add other factors, like length of project and work amount
 		//proj.expectedQuality = Random.Range(10, 80);
-		proj.expectedQuality = (int)((double)(proj.deadline / proj.workAmount) * Random.Range(200, 400));
+		proj.expectedQuality = (int)((double)(proj.deadline / proj.workAmount) * Random.Range(200, 401));
 
 		return proj;
 	}

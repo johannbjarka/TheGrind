@@ -109,20 +109,20 @@ public class Character : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		int totalskills = 0;
 		for (int i = 0; i < skills.Length; i++) {
-			skills[i] = Random.Range(1, 20);
+			skills[i] = Random.Range(1, 21);
 			totalskills += skills[i];
 		}
-		speed = Random.Range(0, 5);
-		salary = totalskills * (1 + ((speed - 3) / 10));
-		morale = Random.Range(3, 7);
-		int genderType = Random.Range(0,1);
+		speed = Random.Range(1, 6);
+		salary = (int)(totalskills * (1.0 + ((speed - 3) / 10.0)));
+		morale = Random.Range(3, 8);
+		int genderType = Random.Range(0, 2);
 		if(genderType == 0) {
 			gender = 'M';
-			characterName = firstNames[Random.Range(0, 30)] + " " + lastNames[Random.Range(0, 34)];
+			characterName = firstNames[Random.Range(0, 31)] + " " + lastNames[Random.Range(0, 35)];
 		}
 		else {
 			gender = 'F';
-			characterName = firstNames[Random.Range(22, 47)] + " " + lastNames[Random.Range(0, 34)];
+			characterName = firstNames[Random.Range(22, 48)] + " " + lastNames[Random.Range(0, 35)];
 		}
 		ID = _ID;
 		_ID++;

@@ -7,15 +7,15 @@ public class Applicant : Character {
 	public int[] skills = new int[numberOfSkills];
 	public int speed;
 	public int ID;
-	public ApplicantMenu menu;
+	//public ApplicantMenu menu;
 
 	void Awake () {
 		for (int i = 0; i < skills.Length; i++) {
 			skills[i] = Random.Range(0, 20);
 		}
 		speed = Random.Range(0, 5);
-		menu = gameObject.AddComponent<ApplicantMenu>() as ApplicantMenu;
-		menu.applicantID = this.ID;
+		//menu = gameObject.AddComponent<ApplicantMenu>() as ApplicantMenu;
+		//menu.applicantID = this.ID;
 	}
 	// Use this for initialization
 	void Start () {
@@ -40,8 +40,8 @@ public class Applicant : Character {
 		// Add the applicant to the employee roster and remove it from the pool of applicants.
 		//Company myCompany = GetComponent<Company>();
 		Company myCompany = gameObject.GetComponent<Company>();
-		myCompany.characters.Add(emp.characterName, emp);
-		myCompany.applicants.Remove(this.characterName);
+		//myCompany.characters.Add(emp.characterName, emp);
+		//myCompany.applicants.Remove(this.characterName);
 
 		// Destroy this instance of the Applicant script, since it will not be used again.
 		Destroy(this);

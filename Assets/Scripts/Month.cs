@@ -20,10 +20,10 @@ public class Month : MonoBehaviour {
 		Company myCompany = gameObject.GetComponent<Company>();
 		int balance = myCompany.budget.getBalance();
 		if(balance < 0){
-			myCompany.player.jobSecurity -= balance / 20;
+			myCompany.jobSecurity -= balance / 20;
 		}
 		else{
-			myCompany.player.jobSecurity += balance / 40;
+			myCompany.jobSecurity += balance / 40;
 		}
 		return balance;
 	}
@@ -32,21 +32,21 @@ public class Month : MonoBehaviour {
 		Company myCompany = gameObject.GetComponent<Company>();
 		int ratio = totalQuality / numberOfProjectsFinished;
 		if (ratio >= 9) {
-			myCompany.player.jobSecurity += 8;
+			myCompany.jobSecurity += 8;
 			return 'A';
 		} else if (ratio == 8) {
-			myCompany.player.jobSecurity += 4;
+			myCompany.jobSecurity += 4;
 			return 'B';
 		} else if (ratio == 7) {
 			return 'C';
 		} else if (ratio == 6) {
-			myCompany.player.jobSecurity -= 4;
+			myCompany.jobSecurity -= 4;
 			return 'D';
 		} else if (ratio == 5) {
-			myCompany.player.jobSecurity -= 8;
+			myCompany.jobSecurity -= 8;
 			return 'E';
 		} else {
-			myCompany.player.jobSecurity -= 12;
+			myCompany.jobSecurity -= 12;
 			return 'F';
 		}
 	}

@@ -61,10 +61,10 @@ public class Continue : MonoBehaviour {
 			myCompany.budget.monthlyAmount = newBudget;
 		}
 
-		foreach(KeyValuePair<string, Employee> emp in myCompany.characters) {
-			if(emp.Value.morale <= 0) {
+		foreach(Character emp in myCompany.characters) {
+			if(emp.morale <= 0) {
 				// TODO: send message that employee quit
-				myCompany.characters.Remove(emp.Value.characterName);
+				myCompany.characters.Remove(emp);
 			}
 		}
 	}

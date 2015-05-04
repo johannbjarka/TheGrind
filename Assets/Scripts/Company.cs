@@ -7,11 +7,12 @@ public class Company : MonoBehaviour {
 	public Budget budget;
 	public Month month;
 	public int weeksPassed;
-	public Player player;
 	private int projectID = 0;
-	private int applicantID = 3;
-	public Dictionary<string, Employee> characters = new Dictionary<string, Employee>();
-	public Dictionary<string, Applicant> applicants = new Dictionary<string, Applicant>();
+	public int characterID = 0;
+	public int jobSecurity = 75;
+	public List<Character> characters;
+	//public Dictionary<string, Employee> characters = new Dictionary<string, Employee>();
+	//public Dictionary<string, Applicant> applicants = new Dictionary<string, Applicant>();
 	public List<Project> projects;
 	public List<Project> completedProjects;
 
@@ -37,22 +38,7 @@ public class Company : MonoBehaviour {
 		projects = new List<Project>();
 		completedProjects = new List<Project>();
 
-		//Initialize player
-		player = gameObject.AddComponent<Player>() as Player;
-		player.salary = 150;
-		player.characterName = "Bill Lumbergh";
-		player.gender = 'M';
-		player.jobSecurity = 75;
-
-		// Initialize employees
-		/*Player player = gameObject.AddComponent<Player>() as Player;
-		player.salary = 150;
-		player.characterName = "Bill Lumbergh";
-		player.gender = 'M';
-		player.jobSecurity = 75;
-		characters[player.characterName] = player;*/
-
-		Applicant appl = gameObject.AddComponent<Applicant>() as Applicant;
+		/*Applicant appl = gameObject.AddComponent<Applicant>() as Applicant;
 		Employee emp1 = gameObject.AddComponent<Employee>() as Employee;
 		emp1.ID = 0;
 		emp1.salary = 100;
@@ -89,7 +75,7 @@ public class Company : MonoBehaviour {
 		emp3.morale = 5;
 		characters [emp3.characterName] = emp3;
 		// Don't need the applicant script anymore
-		Destroy(appl);
+		Destroy(appl);*/
 	}
 	
 	// Update is called once per frame
@@ -100,8 +86,8 @@ public class Company : MonoBehaviour {
 	int getTotalSalaries () {
 		// 150 is the player characters salary
 		int totalSalaries = 150;
-		foreach(KeyValuePair<string, Employee> c in characters) {
-			totalSalaries += c.Value.salary; 
+		foreach(Character c in characters) {
+			totalSalaries += c.salary; 
 		}
 		return totalSalaries;
 	}
@@ -111,8 +97,8 @@ public class Company : MonoBehaviour {
 		projectID++;
 	}
 
-	void setApplicantID (Applicant appl) {
+	/*void setApplicantID (Applicant appl) {
 		appl.ID = applicantID;
 		applicantID++;
-	}
+	}*/
 }

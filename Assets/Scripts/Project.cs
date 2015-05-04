@@ -67,21 +67,21 @@ public class Project : MonoBehaviour {
 		Company myCompany = gameObject.GetComponent<Company>();
 
 		if (ratio >= 9) {
-			myCompany.player.jobSecurity += 2;
+			myCompany.jobSecurity += 2;
 			return 'A';
 		} else if (ratio == 8) {
-			myCompany.player.jobSecurity += 1;
+			myCompany.jobSecurity += 1;
 			return 'B';
 		} else if (ratio == 7) {
 			return 'C';
 		} else if (ratio == 6) {
-			myCompany.player.jobSecurity -= 1;
+			myCompany.jobSecurity -= 1;
 			return 'D';
 		} else if (ratio == 5) {
-			myCompany.player.jobSecurity -= 2;
+			myCompany.jobSecurity -= 2;
 			return 'E';
 		} else {
-			myCompany.player.jobSecurity -= 3;
+			myCompany.jobSecurity -= 3;
 			return 'F';
 		}
 	}

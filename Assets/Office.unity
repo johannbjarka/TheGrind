@@ -6182,6 +6182,7 @@ Transform:
   - {fileID: 1572109646}
   - {fileID: 638265988}
   - {fileID: 131126540}
+<<<<<<< HEAD
   - {fileID: 1994891802}
   - {fileID: 1638489730}
   - {fileID: 241676935}
@@ -6202,6 +6203,8 @@ Transform:
   - {fileID: 578190811}
   - {fileID: 1027920314}
   - {fileID: 1891533384}
+=======
+>>>>>>> 050769131d37cdc476c699a541230e7d337f2aa2
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!1 &1528738348

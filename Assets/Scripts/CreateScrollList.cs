@@ -36,6 +36,7 @@ public class CreateScrollList : MonoBehaviour {
 			panel.salaryLabel.text = item.salary;
 			panel.employeeIcon.sprite = item.icon;
 			newPanel.transform.SetParent (contentPanel);
+			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		}
 	}
 }

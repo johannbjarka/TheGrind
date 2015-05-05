@@ -227,11 +227,6 @@ MonoBehaviour:
   onProject: 0
   applicant: 1
   movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
-  movSpeed: .0500000007
 --- !u!61 &60291685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1156,11 +1151,6 @@ MonoBehaviour:
   onProject: 0
   applicant: 1
   movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
-  movSpeed: .0500000007
 --- !u!61 &261780882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1494,11 +1484,6 @@ MonoBehaviour:
   onProject: 0
   applicant: 1
   movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
-  movSpeed: .0500000007
 --- !u!61 &296826156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1789,11 +1774,6 @@ MonoBehaviour:
   morale: 0
   onProject: 0
   applicant: 1
-  movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
   movSpeed: .0500000007
 --- !u!61 &334851326
 BoxCollider2D:
@@ -2247,11 +2227,6 @@ MonoBehaviour:
   morale: 0
   onProject: 0
   applicant: 1
-  movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
   movSpeed: .0500000007
 --- !u!50 &506495028
 Rigidbody2D:
@@ -2915,11 +2890,6 @@ MonoBehaviour:
   onProject: 0
   applicant: 1
   movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
-  movSpeed: .0500000007
 --- !u!61 &803646944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3358,11 +3328,6 @@ MonoBehaviour:
   onProject: 0
   applicant: 1
   movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
-  movSpeed: .0500000007
 --- !u!61 &898533484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3501,11 +3466,6 @@ MonoBehaviour:
   morale: 0
   onProject: 0
   applicant: 1
-  movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
   movSpeed: .0500000007
 --- !u!224 &959473646
 RectTransform:
@@ -3844,11 +3804,6 @@ MonoBehaviour:
   morale: 0
   onProject: 0
   applicant: 1
-  movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
   movSpeed: .0500000007
 --- !u!61 &1144703785
 BoxCollider2D:
@@ -4367,11 +4322,6 @@ MonoBehaviour:
   onProject: 0
   applicant: 1
   movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
-  movSpeed: .0500000007
 --- !u!50 &1296712576
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -4537,11 +4487,6 @@ MonoBehaviour:
   morale: 0
   onProject: 0
   applicant: 1
-  movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
   movSpeed: .0500000007
 --- !u!114 &1313912157
 MonoBehaviour:
@@ -5488,11 +5433,6 @@ MonoBehaviour:
   onProject: 0
   applicant: 1
   movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
-  movSpeed: .0500000007
 --- !u!61 &1724357020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5763,11 +5703,6 @@ MonoBehaviour:
   onProject: 0
   applicant: 1
   movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
-  movSpeed: .0500000007
 --- !u!114 &1863691746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5877,11 +5812,6 @@ MonoBehaviour:
   morale: 0
   onProject: 0
   applicant: 1
-  movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
   movSpeed: .0500000007
 --- !u!61 &1872394957
 BoxCollider2D:
@@ -6134,11 +6064,6 @@ MonoBehaviour:
   onProject: 0
   applicant: 1
   movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
-  movSpeed: .0500000007
 --- !u!222 &1987266655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6382,11 +6307,6 @@ MonoBehaviour:
   morale: 0
   onProject: 0
   applicant: 1
-  movSpeed: .0500000007
-  speed: 0
-  ID: 0
-  morale: 0
-  onProject: 0
   movSpeed: .0500000007
 --- !u!50 &2108217532
 Rigidbody2D:

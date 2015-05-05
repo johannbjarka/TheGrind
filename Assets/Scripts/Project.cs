@@ -4,6 +4,21 @@ using System.Collections.Generic;
 
 public class Project : MonoBehaviour {
 
+	private string[] projectNames = {
+		"Project Morpheus",
+		"Help CSI hunt criminals",
+		"Create a compression algorithm",
+		"Cryschool"
+	};
+	
+	private string[] projectDescriptions = {
+		"Hack into the matrix to save Neo from certain death.",
+		"Create a GUI interface using visual basic to track the criminals IP addresses.",
+		"Gavin Belson the CEO of Hooli needs you to create the best compression algorithm " +
+		"in the world so he can achieve his mission of destroying Pied Piper.",
+		"A university in Iceland has a terrible intranet that needs replacing, make a new intranet for the school."
+	};
+
 	public int ID;
 	private static int _ID = 0;
 	public string name;
@@ -12,9 +27,9 @@ public class Project : MonoBehaviour {
 	public int workAmount;
 	public int reward;
 	public int penalty;
-	// What kind of project it is
 	public int category;
 	public int expectedQuality;
+	public bool isActive = false;
 	public List<Character> employees;
 
 	// Use this for initialization

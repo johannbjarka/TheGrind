@@ -108,11 +108,6 @@ public class Character : MonoBehaviour {
 
 	void Awake () {
 		anim = GetComponent<Animator> ();
-		//int rand = 9;
-		int rand = Random.Range(0, sprites.Length);
-		anim.runtimeAnimatorController = controllers[rand];
-		//spriteRend = GetComponent<SpriteRenderer> ();
-		//spriteRend.sprite = sprites[rand];
 	}
 
 	// Use this for initialization
@@ -132,10 +127,18 @@ public class Character : MonoBehaviour {
 		if(genderType == 0) {
 			gender = 'M';
 			characterName = firstNames[Random.Range(0, 31)] + " " + lastNames[Random.Range(0, 35)];
+			int rand = Random.Range(10, sprites.Length);
+			anim.runtimeAnimatorController = controllers[rand];
+			//spriteRend = GetComponent<SpriteRenderer> ();
+			//spriteRend.sprite = sprites[rand];
 		}
 		else {
 			gender = 'F';
 			characterName = firstNames[Random.Range(22, 48)] + " " + lastNames[Random.Range(0, 35)];
+			int rand = Random.Range(0, 9);
+			anim.runtimeAnimatorController = controllers[rand];
+			//spriteRend = GetComponent<SpriteRenderer> ();
+			//spriteRend.sprite = sprites[rand];
 		}
 		movSpeed = 0.05f;
 		ID = _ID;

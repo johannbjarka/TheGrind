@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Company : MonoBehaviour {
 
+	public GameObject employeePrefab;
 	public Budget budget;
 	public Month month;
 	public int weeksPassed;

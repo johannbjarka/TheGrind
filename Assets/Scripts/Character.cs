@@ -110,6 +110,7 @@ public class Character : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator> ();
 		anim.runtimeAnimatorController = controllers[Random.Range(0, 16)];
+		spriteRend = GetComponent<SpriteRenderer> ();
 		spriteRend.sprite = sprites[Random.Range(0, 16)];
 		// Initialize character away from office
 		transform.position = new Vector3(500, 500, 0);

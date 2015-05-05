@@ -29,6 +29,7 @@ public class CreateScrollList : MonoBehaviour {
 		foreach (var item in itemList) {
 			GameObject newPanel = Instantiate (empPrefab) as GameObject;
 			EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
+			Debug.Log(item.name);
 			panel.nameLabel.text = item.name;
 			panel.genderLabel.text = item.gender;
 			panel.moraleLabel.text = item.morale;

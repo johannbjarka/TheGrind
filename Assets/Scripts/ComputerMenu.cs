@@ -10,6 +10,4 @@ public class ComputerMenu : MonoBehaviour {
 		menuIsOpen = !menuIsOpen;
 		ComputerMenuCanvas.enabled = !ComputerMenuCanvas.enabled;
 	}
-
-
 }

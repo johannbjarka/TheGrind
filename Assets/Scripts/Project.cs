@@ -13,11 +13,11 @@ public class Project : MonoBehaviour {
 	public int skill;
 	public int expectedQuality;
 	public ProjectMenu menu;
-	public List<Employee> employees;
+	public List<Character> employees;
 
 	// Use this for initialization
 	void Start () {
-		employees = new List<Employee>();
+		employees = new List<Character>();
 		menu = gameObject.AddComponent<ProjectMenu>() as ProjectMenu;
 		menu.projectID = this.ID;
 	}
@@ -53,7 +53,7 @@ public class Project : MonoBehaviour {
 
 	char calcGrade () {
 		int totalQuality = 0;
-		foreach (Employee emp in employees) {
+		foreach (Character emp in employees) {
 			totalQuality += emp.skills[this.skill] * emp.speed;
 		}
 		int quality = totalQuality / employees.Count;

@@ -87,7 +87,9 @@ public class Company : MonoBehaviour {
 		// 150 is the player characters salary
 		int totalSalaries = 150;
 		foreach(Character c in characters) {
-			totalSalaries += c.salary; 
+			if(!c.applicant) {
+				totalSalaries += c.salary;
+			} 
 		}
 		return totalSalaries;
 	}

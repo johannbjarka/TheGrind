@@ -93,8 +93,9 @@ public class Character : MonoBehaviour {
 	public int salary;
 	public string characterName;
 	public char gender;
-	private static int numberOfSkills = 13;
-	public int[] skills = new int[numberOfSkills];
+	public int[] skills;
+	public RuntimeAnimatorController[] controllers;
+	public Sprite[] sprites;
 	public int speed;
 	public int ID;
 	private static int _ID = 0;
@@ -103,15 +104,22 @@ public class Character : MonoBehaviour {
 	public bool applicant = true;
 	public float movSpeed;
 	Animator anim;
+	SpriteRenderer spriteRend;
 
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+		anim.runtimeAnimatorController = controllers[Random.Range(0, 16)];
+		spriteRend = GetComponent<SpriteRenderer> ();
+		spriteRend.sprite = sprites[Random.Range(0, 16)];
+		// Initialize character away from office
+		transform.position = new Vector3(500, 500, 0);
 		int totalskills = 0;
 		for (int i = 0; i < skills.Length; i++) {
 			skills[i] = Random.Range(1, 21);
 			totalskills += skills[i];
 		}
+
 		speed = Random.Range(1, 6);
 		salary = (int)(totalskills * (1.0 + ((speed - 3) / 10.0)));
 		morale = Random.Range(3, 8);
@@ -124,6 +132,7 @@ public class Character : MonoBehaviour {
 			gender = 'F';
 			characterName = firstNames[Random.Range(22, 48)] + " " + lastNames[Random.Range(0, 35)];
 		}
+		movSpeed = 0.05f;
 		ID = _ID;
 		_ID++;
 	}

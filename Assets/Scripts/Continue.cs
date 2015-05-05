@@ -21,7 +21,7 @@ public class Continue : MonoBehaviour {
 		foreach(Project proj in myCompany.projects) {
 			proj.deadline--;
 			// Calculate the amount of work done on each project
-			foreach(Employee emp in proj.employees) {
+			foreach(Character emp in proj.employees) {
 				proj.workAmount -= emp.speed;
 			}
 			// If the project is finished, add it to completed projects, add the 
@@ -32,7 +32,7 @@ public class Continue : MonoBehaviour {
 				myCompany.budget.projectRewards += proj.reward;
 
 				// Remove employees from the project
-				foreach(Employee emp in proj.employees) {
+				foreach(Character emp in proj.employees) {
 					emp.onProject = false;
 				}
 			}
@@ -43,7 +43,7 @@ public class Continue : MonoBehaviour {
 				myCompany.budget.projectPenalties += proj.penalty;
 
 				// Remove employees from the project
-				foreach(Employee emp in proj.employees) {
+				foreach(Character emp in proj.employees) {
 					emp.onProject = false;
 				}
 

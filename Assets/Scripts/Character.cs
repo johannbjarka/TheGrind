@@ -101,19 +101,24 @@ public class Character : MonoBehaviour {
 	private static int _ID = 0;
 	public int morale;
 	public bool onProject = false;
-	public bool applicant = true;
+	public bool isApplicant = true;
 	public float movSpeed;
 	Animator anim;
 	SpriteRenderer spriteRend;
 
+	void Awake () {
+		anim = GetComponent<Animator> ();
+		//int rand = 9;
+		int rand = Random.Range(0, sprites.Length);
+		anim.runtimeAnimatorController = controllers[rand];
+		//spriteRend = GetComponent<SpriteRenderer> ();
+		//spriteRend.sprite = sprites[rand];
+	}
+
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent<Animator> ();
-		anim.runtimeAnimatorController = controllers[Random.Range(0, 16)];
-		spriteRend = GetComponent<SpriteRenderer> ();
-		spriteRend.sprite = sprites[Random.Range(0, 16)];
 		// Initialize character away from office
-		transform.position = new Vector3(500, 500, 0);
+		transform.position = new Vector3(0, 0, 0);
 		int totalskills = 0;
 		for (int i = 0; i < skills.Length; i++) {
 			skills[i] = Random.Range(1, 21);

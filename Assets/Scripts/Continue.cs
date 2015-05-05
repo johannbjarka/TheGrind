@@ -15,7 +15,7 @@ public class Continue : MonoBehaviour {
 	}
 
 	void OnMouseDown () {
-		Company myCompany = GameObject.Find("Main Camera").GetComponent<Company>();
+		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
 
 		foreach(Project proj in myCompany.projects) {

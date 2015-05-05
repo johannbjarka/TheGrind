@@ -5,61 +5,54 @@ using System.Collections.Generic;
 public class Project : MonoBehaviour {
 
 	public int ID;
+	private static int _ID = 0;
+	public string name;
+	public string description;
 	public int deadline;
 	public int workAmount;
 	public int reward;
 	public int penalty;
 	// What kind of project it is
-	public int skill;
+	public int category;
 	public int expectedQuality;
-	public ProjectMenu menu;
 	public List<Character> employees;
 
 	// Use this for initialization
 	void Start () {
-		employees = new List<Character>();
-		menu = gameObject.AddComponent<ProjectMenu>() as ProjectMenu;
-		menu.projectID = this.ID;
+		createProject();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
 
-	Project createProject () {
-		Project proj = gameObject.AddComponent<Project>() as Project;
-		proj.deadline = Random.Range (1, 11);
-		if (proj.deadline < 3) {
-			proj.workAmount = Random.Range (5, 21);
-		} else if (proj.deadline < 6) {
-			proj.workAmount = Random.Range (20, 61);
+	void createProject () {
+		//employees = new List<Character>();
+		deadline = Random.Range (1, 11);
+		if (deadline < 3) {
+			workAmount = Random.Range (5, 21);
+		} else if (deadline < 6) {
+			workAmount = Random.Range (20, 61);
 		} else {
-			proj.workAmount = Random.Range (50, 101);
+			workAmount = Random.Range (50, 101);
 		}
-		proj.reward = Random.Range (workAmount - 5, workAmount + 6) * 10;
-		proj.penalty = Random.Range (100, 301);
-		proj.skill = Random.Range (0, 13);
-		// TODO: Possibly add other factors, like length of project and work amount
-		//proj.expectedQuality = Random.Range(10, 80);
-		proj.expectedQuality = (int)((double)(proj.deadline / proj.workAmount) * Random.Range(200, 401));
-
-		return proj;
-	}
-
-	void pickProject () {
-
+		reward = Random.Range (workAmount - 5, workAmount + 6) * 10;
+		penalty = Random.Range (100, 301);
+		category = Random.Range (0, 13);
+		expectedQuality = (int)((double)(deadline / workAmount) * Random.Range(200, 401));
+		ID = _ID;
+		_ID++;
 	}
 
 	char calcGrade () {
 		int totalQuality = 0;
 		foreach (Character emp in employees) {
-			totalQuality += emp.skills[this.skill] * emp.speed;
+			totalQuality += emp.skills[this.category] * emp.speed;
 		}
 		int quality = totalQuality / employees.Count;
 		int ratio = (quality / this.expectedQuality) * 10;
 
-		//Month myMonth = GetComponent<Month>();
 		Month myMonth = gameObject.GetComponent<Month>();
 		myMonth.totalQuality += ratio;
 		myMonth.numberOfProjectsFinished++;

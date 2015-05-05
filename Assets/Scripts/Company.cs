@@ -11,9 +11,9 @@ public class Company : MonoBehaviour {
 	private int projectID = 0;
 	public int characterID = 0;
 	public int jobSecurity = 75;
+	public int maxEmployees = 20;
 	public List<Character> characters;
-	//public Dictionary<string, Employee> characters = new Dictionary<string, Employee>();
-	//public Dictionary<string, Applicant> applicants = new Dictionary<string, Applicant>();
+	public List<Character> applicants;
 	public List<Project> projects;
 	public List<Project> completedProjects;
 
@@ -25,7 +25,26 @@ public class Company : MonoBehaviour {
 		budget.miscCost = 200;
 		budget.projectRewards = 0;
 		budget.projectPenalties = 0;
-		budget.monthlyAmount = 500;
+		budget.monthlyAmount = 1000;
+
+		// Create 5 starting employees
+		for(int i = 0; i < 5; i++) {
+			GameObject character;
+			Vector3 pos = new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f), 0f);
+			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
+			Character emp = character.GetComponent<Character>();
+			emp.isApplicant = false;
+			characters.Add(emp);
+		}
+
+		// Create 5 starting applicants
+		for(int i = 0; i < 5; i++) {
+			GameObject character;
+			Vector3 pos = new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f), -100f);
+			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
+			Character emp = character.GetComponent<Character>();
+			applicants.Add(emp);
+		}
 
 		// Initialize month
 		month = gameObject.AddComponent<Month>() as Month;
@@ -38,45 +57,6 @@ public class Company : MonoBehaviour {
 		//Initialize project lists
 		projects = new List<Project>();
 		completedProjects = new List<Project>();
-
-		/*Applicant appl = gameObject.AddComponent<Applicant>() as Applicant;
-		Employee emp1 = gameObject.AddComponent<Employee>() as Employee;
-		emp1.ID = 0;
-		emp1.salary = 100;
-		emp1.characterName = "Ron Jones";
-		emp1.gender = 'M';
-		emp1.skills = appl.skills;
-		emp1.speed = appl.speed;
-		emp1.morale = 5;
-		characters [emp1.characterName] = emp1;
-		// Don't need the applicant script anymore
-		Destroy(appl);
-
-		appl = appl.createApplicant ();
-		Employee emp2 = gameObject.AddComponent<Employee>() as Employee;
-		emp2.ID = 1;
-		emp2.salary = 80;
-		emp2.characterName = "Philomena Cunk";
-		emp2.gender = 'F';
-		emp2.skills = appl.skills;
-		emp2.speed = appl.speed;
-		emp2.morale = 5;
-		characters [emp2.characterName] = emp2;
-		// Don't need the applicant script anymore
-		Destroy(appl);
-
-		appl = appl.createApplicant ();
-		Employee emp3 = gameObject.AddComponent<Employee>() as Employee;
-		emp3.ID = 2;
-		emp3.salary = 110;
-		emp3.characterName = "Phyllis Harris";
-		emp3.gender = 'F';
-		emp3.skills = appl.skills;
-		emp3.speed = appl.speed;
-		emp3.morale = 5;
-		characters [emp3.characterName] = emp3;
-		// Don't need the applicant script anymore
-		Destroy(appl);*/
 	}
 	
 	// Update is called once per frame
@@ -85,10 +65,10 @@ public class Company : MonoBehaviour {
 	}
 
 	int getTotalSalaries () {
-		// 150 is the player characters salary
-		int totalSalaries = 150;
+		// 250 is the player characters salary
+		int totalSalaries = 250;
 		foreach(Character c in characters) {
-			if(!c.applicant) {
+			if(!c.isApplicant) {
 				totalSalaries += c.salary;
 			} 
 		}
@@ -99,9 +79,4 @@ public class Company : MonoBehaviour {
 		proj.ID = projectID;
 		projectID++;
 	}
-
-	/*void setApplicantID (Applicant appl) {
-		appl.ID = applicantID;
-		applicantID++;
-	}*/
 }

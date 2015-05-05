@@ -2,11 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 public class Employee : Applicant {
-	
-	public int morale;
-	//public EmployeeMenu menu;
-	public bool onProject = false;
-	public float movSpeed;
 
 	//Rigidbody2D rigid;
 	Animator anim;

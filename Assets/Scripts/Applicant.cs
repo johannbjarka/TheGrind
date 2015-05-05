@@ -4,8 +4,6 @@ using System.Collections;
 public class Applicant : Character {
 
 	private static int numberOfSkills = 13;
-	public int speed;
-	public int ID;
 	//public ApplicantMenu menu;
 
 	void Awake () {

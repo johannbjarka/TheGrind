@@ -16,7 +16,7 @@ public class Item {
 
 public class CreateScrollList : MonoBehaviour {
 
-	public GameObject empPrefab;
+	public GameObject employeePanel;
 	public List<Item> itemList;
 
 	public Transform contentPanel;
@@ -27,9 +27,8 @@ public class CreateScrollList : MonoBehaviour {
 
 	void PopulateList () {
 		foreach (var item in itemList) {
-			GameObject newPanel = Instantiate (empPrefab) as GameObject;
+			GameObject newPanel = Instantiate (employeePanel) as GameObject;
 			EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
-			Debug.Log(item.name);
 			panel.nameLabel.text = item.name;
 			panel.genderLabel.text = item.gender;
 			panel.moraleLabel.text = item.morale;

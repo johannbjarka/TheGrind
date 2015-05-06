@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Company : MonoBehaviour {
 
 	public GameObject employeePrefab;
+	public GameObject projectPrefab;
 	public Budget budget;
 	public Month month;
 	public int weeksPassed;
@@ -14,7 +15,9 @@ public class Company : MonoBehaviour {
 	public int maxEmployees = 20;
 	public List<Character> characters;
 	public List<Character> applicants;
+	// Currently active projects
 	public List<Project> projects;
+	public List<Project> availableProjects;
 	public List<Project> completedProjects;
 
 	// Use this for initialization
@@ -40,11 +43,25 @@ public class Company : MonoBehaviour {
 		// Create 5 starting applicants
 		for(int i = 0; i < 5; i++) {
 			GameObject character;
-			Vector3 pos = new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f), -100f);
+			Vector3 pos = new Vector3(1000, 1000, -100f);
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
 			Character emp = character.GetComponent<Character>();
 			applicants.Add(emp);
 		}
+
+		GameObject projectObj = Instantiate(projectPrefab) as GameObject;
+		Project proj = projectObj.GetComponent<Project>();
+		// Hard code project for alpha test
+		Project myProject = projectPrefab.GetComponent<Project>();
+		proj.projName = myProject.projectNames[0];
+		proj.description = myProject.projectDescriptions[0];
+		proj.deadline = 2;
+		proj.workAmount = 15;
+		proj.reward = 200;
+		proj.penalty = 120;
+		proj.expectedQuality = 27;
+		proj.category = 8;
+		availableProjects.Add(proj);
 
 		// Initialize month
 		month = gameObject.AddComponent<Month>() as Month;
@@ -53,10 +70,6 @@ public class Company : MonoBehaviour {
 
 		//Initialize weeks
 		weeksPassed = 0;
-
-		//Initialize project lists
-		projects = new List<Project>();
-		completedProjects = new List<Project>();
 	}
 	
 	// Update is called once per frame

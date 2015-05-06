@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 public class Project : MonoBehaviour {
 
-	private string[] projectNames = {
+	public string[] projectNames = {
 		"Project Morpheus",
 		"Help CSI hunt criminals",
 		"Create a compression algorithm",
 		"Cryschool"
 	};
 	
-	private string[] projectDescriptions = {
+	public string[] projectDescriptions = {
 		"Hack into the matrix to save Neo from certain death.",
 		"Create a GUI interface using visual basic to track the criminals IP addresses.",
 		"Gavin Belson the CEO of Hooli needs you to create the best compression algorithm " +
@@ -21,7 +21,7 @@ public class Project : MonoBehaviour {
 
 	public int ID;
 	private static int _ID = 0;
-	public string name;
+	public string projName;
 	public string description;
 	public int deadline;
 	public int workAmount;
@@ -29,7 +29,6 @@ public class Project : MonoBehaviour {
 	public int penalty;
 	public int category;
 	public int expectedQuality;
-	public bool isActive = false;
 	public List<Character> employees;
 
 	// Use this for initialization
@@ -44,6 +43,9 @@ public class Project : MonoBehaviour {
 
 	void createProject () {
 		//employees = new List<Character>();
+		/*int rand = Random.Range(0, projectNames.Length);
+		projName = projectNames[rand];
+		description = projectDescriptions[rand];
 		deadline = Random.Range (1, 11);
 		if (deadline < 3) {
 			workAmount = Random.Range (5, 21);
@@ -55,7 +57,7 @@ public class Project : MonoBehaviour {
 		reward = Random.Range (workAmount - 5, workAmount + 6) * 10;
 		penalty = Random.Range (100, 301);
 		category = Random.Range (0, 13);
-		expectedQuality = (int)((double)(deadline / workAmount) * Random.Range(200, 401));
+		expectedQuality = (int)(((double)deadline / workAmount) * Random.Range(200, 401));*/
 		ID = _ID;
 		_ID++;
 	}

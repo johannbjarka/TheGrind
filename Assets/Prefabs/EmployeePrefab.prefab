@@ -131,7 +131,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  applicant: 1
+  isApplicant: 1
   movSpeed: 0
 --- !u!114 &11487250
 MonoBehaviour:

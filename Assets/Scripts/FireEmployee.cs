@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using System;
 
 public class FireEmployee : MonoBehaviour {
 
@@ -13,8 +15,9 @@ public class FireEmployee : MonoBehaviour {
 	
 	}
 
-	public void fire (int id){
+	public void fire (Text _id){
 		//TODO: Remove from Project, Remove from Company, take plant.
+		int id = Int32.Parse(_id.text);
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		foreach(Project proj in myCompany.projects){
 			foreach(Character emp in proj.employees){

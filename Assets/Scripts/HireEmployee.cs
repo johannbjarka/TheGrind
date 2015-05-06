@@ -24,8 +24,6 @@ public class HireEmployee : MonoBehaviour {
 	
 	public void hire (Text _id){
 		//TODO: Remove from Project, Remove from Company, take plant.
-		Debug.Log ("YOLO");
-		Debug.Log (_id.text);
 		int id = Int32.Parse(_id.text);
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		foreach(Character emp in myCompany.applicants){

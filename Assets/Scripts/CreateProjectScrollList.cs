@@ -43,6 +43,21 @@ public class CreateProjectScrollList : MonoBehaviour {
 		}
 	}
 
+	public void PopulateCurrentProjectList () {
+		foreach (var project in myCompany.projects) {
+			GameObject newProjectPanel = Instantiate (currentProjectPanel) as GameObject;
+			ProjectPanel panel = newProjectPanel.GetComponent <ProjectPanel> ();
+			panel.Name.text = project.projName;
+			panel.Deadline.text = project.deadline.ToString();
+			panel.Description.text = project.description;
+			panel.Reward.text = project.reward.ToString();
+			panel.Penalty.text = project.penalty.ToString();
+			panel.Category.text = project.category.ToString();
+			newProjectPanel.transform.SetParent (CurrentProjectContentPanel);
+			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+		}
+	}
+
 	public void emptyProjectList () {
 		foreach (Transform child in AvailableProjectContentPanel) {
 			GameObject.Destroy(child.gameObject);

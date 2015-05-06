@@ -101,7 +101,7 @@ public class Company : MonoBehaviour {
 		proj4.expectedQuality = 40;
 		proj4.category = 12;
 		availableProjects.Add(proj4);
-
+		projects.Add (proj4);
 		// Initialize month
 		month = gameObject.AddComponent<Month>() as Month;
 		month.numberOfProjectsFinished = 0;

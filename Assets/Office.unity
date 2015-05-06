@@ -1599,6 +1599,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 461498198}
+        m_MethodName: PopulateEmployeeList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &276593490
@@ -2304,10 +2316,9 @@ GameObject:
   - 50: {fileID: 461498196}
   - 82: {fileID: 461498197}
   - 114: {fileID: 461498195}
-  - 114: {fileID: 461498198}
   - 114: {fileID: 461498199}
-  - 114: {fileID: 461498200}
   - 114: {fileID: 461498201}
+  - 114: {fileID: 461498198}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2492,8 +2503,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   employeePanel: {fileID: 151760, guid: 15d7517adf8977a489075fa37dd478d0, type: 2}
-  itemList: []
-  contentPanel: {fileID: 80073880}
+  applicantsPanel: {fileID: 188746, guid: 2e91bd5defb93c847b68fdfc1ab24fe6, type: 2}
+  employeeContentPanel: {fileID: 80073880}
+  applicantContentPanel: {fileID: 1547597421}
 --- !u!114 &461498199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2508,20 +2520,6 @@ MonoBehaviour:
   projectPanel: {fileID: 100834, guid: 128a2189289398944b400fffa17bfce8, type: 2}
   projectList: []
   ProjectContentPanel: {fileID: 1431888804}
---- !u!114 &461498200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 461498189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  employeePanel: {fileID: 188746, guid: 2e91bd5defb93c847b68fdfc1ab24fe6, type: 2}
-  itemList: []
-  contentPanel: {fileID: 1547597421}
 --- !u!114 &461498201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3543,6 +3541,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 461498195}
         m_MethodName: openApplicantsMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 461498198}
+        m_MethodName: emptyEmployeeList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4601,6 +4611,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 461498198}
+        m_MethodName: emptyEmployeeList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1041925725
@@ -5322,6 +5344,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 461498195}
         m_MethodName: openApplicantsMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 461498198}
+        m_MethodName: PopulateApplicantList
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

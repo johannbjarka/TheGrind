@@ -66,7 +66,8 @@ public class Company : MonoBehaviour {
 		proj.category = 8;
 		availableProjects.Add(proj);
 
-		Project proj2 = projectObj.GetComponent<Project>();
+		GameObject projectObj2 = Instantiate(projectPrefab) as GameObject;
+		Project proj2 = projectObj2.GetComponent<Project>();
 		proj2.projName = myProject.projectNames[1];
 		proj2.description = myProject.projectDescriptions[1];
 		proj2.deadline = 1;
@@ -77,7 +78,8 @@ public class Company : MonoBehaviour {
 		proj2.category = 0;
 		availableProjects.Add(proj2);
 
-		Project proj3 = projectObj.GetComponent<Project>();
+		GameObject projectObj3 = Instantiate(projectPrefab) as GameObject;
+		Project proj3 = projectObj3.GetComponent<Project>();
 		proj3.projName = myProject.projectNames[2];
 		proj3.description = myProject.projectDescriptions[2];
 		proj3.deadline = 3;
@@ -88,7 +90,8 @@ public class Company : MonoBehaviour {
 		proj3.category = 2;
 		availableProjects.Add(proj3);
 
-		Project proj4 = projectObj.GetComponent<Project>();
+		GameObject projectObj4 = Instantiate(projectPrefab) as GameObject;
+		Project proj4 = projectObj4.GetComponent<Project>();
 		proj4.projName = myProject.projectNames[3];
 		proj4.description = myProject.projectDescriptions[3];
 		proj4.deadline = 4;

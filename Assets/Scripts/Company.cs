@@ -33,7 +33,7 @@ public class Company : MonoBehaviour {
 		// Create 5 starting employees
 		for(int i = 0; i < 5; i++) {
 			GameObject character;
-			Vector3 pos = new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f), 0f);
+			Vector3 pos = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
 			Character emp = character.GetComponent<Character>();
 			emp.isApplicant = false;

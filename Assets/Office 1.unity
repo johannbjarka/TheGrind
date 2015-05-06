@@ -1497,6 +1497,8 @@ MonoBehaviour:
   ComputerMenuCanvas: {fileID: 894505897}
   EmployeeRecordsCanvas: {fileID: 0}
   AvailableProjectsCanvas: {fileID: 0}
+  ApplicantsCanvas: {fileID: 0}
+  CurrentProjectsCanvas: {fileID: 0}
 --- !u!50 &461498196
 Rigidbody2D:
   m_ObjectHideFlags: 0

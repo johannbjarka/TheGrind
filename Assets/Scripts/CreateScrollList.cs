@@ -28,6 +28,7 @@ public class CreateScrollList : MonoBehaviour {
 			panel.speedLabel.text = item.speed.ToString();
 			panel.salaryLabel.text = item.salary.ToString();
 			panel.employeeIcon.sprite = item.sprite;
+			panel.ID.text = item.ID.ToString();
 			newPanel.transform.SetParent (employeeContentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		}

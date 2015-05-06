@@ -2522,7 +2522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   availableProjectPanel: {fileID: 100834, guid: 128a2189289398944b400fffa17bfce8,
     type: 2}
-  currentProjectPanel: {fileID: 110254, guid: 811ebd3ede608f54aaf74554b12ed269, type: 2}
+  currentProjectPanel: {fileID: 170912, guid: bbe5647acc22e194c83637d380cf6cfc, type: 2}
   AvailableProjectContentPanel: {fileID: 1431888804}
   CurrentProjectContentPanel: {fileID: 1300103383}
 --- !u!1 &477498213

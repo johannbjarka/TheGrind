@@ -103,6 +103,7 @@ public class Character : MonoBehaviour {
 	public bool onProject = false;
 	public bool isApplicant = true;
 	public float movSpeed;
+	Sprite sprite;
 	Animator anim;
 	SpriteRenderer spriteRend;
 
@@ -129,16 +130,14 @@ public class Character : MonoBehaviour {
 			characterName = firstNames[Random.Range(0, 31)] + " " + lastNames[Random.Range(0, 35)];
 			int rand = Random.Range(10, sprites.Length);
 			anim.runtimeAnimatorController = controllers[rand];
-			//spriteRend = GetComponent<SpriteRenderer> ();
-			//spriteRend.sprite = sprites[rand];
+			sprite = sprites[rand];
 		}
 		else {
 			gender = 'F';
 			characterName = firstNames[Random.Range(22, 48)] + " " + lastNames[Random.Range(0, 35)];
 			int rand = Random.Range(0, 9);
 			anim.runtimeAnimatorController = controllers[rand];
-			//spriteRend = GetComponent<SpriteRenderer> ();
-			//spriteRend.sprite = sprites[rand];
+			sprite = sprites[rand];
 		}
 		movSpeed = 0.03f;
 		ID = _ID;

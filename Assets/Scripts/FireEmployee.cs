@@ -13,13 +13,22 @@ public class FireEmployee : MonoBehaviour {
 	
 	}
 
-	public void fire (){
+	public void fire (int id){
 		//TODO: Remove from Project, Remove from Company, take plant.
-		Company myCompany = GameObject.Find("Main Camera").GetComponent<Company>();
-		/*foreach(Project proj in myCompany.projects){
-			foreach(Employee emp in proj.employees){
-				//if(emp.characterName == this.par)
+		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		foreach(Project proj in myCompany.projects){
+			foreach(Character emp in proj.employees){
+				if(emp.ID == id){
+					proj.employees.Remove(emp);
+				}
 			}
-		}*/
+		}
+		foreach(Character emp in myCompany.characters){
+			if(emp.ID == id){
+				myCompany.characters.Remove(emp);
+				Destroy(emp);
+			}
+		}
+		//takePlant();
 	}
 }

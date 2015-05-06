@@ -66,35 +66,38 @@ public class Company : MonoBehaviour {
 		proj.category = 8;
 		availableProjects.Add(proj);
 
-		proj.projName = myProject.projectNames[1];
-		proj.description = myProject.projectDescriptions[1];
-		proj.deadline = 1;
-		proj.workAmount = 7;
-		proj.reward = 100;
-		proj.penalty = 100;
-		proj.expectedQuality = 30;
-		proj.category = 0;
-		availableProjects.Add(proj);
+		Project proj2 = projectObj.GetComponent<Project>();
+		proj2.projName = myProject.projectNames[1];
+		proj2.description = myProject.projectDescriptions[1];
+		proj2.deadline = 1;
+		proj2.workAmount = 7;
+		proj2.reward = 100;
+		proj2.penalty = 100;
+		proj2.expectedQuality = 30;
+		proj2.category = 0;
+		availableProjects.Add(proj2);
 
-		proj.projName = myProject.projectNames[2];
-		proj.description = myProject.projectDescriptions[2];
-		proj.deadline = 3;
-		proj.workAmount = 27;
-		proj.reward = 250;
-		proj.penalty = 170;
-		proj.expectedQuality = 40;
-		proj.category = 2;
-		availableProjects.Add(proj);
+		Project proj3 = projectObj.GetComponent<Project>();
+		proj3.projName = myProject.projectNames[2];
+		proj3.description = myProject.projectDescriptions[2];
+		proj3.deadline = 3;
+		proj3.workAmount = 27;
+		proj3.reward = 250;
+		proj3.penalty = 170;
+		proj3.expectedQuality = 40;
+		proj3.category = 2;
+		availableProjects.Add(proj3);
 
-		proj.projName = myProject.projectNames[3];
-		proj.description = myProject.projectDescriptions[3];
-		proj.deadline = 4;
-		proj.workAmount = 30;
-		proj.reward = 300;
-		proj.penalty = 300;
-		proj.expectedQuality = 40;
-		proj.category = 12;
-		availableProjects.Add(proj);
+		Project proj4 = projectObj.GetComponent<Project>();
+		proj4.projName = myProject.projectNames[3];
+		proj4.description = myProject.projectDescriptions[3];
+		proj4.deadline = 4;
+		proj4.workAmount = 30;
+		proj4.reward = 300;
+		proj4.penalty = 300;
+		proj4.expectedQuality = 40;
+		proj4.category = 12;
+		availableProjects.Add(proj4);
 
 		// Initialize month
 		month = gameObject.AddComponent<Month>() as Month;

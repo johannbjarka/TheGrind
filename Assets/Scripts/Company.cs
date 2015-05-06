@@ -123,6 +123,6 @@ public class Company : MonoBehaviour {
 	}
 
 	public void firePlayer(int id){
-
+		//TODO: Display firing splash screen, with different text based on id.
 	}
 }

@@ -56,4 +56,5 @@ public class CreateScrollList : MonoBehaviour {
 			GameObject.Destroy(child.gameObject);
 		}
 	}
+
 }

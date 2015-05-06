@@ -4,24 +4,15 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
-/*
-[System.Serializable]
-public class Item {
-	public Sprite icon;
-	public string name;
-	public string gender;
-	public string morale;
-	public string speed;
-	public string salary;
-}
-*/
-
 public class CreateScrollList : MonoBehaviour {
 
 	Company myCompany;
-	public GameObject employeePanel;
 
-	public Transform contentPanel;
+	public GameObject employeePanel;
+	public GameObject applicantsPanel;
+
+	public Transform employeeContentPanel;
+	public Transform applicantContentPanel;
 
 	void Start () {
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
@@ -37,14 +28,32 @@ public class CreateScrollList : MonoBehaviour {
 			panel.speedLabel.text = item.speed.ToString();
 			panel.salaryLabel.text = item.salary.ToString();
 			panel.employeeIcon.sprite = item.sprites[0];
-			newPanel.transform.SetParent (contentPanel);
+			newPanel.transform.SetParent (employeeContentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		}
 	}
 
 	public void PopulateApplicantList () {
 		foreach (var item in myCompany.applicants) {
+			GameObject newPanel = Instantiate (applicantsPanel) as GameObject;
+			EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
+			panel.nameLabel.text = item.characterName;
+			panel.genderLabel.text = item.gender.ToString();
+			panel.moraleLabel.text = item.morale.ToString();
+			panel.speedLabel.text = item.speed.ToString();
+			panel.salaryLabel.text = item.salary.ToString();
+			panel.employeeIcon.sprite = item.sprites[0];
+			newPanel.transform.SetParent (applicantContentPanel);
+			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+		}
+	}
 
+	public void emptyEmployeeList () {
+		foreach (Transform child in employeeContentPanel) {
+			GameObject.Destroy(child.gameObject);
+		}
+		foreach (Transform child in applicantContentPanel) {
+			GameObject.Destroy(child.gameObject);
 		}
 	}
 }

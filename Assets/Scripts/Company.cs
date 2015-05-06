@@ -17,6 +17,26 @@ public class Company : MonoBehaviour {
 	public List<Project> projects;
 	public List<Project> completedProjects;
 
+	void Awake () {
+		// Create 5 starting employees
+		for(int i = 0; i < 5; i++) {
+			GameObject character;
+			Vector3 pos = new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f), 0f);
+			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
+			Character emp = character.GetComponent<Character>();
+			emp.isApplicant = false;
+			characters.Add(emp);
+		}
+		
+		// Create 5 starting applicants
+		for(int i = 0; i < 5; i++) {
+			GameObject character;
+			Vector3 pos = new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f), -100f);
+			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
+			Character emp = character.GetComponent<Character>();
+			applicants.Add(emp);
+		}
+	}
 	// Use this for initialization
 	void Start () {
 		// Initialize budget
@@ -27,24 +47,7 @@ public class Company : MonoBehaviour {
 		budget.projectPenalties = 0;
 		budget.monthlyAmount = 1000;
 
-		// Create 5 starting employees
-		for(int i = 0; i < 5; i++) {
-			GameObject character;
-			Vector3 pos = new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f), 0f);
-			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
-			Character emp = character.GetComponent<Character>();
-			emp.isApplicant = false;
-			characters.Add(emp);
-		}
 
-		// Create 5 starting applicants
-		for(int i = 0; i < 5; i++) {
-			GameObject character;
-			Vector3 pos = new Vector3(Random.Range(-2.0f, 2.0f), Random.Range(-2.0f, 2.0f), -100f);
-			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
-			Character emp = character.GetComponent<Character>();
-			applicants.Add(emp);
-		}
 
 		// Initialize month
 		month = gameObject.AddComponent<Month>() as Month;

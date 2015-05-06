@@ -11,4 +11,5 @@ public class EmployeePanel : MonoBehaviour {
 		public Text salaryLabel;
 		public Text moraleLabel;
 		public Button skillsButton;
+		public Button hireButton;
 }

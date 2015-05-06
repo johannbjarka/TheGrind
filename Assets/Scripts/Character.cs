@@ -101,7 +101,6 @@ public class Character : MonoBehaviour {
 	private static int _ID = 0;
 	public int morale;
 	public bool onProject = false;
-	public bool isApplicant = true;
 	public float movSpeed;
 	public Sprite sprite;
 	Animator anim;

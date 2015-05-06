@@ -27,7 +27,6 @@ public class Company : MonoBehaviour {
 			Vector3 pos = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
 			Character emp = character.GetComponent<Character>();
-			emp.isApplicant = false;
 			characters.Add(emp);
 		}
 		
@@ -120,9 +119,7 @@ public class Company : MonoBehaviour {
 		// 250 is the player characters salary
 		int totalSalaries = 250;
 		foreach(Character c in characters) {
-			if(!c.isApplicant) {
-				totalSalaries += c.salary;
-			} 
+			totalSalaries += c.salary;
 		}
 		return totalSalaries;
 	}

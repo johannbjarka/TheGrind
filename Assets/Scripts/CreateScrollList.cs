@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
+/*
 [System.Serializable]
 public class Item {
 	public Sprite icon;
@@ -13,30 +14,37 @@ public class Item {
 	public string speed;
 	public string salary;
 }
+*/
 
 public class CreateScrollList : MonoBehaviour {
 
+	Company myCompany;
 	public GameObject employeePanel;
-	public List<Item> itemList;
 
 	public Transform contentPanel;
 
 	void Start () {
-		PopulateList ();
+		myCompany = GameObject.Find("Company").GetComponent<Company>();
 	}
 
-	void PopulateList () {
-		foreach (var item in itemList) {
+	public void PopulateEmployeeList () {
+		foreach (var item in myCompany.characters) {
 			GameObject newPanel = Instantiate (employeePanel) as GameObject;
 			EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
-			panel.nameLabel.text = item.name;
-			panel.genderLabel.text = item.gender;
-			panel.moraleLabel.text = item.morale;
-			panel.speedLabel.text = item.speed;
-			panel.salaryLabel.text = item.salary;
-			panel.employeeIcon.sprite = item.icon;
+			panel.nameLabel.text = item.characterName;
+			panel.genderLabel.text = item.gender.ToString();
+			panel.moraleLabel.text = item.morale.ToString();
+			panel.speedLabel.text = item.speed.ToString();
+			panel.salaryLabel.text = item.salary.ToString();
+			panel.employeeIcon.sprite = item.sprites[0];
 			newPanel.transform.SetParent (contentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+		}
+	}
+
+	public void PopulateApplicantList () {
+		foreach (var item in myCompany.applicants) {
+
 		}
 	}
 }

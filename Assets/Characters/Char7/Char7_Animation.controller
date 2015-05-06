@@ -444,7 +444,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Char_Walk_North
-  m_Speed: 1
+  m_Speed: .100000001
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110155210}
@@ -464,7 +464,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Char_Walk_West
-  m_Speed: 1
+  m_Speed: .100000001
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110183502}
@@ -484,7 +484,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Char_Walk_South
-  m_Speed: 1
+  m_Speed: .100000001
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110135044}
@@ -516,7 +516,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: 31b8e50f47cbbf14b8fc04f10be4b161, type: 2}
   m_Tag: 
 --- !u!1102 &110282580
 AnimatorState:
@@ -525,7 +525,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Char_Walk_East
-  m_Speed: 1
+  m_Speed: .100000001
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110158386}

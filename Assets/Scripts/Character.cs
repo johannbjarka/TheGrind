@@ -113,7 +113,7 @@ public class Character : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Initialize character away from office
-		transform.position = new Vector3(0, 0, 0);
+		transform.position = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
 		int totalskills = 0;
 		for (int i = 0; i < skills.Length; i++) {
 			skills[i] = Random.Range(1, 21);
@@ -140,7 +140,7 @@ public class Character : MonoBehaviour {
 			//spriteRend = GetComponent<SpriteRenderer> ();
 			//spriteRend.sprite = sprites[rand];
 		}
-		movSpeed = 0.05f;
+		movSpeed = 0.03f;
 		ID = _ID;
 		_ID++;
 	}
@@ -148,12 +148,12 @@ public class Character : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		int dir = (int)(Random.value * 4);
-		int mov = Random.Range(0,20);
+		int mov = Random.Range(0,4);
 		bool mov1;
 		if (mov == 0) {
-			mov1 = false;
-		} else {
 			mov1 = true;
+		} else {
+			mov1 = false;
 		}
 		anim.SetInteger ("Direction", dir);
 		anim.SetBool ("Moving", mov1);

@@ -8,6 +8,8 @@ public class Continue : MonoBehaviour {
 	public int monthlyBalance;
 	public char monthlyGrade;
 	public int newBudget;
+	public Canvas performanceReview;
+	private bool pfReviewOpen = false;
 
 	// Use this for initialization
 	void Start () {
@@ -75,6 +77,8 @@ public class Continue : MonoBehaviour {
 				//FOR ALPHA
 				myCompany.firePlayer(2);
 			}
+			pfReviewOpen = !pfReviewOpen;
+			performanceReview.enabled = !performanceReview.enabled;
 		}
 
 		foreach(Character emp in myCompany.characters) {

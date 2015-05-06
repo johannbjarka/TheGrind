@@ -9,8 +9,6 @@ public class Company : MonoBehaviour {
 	public Budget budget;
 	public Month month;
 	public int weeksPassed;
-	private int projectID = 0;
-	public int characterID = 0;
 	public int jobSecurity = 75;
 	public int maxEmployees = 20;
 	public List<Character> characters;

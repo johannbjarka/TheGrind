@@ -103,7 +103,7 @@ public class Character : MonoBehaviour {
 	public bool onProject = false;
 	public bool isApplicant = true;
 	public float movSpeed;
-	Sprite sprite;
+	public Sprite sprite;
 	Animator anim;
 	SpriteRenderer spriteRend;
 

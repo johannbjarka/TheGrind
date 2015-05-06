@@ -27,7 +27,7 @@ public class CreateScrollList : MonoBehaviour {
 			panel.moraleLabel.text = item.morale.ToString();
 			panel.speedLabel.text = item.speed.ToString();
 			panel.salaryLabel.text = item.salary.ToString();
-			panel.employeeIcon.sprite = item.sprites[0];
+			panel.employeeIcon.sprite = item.sprite;
 			newPanel.transform.SetParent (employeeContentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		}
@@ -42,7 +42,7 @@ public class CreateScrollList : MonoBehaviour {
 			panel.moraleLabel.text = item.morale.ToString();
 			panel.speedLabel.text = item.speed.ToString();
 			panel.salaryLabel.text = item.salary.ToString();
-			panel.employeeIcon.sprite = item.sprites[0];
+			panel.employeeIcon.sprite = item.sprite;
 			newPanel.transform.SetParent (applicantContentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		}

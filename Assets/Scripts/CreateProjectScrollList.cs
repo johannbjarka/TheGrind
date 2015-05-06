@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
-
+/*
 [System.Serializable]
 public class ProjectItem {
 	public string ProjectName;
@@ -13,29 +13,42 @@ public class ProjectItem {
 	public string ProjectDeadline;
 	public string ProjectCategory;
 }
-
+*/
 public class CreateProjectScrollList : MonoBehaviour {
-	public GameObject projectPanel;
-	public List<ProjectItem> projectList;
 
-	public Transform ProjectContentPanel;
+	public GameObject availableProjectPanel;
+	public GameObject currentProjectPanel;
+
+	Company myCompany;
+
+	public Transform AvailableProjectContentPanel;
+	public Transform CurrentProjectContentPanel;
 
 	void Start () {
-		PopulateProjectList ();
+		myCompany = GameObject.Find("Company").GetComponent<Company>();
 	}
 
-	void PopulateProjectList () {
-		foreach (var project in projectList) {
-			GameObject newProjectPanel = Instantiate (projectPanel) as GameObject;
+	public void PopulateAvailableProjectList () {
+		foreach (var project in myCompany.availableProjects) {
+			GameObject newProjectPanel = Instantiate (availableProjectPanel) as GameObject;
 			ProjectPanel panel = newProjectPanel.GetComponent <ProjectPanel> ();
-			panel.Name.text = project.ProjectName;
-			panel.Deadline.text = project.ProjectDeadline;
-			panel.Description.text = project.ProjectDescription;
-			panel.Reward.text = project.ProjectReward;
-			panel.Penalty.text = project.ProjectPenalty;
-			panel.Category.text = project.ProjectCategory;
-			newProjectPanel.transform.SetParent (ProjectContentPanel);
+			panel.Name.text = project.projName;
+			panel.Deadline.text = project.deadline.ToString();
+			panel.Description.text = project.description;
+			panel.Reward.text = project.reward.ToString();
+			panel.Penalty.text = project.penalty.ToString();
+			panel.Category.text = project.category.ToString();
+			newProjectPanel.transform.SetParent (AvailableProjectContentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+		}
+	}
+
+	public void emptyProjectList () {
+		foreach (Transform child in AvailableProjectContentPanel) {
+			GameObject.Destroy(child.gameObject);
+		}
+		foreach (Transform child in CurrentProjectContentPanel) {
+			GameObject.Destroy(child.gameObject);
 		}
 	}
 }

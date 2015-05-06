@@ -63,6 +63,36 @@ public class Company : MonoBehaviour {
 		proj.category = 8;
 		availableProjects.Add(proj);
 
+		proj.projName = myProject.projectNames[1];
+		proj.description = myProject.projectDescriptions[1];
+		proj.deadline = 1;
+		proj.workAmount = 7;
+		proj.reward = 100;
+		proj.penalty = 100;
+		proj.expectedQuality = 30;
+		proj.category = 0;
+		availableProjects.Add(proj);
+
+		proj.projName = myProject.projectNames[2];
+		proj.description = myProject.projectDescriptions[2];
+		proj.deadline = 3;
+		proj.workAmount = 27;
+		proj.reward = 250;
+		proj.penalty = 170;
+		proj.expectedQuality = 40;
+		proj.category = 2;
+		availableProjects.Add(proj);
+
+		proj.projName = myProject.projectNames[3];
+		proj.description = myProject.projectDescriptions[3];
+		proj.deadline = 4;
+		proj.workAmount = 30;
+		proj.reward = 300;
+		proj.penalty = 300;
+		proj.expectedQuality = 40;
+		proj.category = 12;
+		availableProjects.Add(proj);
+
 		// Initialize month
 		month = gameObject.AddComponent<Month>() as Month;
 		month.numberOfProjectsFinished = 0;

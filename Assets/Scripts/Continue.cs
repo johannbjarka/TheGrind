@@ -4,6 +4,11 @@ using System.Collections.Generic;
 
 public class Continue : MonoBehaviour {
 
+	public int projectsFinished;
+	public int monthlyBalance;
+	public char monthlyGrade;
+	public int newBudget;
+
 	// Use this for initialization
 	void Start () {
 
@@ -52,13 +57,24 @@ public class Continue : MonoBehaviour {
 
 		// If a month has passed
 		if((myCompany.weeksPassed % 4) == 0) {
-			int projectsFinished = myCompany.month.numberOfProjectsFinished;
-			int monthlyBalance = myCompany.month.calcFinalBalance();
-			char monthlyGrade = myCompany.month.getGrade();
-			int newBudget = myCompany.month.getNextAllowance();
+			projectsFinished = myCompany.month.numberOfProjectsFinished;
+			monthlyBalance = myCompany.month.calcFinalBalance();
+			monthlyGrade = myCompany.month.getGrade();
+			newBudget = myCompany.month.getNextAllowance();
 			myCompany.budget.projectRewards = 0;
 			myCompany.budget.projectPenalties = 0;
 			myCompany.budget.monthlyAmount = newBudget;
+
+			if(projectsFinished == 0){
+				//myCompany.jobSecurity -= 15;
+				//FOR ALPHA
+				myCompany.firePlayer(1);
+			}
+			if(myCompany.characters.Count == 0){
+				//myCompany.jobSecurity -= 15;
+				//FOR ALPHA
+				myCompany.firePlayer(2);
+			}
 		}
 
 		foreach(Character emp in myCompany.characters) {

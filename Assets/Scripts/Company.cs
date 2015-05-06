@@ -124,8 +124,7 @@ public class Company : MonoBehaviour {
 		return totalSalaries;
 	}
 
-	void setProjectID (Project proj) {
-		proj.ID = projectID;
-		projectID++;
+	public void firePlayer(int id){
+
 	}
 }

@@ -227,7 +227,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!61 &60291685
@@ -1448,7 +1447,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!61 &261780882
@@ -1810,7 +1808,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!61 &296826156
@@ -1951,7 +1948,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!61 &334851326
@@ -2757,7 +2753,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!50 &506495028
@@ -3651,7 +3646,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!61 &803646944
@@ -4395,7 +4389,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: .0500000007
   sprite: {fileID: 0}
 --- !u!61 &898533484
@@ -4820,7 +4813,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!224 &959473646
@@ -5486,7 +5478,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!61 &1144703785
@@ -6405,7 +6396,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!50 &1296712576
@@ -6670,7 +6660,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!114 &1313912157
@@ -8402,7 +8391,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!61 &1724357020
@@ -8894,7 +8882,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!114 &1863691746
@@ -9076,7 +9063,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!61 &1872394957
@@ -9330,7 +9316,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!222 &1987266655
@@ -10049,7 +10034,6 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  isApplicant: 1
   movSpeed: 0
   sprite: {fileID: 0}
 --- !u!50 &2108217532

@@ -64,6 +64,25 @@ public class CreateScrollList : MonoBehaviour {
 		}
 	}
 
+	public void addEmployee(IDPair ids){
+		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		int projectID = Int32.Parse(ids.projectID.text);
+		int employeeID = Int32.Parse(ids.employeeID.text);
+		foreach(Project proj in myCompany.projects){
+			if(proj.ID == projectID){
+				foreach(Character emp in myCompany.characters){
+					if(emp.ID == employeeID){
+						emp.onProject = true;
+						proj.employees.Add(emp);
+						Destroy(availableEmployeePanel);
+						break;
+					}
+				}
+				break;
+			}
+		}
+	}
+
 	public void PopulateApplicantList () {
 		foreach (var item in myCompany.applicants) {
 			GameObject newPanel = Instantiate (applicantsPanel) as GameObject;
@@ -83,6 +102,9 @@ public class CreateScrollList : MonoBehaviour {
 	public void closeAvailableEmployeeList () {
 		selectEmployeesCanvasIsOpen = !selectEmployeesCanvasIsOpen;
 		SelectEmployeesCanvas.enabled = !SelectEmployeesCanvas.enabled;
+		foreach (Transform child in availableEmployeeContentPanel) {
+			GameObject.Destroy(child.gameObject);
+		}
 	}
 
 	public void emptyEmployeeList () {

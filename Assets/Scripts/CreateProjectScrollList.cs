@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 /*
@@ -78,5 +79,20 @@ public class CreateProjectScrollList : MonoBehaviour {
 		}
 	}
 
+	public void selectProject(Text _id){
+		int id = Int32.Parse(_id.text);
+		Company myCompany = GameObject.Find ("Company").GetComponent<Company>();
+		foreach(Project proj in myCompany.availableProjects){
+			if(proj.ID == id){
+				myCompany.projects.Add(proj);
+				myCompany.availableProjects.Remove(proj);
+				Destroy(availableProjectPanel);
+				break;
+			}
+		}
+		//TODO: Take player to menu to select employees for project
+		CreateScrollList list = GameObject.Find("Main Camera").GetComponent<CreateScrollList>();
+		list.PopulateAvailableEmployeeList(id);
+	}
 
 }

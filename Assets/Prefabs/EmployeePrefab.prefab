@@ -14,6 +14,7 @@ GameObject:
   - 50: {fileID: 5099536}
   - 95: {fileID: 9551798}
   - 212: {fileID: 21268962}
+  - 114: {fileID: 11484166}
   m_Layer: 0
   m_Name: EmployeePrefab
   m_TagString: Untagged
@@ -114,9 +115,9 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 34463e7ec64bfd247bbd87261476d8da, type: 3}
   - {fileID: 21300002, guid: 705022ec4dd7fc64b9537f42c66c80db, type: 3}
   - {fileID: 21300002, guid: ed66d58273d2d934b93fba8cd39a60d0, type: 3}
-  - {fileID: 21300002, guid: ec002352dc12f11499c169b45705157c, type: 3}
-  - {fileID: 21300002, guid: 6ebd6ab20348a9e40b0998f94b638ae0, type: 3}
   - {fileID: 21300002, guid: a6470973485e18f4c956474059c88a17, type: 3}
+  - {fileID: 21300002, guid: 6ebd6ab20348a9e40b0998f94b638ae0, type: 3}
+  - {fileID: 21300002, guid: ec002352dc12f11499c169b45705157c, type: 3}
   - {fileID: 21300002, guid: 4673eeb9a0ff59146a4407ea982579d2, type: 3}
   - {fileID: 21300002, guid: 5dfc943e653fa7840857fbb7286fdc29, type: 3}
   - {fileID: 21300002, guid: 65b35882859da4b4fb0a595c7b10ed37, type: 3}
@@ -131,8 +132,22 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
-  applicant: 1
   movSpeed: 0
+  sprite: {fileID: 0}
+--- !u!114 &11484166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69acd04a546dcaa4aa0c87575accf545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  me: {fileID: 0}
+  watercoolers: []
+  thirsty: 0
 --- !u!114 &11487250
 MonoBehaviour:
   m_ObjectHideFlags: 1

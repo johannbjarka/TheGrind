@@ -26,10 +26,11 @@ public class Company : MonoBehaviour {
 	public Text income;
 	public Text penalties;
 	public Text allocated;
+	public Text jobSec;
 
 	void Awake () {
 		// Create 5 starting employees
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < 7; i++) {
 			GameObject character;
 			Vector3 pos = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
@@ -38,7 +39,7 @@ public class Company : MonoBehaviour {
 		}
 		
 		// Create 5 starting applicants
-		for(int i = 0; i < 5; i++) {
+		for(int i = 0; i < 8; i++) {
 			GameObject character;
 			Vector3 pos = new Vector3(1000, 1000, -100f);
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
@@ -54,7 +55,7 @@ public class Company : MonoBehaviour {
 		budget.miscCost = 200;
 		budget.projectRewards = 0;
 		budget.projectPenalties = 0;
-		budget.monthlyAmount = 1000;
+		budget.monthlyAmount = 1500;
 
 
 
@@ -135,6 +136,7 @@ public class Company : MonoBehaviour {
 		income.text = budget.projectRewards.ToString();
 		penalties.text = budget.projectPenalties.ToString();
 		allocated.text = budget.monthlyAmount.ToString();
+		jobSec.text = jobSecurity.ToString();
 
 		if(jobSecurity > 100){
 			jobSecurity = 100;

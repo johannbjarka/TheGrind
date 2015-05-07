@@ -62,9 +62,10 @@ public class Continue : MonoBehaviour {
 				foreach(Character emp in myCompany.projects[i].employees) {
 					emp.onProject = false;
 				}
-				myCompany.projects.Remove(myCompany.projects[i]);
 			}
-			if(myCompany.projects[i].workAmount <= 0) {
+			if((myCompany.projects[i].workAmount <= 0) || 
+			   (myCompany.projects[i].deadline == 0)) {
+
 				myCompany.projects.Remove(myCompany.projects[i]);
 			}
 		}

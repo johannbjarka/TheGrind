@@ -21,39 +21,38 @@ public class Continue : MonoBehaviour {
 	
 	}
 
-	void OnMouseDown () {
+	public void continueGame () {
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
 
-		foreach(Project proj in myCompany.projects) {
-			proj.deadline--;
-			// Calculate the amount of work done on each project
-			foreach(Character emp in proj.employees) {
-				proj.workAmount -= emp.speed;
+		// Calculate the amount of work done on each project
+		for(int i = 0; i < myCompany.projects.Count; i++) {
+			myCompany.projects[i].deadline--;
+			foreach(Character emp in myCompany.projects[i].employees) {
+				myCompany.projects[i].workAmount -= emp.speed;
 			}
 			// If the project is finished, add it to completed projects, add the 
 			// reward to the budget and remove it from projects.
-			if(proj.workAmount <= 0) {
-				myCompany.completedProjects.Add(proj);
-				myCompany.projects.Remove(proj);
-				myCompany.budget.projectRewards += proj.reward;
-
+			if(myCompany.projects[i].workAmount <= 0) {
+				myCompany.completedProjects.Add(myCompany.projects[i]);
+				myCompany.projects.Remove(myCompany.projects[i]);
+				myCompany.budget.projectRewards += myCompany.projects[i].reward;
+				
 				// Remove employees from the project
-				foreach(Character emp in proj.employees) {
+				foreach(Character emp in myCompany.projects[i].employees) {
 					emp.onProject = false;
 				}
 			}
 			// If a project's deadline has passed and it's not finished we 
 			// remove it from projects and add the penalty to projectPenalties. 
-			if(proj.deadline == 0 && proj.workAmount > 0) {
-				myCompany.projects.Remove(proj);
-				myCompany.budget.projectPenalties += proj.penalty;
-
+			if(myCompany.projects[i].deadline == 0 && myCompany.projects[i].workAmount > 0) {
+				myCompany.budget.projectPenalties += myCompany.projects[i].penalty;
+				
 				// Remove employees from the project
-				foreach(Character emp in proj.employees) {
+				foreach(Character emp in myCompany.projects[i].employees) {
 					emp.onProject = false;
 				}
-
+				myCompany.projects.Remove(myCompany.projects[i]);
 			}
 		}
 
@@ -77,8 +76,8 @@ public class Continue : MonoBehaviour {
 				//FOR ALPHA
 				myCompany.firePlayer(2);
 			}
-			pfReviewOpen = !pfReviewOpen;
-			performanceReview.enabled = !performanceReview.enabled;
+			//pfReviewOpen = !pfReviewOpen;
+			//performanceReview.enabled = !performanceReview.enabled;
 		}
 
 		foreach(Character emp in myCompany.characters) {

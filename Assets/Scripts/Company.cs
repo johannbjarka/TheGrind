@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Company : MonoBehaviour {
 
@@ -17,6 +18,7 @@ public class Company : MonoBehaviour {
 	public List<Project> projects;
 	public List<Project> availableProjects;
 	public List<Project> completedProjects;
+	public Text weeks;
 
 	void Awake () {
 		// Create 5 starting employees
@@ -111,6 +113,7 @@ public class Company : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		budget.totalSalaries = getTotalSalaries();
+		//weeks.text = weeksPassed.ToString();
 	}
 
 	int getTotalSalaries () {
@@ -124,6 +127,7 @@ public class Company : MonoBehaviour {
 
 	public void firePlayer(int id){
 		//TODO: Display firing splash screen, with different text based on id.
+		Debug.Log("You're fired");
 	}
 
 	public string getDescription (int cat) {

@@ -30,7 +30,10 @@ public class Month : MonoBehaviour {
 
 	public char getGrade () {
 		Company myCompany = gameObject.GetComponent<Company>();
-		int ratio = totalQuality / numberOfProjectsFinished;
+		int ratio = 0;
+		if(numberOfProjectsFinished > 0) {
+			ratio = totalQuality / numberOfProjectsFinished;
+		}
 		if (ratio >= 9) {
 			myCompany.jobSecurity += 8;
 			return 'A';

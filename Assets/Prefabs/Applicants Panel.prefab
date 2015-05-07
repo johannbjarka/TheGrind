@@ -64,6 +64,7 @@ GameObject:
   - 222: {fileID: 22264064}
   - 114: {fileID: 11459432}
   - 114: {fileID: 11423680}
+  - 114: {fileID: 11465066}
   m_Layer: 5
   m_Name: Skills Button
   m_TagString: Untagged
@@ -469,7 +470,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11459432}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11465066}
+        m_MethodName: openApplicantSkills
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11495682}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI, Version=1.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11424128
@@ -567,6 +580,7 @@ MonoBehaviour:
   hireButton: {fileID: 11488428}
   fireButton: {fileID: 0}
   ID: {fileID: 11495682}
+  ProjectID: {fileID: 0}
 --- !u!114 &11459432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -661,6 +675,29 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Salary:'
+--- !u!114 &11465066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  employeePanel: {fileID: 0}
+  availableEmployeePanel: {fileID: 0}
+  applicantsPanel: {fileID: 0}
+  applicantPrefab: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  employeeContentPanel: {fileID: 0}
+  applicantContentPanel: {fileID: 0}
+  availableEmployeeContentPanel: {fileID: 0}
+  skillsMenuContentPanel: {fileID: 0}
+  SelectEmployeesCanvas: {fileID: 0}
+  skillsCanvas: {fileID: 0}
+  skillsMenuPrefab: {fileID: 185466, guid: 123bf3b057f05c6408f35644937034c9, type: 2}
 --- !u!114 &11467928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -895,11 +932,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   employeePanel: {fileID: 0}
+  availableEmployeePanel: {fileID: 0}
   applicantsPanel: {fileID: 0}
   applicantPrefab: {fileID: 119452}
   employeePrefab: {fileID: 0}
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
+  availableEmployeeContentPanel: {fileID: 0}
+  skillsMenuContentPanel: {fileID: 0}
+  SelectEmployeesCanvas: {fileID: 0}
+  skillsCanvas: {fileID: 0}
+  skillsMenuPrefab: {fileID: 0}
 --- !u!222 &22203030
 CanvasRenderer:
   m_ObjectHideFlags: 1

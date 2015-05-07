@@ -5,11 +5,7 @@ using System;
 public class AddToProject : MonoBehaviour {
 
 	public void addEmployee(IDPair ids){
-		Debug.Log("YOLO");
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
-		//Project proj2 = ;
-		Debug.Log (ids.projectID.text);
-		Debug.Log (ids.employeeID.text);
 		int projectID = Int32.Parse(ids.projectID.text);
 		int employeeID = Int32.Parse(ids.employeeID.text);
 		foreach(Project proj in myCompany.projects){

@@ -80,6 +80,11 @@ public class CreateScrollList : MonoBehaviour {
 		}
 	}
 
+	public void closeAvailableEmployeeList () {
+		selectEmployeesCanvasIsOpen = !selectEmployeesCanvasIsOpen;
+		SelectEmployeesCanvas.enabled = !SelectEmployeesCanvas.enabled;
+	}
+
 	public void emptyEmployeeList () {
 		foreach (Transform child in employeeContentPanel) {
 			GameObject.Destroy(child.gameObject);

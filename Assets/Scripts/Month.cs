@@ -20,7 +20,7 @@ public class Month : MonoBehaviour {
 		Company myCompany = gameObject.GetComponent<Company>();
 		int balance = myCompany.budget.getBalance();
 		if(balance < 0){
-			myCompany.jobSecurity -= balance / 20;
+			myCompany.jobSecurity += balance / 20;
 		}
 		else{
 			myCompany.jobSecurity += balance / 40;

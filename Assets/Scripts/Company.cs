@@ -114,6 +114,9 @@ public class Company : MonoBehaviour {
 	void Update () {
 		budget.totalSalaries = getTotalSalaries();
 		//weeks.text = weeksPassed.ToString();
+		if(jobSecurity > 100){
+			jobSecurity = 100;
+		}
 	}
 
 	int getTotalSalaries () {

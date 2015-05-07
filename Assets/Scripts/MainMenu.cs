@@ -7,6 +7,10 @@ public class MainMenu : MonoBehaviour {
 		Application.LoadLevel ("Tutorial");
 	}
 
+	public void StartContext () {
+		Application.LoadLevel ("ContextScreen");
+	}
+
 	public void StartOffice () {
 		Application.LoadLevel ("Office");
 	}

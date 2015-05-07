@@ -125,4 +125,37 @@ public class Company : MonoBehaviour {
 	public void firePlayer(int id){
 		//TODO: Display firing splash screen, with different text based on id.
 	}
+
+	public string getDescription (int cat) {
+		switch (cat) {
+		case 0:
+			return "Graphics";
+		case 1:
+			return "AI";
+		case 2:
+			return "Algorithms";
+		case 3:
+			return "Databases";
+		case 4:
+			return "Debugging";
+		case 5:
+			return "Design";
+		case 6:
+			return "Research";
+		case 7:
+			return "ERP";
+		case 8:
+			return "Hacking";
+		case 9:
+			return "Networking";
+		case 10:
+			return "Recursion";
+		case 11:
+			return "State Machines";
+		case 12:
+			return "Web Development";
+		default:
+			return "Programming";
+		}
+	}
 }

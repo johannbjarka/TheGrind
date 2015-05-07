@@ -43,7 +43,7 @@ public class CreateProjectScrollList : MonoBehaviour {
 			panel.Reward.text = project.reward.ToString();
 			panel.Penalty.text = project.penalty.ToString();
 			panel.ID.text = project.ID.ToString();
-			panel.Category.text = getDescription(project.category);
+			panel.Category.text = myCompany.getDescription(project.category);
 			newProjectPanel.transform.SetParent (AvailableProjectContentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		}
@@ -63,7 +63,7 @@ public class CreateProjectScrollList : MonoBehaviour {
 			panel.Description.text = project.description;
 			panel.Reward.text = project.reward.ToString();
 			panel.Penalty.text = project.penalty.ToString();
-			panel.Category.text = getDescription(project.category);
+			panel.Category.text = myCompany.getDescription(project.category);
 			newProjectPanel.transform.SetParent (CurrentProjectContentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		}
@@ -78,36 +78,5 @@ public class CreateProjectScrollList : MonoBehaviour {
 		}
 	}
 
-	private string getDescription (int cat) {
-		switch (cat) {
-		case 0:
-			return "Graphics";
-		case 1:
-			return "AI";
-		case 2:
-			return "Algorithms";
-		case 3:
-			return "Databases";
-		case 4:
-			return "Debugging";
-		case 5:
-			return "Design";
-		case 6:
-			return "Distributed Programming";
-		case 7:
-			return "ERP";
-		case 8:
-			return "Hacking";
-		case 9:
-			return "Programming Paradigms";
-		case 10:
-			return "Recursion";
-		case 11:
-			return "State Machines";
-		case 12:
-			return "Web Development";
-		default:
-			return "Programming";
-		}
-	}
+
 }

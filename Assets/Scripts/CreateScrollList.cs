@@ -76,6 +76,24 @@ public class CreateScrollList : MonoBehaviour {
 		}
 	}
 
+	public Canvas skillsCanvas;
+	public bool skillsCanvasIsOpen = false;
+	public SkillsMenu skills;
+	public void openSkills (Text _id) {
+
+		int id = Int32.Parse(_id.text);
+		skills.Graphics.text = myCompany.characters [id].skills [0].ToString();
+		skills.AI.text = myCompany.characters [id].skills [1].ToString();
+
+		skillsCanvasIsOpen = !skillsCanvasIsOpen;
+		skillsCanvas.enabled = !skillsCanvas.enabled;
+	}
+
+	public void closeSkills () {
+		skillsCanvasIsOpen = !skillsCanvasIsOpen;
+		skillsCanvas.enabled = !skillsCanvas.enabled;
+	}
+
 	public void fire (Text _id){
 		//TODO: Remove from Project, Remove from Company, take plant.
 		int id = Int32.Parse(_id.text);

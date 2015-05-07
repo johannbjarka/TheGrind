@@ -36,6 +36,7 @@ public class Continue : MonoBehaviour {
 			if(myCompany.projects[i].workAmount <= 0) {
 				myCompany.completedProjects.Add(myCompany.projects[i]);
 				myCompany.budget.projectRewards += myCompany.projects[i].reward;
+				myCompany.month.numberOfProjectsFinished++;
 				
 				// Remove employees from the project
 				foreach(Character emp in myCompany.projects[i].employees) {
@@ -81,6 +82,7 @@ public class Continue : MonoBehaviour {
 			}
 			//pfReviewOpen = !pfReviewOpen;
 			//performanceReview.enabled = !performanceReview.enabled;
+			myCompany.month.numberOfProjectsFinished = 0;
 		}
 
 		foreach(Character emp in myCompany.characters) {

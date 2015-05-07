@@ -133,7 +133,7 @@ public class Company : MonoBehaviour {
 
 	public void firePlayer(int id){
 		//TODO: Display firing splash screen, with different text based on id.
-		Debug.Log("You're fired");
+		Debug.Log("You're fired because " + id);
 	}
 
 	public string getDescription (int cat) {

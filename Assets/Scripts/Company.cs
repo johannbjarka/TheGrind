@@ -19,6 +19,13 @@ public class Company : MonoBehaviour {
 	public List<Project> availableProjects;
 	public List<Project> completedProjects;
 	public Text weeks;
+	public Text balance;
+	public Text balance2;
+	public Text salaries;
+	public Text misc;
+	public Text income;
+	public Text penalties;
+	public Text allocated;
 
 	void Awake () {
 		// Create 5 starting employees
@@ -113,6 +120,21 @@ public class Company : MonoBehaviour {
 	void Update () {
 		budget.totalSalaries = getTotalSalaries();
 		weeks.text = (weeksPassed + 1).ToString();
+		if(budget.getBalance() < 0) {
+			balance.color = Color.red;
+			balance2.color = Color.red;
+		}
+		else {
+			balance.color = Color.black;
+			balance2.color = Color.black;
+		}
+		balance.text = budget.getBalance().ToString();
+		balance2.text = budget.getBalance().ToString();
+		salaries.text = budget.totalSalaries.ToString();
+		misc.text = budget.miscCost.ToString();
+		income.text = budget.projectRewards.ToString();
+		penalties.text = budget.projectPenalties.ToString();
+		allocated.text = budget.monthlyAmount.ToString();
 
 		if(jobSecurity > 100){
 			jobSecurity = 100;

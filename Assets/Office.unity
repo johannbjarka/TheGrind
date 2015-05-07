@@ -3382,6 +3382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   employeePanel: {fileID: 181426, guid: 15d7517adf8977a489075fa37dd478d0, type: 2}
   applicantsPanel: {fileID: 119452, guid: 2e91bd5defb93c847b68fdfc1ab24fe6, type: 2}
+  applicantPrefab: {fileID: 0}
+  employeePrefab: {fileID: 0}
   employeeContentPanel: {fileID: 80073880}
   applicantContentPanel: {fileID: 1547597421}
 --- !u!114 &461498199

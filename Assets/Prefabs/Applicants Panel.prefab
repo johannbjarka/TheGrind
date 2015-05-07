@@ -254,7 +254,7 @@ GameObject:
   - 222: {fileID: 22222500}
   - 114: {fileID: 11402716}
   - 114: {fileID: 11488428}
-  - 114: {fileID: 11430676}
+  - 114: {fileID: 11499340}
   m_Layer: 5
   m_Name: Hire Button
   m_TagString: Untagged
@@ -545,17 +545,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: '*Insert Morale*'
---- !u!114 &11430676
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 180820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc13ba6a0318def488d24acbcee8c25f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11446804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -854,7 +843,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11430676}
+      - m_Target: {fileID: 11499340}
         m_MethodName: hire
         m_Mode: 2
         m_Arguments:
@@ -894,6 +883,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &11499340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  employeePanel: {fileID: 0}
+  applicantsPanel: {fileID: 0}
+  applicantPrefab: {fileID: 119452}
+  employeePrefab: {fileID: 0}
+  employeeContentPanel: {fileID: 0}
+  applicantContentPanel: {fileID: 0}
 --- !u!222 &22203030
 CanvasRenderer:
   m_ObjectHideFlags: 1

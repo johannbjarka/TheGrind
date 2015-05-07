@@ -3,7 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class SkillsMenu : MonoBehaviour {
-	
+
+	public GameObject skillsPanel;
 	public Text Graphics;
 	public Text AI;
 	public Text Algorithms;
@@ -18,6 +19,5 @@ public class SkillsMenu : MonoBehaviour {
 	public Text StateMachine;
 	public Text WebDevelopment;
 	public Text Programming;
-	public Button closeButton;
 
 }

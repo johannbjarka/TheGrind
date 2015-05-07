@@ -18,6 +18,7 @@ public class CreateScrollList : MonoBehaviour {
 	public Transform employeeContentPanel;
 	public Transform applicantContentPanel;
 	public Transform availableEmployeeContentPanel;
+	public Transform skillsMenuContentPanel;
 
 	void Start () {
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
@@ -130,24 +131,6 @@ public class CreateScrollList : MonoBehaviour {
 		}
 	}
 
-	public Canvas skillsCanvas;
-	public bool skillsCanvasIsOpen = false;
-	public SkillsMenu skills;
-	public void openSkills (Text _id) {
-
-		int id = Int32.Parse(_id.text);
-		skills.Graphics.text = myCompany.characters [id].skills [0].ToString();
-		skills.AI.text = myCompany.characters [id].skills [1].ToString();
-
-		skillsCanvasIsOpen = !skillsCanvasIsOpen;
-		skillsCanvas.enabled = !skillsCanvas.enabled;
-	}
-
-	public void closeSkills () {
-		skillsCanvasIsOpen = !skillsCanvasIsOpen;
-		skillsCanvas.enabled = !skillsCanvas.enabled;
-	}
-
 	public void fire (Text _id){
 		//TODO: Remove from Project, Remove from Company, take plant.
 		int id = Int32.Parse(_id.text);
@@ -169,5 +152,75 @@ public class CreateScrollList : MonoBehaviour {
 			}
 		}
 		//takePlant();
+	}
+
+
+	public Canvas skillsCanvas;
+	bool skillsCanvasIsOpen = false;
+	public GameObject skillsMenuPrefab;
+	GameObject myCamera;
+	
+	public void openSkills (Text _id) {
+		myCamera = GameObject.Find ("Main Camera");
+		skillsCanvas = myCamera.GetComponent<CreateScrollList>().skillsCanvas;
+		skillsMenuContentPanel = myCamera.GetComponent<CreateScrollList> ().skillsMenuContentPanel;
+		int id = Int32.Parse(_id.text);
+		GameObject newskillsPanel = Instantiate (skillsMenuPrefab) as GameObject;
+		SkillsMenu skills = newskillsPanel.GetComponent <SkillsMenu> ();
+		
+		skills.Graphics.text = myCompany.characters [id].skills [0].ToString();
+		skills.AI.text = myCompany.characters [id].skills [1].ToString();
+		skills.Algorithms.text = myCompany.characters [id].skills [2].ToString();
+		skills.Databases.text = myCompany.characters [id].skills [3].ToString();
+		skills.Debugging.text = myCompany.characters [id].skills [4].ToString();
+		skills.Design.text = myCompany.characters [id].skills [5].ToString();
+		skills.Research.text = myCompany.characters [id].skills [6].ToString();
+		skills.ERP.text = myCompany.characters [id].skills [7].ToString();
+		skills.Hacking.text = myCompany.characters [id].skills [8].ToString();
+		skills.Networking.text = myCompany.characters [id].skills [9].ToString();
+		skills.Recursion.text = myCompany.characters [id].skills [10].ToString();
+		skills.StateMachine.text = myCompany.characters [id].skills [11].ToString();
+		skills.WebDevelopment.text = myCompany.characters [id].skills [12].ToString();
+		
+		skillsCanvasIsOpen = !skillsCanvasIsOpen;
+		skillsCanvas.enabled = !skillsCanvas.enabled;
+		newskillsPanel.transform.SetParent (skillsMenuContentPanel);
+		skills.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+	}
+	public void openApplicantSkills (Text _id) {
+		myCamera = GameObject.Find ("Main Camera");
+		skillsCanvas = myCamera.GetComponent<CreateScrollList>().skillsCanvas;
+		skillsMenuContentPanel = myCamera.GetComponent<CreateScrollList> ().skillsMenuContentPanel;
+		// TODO: this -5 is not goooood.
+		int id = Int32.Parse(_id.text) - 5;
+		GameObject newskillsPanel = Instantiate (skillsMenuPrefab) as GameObject;
+		SkillsMenu skills = newskillsPanel.GetComponent <SkillsMenu> ();
+
+		skills.Graphics.text = myCompany.applicants [id].skills [0].ToString();
+		skills.AI.text = myCompany.applicants [id].skills [1].ToString();
+		skills.Algorithms.text = myCompany.applicants [id].skills [2].ToString();
+		skills.Databases.text = myCompany.applicants [id].skills [3].ToString();
+		skills.Debugging.text = myCompany.applicants [id].skills [4].ToString();
+		skills.Design.text = myCompany.applicants [id].skills [5].ToString();
+		skills.Research.text = myCompany.applicants [id].skills [6].ToString();
+		skills.ERP.text = myCompany.applicants [id].skills [7].ToString();
+		skills.Hacking.text = myCompany.applicants [id].skills [8].ToString();
+		skills.Networking.text = myCompany.applicants [id].skills [9].ToString();
+		skills.Recursion.text = myCompany.applicants [id].skills [10].ToString();
+		skills.StateMachine.text = myCompany.applicants [id].skills [11].ToString();
+		skills.WebDevelopment.text = myCompany.applicants [id].skills [12].ToString();
+		
+		skillsCanvasIsOpen = !skillsCanvasIsOpen;
+		skillsCanvas.enabled = !skillsCanvas.enabled;
+		newskillsPanel.transform.SetParent (skillsMenuContentPanel);
+		skills.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+	}
+	
+	public void closeSkills () {
+		skillsCanvasIsOpen = !skillsCanvasIsOpen;
+		skillsCanvas.enabled = !skillsCanvas.enabled;
+		foreach (Transform child in skillsMenuContentPanel) {
+			GameObject.Destroy(child.gameObject);
+		}
 	}
 }

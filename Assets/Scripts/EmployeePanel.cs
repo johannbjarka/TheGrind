@@ -14,4 +14,5 @@ public class EmployeePanel : MonoBehaviour {
 		public Button hireButton;
 		public Button fireButton;
 		public Text ID;
+		public Text ProjectID;
 }

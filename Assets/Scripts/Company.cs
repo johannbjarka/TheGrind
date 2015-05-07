@@ -100,7 +100,6 @@ public class Company : MonoBehaviour {
 		proj4.expectedQuality = 40;
 		proj4.category = 12;
 		availableProjects.Add(proj4);
-		projects.Add (proj4);
 		// Initialize month
 		month = gameObject.AddComponent<Month>() as Month;
 		month.numberOfProjectsFinished = 0;
@@ -113,7 +112,7 @@ public class Company : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		budget.totalSalaries = getTotalSalaries();
-		//weeks.text = weeksPassed.ToString();
+		weeks.text = (weeksPassed + 1).ToString();
 	}
 
 	int getTotalSalaries () {

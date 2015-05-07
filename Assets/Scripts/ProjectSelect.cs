@@ -16,6 +16,8 @@ public class ProjectSelect : MonoBehaviour {
 			}
 		}
 		//TODO: Take player to menu to select employees for project
+		CreateScrollList list = GameObject.Find("Main Camera").GetComponent<CreateScrollList>();
+		list.PopulateAvailableEmployeeList(id);
 	}
 
 	// Use this for initialization

@@ -25,9 +25,9 @@ public class Continue : MonoBehaviour {
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
 
-		// Calculate the amount of work done on each project
 		for(int i = 0; i < myCompany.projects.Count; i++) {
 			myCompany.projects[i].deadline--;
+			// Calculate the amount of work done on each project
 			foreach(Character emp in myCompany.projects[i].employees) {
 				myCompany.projects[i].workAmount -= emp.speed;
 			}
@@ -35,13 +35,13 @@ public class Continue : MonoBehaviour {
 			// reward to the budget and remove it from projects.
 			if(myCompany.projects[i].workAmount <= 0) {
 				myCompany.completedProjects.Add(myCompany.projects[i]);
-				myCompany.projects.Remove(myCompany.projects[i]);
 				myCompany.budget.projectRewards += myCompany.projects[i].reward;
 				
 				// Remove employees from the project
 				foreach(Character emp in myCompany.projects[i].employees) {
 					emp.onProject = false;
 				}
+
 			}
 			// If a project's deadline has passed and it's not finished we 
 			// remove it from projects and add the penalty to projectPenalties. 
@@ -52,6 +52,9 @@ public class Continue : MonoBehaviour {
 				foreach(Character emp in myCompany.projects[i].employees) {
 					emp.onProject = false;
 				}
+				myCompany.projects.Remove(myCompany.projects[i]);
+			}
+			if(myCompany.projects[i].workAmount <= 0) {
 				myCompany.projects.Remove(myCompany.projects[i]);
 			}
 		}

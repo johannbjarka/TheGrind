@@ -10,12 +10,14 @@ public class CreateScrollList : MonoBehaviour {
 	Company myCompany;
 
 	public GameObject employeePanel;
+	public GameObject availableEmployeePanel;
 	public GameObject applicantsPanel;
 	public GameObject applicantPrefab;
 	public GameObject employeePrefab;
 
 	public Transform employeeContentPanel;
 	public Transform applicantContentPanel;
+	public Transform availableEmployeeContentPanel;
 
 	void Start () {
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
@@ -34,6 +36,31 @@ public class CreateScrollList : MonoBehaviour {
 			panel.ID.text = item.ID.ToString();
 			newPanel.transform.SetParent (employeeContentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+		}
+	}
+
+	public Canvas SelectEmployeesCanvas;
+	bool selectEmployeesCanvasIsOpen = false;
+
+	public void PopulateAvailableEmployeeList (int id) {
+		selectEmployeesCanvasIsOpen = !selectEmployeesCanvasIsOpen;
+		SelectEmployeesCanvas.enabled = !SelectEmployeesCanvas.enabled;
+		foreach (var item in myCompany.characters) {
+			GameObject newPanel = Instantiate (availableEmployeePanel) as GameObject;
+			EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
+			if(!item.onProject){
+				panel.nameLabel.text = item.characterName;
+				panel.genderLabel.text = item.gender.ToString();
+				panel.moraleLabel.text = item.morale.ToString();
+				panel.speedLabel.text = item.speed.ToString();
+				panel.salaryLabel.text = item.salary.ToString();
+				panel.employeeIcon.sprite = item.sprite;
+				panel.ID.text = item.ID.ToString();
+				panel.ProjectID.text = id.ToString();
+
+				newPanel.transform.SetParent (availableEmployeeContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+			}
 		}
 	}
 

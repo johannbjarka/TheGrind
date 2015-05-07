@@ -9,7 +9,13 @@ public class Continue : MonoBehaviour {
 	public char monthlyGrade;
 	public int newBudget;
 	public Canvas performanceReview;
-	private bool pfReviewOpen = false;
+	Company myCompany;
+	public Canvas gotFiredCanvas;
+	public bool gotFiredCanvasIsOpen = false;
+	public GameObject gotFiredPanelPrefab;
+
+	public Transform gotFiredContentPanel;
+	//private bool pfReviewOpen = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +28,11 @@ public class Continue : MonoBehaviour {
 	}
 
 	public void continueGame () {
-		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
+
+		GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
+		PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
 
 		for(int i = 0; i < myCompany.projects.Count; i++) {
 			myCompany.projects[i].deadline--;
@@ -73,11 +82,21 @@ public class Continue : MonoBehaviour {
 			if(projectsFinished == 0){
 				//myCompany.jobSecurity -= 15;
 				//FOR ALPHA
+				panel.explanation.text = "You did not finish any projects this month! This is UNACCEPTAAAABLEEEEEE! You're FIRED!";
+				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				myCompany.firePlayer(1);
 			}
 			if(myCompany.characters.Count == 0){
 				//myCompany.jobSecurity -= 15;
 				//FOR ALPHA
+				panel.explanation.text = "You do not have any employees, you can't do this all by yourself! You're FIRED!";
+				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				myCompany.firePlayer(2);
 			}
 			//pfReviewOpen = !pfReviewOpen;
@@ -94,12 +113,22 @@ public class Continue : MonoBehaviour {
 		if(myCompany.jobSecurity <= 25){
 			int rand = Random.Range(1, 100);
 			if(rand > 80){
+				panel.explanation.text = "You're pretty terrible at this, you have been fired and my grandmother is your replacement. She's Jewish so...good with money and that.";
+				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				myCompany.firePlayer(3);
 			}
 		}
 		else if(myCompany.jobSecurity <= 50){
 			int rand = Random.Range(1, 100);
 			if(rand > 95){
+				panel.explanation.text = "We have decided to restructure the company, you have been fired to afford the monthly dwarf tossing competition.";
+				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				myCompany.firePlayer(3);
 			}
 		}

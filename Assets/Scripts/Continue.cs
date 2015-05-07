@@ -89,5 +89,17 @@ public class Continue : MonoBehaviour {
 				myCompany.characters.Remove(emp);
 			}
 		}
+		if(myCompany.jobSecurity <= 25){
+			int rand = Random.Range(1, 100);
+			if(rand > 80){
+				myCompany.firePlayer(3);
+			}
+		}
+		else if(myCompany.jobSecurity <= 50){
+			int rand = Random.Range(1, 100);
+			if(rand > 95){
+				myCompany.firePlayer(3);
+			}
+		}
 	}
 }

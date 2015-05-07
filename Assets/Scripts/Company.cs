@@ -113,6 +113,13 @@ public class Company : MonoBehaviour {
 	void Update () {
 		budget.totalSalaries = getTotalSalaries();
 		weeks.text = (weeksPassed + 1).ToString();
+
+		if(jobSecurity > 100){
+			jobSecurity = 100;
+		}
+		else if(jobSecurity <= 0){
+			firePlayer(3);
+		}
 	}
 
 	int getTotalSalaries () {

@@ -289,8 +289,8 @@ GameObject:
   - 222: {fileID: 22256992}
   - 114: {fileID: 11495710}
   - 114: {fileID: 11435672}
-  - 114: {fileID: 11454260}
   - 114: {fileID: 11453638}
+  - 114: {fileID: 11479914}
   m_Layer: 5
   m_Name: Add Button
   m_TagString: Untagged
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11454260}
+      - m_Target: {fileID: 11479914}
         m_MethodName: addEmployee
         m_Mode: 2
         m_Arguments:
@@ -557,17 +557,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectID: {fileID: 11452720}
   employeeID: {fileID: 11493880}
---- !u!114 &11454260
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 595801e70e099404a9b107634b503eb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11454684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -740,6 +729,29 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Salary:'
+--- !u!114 &11479914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  employeePanel: {fileID: 0}
+  availableEmployeePanel: {fileID: 183642}
+  applicantsPanel: {fileID: 0}
+  applicantPrefab: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  employeeContentPanel: {fileID: 0}
+  applicantContentPanel: {fileID: 0}
+  availableEmployeeContentPanel: {fileID: 0}
+  SelectEmployeesCanvas: {fileID: 0}
+  skillsCanvas: {fileID: 0}
+  skillsCanvasIsOpen: 0
+  skills: {fileID: 0}
 --- !u!114 &11480728
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -6123,7 +6123,7 @@ MonoBehaviour:
   employeePrefab: {fileID: 0}
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
-  availableEmployeeContentPanel: {fileID: 0}
+  availableEmployeeContentPanel: {fileID: 1119963797}
   SelectEmployeesCanvas: {fileID: 336322696}
   skillsCanvas: {fileID: 0}
   skillsCanvasIsOpen: 0

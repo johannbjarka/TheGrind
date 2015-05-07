@@ -748,10 +748,10 @@ MonoBehaviour:
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
   availableEmployeeContentPanel: {fileID: 0}
+  skillsMenuContentPanel: {fileID: 0}
   SelectEmployeesCanvas: {fileID: 0}
   skillsCanvas: {fileID: 0}
-  skillsCanvasIsOpen: 0
-  skills: {fileID: 0}
+  skillsMenuPrefab: {fileID: 0}
 --- !u!114 &11480728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -949,10 +949,10 @@ MonoBehaviour:
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
   availableEmployeeContentPanel: {fileID: 0}
+  skillsMenuContentPanel: {fileID: 0}
   SelectEmployeesCanvas: {fileID: 0}
   skillsCanvas: {fileID: 0}
-  skillsCanvasIsOpen: 0
-  skills: {fileID: 0}
+  skillsMenuPrefab: {fileID: 185466, guid: 123bf3b057f05c6408f35644937034c9, type: 2}
 --- !u!114 &11493880
 MonoBehaviour:
   m_ObjectHideFlags: 1

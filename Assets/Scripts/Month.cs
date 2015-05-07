@@ -53,7 +53,7 @@ public class Month : MonoBehaviour {
 			return 'F';
 		}
 	}
-
+	
 	public int getNextAllowance () {
 		Company myCompany = gameObject.GetComponent<Company>();
 		int oldAllowance = myCompany.budget.monthlyAmount;

@@ -117,6 +117,9 @@ public class Company : MonoBehaviour {
 		if(jobSecurity > 100){
 			jobSecurity = 100;
 		}
+		else if(jobSecurity <= 0){
+			firePlayer(3);
+		}
 	}
 
 	int getTotalSalaries () {

@@ -1468,6 +1468,11 @@ MonoBehaviour:
   rewPen: {fileID: 2112413726}
   rewPenAmount: {fileID: 1697020658}
   grade: {fileID: 1048167252}
+  performanceReview: {fileID: 0}
+  gotFiredCanvas: {fileID: 0}
+  gotFiredCanvasIsOpen: 0
+  gotFiredPanelPrefab: {fileID: 0}
+  gotFiredContentPanel: {fileID: 0}
 --- !u!1 &124250026
 GameObject:
   m_ObjectHideFlags: 0
@@ -8172,6 +8177,7 @@ MonoBehaviour:
   monthJobSecurity: {fileID: 172170272}
   grade: {fileID: 1450196099}
   nextBudget: {fileID: 1400974933}
+  jobSec: {fileID: 0}
 --- !u!4 &946141423
 Transform:
   m_ObjectHideFlags: 0

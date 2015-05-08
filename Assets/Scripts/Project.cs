@@ -70,12 +70,9 @@ public class Project : MonoBehaviour {
 		int quality = totalQuality / employees.Count;
 		int ratio = (quality / this.expectedQuality) * 10;
 
-		Month myMonth = gameObject.GetComponent<Month>();
-		myMonth.totalQuality += ratio;
-		myMonth.numberOfProjectsFinished++;
-
-		Company myCompany = gameObject.GetComponent<Company>();
-
+		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		myCompany.month.totalQuality += ratio;
+		
 		if (ratio >= 9) {
 			myCompany.jobSecurity += 2;
 			return 'A';

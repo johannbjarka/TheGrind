@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class Continue : MonoBehaviour {
 
-	public int projectsFinished;
-	public int monthlyBalance;
-	public char monthlyGrade;
 	public int newBudget;
 	public Text	projName;
 	public Text rewPen;
 	public Text rewPenAmount;
 	public Text grade;
+	public Canvas projectDone;
 	public Canvas performanceReview;
 	Company myCompany;
 	public Canvas gotFiredCanvas;
@@ -42,7 +40,7 @@ public class Continue : MonoBehaviour {
 			foreach(Character emp in myCompany.projects[i].employees) {
 				myCompany.projects[i].workAmount -= emp.speed;
 			}
-			ProjectDone projDone = GameObject.Find("projDone").GetComponent<ProjectDone>();
+			ProjectDone projDone = GameObject.Find("ProjDone").GetComponent<ProjectDone>();
 			// If the project is finished, add it to completed projects, add the 
 			// reward to the budget and remove it from projects.
 			if(myCompany.projects[i].workAmount <= 0) {
@@ -84,7 +82,6 @@ public class Continue : MonoBehaviour {
 
 		// If a month has passed
 		if((myCompany.weeksPassed % 4) == 0) {
-
 			myCompany.setTextFields();
 			MonthlyReview monthly = GameObject.Find("Monthly").GetComponent<MonthlyReview>();
 			monthly.openMonthlyReview();
@@ -93,7 +90,7 @@ public class Continue : MonoBehaviour {
 			myCompany.budget.projectPenalties = 0;
 			myCompany.budget.monthlyAmount = myCompany.month.getNextAllowance();
 
-			if(projectsFinished == 0){
+			if(myCompany.month.numberOfProjectsFinished == 0){
 				//myCompany.jobSecurity -= 15;
 				//FOR ALPHA
 				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;

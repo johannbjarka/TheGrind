@@ -30,9 +30,7 @@ public class Continue : MonoBehaviour {
 	public void continueGame () {
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
-
-		GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
-		PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
+		
 
 		for(int i = 0; i < myCompany.projects.Count; i++) {
 			myCompany.projects[i].deadline--;
@@ -83,16 +81,21 @@ public class Continue : MonoBehaviour {
 			if(projectsFinished == 0){
 				//myCompany.jobSecurity -= 15;
 				//FOR ALPHA
+				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
+				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
 				panel.explanation.text = "You did not finish any projects this month! This is UNACCEPTAAAABLEEEEEE! You're FIRED!";
-				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
-				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+				panel.transform.position = new Vector3(0,0,0);
+				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
 				myCompany.firePlayer(1);
 			}
 			if(myCompany.characters.Count == 0){
 				//myCompany.jobSecurity -= 15;
 				//FOR ALPHA
+				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
+				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
 				panel.explanation.text = "You do not have any employees, you can't do this all by yourself! You're FIRED!";
 				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
 				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
@@ -114,6 +117,8 @@ public class Continue : MonoBehaviour {
 		if(myCompany.jobSecurity <= 25){
 			int rand = Random.Range(1, 100);
 			if(rand > 80){
+				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
+				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
 				panel.explanation.text = "You're pretty terrible at this, you have been fired and my grandmother is your replacement. She's Jewish so...good with money and that.";
 				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
 				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
@@ -125,6 +130,8 @@ public class Continue : MonoBehaviour {
 		else if(myCompany.jobSecurity <= 50){
 			int rand = Random.Range(1, 100);
 			if(rand > 95){
+				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
+				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
 				panel.explanation.text = "We have decided to restructure the company, you have been fired to afford the monthly dwarf tossing competition.";
 				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
 				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;

@@ -11,6 +11,7 @@ GameObject:
   - 222: {fileID: 22266578}
   - 114: {fileID: 11478346}
   - 114: {fileID: 11407006}
+  - 114: {fileID: 11483240}
   m_Layer: 5
   m_Name: Quit Game
   m_TagString: Untagged
@@ -117,6 +118,7 @@ GameObject:
   - 222: {fileID: 22241424}
   - 114: {fileID: 11475928}
   - 114: {fileID: 11484074}
+  - 114: {fileID: 11468114}
   m_Layer: 5
   m_Name: Try Again
   m_TagString: Untagged
@@ -205,7 +207,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11478346}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11483240}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11428032
@@ -340,6 +354,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!114 &11468114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd1578ebc54003489b12e4af3803639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11473890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,6 +433,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11483240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd1578ebc54003489b12e4af3803639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11484074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -446,7 +482,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11475928}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11468114}
+        m_MethodName: StartOffice
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &11489926
@@ -628,8 +676,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: -3.09944153e-06, y: -77.6999969}
-  m_SizeDelta: {x: 500, y: 49.4000015}
+  m_AnchoredPosition: {x: -1, y: -65}
+  m_SizeDelta: {x: 478, y: 95}
   m_Pivot: {x: .5, y: 1}
 --- !u!224 &22468664
 RectTransform:

@@ -98,12 +98,17 @@ public class Continue : MonoBehaviour {
 				//FOR ALPHA
 				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
 				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
+				foreach (Transform child in gotFiredContentPanel) {
+					GameObject.Destroy(child.gameObject);
+				}
 				panel.explanation.text = "You did not finish any projects this month! This is UNACCEPTAAAABLEEEEEE! You're FIRED!";
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				panel.transform.position = new Vector3(0,2,0);
-				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
-				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				if(!gotFiredCanvasIsOpen) {
+					gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+					gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				}
 				myCompany.firePlayer(1);
 			}
 			if(myCompany.characters.Count == 0){
@@ -111,12 +116,18 @@ public class Continue : MonoBehaviour {
 				//FOR ALPHA
 				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
 				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
+				foreach (Transform child in gotFiredContentPanel) {
+					GameObject.Destroy(child.gameObject);
+				}
 				panel.explanation.text = "You do not have any employees, you can't do this all by yourself! You're FIRED!";
-				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
-				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				panel.transform.position = new Vector3(0,2,0);
+				if(!gotFiredCanvasIsOpen) {
+					gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+					gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				}
+				Debug.Log("FIRED HERE");
 				myCompany.firePlayer(2);
 			}
 			myCompany.month.numberOfProjectsFinished = 0;
@@ -133,12 +144,17 @@ public class Continue : MonoBehaviour {
 			if(rand > 80){
 				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
 				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
+				foreach (Transform child in gotFiredContentPanel) {
+					GameObject.Destroy(child.gameObject);
+				}
 				panel.explanation.text = "You're pretty terrible at this, you have been fired and my grandmother is your replacement. She's Jewish so...good with money and that.";
-				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
-				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				panel.transform.position = new Vector3(0,2,0);
+				if(!gotFiredCanvasIsOpen) {
+					gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+					gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				}
 				myCompany.firePlayer(3);
 			}
 		}
@@ -147,12 +163,17 @@ public class Continue : MonoBehaviour {
 			if(rand > 95){
 				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
 				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
+				foreach (Transform child in gotFiredContentPanel) {
+					GameObject.Destroy(child.gameObject);
+				}
 				panel.explanation.text = "We have decided to restructure the company, you have been fired to afford the monthly dwarf tossing competition.";
-				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
-				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				panel.transform.position = new Vector3(0,2,0);
+				if(!gotFiredCanvasIsOpen) {
+					gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+					gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				}
 				myCompany.firePlayer(3);
 			}
 		}

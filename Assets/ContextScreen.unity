@@ -464,7 +464,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: You are a middle manager of a software company in Silicon Valley. You can
     hire and fire employees and decide which projects you want to undertake. Your
-    goal is to keep your job as long as you can. To do that you must make a profit,
+    goal is to keep your job as long as you can. To do that, you must make a profit,
     finish projects in time and deliver quality projects.
 --- !u!222 &861235043
 CanvasRenderer:

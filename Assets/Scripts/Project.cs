@@ -62,7 +62,7 @@ public class Project : MonoBehaviour {
 		_ID++;
 	}
 
-	char calcGrade () {
+	public char calcGrade () {
 		int totalQuality = 0;
 		foreach (Character emp in employees) {
 			totalQuality += emp.skills[this.category] * emp.speed;

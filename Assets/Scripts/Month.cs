@@ -5,6 +5,7 @@ public class Month : MonoBehaviour {
 
 	public int numberOfProjectsFinished = 0;
 	public int totalQuality = 0;
+	public char grade;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +29,7 @@ public class Month : MonoBehaviour {
 		return balance;
 	}
 
-	public char getGrade () {
+	public void getGrade () {
 		Company myCompany = gameObject.GetComponent<Company>();
 		int ratio = 0;
 		if(numberOfProjectsFinished > 0) {
@@ -36,21 +37,21 @@ public class Month : MonoBehaviour {
 		}
 		if (ratio >= 9) {
 			myCompany.jobSecurity += 8;
-			return 'A';
+			grade = 'A';
 		} else if (ratio == 8) {
 			myCompany.jobSecurity += 4;
-			return 'B';
+			grade = 'B';
 		} else if (ratio == 7) {
-			return 'C';
+			grade = 'C';
 		} else if (ratio == 6) {
 			myCompany.jobSecurity -= 4;
-			return 'D';
+			grade = 'D';
 		} else if (ratio == 5) {
 			myCompany.jobSecurity -= 8;
-			return 'E';
+			grade = 'E';
 		} else {
 			myCompany.jobSecurity -= 12;
-			return 'F';
+			grade = 'F';
 		}
 	}
 	
@@ -58,7 +59,6 @@ public class Month : MonoBehaviour {
 		Company myCompany = gameObject.GetComponent<Company>();
 		int oldAllowance = myCompany.budget.monthlyAmount;
 		int newAllowance;
-		char grade = getGrade();
 		switch (grade)
 		{
 		case 'A':

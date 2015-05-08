@@ -26,6 +26,11 @@ public class Company : MonoBehaviour {
 	public Text income;
 	public Text penalties;
 	public Text allocated;
+	public Text projFinished;
+	public Text monthBalance;
+	public Text monthJobSecurity;
+	public Text grade;
+	public Text nextBudget;
 
 	void Awake () {
 		// Create 5 starting employees
@@ -135,6 +140,7 @@ public class Company : MonoBehaviour {
 		income.text = budget.projectRewards.ToString();
 		penalties.text = budget.projectPenalties.ToString();
 		allocated.text = budget.monthlyAmount.ToString();
+		monthJobSecurity.text = jobSecurity.ToString();
 
 		if(jobSecurity > 100){
 			jobSecurity = 100;
@@ -142,6 +148,14 @@ public class Company : MonoBehaviour {
 		else if(jobSecurity <= 0){
 			firePlayer(3);
 		}
+	}
+
+	public void setTextFields () {
+		projFinished.text = month.numberOfProjectsFinished.ToString();
+		monthBalance.text = budget.getBalance().ToString();
+		month.getGrade();
+		grade.text = month.grade.ToString();
+		nextBudget.text = month.getNextAllowance().ToString();
 	}
 
 	int getTotalSalaries () {

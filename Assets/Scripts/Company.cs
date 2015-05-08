@@ -152,12 +152,11 @@ public class Company : MonoBehaviour {
 		}
 	}
 
-	public void setTextFields () {
+	public void setTextFields (int monthBal) {
 		projFinished.text = month.numberOfProjectsFinished.ToString();
-		monthBalance.text = budget.getBalance().ToString();
-		month.getGrade();
+		monthBalance.text = monthBal.ToString();
 		grade.text = month.grade.ToString();
-		nextBudget.text = month.getNextAllowance().ToString();
+		nextBudget.text = budget.monthlyAmount.ToString();
 	}
 
 	int getTotalSalaries () {

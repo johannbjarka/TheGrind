@@ -82,13 +82,12 @@ public class Continue : MonoBehaviour {
 
 		// If a month has passed
 		if((myCompany.weeksPassed % 4) == 0) {
-			myCompany.setTextFields();
 			MonthlyReview monthly = GameObject.Find("Monthly").GetComponent<MonthlyReview>();
-			monthly.openMonthlyReview();
-
-			myCompany.budget.projectRewards = 0;
-			myCompany.budget.projectPenalties = 0;
+			int monthlyBalance = myCompany.budget.getBalance();
+			myCompany.month.getGrade();
 			myCompany.budget.monthlyAmount = myCompany.month.getNextAllowance();
+			myCompany.setTextFields(monthlyBalance);
+			monthly.openMonthlyReview();
 
 			if(myCompany.month.numberOfProjectsFinished == 0){
 				//myCompany.jobSecurity -= 15;
@@ -98,7 +97,8 @@ public class Continue : MonoBehaviour {
 				foreach (Transform child in gotFiredContentPanel) {
 					GameObject.Destroy(child.gameObject);
 				}
-				panel.explanation.text = "You did not finish any projects this month! This is UNACCEPTAAAABLEEEEEE! You're FIRED!";
+				panel.explanation.text = "You did not finish any projects this month! This is " +
+					"UNACCEPTAAAABLEEEEEE! You're FIRED!";
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				panel.transform.position = new Vector3(0,2,0);
@@ -128,6 +128,9 @@ public class Continue : MonoBehaviour {
 				myCompany.firePlayer(2);
 			}
 			myCompany.month.numberOfProjectsFinished = 0;
+			myCompany.month.totalQuality = 0;
+			myCompany.budget.projectRewards = 0;
+			myCompany.budget.projectPenalties = 0;
 		}
 
 		foreach(Character emp in myCompany.characters) {
@@ -144,7 +147,8 @@ public class Continue : MonoBehaviour {
 				foreach (Transform child in gotFiredContentPanel) {
 					GameObject.Destroy(child.gameObject);
 				}
-				panel.explanation.text = "You're pretty terrible at this, you have been fired and my grandmother is your replacement. She's Jewish so...good with money and that.";
+				panel.explanation.text = "You're pretty terrible at this, you have been fired and my grandmother is " +
+					"your replacement. She's Jewish so...good with money and that.";
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				panel.transform.position = new Vector3(0,2,0);
@@ -163,7 +167,8 @@ public class Continue : MonoBehaviour {
 				foreach (Transform child in gotFiredContentPanel) {
 					GameObject.Destroy(child.gameObject);
 				}
-				panel.explanation.text = "We have decided to restructure the company, you have been fired to afford the monthly dwarf tossing competition.";
+				panel.explanation.text = "We have decided to restructure the company, you have been fired to " +
+					"afford the monthly dwarf tossing competition.";
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				panel.transform.position = new Vector3(0,2,0);

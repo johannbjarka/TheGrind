@@ -13,7 +13,7 @@ public class Project : MonoBehaviour {
 	
 	public string[] projectDescriptions = {
 		"Hack into the matrix to save Neo from certain death.",
-		"Create a GUI interface using visual basic to track the criminals IP addresses.",
+		"Create a GUI interface using Visual Basic to track the criminal's IP address.",
 		"Gavin Belson the CEO of Hooli needs you to create the best compression algorithm " +
 		"in the world so he can achieve his mission of destroying Pied Piper.",
 		"A university in Iceland has a terrible intranet that needs replacing, make a new intranet for the school."
@@ -65,14 +65,13 @@ public class Project : MonoBehaviour {
 	public char calcGrade () {
 		int totalQuality = 0;
 		foreach (Character emp in employees) {
-			totalQuality += emp.skills[this.category] * emp.speed;
+			totalQuality += (int)(emp.skills[this.category] * ((double)emp.speed / 2));
 		}
 		int quality = totalQuality / employees.Count;
-		int ratio = (quality / this.expectedQuality) * 10;
+		int ratio = (int)(((double)quality / this.expectedQuality) * 10);
 
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.month.totalQuality += ratio;
-		
 		if (ratio >= 9) {
 			myCompany.jobSecurity += 2;
 			return 'A';

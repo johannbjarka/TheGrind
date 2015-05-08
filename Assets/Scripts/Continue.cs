@@ -86,7 +86,7 @@ public class Continue : MonoBehaviour {
 				panel.explanation.text = "You did not finish any projects this month! This is UNACCEPTAAAABLEEEEEE! You're FIRED!";
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-				panel.transform.position = new Vector3(0,0,0);
+				panel.transform.position = new Vector3(0,2,0);
 				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
 				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
 				myCompany.firePlayer(1);
@@ -101,6 +101,7 @@ public class Continue : MonoBehaviour {
 				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+				panel.transform.position = new Vector3(0,2,0);
 				myCompany.firePlayer(2);
 			}
 			//pfReviewOpen = !pfReviewOpen;
@@ -124,6 +125,7 @@ public class Continue : MonoBehaviour {
 				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+				panel.transform.position = new Vector3(0,2,0);
 				myCompany.firePlayer(3);
 			}
 		}
@@ -137,6 +139,7 @@ public class Continue : MonoBehaviour {
 				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
 				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+				panel.transform.position = new Vector3(0,2,0);
 				myCompany.firePlayer(3);
 			}
 		}

@@ -1289,6 +1289,10 @@ MonoBehaviour:
   monthlyBalance: 0
   monthlyGrade: 0
   newBudget: 0
+  projName: {fileID: 0}
+  rewPen: {fileID: 0}
+  rewPenAmount: {fileID: 0}
+  grade: {fileID: 0}
   performanceReview: {fileID: 0}
   gotFiredCanvas: {fileID: 1522317268}
   gotFiredCanvasIsOpen: 0
@@ -7789,6 +7793,11 @@ MonoBehaviour:
   income: {fileID: 459113347}
   penalties: {fileID: 1354440445}
   allocated: {fileID: 263689773}
+  projFinished: {fileID: 0}
+  monthBalance: {fileID: 0}
+  monthJobSecurity: {fileID: 0}
+  grade: {fileID: 0}
+  nextBudget: {fileID: 0}
   jobSec: {fileID: 946220221}
 --- !u!4 &946141423
 Transform:

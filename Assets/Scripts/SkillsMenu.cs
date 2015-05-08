@@ -18,6 +18,5 @@ public class SkillsMenu : MonoBehaviour {
 	public Text Recursion;
 	public Text StateMachine;
 	public Text WebDevelopment;
-	public Text Programming;
 
 }

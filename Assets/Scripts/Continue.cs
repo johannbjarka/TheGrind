@@ -13,6 +13,13 @@ public class Continue : MonoBehaviour {
 	public Text rewPen;
 	public Text rewPenAmount;
 	public Text grade;
+	public Canvas performanceReview;
+	Company myCompany;
+	public Canvas gotFiredCanvas;
+	public bool gotFiredCanvasIsOpen = false;
+	public GameObject gotFiredPanelPrefab;
+
+	public Transform gotFiredContentPanel;
 
 	// Use this for initialization
 	void Start () {
@@ -25,8 +32,9 @@ public class Continue : MonoBehaviour {
 	}
 
 	public void continueGame () {
-		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
+		
 
 		for(int i = 0; i < myCompany.projects.Count; i++) {
 			myCompany.projects[i].deadline--;
@@ -66,9 +74,10 @@ public class Continue : MonoBehaviour {
 				foreach(Character emp in myCompany.projects[i].employees) {
 					emp.onProject = false;
 				}
-				myCompany.projects.Remove(myCompany.projects[i]);
 			}
-			if(myCompany.projects[i].workAmount <= 0) {
+			if((myCompany.projects[i].workAmount <= 0) || 
+			   (myCompany.projects[i].deadline == 0)) {
+
 				myCompany.projects.Remove(myCompany.projects[i]);
 			}
 		}
@@ -87,11 +96,27 @@ public class Continue : MonoBehaviour {
 			if(projectsFinished == 0){
 				//myCompany.jobSecurity -= 15;
 				//FOR ALPHA
+				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
+				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
+				panel.explanation.text = "You did not finish any projects this month! This is UNACCEPTAAAABLEEEEEE! You're FIRED!";
+				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+				panel.transform.position = new Vector3(0,2,0);
+				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
 				myCompany.firePlayer(1);
 			}
 			if(myCompany.characters.Count == 0){
 				//myCompany.jobSecurity -= 15;
 				//FOR ALPHA
+				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
+				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
+				panel.explanation.text = "You do not have any employees, you can't do this all by yourself! You're FIRED!";
+				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+				panel.transform.position = new Vector3(0,2,0);
 				myCompany.firePlayer(2);
 			}
 			myCompany.month.numberOfProjectsFinished = 0;
@@ -106,12 +131,28 @@ public class Continue : MonoBehaviour {
 		if(myCompany.jobSecurity <= 25){
 			int rand = Random.Range(1, 100);
 			if(rand > 80){
+				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
+				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
+				panel.explanation.text = "You're pretty terrible at this, you have been fired and my grandmother is your replacement. She's Jewish so...good with money and that.";
+				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+				panel.transform.position = new Vector3(0,2,0);
 				myCompany.firePlayer(3);
 			}
 		}
 		else if(myCompany.jobSecurity <= 50){
 			int rand = Random.Range(1, 100);
 			if(rand > 95){
+				GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
+				PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
+				panel.explanation.text = "We have decided to restructure the company, you have been fired to afford the monthly dwarf tossing competition.";
+				gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+				gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+				newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+				panel.transform.position = new Vector3(0,2,0);
 				myCompany.firePlayer(3);
 			}
 		}

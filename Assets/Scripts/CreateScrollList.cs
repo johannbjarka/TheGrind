@@ -122,6 +122,7 @@ public class CreateScrollList : MonoBehaviour {
 
 		foreach(Character emp in myCompany.applicants){
 			if(emp.ID == id){
+				myCompany.partialSalaries += (int)(emp.salary * ((4 - (myCompany.weeksPassed % 4)) / 4.0));
 				myCompany.characters.Add(emp);
 				myCompany.applicants.Remove(emp);
 				emp.gameObject.transform.position = new Vector3(0, 0, 0);
@@ -145,6 +146,7 @@ public class CreateScrollList : MonoBehaviour {
 		}
 		foreach(Character emp in myCompany.characters){
 			if(emp.ID == id){
+				myCompany.partialSalaries += (int)(emp.salary * ((myCompany.weeksPassed % 4) / 4.0));
 				myCompany.characters.Remove(emp);
 				emp.gameObject.transform.position = new Vector3(-1000, -1000, 0);
 				Destroy(employeePrefab);

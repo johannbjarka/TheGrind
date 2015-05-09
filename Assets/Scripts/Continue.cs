@@ -33,6 +33,9 @@ public class Continue : MonoBehaviour {
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
 		
+		foreach(Project proj in myCompany.availableProjects) {
+			proj.deadline--;
+		}
 
 		for(int i = 0; i < myCompany.projects.Count; i++) {
 			myCompany.projects[i].deadline--;
@@ -131,6 +134,7 @@ public class Continue : MonoBehaviour {
 			myCompany.month.totalQuality = 0;
 			myCompany.budget.projectRewards = 0;
 			myCompany.budget.projectPenalties = 0;
+			myCompany.partialSalaries = 0;
 		}
 
 		foreach(Character emp in myCompany.characters) {

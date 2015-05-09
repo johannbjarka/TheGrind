@@ -28,6 +28,7 @@ public class HireEmployee : MonoBehaviour {
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		foreach(Character emp in myCompany.applicants){
 			if(emp.ID == id){
+				myCompany.partialSalaries += (int)(emp.salary * ((4 - (myCompany.weeksPassed % 4)) / 4.0));
 				myCompany.characters.Add(emp);
 				myCompany.applicants.Remove(emp);
 				emp.gameObject.transform.position = new Vector3(0, 0, 0);

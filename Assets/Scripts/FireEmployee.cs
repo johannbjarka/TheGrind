@@ -29,6 +29,8 @@ public class FireEmployee : MonoBehaviour {
 		}
 		foreach(Character emp in myCompany.characters){
 			if(emp.ID == id){
+				Debug.Log("YOLO");
+				myCompany.partialSalaries += (int)(emp.salary * ((myCompany.weeksPassed % 4) / 4.0));
 				myCompany.characters.Remove(emp);
 				emp.gameObject.transform.position = new Vector3(-1000, -1000, 0);
 				break;

@@ -18,6 +18,7 @@ public class Company : MonoBehaviour {
 	public List<Project> projects;
 	public List<Project> availableProjects;
 	public List<Project> completedProjects;
+	public int partialSalaries = 0;
 	public Text weeks;
 	public Text balance;
 	public Text balance2;
@@ -162,6 +163,7 @@ public class Company : MonoBehaviour {
 	int getTotalSalaries () {
 		// 250 is the player characters salary
 		int totalSalaries = 250;
+		totalSalaries += partialSalaries;
 		foreach(Character c in characters) {
 			totalSalaries += c.salary;
 		}

@@ -65,6 +65,21 @@ public class CreateScrollList : MonoBehaviour {
 		}
 	}
 
+	public Canvas RemoveEmployeesCanvas;
+	bool removeEmployeesCanvasIsOpen = false;
+
+	public void populateProjectEmployeeList (int id) {
+		removeEmployeesCanvasIsOpen = !removeEmployeesCanvasIsOpen;
+		RemoveEmployeesCanvas.enabled = !RemoveEmployeesCanvas.enabled;
+		foreach(var proj in myCompany.projects) {
+			if(id == proj.ID) {
+				for(int i = 0; i < proj.employees.Count; i++) {
+
+				}
+			}
+		}
+	}
+
 	public void addEmployee(IDPair ids){
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int projectID = Int32.Parse(ids.projectID.text);
@@ -75,6 +90,25 @@ public class CreateScrollList : MonoBehaviour {
 					if(emp.ID == employeeID){
 						emp.onProject = true;
 						proj.employees.Add(emp);
+						Destroy(availableEmployeePanel);
+						break;
+					}
+				}
+				break;
+			}
+		}
+	}
+
+	public void removeEmployee (IDPair ids) {
+		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		int projectID = Int32.Parse(ids.projectID.text);
+		int employeeID = Int32.Parse(ids.employeeID.text);
+		foreach(Project proj in myCompany.projects){
+			if(proj.ID == projectID){
+				foreach(Character emp in myCompany.characters){
+					if(emp.ID == employeeID){
+						emp.onProject = false;
+						proj.employees.Remove(emp);
 						Destroy(availableEmployeePanel);
 						break;
 					}

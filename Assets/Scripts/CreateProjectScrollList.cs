@@ -64,6 +64,7 @@ public class CreateProjectScrollList : MonoBehaviour {
 			panel.Description.text = project.description;
 			panel.Reward.text = project.reward.ToString();
 			panel.Penalty.text = project.penalty.ToString();
+			panel.ID.text = project.ID.ToString();
 			panel.Category.text = myCompany.getDescription(project.category);
 			newProjectPanel.transform.SetParent (CurrentProjectContentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -79,7 +80,7 @@ public class CreateProjectScrollList : MonoBehaviour {
 		}
 	}
 
-	public void selectProject(Text _id){
+	public void selectProject(Text _id) {
 		int id = Int32.Parse(_id.text);
 		Company myCompany = GameObject.Find ("Company").GetComponent<Company>();
 		foreach(Project proj in myCompany.availableProjects){
@@ -90,9 +91,21 @@ public class CreateProjectScrollList : MonoBehaviour {
 				break;
 			}
 		}
-		//TODO: Take player to menu to select employees for project
+		// Takes player to menu to select employees for project
 		CreateScrollList list = GameObject.Find("Main Camera").GetComponent<CreateScrollList>();
 		list.PopulateAvailableEmployeeList(id);
+	}
+
+	public void addToProject(Text _id) {
+		int id = Int32.Parse(_id.text);
+		CreateScrollList list = GameObject.Find("Main Camera").GetComponent<CreateScrollList>();
+		list.PopulateAvailableEmployeeList(id);
+	}
+
+	public void removeFromProject(Text _id) {
+		int id = Int32.Parse(_id.text);
+		CreateScrollList list = GameObject.Find("Main Camera").GetComponent<CreateScrollList>();
+
 	}
 
 }

@@ -103,7 +103,7 @@ public class Character : MonoBehaviour {
 	public bool onProject = false;
 	public float movSpeed;
 	public Sprite sprite;
-	Animator anim;
+	public Animator anim;
 	SpriteRenderer spriteRend;
 
 	void Awake () {
@@ -145,39 +145,42 @@ public class Character : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		int dir = (int)(Random.value * 4);
-		int mov = Random.Range(0,4);
-		bool mov1;
-		if (mov == 0) {
-			mov1 = true;
-		} else {
-			mov1 = false;
+		CharacterAI myAI = gameObject.GetComponent<CharacterAI>();
+		if(myAI.thirsty < 50) {
+			int dir = (int)(Random.value * 4);
+			int mov = Random.Range(0,4);
+			bool mov1;
+			if (mov == 0) {
+				mov1 = true;
+			} else {
+				mov1 = false;
+			}
+			anim.SetInteger ("Direction", dir);
+			anim.SetBool ("Moving", mov1);
+			anim.IsInTransition (0);
+			//if (mov1 == true) {
+			//if (dir == 0) {
+			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_South")){
+				//rigid.AddForce(-(Vector2.up * movSpeed));
+				transform.position += -Vector3.up * movSpeed;
+				//transform.Translate (-Vector2.up * movSpeed);
+			} //else if (dir == 1) {
+			else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_West")){
+				//rigid.AddForce(-Vector2.right * movSpeed);
+				transform.position += -Vector3.right * movSpeed;
+				//transform.Translate (-Vector2.right * movSpeed);
+			} else //if (dir == 2) {
+			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_North")){
+				//rigid.AddForce(Vector2.up * movSpeed);
+				transform.position += Vector3.up * movSpeed;
+				//transform.Translate (Vector2.up * movSpeed);
+			} else// if (dir == 3) {
+			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_East")){
+				//rigid.AddForce(Vector2.right * movSpeed);
+				transform.position += Vector3.right * movSpeed;
+				//transform.Translate (Vector2.right * movSpeed);
+			}
+			//}
 		}
-		anim.SetInteger ("Direction", dir);
-		anim.SetBool ("Moving", mov1);
-		anim.IsInTransition (0);
-		//if (mov1 == true) {
-		//if (dir == 0) {
-		if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_South")){
-			//rigid.AddForce(-(Vector2.up * movSpeed));
-			transform.position += -Vector3.up * movSpeed;
-			//transform.Translate (-Vector2.up * movSpeed);
-		} //else if (dir == 1) {
-		else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_West")){
-			//rigid.AddForce(-Vector2.right * movSpeed);
-			transform.position += -Vector3.right * movSpeed;
-			//transform.Translate (-Vector2.right * movSpeed);
-		} else //if (dir == 2) {
-		if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_North")){
-			//rigid.AddForce(Vector2.up * movSpeed);
-			transform.position += Vector3.up * movSpeed;
-			//transform.Translate (Vector2.up * movSpeed);
-		} else// if (dir == 3) {
-		if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_East")){
-			//rigid.AddForce(Vector2.right * movSpeed);
-			transform.position += Vector3.right * movSpeed;
-			//transform.Translate (Vector2.right * movSpeed);
-		}
-		//}
 	}
 }

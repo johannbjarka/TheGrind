@@ -108,6 +108,7 @@ public class Character : MonoBehaviour {
 
 	void Awake () {
 		anim = GetComponent<Animator> ();
+		anim.speed = 0.5f;
 	}
 
 	// Use this for initialization
@@ -148,7 +149,7 @@ public class Character : MonoBehaviour {
 		CharacterAI myAI = gameObject.GetComponent<CharacterAI>();
 		if(myAI.thirsty < 50) {
 			int dir = (int)(Random.value * 4);
-			int mov = Random.Range(0,4);
+			int mov = Random.Range(0,2);
 			bool mov1;
 			if (mov == 0) {
 				mov1 = true;

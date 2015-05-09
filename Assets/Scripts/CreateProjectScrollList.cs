@@ -105,7 +105,7 @@ public class CreateProjectScrollList : MonoBehaviour {
 	public void removeFromProject(Text _id) {
 		int id = Int32.Parse(_id.text);
 		CreateScrollList list = GameObject.Find("Main Camera").GetComponent<CreateScrollList>();
-
+		list.populateProjectEmployeeList(id);
 	}
 
 }

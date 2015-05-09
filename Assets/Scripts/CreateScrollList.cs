@@ -14,11 +14,13 @@ public class CreateScrollList : MonoBehaviour {
 	public GameObject applicantsPanel;
 	public GameObject applicantPrefab;
 	public GameObject employeePrefab;
+	public GameObject projectEmployeePanel;
 
 	public Transform employeeContentPanel;
 	public Transform applicantContentPanel;
 	public Transform availableEmployeeContentPanel;
 	public Transform skillsMenuContentPanel;
+	public Transform projectEmployeeContentPanel;
 
 	void Start () {
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
@@ -73,8 +75,20 @@ public class CreateScrollList : MonoBehaviour {
 		RemoveEmployeesCanvas.enabled = !RemoveEmployeesCanvas.enabled;
 		foreach(var proj in myCompany.projects) {
 			if(id == proj.ID) {
-				for(int i = 0; i < proj.employees.Count; i++) {
-
+				foreach(var item in proj.employees) {
+					GameObject newPanel = Instantiate (projectEmployeePanel) as GameObject;
+					EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
+					panel.nameLabel.text = item.characterName;
+					panel.genderLabel.text = item.gender.ToString();
+					panel.moraleLabel.text = item.morale.ToString();
+					panel.speedLabel.text = item.speed.ToString();
+					panel.salaryLabel.text = item.salary.ToString();
+					panel.employeeIcon.sprite = item.sprite;
+					panel.ID.text = item.ID.ToString();
+					panel.ProjectID.text = id.ToString();
+					
+					newPanel.transform.SetParent (projectEmployeeContentPanel);
+					panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				}
 			}
 		}
@@ -100,16 +114,17 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void removeEmployee (IDPair ids) {
+		Debug.Log("YOLO");
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int projectID = Int32.Parse(ids.projectID.text);
 		int employeeID = Int32.Parse(ids.employeeID.text);
 		foreach(Project proj in myCompany.projects){
 			if(proj.ID == projectID){
-				foreach(Character emp in myCompany.characters){
+				foreach(Character emp in proj.employees){
 					if(emp.ID == employeeID){
 						emp.onProject = false;
 						proj.employees.Remove(emp);
-						Destroy(availableEmployeePanel);
+						Destroy(projectEmployeePanel);
 						break;
 					}
 				}

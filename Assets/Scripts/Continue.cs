@@ -33,8 +33,14 @@ public class Continue : MonoBehaviour {
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
 		
-		foreach(Project proj in myCompany.availableProjects) {
-			proj.deadline--;
+		for(int i = 0; i < myCompany.availableProjects.Count; i++) {
+			myCompany.availableProjects[i].deadline--;
+		}
+
+		for(int i = 0; i < myCompany.availableProjects.Count; i++) {
+			if(myCompany.availableProjects[i].deadline == 0) {
+				myCompany.availableProjects.Remove(myCompany.availableProjects[i]);
+			}
 		}
 
 		for(int i = 0; i < myCompany.projects.Count; i++) {
@@ -76,9 +82,12 @@ public class Continue : MonoBehaviour {
 					emp.onProject = false;
 				}
 			}
+		}
+
+		for(int i = 0; i < myCompany.projects.Count; i++) {
 			if((myCompany.projects[i].workAmount <= 0) || 
 			   (myCompany.projects[i].deadline == 0)) {
-
+				
 				myCompany.projects.Remove(myCompany.projects[i]);
 			}
 		}

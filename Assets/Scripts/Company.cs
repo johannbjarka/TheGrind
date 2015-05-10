@@ -34,6 +34,12 @@ public class Company : MonoBehaviour {
 	public Text nextBudget;
 	public Text jobSec;
 
+	public Canvas gotFiredCanvas;
+	bool gotFiredCanvasIsOpen = false;
+	public GameObject gotFiredPanelPrefab;
+	
+	public Transform gotFiredContentPanel;
+
 	void Awake () {
 		// Create 5 starting employees
 		for(int i = 0; i < 7; i++) {
@@ -149,7 +155,7 @@ public class Company : MonoBehaviour {
 			jobSecurity = 100;
 		}
 		else if(jobSecurity <= 0){
-			firePlayer(3);
+			firePlayer("Job security too low!");
 		}
 	}
 
@@ -170,9 +176,28 @@ public class Company : MonoBehaviour {
 		return totalSalaries;
 	}
 
-	public void firePlayer(int id){
-		//TODO: Display firing splash screen, with different text based on id.
-		Debug.Log("You're fired because " + id);
+	public void firePlayer(string reason){
+		//Instantiate the panel
+		GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
+		PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
+		// Destroy any existing children
+		foreach (Transform child in gotFiredContentPanel) {
+			GameObject.Destroy(child.gameObject);
+		}
+		// Set the text
+		panel.explanation.text = reason;
+		// Set the parent so the panel knows where to go
+		newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
+		// Have to set the scale or it will be super large
+		panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+		// Have to set the position for some reason, else the panel will be too low.
+		panel.transform.position = new Vector3(0,2.3f,0);
+
+		// Then show the canvas only if it is closed.
+		if(!gotFiredCanvasIsOpen) {
+			gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
+			gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+		}
 	}
 
 	public string getDescription (int cat) {

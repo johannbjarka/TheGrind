@@ -9337,9 +9337,9 @@ MonoBehaviour:
   grade: {fileID: 498570548}
   nextBudget: {fileID: 568080141}
   jobSec: {fileID: 946220221}
-  gotFiredCanvas: {fileID: 0}
-  gotFiredPanelPrefab: {fileID: 0}
-  gotFiredContentPanel: {fileID: 0}
+  gotFiredCanvas: {fileID: 1522317268}
+  gotFiredPanelPrefab: {fileID: 103698, guid: 8d775aaa8b6a8f34e9111fe65f930db9, type: 2}
+  gotFiredContentPanel: {fileID: 1028377264}
 --- !u!4 &946141423
 Transform:
   m_ObjectHideFlags: 0
@@ -10115,6 +10115,7 @@ GameObject:
   - 224: {fileID: 1028377264}
   - 222: {fileID: 1028377267}
   - 114: {fileID: 1028377266}
+  - 114: {fileID: 1028377265}
   m_Layer: 5
   m_Name: Got Fired Content Panel
   m_TagString: Untagged
@@ -10136,9 +10137,21 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -23.5000076}
-  m_SizeDelta: {x: 0, y: -47}
+  m_AnchoredPosition: {x: 0, y: -23.7499962}
+  m_SizeDelta: {x: 0, y: -47.5}
   m_Pivot: {x: .5, y: .5}
+--- !u!114 &1028377265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028377263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1200242548, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
 --- !u!114 &1028377266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19293,8 +19306,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 300}
+  m_AnchoredPosition: {x: 0, y: 12}
+  m_SizeDelta: {x: 500, y: 275}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1930228542
 MonoBehaviour:

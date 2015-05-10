@@ -10,6 +10,7 @@ public class Continue : MonoBehaviour {
 	public Text rewPen;
 	public Text rewPenAmount;
 	public Text grade;
+	public Text isProjDone;
 	public Canvas projectDone;
 	public Canvas performanceReview;
 	Company myCompany;
@@ -45,6 +46,7 @@ public class Continue : MonoBehaviour {
 				rewPen.text = "Reward for project";
 				rewPenAmount.text = myCompany.projects[i].reward.ToString();
 				grade.text = myCompany.projects[i].calcGrade().ToString();
+				isProjDone.text = "Good job, you finished the project in time.";
 				projDone.openProjectDone();
 				// Remove employees from the project
 				foreach(Character emp in myCompany.projects[i].employees) {
@@ -60,6 +62,7 @@ public class Continue : MonoBehaviour {
 				rewPen.text = "Penalty for project";
 				rewPenAmount.text = myCompany.projects[i].penalty.ToString();
 				grade.text = "-";
+				isProjDone.text = "Oh no! You didn't finish in time. The project needed more employees.";
 				projDone.openProjectDone();
 				
 				// Remove employees from the project

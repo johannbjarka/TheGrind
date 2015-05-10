@@ -34,6 +34,8 @@ public class Company : MonoBehaviour {
 	public Text nextBudget;
 	public Text jobSec;
 
+	public Dictionary<int, string> skills;
+
 	public Canvas gotFiredCanvas;
 	bool gotFiredCanvasIsOpen = false;
 	public GameObject gotFiredPanelPrefab;
@@ -69,7 +71,13 @@ public class Company : MonoBehaviour {
 		budget.projectPenalties = 0;
 		budget.monthlyAmount = 1500;
 
-
+		skills = new Dictionary<int, string>();
+		skills[0] = "AI:";
+		skills[1] = "Algorithms:";
+		skills[2] = "Databases:";
+		skills[3] = "Hacking:";
+		skills[4] = "Networking:";
+		skills[5] = "Web Dev:";
 
 		GameObject projectObj = Instantiate(projectPrefab) as GameObject;
 		Project proj = projectObj.GetComponent<Project>();

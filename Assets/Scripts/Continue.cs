@@ -49,7 +49,7 @@ public class Continue : MonoBehaviour {
 				rewPen.text = "Reward for project";
 				rewPenAmount.text = myCompany.projects[i].reward.ToString();
 				grade.text = myCompany.projects[i].calcGrade().ToString();
-				isProjDone.text = "Good job, you finished the project in time.";
+				isProjDone.text = "Good job! You finished the project in time.";
 				projDone.openProjectDone();
 				// Remove employees from the project
 				foreach(Character emp in myCompany.projects[i].employees) {

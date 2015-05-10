@@ -49,10 +49,12 @@ public class CreateScrollList : MonoBehaviour {
 		selectEmployeesCanvasIsOpen = !selectEmployeesCanvasIsOpen;
 		SelectEmployeesCanvas.enabled = !SelectEmployeesCanvas.enabled;
 		float ratio = 0.0f;
+		int category = 0;
 
 		foreach(var proj in myCompany.projects) {
 			if(id == proj.ID) {
 				ratio = (float)proj.workEstimate / proj.workAmount;
+				category = proj.category;
 				break;
 			}
 		}
@@ -73,6 +75,8 @@ public class CreateScrollList : MonoBehaviour {
 				panel.employeeIcon.sprite = item.sprite;
 				panel.ID.text = item.ID.ToString();
 				panel.ProjectID.text = id.ToString();
+				panel.category.text = myCompany.skills[category];
+				panel.rating.text = item.skills[category].ToString();
 
 				newPanel.transform.SetParent (availableEmployeeContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -101,7 +105,9 @@ public class CreateScrollList : MonoBehaviour {
 					panel.employeeIcon.sprite = item.sprite;
 					panel.ID.text = item.ID.ToString();
 					panel.ProjectID.text = id.ToString();
-					
+					panel.category.text = myCompany.skills[proj.category];
+					panel.rating.text = item.skills[proj.category].ToString();
+
 					newPanel.transform.SetParent (projectEmployeeContentPanel);
 					panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				}

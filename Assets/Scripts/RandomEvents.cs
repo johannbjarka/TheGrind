@@ -86,7 +86,7 @@ public class RandomEvents : MonoBehaviour {
 				"embarrasses you. Job security -5";
 			break;
 		case 20:
-			eventText = "You give your boss ";
+			eventText = "You give your boss a bottle of scotch and a pair of bunny slippers. Job security +5";
 			break;
 		default:
 			break;

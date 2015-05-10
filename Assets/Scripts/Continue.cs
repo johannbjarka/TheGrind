@@ -30,11 +30,14 @@ public class Continue : MonoBehaviour {
 		}
 
 		for(int i = 0; i < myCompany.projects.Count; i++) {
+
 			myCompany.projects[i].deadline--;
+
 			// Calculate the amount of work done on each project
 			foreach(Character emp in myCompany.projects[i].employees) {
 				myCompany.projects[i].workAmount -= emp.speed;
 			}
+
 			ProjectDone projDone = GameObject.Find("ProjDone").GetComponent<ProjectDone>();
 			// If the project is finished, add it to completed projects, add the 
 			// reward to the budget and remove it from projects.
@@ -87,14 +90,16 @@ public class Continue : MonoBehaviour {
 			myCompany.month.getGrade();
 			myCompany.budget.monthlyAmount = myCompany.month.getNextAllowance();
 			myCompany.setTextFields(monthlyBalance);
-			monthly.openMonthlyReview();
 
 			if(myCompany.month.numberOfProjectsFinished == 0){
 				myCompany.firePlayer("You did not finish any projects this month! This is " +
 				                     "UNACCEPTAAAABLEEEEEE! You're FIRED!");
 			}
-			if(myCompany.characters.Count == 0){
+			else if(myCompany.characters.Count == 0){
 				myCompany.firePlayer("You do not have any employees, you can't do this all by yourself! You're FIRED!");
+			}
+			else {
+				monthly.openMonthlyReview();
 			}
 			myCompany.month.numberOfProjectsFinished = 0;
 			myCompany.month.totalQuality = 0;

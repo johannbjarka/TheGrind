@@ -269,6 +269,7 @@ public class CreateScrollList : MonoBehaviour {
 
 				newskillsPanel.transform.SetParent (skillsMenuContentPanel);
 				skills.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+				skills.transform.position = new Vector3(0,1.0f,0);
 
 				break;
 			}
@@ -297,6 +298,7 @@ public class CreateScrollList : MonoBehaviour {
 				skillsCanvas.enabled = !skillsCanvas.enabled;
 				newskillsPanel.transform.SetParent (skillsMenuContentPanel);
 				skills.transform.localScale = new Vector3 (1.0f, 1.0f, 1.0f);
+				skills.transform.position = new Vector3(0,1.0f,0);
 			}
 		}
 	}

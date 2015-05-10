@@ -48,6 +48,18 @@ public class CreateScrollList : MonoBehaviour {
 	public void PopulateAvailableEmployeeList (int id) {
 		selectEmployeesCanvasIsOpen = !selectEmployeesCanvasIsOpen;
 		SelectEmployeesCanvas.enabled = !SelectEmployeesCanvas.enabled;
+		float ratio = 0.0f;
+
+		foreach(var proj in myCompany.projects) {
+			if(id == proj.ID) {
+				ratio = (float)proj.workEstimate / proj.workAmount;
+				break;
+			}
+		}
+
+		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
+		progBar.scaleFill(ratio);
+
 		foreach (var item in myCompany.characters) {
 			GameObject newPanel = Instantiate (availableEmployeePanel) as GameObject;
 			EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
@@ -73,6 +85,7 @@ public class CreateScrollList : MonoBehaviour {
 	public void populateProjectEmployeeList (int id) {
 		removeEmployeesCanvasIsOpen = !removeEmployeesCanvasIsOpen;
 		RemoveEmployeesCanvas.enabled = !RemoveEmployeesCanvas.enabled;
+		float ratio = 0.0f;
 		foreach(var proj in myCompany.projects) {
 			if(id == proj.ID) {
 				foreach(var item in proj.employees) {
@@ -90,48 +103,60 @@ public class CreateScrollList : MonoBehaviour {
 					newPanel.transform.SetParent (projectEmployeeContentPanel);
 					panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				}
+				ratio = (float)proj.workEstimate / proj.workAmount;
+				break;
 			}
 		}
+		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
+		progBar.scaleFill(ratio);
 	}
 
 	public void addEmployee(IDPair ids){
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int projectID = Int32.Parse(ids.projectID.text);
 		int employeeID = Int32.Parse(ids.employeeID.text);
+		float ratio = 0.0f;
 		foreach(Project proj in myCompany.projects){
 			if(proj.ID == projectID){
 				foreach(Character emp in myCompany.characters){
 					if(emp.ID == employeeID){
 						emp.onProject = true;
 						proj.employees.Add(emp);
+						proj.workEstimate += emp.speed * proj.deadline;
 						Destroy(availableEmployeePanel);
 						break;
 					}
 				}
+				ratio = (float)proj.workEstimate / proj.workAmount;
 				break;
 			}
 		}
 		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
-		progBar.scaleFill();
+		progBar.scaleFill(ratio);
 	}
 
 	public void removeEmployee (IDPair ids) {
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int projectID = Int32.Parse(ids.projectID.text);
 		int employeeID = Int32.Parse(ids.employeeID.text);
+		float ratio = 0.0f;
 		foreach(Project proj in myCompany.projects){
 			if(proj.ID == projectID){
 				foreach(Character emp in proj.employees){
 					if(emp.ID == employeeID){
 						emp.onProject = false;
+						proj.workEstimate -= emp.speed * proj.deadline;
 						proj.employees.Remove(emp);
 						Destroy(projectEmployeePanel);
 						break;
 					}
 				}
+				ratio = (float)proj.workEstimate / proj.workAmount;
 				break;
 			}
 		}
+		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
+		progBar.scaleFill(ratio);
 	}
 
 	public void PopulateApplicantList () {

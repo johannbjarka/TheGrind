@@ -25,6 +25,7 @@ public class Project : MonoBehaviour {
 	public string description;
 	public int deadline;
 	public int workAmount;
+	public int workEstimate;
 	public int reward;
 	public int penalty;
 	public int category;
@@ -58,6 +59,7 @@ public class Project : MonoBehaviour {
 		penalty = Random.Range (100, 301);
 		category = Random.Range (0, 13);
 		expectedQuality = (int)(((double)deadline / workAmount) * Random.Range(200, 401));*/
+		workEstimate = 0;
 		ID = _ID;
 		_ID++;
 	}

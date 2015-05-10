@@ -668,9 +668,9 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 22
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 22
     m_Alignment: 4
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -745,11 +745,14 @@ MonoBehaviour:
   applicantsPanel: {fileID: 0}
   applicantPrefab: {fileID: 0}
   employeePrefab: {fileID: 0}
+  projectEmployeePanel: {fileID: 0}
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
   availableEmployeeContentPanel: {fileID: 0}
   skillsMenuContentPanel: {fileID: 0}
+  projectEmployeeContentPanel: {fileID: 0}
   SelectEmployeesCanvas: {fileID: 0}
+  RemoveEmployeesCanvas: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 0}
 --- !u!114 &11480728
@@ -946,11 +949,14 @@ MonoBehaviour:
   applicantsPanel: {fileID: 0}
   applicantPrefab: {fileID: 0}
   employeePrefab: {fileID: 0}
+  projectEmployeePanel: {fileID: 0}
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
   availableEmployeeContentPanel: {fileID: 0}
   skillsMenuContentPanel: {fileID: 0}
+  projectEmployeeContentPanel: {fileID: 0}
   SelectEmployeesCanvas: {fileID: 0}
+  RemoveEmployeesCanvas: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 185466, guid: 123bf3b057f05c6408f35644937034c9, type: 2}
 --- !u!114 &11493880

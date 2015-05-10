@@ -4,17 +4,7 @@ using UnityEngine.EventSystems;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-/*
-[System.Serializable]
-public class ProjectItem {
-	public string ProjectName;
-	public string ProjectReward;
-	public string ProjectDescription;
-	public string ProjectPenalty;
-	public string ProjectDeadline;
-	public string ProjectCategory;
-}
-*/
+
 public class CreateProjectScrollList : MonoBehaviour {
 
 	public GameObject availableProjectPanel;

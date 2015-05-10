@@ -61,9 +61,10 @@ public class CreateScrollList : MonoBehaviour {
 		progBar.scaleFill(ratio);
 
 		foreach (var item in myCompany.characters) {
-			GameObject newPanel = Instantiate (availableEmployeePanel) as GameObject;
-			EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 			if(!item.onProject){
+				GameObject newPanel = Instantiate (availableEmployeePanel) as GameObject;
+				EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
+
 				panel.nameLabel.text = item.characterName;
 				panel.genderLabel.text = item.gender.ToString();
 				panel.moraleLabel.text = item.morale.ToString();
@@ -179,6 +180,8 @@ public class CreateScrollList : MonoBehaviour {
 	public void closeAvailableEmployeeList () {
 		selectEmployeesCanvasIsOpen = !selectEmployeesCanvasIsOpen;
 		SelectEmployeesCanvas.enabled = !SelectEmployeesCanvas.enabled;
+
+
 		foreach (Transform child in availableEmployeeContentPanel) {
 			GameObject.Destroy(child.gameObject);
 		}

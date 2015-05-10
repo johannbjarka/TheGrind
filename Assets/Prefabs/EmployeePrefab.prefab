@@ -93,7 +93,7 @@ MonoBehaviour:
   salary: 0
   characterName: 
   gender: 0
-  skills: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  skills: 000000000000000000000000000000000000000000000000
   controllers:
   - {fileID: 9100000, guid: 05f545f2161bc4842a6cc20f28a03598, type: 2}
   - {fileID: 9100000, guid: 3f47b7e8375b97b40baaf20e91e2e268, type: 2}
@@ -134,6 +134,7 @@ MonoBehaviour:
   onProject: 0
   movSpeed: 0
   sprite: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &11484166
 MonoBehaviour:
   m_ObjectHideFlags: 1

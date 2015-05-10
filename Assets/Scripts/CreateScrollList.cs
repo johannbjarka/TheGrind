@@ -249,26 +249,21 @@ public class CreateScrollList : MonoBehaviour {
 		GameObject newskillsPanel = Instantiate (skillsMenuPrefab) as GameObject;
 		SkillsMenu skills = newskillsPanel.GetComponent <SkillsMenu> ();
 
-		foreach(Character emp in myCompany.characters){
-			if(id == emp.ID){
-				skills.Graphics.text = emp.skills [0].ToString();
-				skills.AI.text = emp.skills [1].ToString();
-				skills.Algorithms.text = emp.skills [2].ToString();
-				skills.Databases.text = emp.skills [3].ToString();
-				skills.Debugging.text = emp.skills [4].ToString();
-				skills.Design.text = emp.skills [5].ToString();
-				skills.Research.text = emp.skills [6].ToString();
-				skills.ERP.text = emp.skills [7].ToString();
-				skills.Hacking.text = emp.skills [8].ToString();
-				skills.Networking.text = emp.skills [9].ToString();
-				skills.Recursion.text = emp.skills [10].ToString();
-				skills.StateMachine.text = emp.skills [11].ToString();
-				skills.WebDevelopment.text = emp.skills [12].ToString();
-				
+		foreach(Character emp in myCompany.characters) {
+			if(id == emp.ID) {
+				skills.AI.text = emp.skills [0].ToString();
+				skills.Algorithms.text = emp.skills [1].ToString();
+				skills.Databases.text = emp.skills [2].ToString();
+				skills.Hacking.text = emp.skills [3].ToString();
+				skills.Networking.text = emp.skills [4].ToString();
+				skills.WebDevelopment.text = emp.skills [5].ToString();
+			
 				skillsCanvasIsOpen = !skillsCanvasIsOpen;
 				skillsCanvas.enabled = !skillsCanvas.enabled;
+
 				newskillsPanel.transform.SetParent (skillsMenuContentPanel);
 				skills.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
 				break;
 			}
 		}
@@ -285,19 +280,12 @@ public class CreateScrollList : MonoBehaviour {
 
 		foreach (Character emp in myCompany.applicants) {
 			if (id == emp.ID) {
-				skills.Graphics.text = emp.skills [0].ToString ();
-				skills.AI.text = emp.skills [1].ToString ();
-				skills.Algorithms.text = emp.skills [2].ToString ();
-				skills.Databases.text = emp.skills [3].ToString ();
-				skills.Debugging.text = emp.skills [4].ToString ();
-				skills.Design.text = emp.skills [5].ToString ();
-				skills.Research.text = emp.skills [6].ToString ();
-				skills.ERP.text = emp.skills [7].ToString ();
-				skills.Hacking.text = emp.skills [8].ToString ();
-				skills.Networking.text = emp.skills [9].ToString ();
-				skills.Recursion.text = emp.skills [10].ToString ();
-				skills.StateMachine.text = emp.skills [11].ToString ();
-				skills.WebDevelopment.text = emp.skills [12].ToString ();
+				skills.AI.text = emp.skills [0].ToString ();
+				skills.Algorithms.text = emp.skills [1].ToString ();
+				skills.Databases.text = emp.skills [2].ToString ();
+				skills.Hacking.text = emp.skills [3].ToString ();
+				skills.Networking.text = emp.skills [4].ToString ();
+				skills.WebDevelopment.text = emp.skills [5].ToString ();
 				
 				skillsCanvasIsOpen = !skillsCanvasIsOpen;
 				skillsCanvas.enabled = !skillsCanvas.enabled;

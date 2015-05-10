@@ -82,7 +82,7 @@ public class Company : MonoBehaviour {
 		proj.reward = 200;
 		proj.penalty = 120;
 		proj.expectedQuality = 27;
-		proj.category = 8;
+		proj.category = 3;
 		availableProjects.Add(proj);
 
 		GameObject projectObj2 = Instantiate(projectPrefab) as GameObject;
@@ -118,7 +118,7 @@ public class Company : MonoBehaviour {
 		proj4.reward = 300;
 		proj4.penalty = 300;
 		proj4.expectedQuality = 40;
-		proj4.category = 12;
+		proj4.category = 5;
 		availableProjects.Add(proj4);
 		// Initialize month
 		month = gameObject.AddComponent<Month>() as Month;
@@ -203,33 +203,19 @@ public class Company : MonoBehaviour {
 	public string getDescription (int cat) {
 		switch (cat) {
 		case 0:
-			return "Graphics";
-		case 1:
 			return "AI";
-		case 2:
+		case 1:
 			return "Algorithms";
-		case 3:
+		case 2:
 			return "Databases";
-		case 4:
-			return "Debugging";
-		case 5:
-			return "Design";
-		case 6:
-			return "Research";
-		case 7:
-			return "ERP";
-		case 8:
+		case 3:
 			return "Hacking";
-		case 9:
+		case 4:
 			return "Networking";
-		case 10:
-			return "Recursion";
-		case 11:
-			return "State Machines";
-		case 12:
+		case 5:
 			return "Web Development";
 		default:
-			return "Programming";
+			return "UNDEFINED CATEGORY";
 		}
 	}
 }

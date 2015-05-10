@@ -111,10 +111,11 @@ public class CreateScrollList : MonoBehaviour {
 				break;
 			}
 		}
+		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
+		progBar.scaleFill();
 	}
 
 	public void removeEmployee (IDPair ids) {
-		Debug.Log("YOLO");
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int projectID = Int32.Parse(ids.projectID.text);
 		int employeeID = Int32.Parse(ids.employeeID.text);

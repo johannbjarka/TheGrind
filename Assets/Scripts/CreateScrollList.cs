@@ -86,6 +86,17 @@ public class CreateScrollList : MonoBehaviour {
 		removeEmployeesCanvasIsOpen = !removeEmployeesCanvasIsOpen;
 		RemoveEmployeesCanvas.enabled = !RemoveEmployeesCanvas.enabled;
 		float ratio = 0.0f;
+
+		foreach(var proj in myCompany.projects) {
+			if(id == proj.ID) {
+				ratio = (float)proj.workEstimate / proj.workAmount;
+				break;
+			}
+		}
+
+		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
+		progBar.scaleRemoveFill(ratio);
+
 		foreach(var proj in myCompany.projects) {
 			if(id == proj.ID) {
 				foreach(var item in proj.employees) {
@@ -103,12 +114,11 @@ public class CreateScrollList : MonoBehaviour {
 					newPanel.transform.SetParent (projectEmployeeContentPanel);
 					panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				}
-				ratio = (float)proj.workEstimate / proj.workAmount;
+				/*ratio = (float)proj.workEstimate / proj.workAmount;
+				Debug.Log (ratio);*/
 				break;
 			}
 		}
-		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
-		progBar.scaleFill(ratio);
 	}
 
 	public void addEmployee(IDPair ids){
@@ -156,7 +166,7 @@ public class CreateScrollList : MonoBehaviour {
 			}
 		}
 		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
-		progBar.scaleFill(ratio);
+		progBar.scaleRemoveFill(ratio);
 	}
 
 	public void PopulateApplicantList () {

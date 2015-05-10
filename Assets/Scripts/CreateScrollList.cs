@@ -89,16 +89,6 @@ public class CreateScrollList : MonoBehaviour {
 
 		foreach(var proj in myCompany.projects) {
 			if(id == proj.ID) {
-				ratio = (float)proj.workEstimate / proj.workAmount;
-				break;
-			}
-		}
-
-		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
-		progBar.scaleRemoveFill(ratio);
-
-		foreach(var proj in myCompany.projects) {
-			if(id == proj.ID) {
 				foreach(var item in proj.employees) {
 					GameObject newPanel = Instantiate (projectEmployeePanel) as GameObject;
 					EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
@@ -114,11 +104,12 @@ public class CreateScrollList : MonoBehaviour {
 					newPanel.transform.SetParent (projectEmployeeContentPanel);
 					panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				}
-				/*ratio = (float)proj.workEstimate / proj.workAmount;
-				Debug.Log (ratio);*/
+				ratio = (float)proj.workEstimate / proj.workAmount;
 				break;
 			}
 		}
+		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
+		progBar.scaleRemoveFill(ratio);
 	}
 
 	public void addEmployee(IDPair ids){
@@ -218,7 +209,7 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void fire (Text _id){
-		//TODO: Remove from Project, Remove from Company, take plant.
+		//TODO: Take plant.
 		int id = Int32.Parse(_id.text);
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		foreach(Project proj in myCompany.projects){

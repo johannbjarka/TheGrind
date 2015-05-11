@@ -2044,6 +2044,180 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 150035471}
+--- !u!1 &155563096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 155563097}
+  - 222: {fileID: 155563102}
+  - 114: {fileID: 155563101}
+  - 114: {fileID: 155563100}
+  - 114: {fileID: 155563099}
+  - 114: {fileID: 155563098}
+  m_Layer: 5
+  m_Name: Cancel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &155563097
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155563096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 17.4699707}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1171520683}
+  m_Father: {fileID: 852140001}
+  m_RootOrder: 2
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -377, y: -7.49998856}
+  m_SizeDelta: {x: 56.9000015, y: 30}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &155563098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155563096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00e2bbe4e686d54bb28754d5f291fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableProjectPanel: {fileID: 0}
+  currentProjectPanel: {fileID: 0}
+  AvailableProjectContentPanel: {fileID: 0}
+  CurrentProjectContentPanel: {fileID: 0}
+--- !u!114 &155563099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155563096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  employeePanel: {fileID: 0}
+  availableEmployeePanel: {fileID: 0}
+  initialAvailableEmployeePanel: {fileID: 0}
+  applicantsPanel: {fileID: 0}
+  applicantPrefab: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  projectEmployeePanel: {fileID: 0}
+  employeeContentPanel: {fileID: 0}
+  applicantContentPanel: {fileID: 0}
+  availableEmployeeContentPanel: {fileID: 0}
+  initialAvailableEmployeeContentPanel: {fileID: 603590591}
+  skillsMenuContentPanel: {fileID: 0}
+  projectEmployeeContentPanel: {fileID: 0}
+  SelectEmployeesCanvas: {fileID: 0}
+  SelectInitialEmployeesCanvas: {fileID: 699118368}
+  RemoveEmployeesCanvas: {fileID: 0}
+  skillsCanvas: {fileID: 0}
+  skillsMenuPrefab: {fileID: 0}
+--- !u!114 &155563100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155563096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
+    m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
+    m_ColorMultiplier: 1
+    m_FadeDuration: .100000001
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 155563101}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 155563099}
+        m_MethodName: closeInitialAvailableEmployeeListOnCancel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 155563098}
+        m_MethodName: deSelectProject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &155563101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155563096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &155563102
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155563096}
 --- !u!1 &183449413
 GameObject:
   m_ObjectHideFlags: 0
@@ -3185,6 +3359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 0}
+  initialAvailableEmployeePanel: {fileID: 0}
   applicantsPanel: {fileID: 0}
   applicantPrefab: {fileID: 0}
   employeePrefab: {fileID: 0}
@@ -3192,9 +3367,11 @@ MonoBehaviour:
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
   availableEmployeeContentPanel: {fileID: 183449418}
+  initialAvailableEmployeeContentPanel: {fileID: 0}
   skillsMenuContentPanel: {fileID: 0}
   projectEmployeeContentPanel: {fileID: 0}
   SelectEmployeesCanvas: {fileID: 1278373878}
+  SelectInitialEmployeesCanvas: {fileID: 0}
   RemoveEmployeesCanvas: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 0}
@@ -5252,6 +5429,8 @@ MonoBehaviour:
   employeePanel: {fileID: 181426, guid: 15d7517adf8977a489075fa37dd478d0, type: 2}
   availableEmployeePanel: {fileID: 183642, guid: 0ae08379910711e43a83fb22e46a5ced,
     type: 2}
+  initialAvailableEmployeePanel: {fileID: 183642, guid: 22ea999768386f84c9626298a0679111,
+    type: 2}
   applicantsPanel: {fileID: 119452, guid: 2e91bd5defb93c847b68fdfc1ab24fe6, type: 2}
   applicantPrefab: {fileID: 0}
   employeePrefab: {fileID: 0}
@@ -5259,9 +5438,11 @@ MonoBehaviour:
   employeeContentPanel: {fileID: 80073880}
   applicantContentPanel: {fileID: 1547597421}
   availableEmployeeContentPanel: {fileID: 1119963797}
+  initialAvailableEmployeeContentPanel: {fileID: 603590591}
   skillsMenuContentPanel: {fileID: 1059838147}
   projectEmployeeContentPanel: {fileID: 183449418}
   SelectEmployeesCanvas: {fileID: 336322696}
+  SelectInitialEmployeesCanvas: {fileID: 699118368}
   RemoveEmployeesCanvas: {fileID: 1278373878}
   skillsCanvas: {fileID: 1805231346}
   skillsMenuPrefab: {fileID: 185466, guid: 123bf3b057f05c6408f35644937034c9, type: 2}
@@ -5276,7 +5457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00e2bbe4e686d54bb28754d5f291fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableProjectPanel: {fileID: 197602, guid: 128a2189289398944b400fffa17bfce8,
+  availableProjectPanel: {fileID: 132778, guid: 4a67f936997060b4590e728d2ea2e7f6,
     type: 2}
   currentProjectPanel: {fileID: 175700, guid: bbe5647acc22e194c83637d380cf6cfc, type: 2}
   AvailableProjectContentPanel: {fileID: 1431888804}
@@ -5294,6 +5475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressFill: {fileID: 1318152710}
   removeEmpsFill: {fileID: 1188954708}
+  initialProgressFill: {fileID: 489208524}
 --- !u!1 &477498213
 GameObject:
   m_ObjectHideFlags: 0
@@ -9021,6 +9203,7 @@ RectTransform:
   m_Children:
   - {fileID: 1408089212}
   - {fileID: 1182729345}
+  - {fileID: 155563097}
   m_Father: {fileID: 1266455019}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
@@ -9637,6 +9820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 0}
+  initialAvailableEmployeePanel: {fileID: 0}
   applicantsPanel: {fileID: 0}
   applicantPrefab: {fileID: 0}
   employeePrefab: {fileID: 0}
@@ -9644,9 +9828,11 @@ MonoBehaviour:
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
   availableEmployeeContentPanel: {fileID: 1119963797}
+  initialAvailableEmployeeContentPanel: {fileID: 0}
   skillsMenuContentPanel: {fileID: 0}
   projectEmployeeContentPanel: {fileID: 0}
   SelectEmployeesCanvas: {fileID: 336322696}
+  SelectInitialEmployeesCanvas: {fileID: 0}
   RemoveEmployeesCanvas: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 0}
@@ -10362,6 +10548,7 @@ MonoBehaviour:
   weeksPassed: 0
   jobSecurity: 75
   maxEmployees: 20
+  selectedProject: 0
   characters: []
   applicants: []
   projects: []
@@ -13191,6 +13378,72 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!1 &1171520682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1171520683}
+  - 222: {fileID: 1171520685}
+  - 114: {fileID: 1171520684}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1171520683
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171520682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 155563097}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1171520684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171520682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Cancel
+--- !u!222 &1171520685
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171520682}
 --- !u!1 &1172680783
 GameObject:
   m_ObjectHideFlags: 0
@@ -13269,6 +13522,7 @@ GameObject:
   - 114: {fileID: 1182729348}
   - 114: {fileID: 1182729347}
   - 114: {fileID: 1182729346}
+  - 114: {fileID: 1182729350}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -13307,16 +13561,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 0}
+  initialAvailableEmployeePanel: {fileID: 0}
   applicantsPanel: {fileID: 0}
   applicantPrefab: {fileID: 0}
   employeePrefab: {fileID: 0}
   projectEmployeePanel: {fileID: 0}
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
-  availableEmployeeContentPanel: {fileID: 603590591}
+  availableEmployeeContentPanel: {fileID: 0}
+  initialAvailableEmployeeContentPanel: {fileID: 603590591}
   skillsMenuContentPanel: {fileID: 0}
   projectEmployeeContentPanel: {fileID: 0}
-  SelectEmployeesCanvas: {fileID: 699118368}
+  SelectEmployeesCanvas: {fileID: 0}
+  SelectInitialEmployeesCanvas: {fileID: 699118368}
   RemoveEmployeesCanvas: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 0}
@@ -13360,7 +13617,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1182729346}
-        m_MethodName: closeAvailableEmployeeList
+        m_MethodName: closeInitialAvailableEmployeeList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1182729350}
+        m_MethodName: destroyPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13400,6 +13669,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1182729344}
+--- !u!114 &1182729350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1182729344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00e2bbe4e686d54bb28754d5f291fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableProjectPanel: {fileID: 132778, guid: 4a67f936997060b4590e728d2ea2e7f6,
+    type: 2}
+  currentProjectPanel: {fileID: 175700, guid: bbe5647acc22e194c83637d380cf6cfc, type: 2}
+  AvailableProjectContentPanel: {fileID: 1431888804}
+  CurrentProjectContentPanel: {fileID: 1300103383}
 --- !u!1 &1188954707
 GameObject:
   m_ObjectHideFlags: 0

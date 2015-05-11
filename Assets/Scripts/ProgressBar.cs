@@ -6,6 +6,14 @@ public class ProgressBar : MonoBehaviour {
 
 	public RectTransform progressFill;
 	public RectTransform removeEmpsFill;
+	public RectTransform initialProgressFill;
+
+	public void scaleInitialFill (float ratio) {
+		if(ratio > 1.0f) {
+			ratio = 1.0f;
+		}
+		initialProgressFill.localScale = new Vector3(initialProgressFill.localScale.x, ratio, initialProgressFill.localScale.z);
+	}
 
 	public void scaleFill (float ratio) {
 		if(ratio > 1.0f) {

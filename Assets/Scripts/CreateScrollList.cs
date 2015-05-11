@@ -11,6 +11,7 @@ public class CreateScrollList : MonoBehaviour {
 
 	public GameObject employeePanel;
 	public GameObject availableEmployeePanel;
+	public GameObject initialAvailableEmployeePanel;
 	public GameObject applicantsPanel;
 	public GameObject applicantPrefab;
 	public GameObject employeePrefab;
@@ -19,6 +20,7 @@ public class CreateScrollList : MonoBehaviour {
 	public Transform employeeContentPanel;
 	public Transform applicantContentPanel;
 	public Transform availableEmployeeContentPanel;
+	public Transform initialAvailableEmployeeContentPanel;
 	public Transform skillsMenuContentPanel;
 	public Transform projectEmployeeContentPanel;
 
@@ -84,6 +86,49 @@ public class CreateScrollList : MonoBehaviour {
 		}
 	}
 
+	public Canvas SelectInitialEmployeesCanvas;
+	bool selectInitialEmployeesCanvasIsOpen = false;
+	
+	public void PopulateAvailableInitialEmployeeList (int id) {
+		selectInitialEmployeesCanvasIsOpen = !selectInitialEmployeesCanvasIsOpen;
+		SelectInitialEmployeesCanvas.enabled = !SelectInitialEmployeesCanvas.enabled;
+		float ratio = 0.0f;
+		int category = 0;
+		
+		foreach(var proj in myCompany.availableProjects) {
+			if(id == proj.ID) {
+				ratio = (float)proj.workEstimate / proj.workAmount;
+				category = proj.category;
+				break;
+			}
+		}
+		
+		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
+		Debug.Log (ratio);
+		progBar.scaleInitialFill(ratio);
+		
+		foreach (var item in myCompany.characters) {
+			if(!item.onProject){
+				GameObject newPanel = Instantiate (initialAvailableEmployeePanel) as GameObject;
+				EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
+				
+				panel.nameLabel.text = item.characterName;
+				panel.genderLabel.text = item.gender.ToString();
+				panel.moraleLabel.text = item.morale.ToString();
+				panel.speedLabel.text = item.speed.ToString();
+				panel.salaryLabel.text = item.salary.ToString();
+				panel.employeeIcon.sprite = item.sprite;
+				panel.ID.text = item.ID.ToString();
+				panel.ProjectID.text = id.ToString();
+				panel.category.text = myCompany.skills[category];
+				panel.rating.text = item.skills[category].ToString();
+				
+				newPanel.transform.SetParent (initialAvailableEmployeeContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+			}
+		}
+	}
+
 	public Canvas RemoveEmployeesCanvas;
 	bool removeEmployeesCanvasIsOpen = false;
 
@@ -143,6 +188,31 @@ public class CreateScrollList : MonoBehaviour {
 		progBar.scaleFill(ratio);
 	}
 
+	public void initialAddEmployee(IDPair ids){
+		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		int projectID = Int32.Parse(ids.projectID.text);
+		int employeeID = Int32.Parse(ids.employeeID.text);
+		float ratio = 0.0f;
+		foreach(Project proj in myCompany.availableProjects){
+			if(proj.ID == projectID){
+				foreach(Character emp in myCompany.characters){
+					if(emp.ID == employeeID){
+						emp.onProject = true;
+						proj.employees.Add(emp);
+						proj.workEstimate += emp.speed * proj.deadline;
+						Destroy(availableEmployeePanel);
+						break;
+					}
+				}
+				ratio = (float)proj.workEstimate / proj.workAmount;
+				break;
+			}
+		}
+		Debug.Log(ratio);
+		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
+		progBar.scaleInitialFill(ratio);
+	}
+
 	public void removeEmployee (IDPair ids) {
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int projectID = Int32.Parse(ids.projectID.text);
@@ -189,6 +259,32 @@ public class CreateScrollList : MonoBehaviour {
 
 
 		foreach (Transform child in availableEmployeeContentPanel) {
+			GameObject.Destroy(child.gameObject);
+		}
+	}
+
+	public void closeInitialAvailableEmployeeList () {
+		selectInitialEmployeesCanvasIsOpen = !selectInitialEmployeesCanvasIsOpen;
+		SelectInitialEmployeesCanvas.enabled = !SelectInitialEmployeesCanvas.enabled;
+
+		foreach(Project proj in myCompany.availableProjects){
+			if(proj.ID == myCompany.selectedProject){
+				myCompany.projects.Add(proj);
+				myCompany.availableProjects.Remove(proj);
+				break;
+			}
+		}
+		
+		/*foreach (Transform child in initialAvailableEmployeeContentPanel) {
+			GameObject.Destroy(child.gameObject);
+		}*/
+	}
+
+	public void closeInitialAvailableEmployeeListOnCancel () {
+		selectInitialEmployeesCanvasIsOpen = !selectInitialEmployeesCanvasIsOpen;
+		SelectInitialEmployeesCanvas.enabled = !SelectInitialEmployeesCanvas.enabled;
+		
+		foreach (Transform child in initialAvailableEmployeeContentPanel) {
 			GameObject.Destroy(child.gameObject);
 		}
 	}

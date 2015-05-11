@@ -71,19 +71,31 @@ public class CreateProjectScrollList : MonoBehaviour {
 	}
 
 	public void selectProject(Text _id) {
+		myCompany = GameObject.Find ("Company").GetComponent<Company>();
 		int id = Int32.Parse(_id.text);
-		Company myCompany = GameObject.Find ("Company").GetComponent<Company>();
-		foreach(Project proj in myCompany.availableProjects){
-			if(proj.ID == id){
-				myCompany.projects.Add(proj);
-				myCompany.availableProjects.Remove(proj);
-				Destroy(availableProjectPanel);
+		myCompany.selectedProject = id;
+		// Takes player to menu to select employees for project
+		CreateScrollList list = GameObject.Find("Main Camera").GetComponent<CreateScrollList>();
+		list.PopulateAvailableInitialEmployeeList(id);
+	}
+
+	public void destroyPanel() {
+		emptyProjectList();
+		PopulateAvailableProjectList();
+	}
+
+	public void deSelectProject () {
+		myCompany = GameObject.Find("Company").GetComponent<Company>();
+		foreach(var proj in myCompany.availableProjects) {
+			if(myCompany.selectedProject == proj.ID) {
+				foreach(Character emp in proj.employees) {
+					emp.onProject = false;
+				}
+				proj.workEstimate = 0;
+				proj.employees.Clear();
 				break;
 			}
 		}
-		// Takes player to menu to select employees for project
-		CreateScrollList list = GameObject.Find("Main Camera").GetComponent<CreateScrollList>();
-		list.PopulateAvailableEmployeeList(id);
 	}
 
 	public void addToProject(Text _id) {

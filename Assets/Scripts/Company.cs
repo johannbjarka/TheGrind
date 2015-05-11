@@ -12,6 +12,7 @@ public class Company : MonoBehaviour {
 	public int weeksPassed;
 	public int jobSecurity = 75;
 	public int maxEmployees = 20;
+	public int selectedProject;
 	public List<Character> characters;
 	public List<Character> applicants;
 	// Currently active projects

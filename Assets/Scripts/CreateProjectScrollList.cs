@@ -82,6 +82,8 @@ public class CreateProjectScrollList : MonoBehaviour {
 	public void destroyPanel() {
 		emptyProjectList();
 		PopulateAvailableProjectList();
+		CreateScrollList scrollList = GameObject.Find("Main Camera").GetComponent<CreateScrollList>();
+		scrollList.emptyInitialAvailableEmployeeList();
 	}
 
 	public void deSelectProject () {

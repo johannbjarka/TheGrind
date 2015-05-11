@@ -104,7 +104,6 @@ public class CreateScrollList : MonoBehaviour {
 		}
 		
 		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
-		Debug.Log (ratio);
 		progBar.scaleInitialFill(ratio);
 		
 		foreach (var item in myCompany.characters) {
@@ -208,7 +207,6 @@ public class CreateScrollList : MonoBehaviour {
 				break;
 			}
 		}
-		Debug.Log(ratio);
 		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
 		progBar.scaleInitialFill(ratio);
 	}
@@ -294,6 +292,12 @@ public class CreateScrollList : MonoBehaviour {
 			GameObject.Destroy(child.gameObject);
 		}
 		foreach (Transform child in applicantContentPanel) {
+			GameObject.Destroy(child.gameObject);
+		}
+	}
+
+	public void emptyInitialAvailableEmployeeList() {
+		foreach(Transform child in initialAvailableEmployeeContentPanel) {
 			GameObject.Destroy(child.gameObject);
 		}
 	}

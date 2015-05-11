@@ -108,6 +108,14 @@ public class Continue : MonoBehaviour {
 			myCompany.partialSalaries = 0;
 		}
 
+		//Random event
+		int ranEvent = Random.Range(1, 5);
+		string eventText = "";
+		if(ranEvent == 1) {
+			eventText = callEvent();
+		}
+
+		// Employees quit if their morale reaches 0
 		foreach(Character emp in myCompany.characters) {
 			if(emp.morale <= 0) {
 				// TODO: send message that employee quit
@@ -127,5 +135,199 @@ public class Continue : MonoBehaviour {
 				                     "afford the monthly dwarf tossing competition.");
 			}
 		}
+	}
+
+	string callEvent() {
+		myCompany = GameObject.Find("Company").GetComponent<Company>();
+		int randEvent = Random.Range(1, 34);
+		string eventText = "";
+		
+		switch(randEvent){
+		case 1:
+			eventText = "You played golf with the CEO this weekend. " +
+				"You kept it cool and lost on purpose. Budget +$1000";
+			myCompany.budget.monthlyAmount += 1000;
+			break;
+		case 2:
+			eventText = "The boss invited you on a badass blimp ride. " +
+				"You used company funds to foot the bill. Budget -$2500";
+			myCompany.budget.monthlyAmount -= 2500;
+			break;
+		case 3:
+			eventText = "You met the person of your dreams. Flowers and real champagne" +
+				" sure can be expensive. Budget -$1000";
+			myCompany.budget.monthlyAmount -= 1000;
+			break;
+		case 4:
+			eventText = "The boss came in just before the office closed on Friday" +
+				" and launched a drunken tirade at the staff. Staff morale -1";
+			foreach(Character emp in myCompany.characters) {
+				emp.morale--;
+			}
+			break;
+		case 5:
+			eventText = "Due to incessant requests, management ordered you to pay for " +
+				"an in depth seminar on appropriate workplace communication. " +
+					"Staff morale +1. Budget -$1000";
+			foreach(Character emp in myCompany.characters) {
+				emp.morale++;
+			}
+			myCompany.budget.monthlyAmount -= 1000;
+			break;
+		case 6:
+			eventText = "Your friends prank called your boss and left the impression that " +
+				"you're a sexual deviant. Job security -10";
+			myCompany.jobSecurity -= 10;
+			break;
+		case 7:
+			eventText = "Your kid got into a fight at school. You left early to cheer her " +
+				"on. The boss came by while you were away. Job security -5";
+			myCompany.jobSecurity -= 5;
+			break;
+		case 8:
+			eventText = "The office security camera caught a hobo on tape breaking into " +
+				"the office and doing his business in the flower pots. Cleanup was a priority. Budget -$500";
+			myCompany.budget.monthlyAmount -= 500;
+			break;
+		case 9:
+			eventText = "The office was ransacked over the weekend. The thieves made off with " +
+				"a red Swingline stapler and three PCs. Budget -$1000";
+			myCompany.budget.monthlyAmount -= 1000;
+			break;
+		case 10:
+			eventText = "You went with your boss to Las Vegas for a conference. He went to a strip joint " +
+				"but you didn't want to partake. As punishment he used your departments budget to foot the bill. " +
+					"Budget -$1500";
+			myCompany.budget.monthlyAmount -= 1500;
+			break;
+		case 11:
+			eventText = "You went all in at the staff party on Friday. Your drunken advances " +
+				"made everyone uncomfortable. Staff morale -1, Job security -5";
+			foreach(Character emp in myCompany.characters) {
+				emp.morale--;
+			}
+			myCompany.jobSecurity -= 5;
+			break;
+		case 12:
+			eventText = "You decided to increase office morale by holding a screening of " +
+				"\"Requiem For A Dream\". Staff morale -1";
+			foreach(Character emp in myCompany.characters) {
+				emp.morale--;
+			}
+			break;
+		case 13:
+			eventText = "You went to lunch with the top brass. Your jokes were unusually well " +
+				"received. Job security +5";
+			myCompany.jobSecurity += 5;
+			break;
+		case 14:
+			eventText = "You made an inappropriately left-leaning political comment at a board meeting. " +
+				"Job security -5";
+			myCompany.jobSecurity -= 5;
+			break;
+		case 15:
+			eventText = "You forwarded a wildly inappropriate e-mail to your boss. Lucky for you he swings that way. " +
+				"Job security +5";
+			myCompany.jobSecurity += 5;
+			break;
+		case 16:
+			eventText = "You were sued by your bosses secretary. Your light flirting was obviously not as well " +
+				"received as you had hoped. You settle out of court. Job security -10";
+			myCompany.jobSecurity -= 10;
+			break;
+		case 17:
+			eventText = "You came into work in the same clothes you wore yesterday. Someone noticed. Job security -1";
+			myCompany.jobSecurity -= 1;
+			break;
+		case 18:
+			eventText = "You go to a meeting with your boss to ask for a raise. You ask him to \"Show you the money\". " +
+				"Job security -5";
+			myCompany.jobSecurity -= 5;
+			break;
+		case 19:
+			eventText = "Your mother calls your boss to complain about the long hours you work. She thoroughly " +
+				"embarrasses you. Job security -5";
+			myCompany.jobSecurity -= 5;
+			break;
+		case 20:
+			eventText = "You give your boss a bottle of scotch and a pair of bunny slippers. Job security +5";
+			myCompany.jobSecurity += 5;
+			break;
+		case 21:
+			eventText = "You managed to sell excess paper on the black market. Budget +$500";
+			myCompany.budget.monthlyAmount += 500;
+			break;
+		case 22:
+			eventText = "Someone left a note under your apartment door saying \"I know where you live now\"";
+			break;
+		case 23:
+			eventText = "An old woman berated you for cutting in line at the supermarket.";
+			break;
+		case 24:
+			eventText = "You went to a baseball game and had a corndog, but you left your personal wallet in your" +
+				"other pants. Thank God for the company credit card. Budget -$10";
+			myCompany.budget.monthlyAmount -= 10;
+			break;
+		case 25:
+			eventText = "You went on a date and spilled an ice cream cone on your shoes. " +
+				"It didn't get better from there.";
+			break;
+		case 26:
+			eventText = "Management installed a PA system in the office to keep the staff on their toes. " +
+				"Staff morale -1";
+			foreach(Character emp in myCompany.characters) {
+				emp.morale--;
+			}
+			break;
+		case 27:
+			eventText = "Management installed a security camera in all the office bathrooms to discourage" +
+				" unauthorized breaks. Staff morale -2";
+			foreach(Character emp in myCompany.characters) {
+				emp.morale -= 2;
+			}
+			break;
+		case 28:
+			eventText = "The boss paid a visit to your department to show off his Nazi memorabilia. " +
+				"You played along. Staff morale -1";
+			foreach(Character emp in myCompany.characters) {
+				emp.morale--;
+			}
+			break;
+		case 29:
+			eventText = "You spent the weekend making plans to hike the Pacific Crest Trail. " +
+				"Not even you believe you'll actually do it.";
+			break;
+		case 30:
+			eventText = "You went to Las Vegas in a $20.000 car but came back in a " +
+				"$200.000 Greyhound bus.";
+			break;
+		case 31:
+			eventText = "You found out the staff has been calling you Mr. Toad behind your back. " +
+				"Staff morale +1, Job security -3";
+			foreach(Character emp in myCompany.characters) {
+				emp.morale++;
+			}
+			myCompany.jobSecurity -= 3;
+			break;
+		case 32:
+			eventText = "During an office party you try to impress your employees by performing an " +
+				"improvised dance routine. You failed. Staff morale -1, Job security -3";
+			foreach(Character emp in myCompany.characters) {
+				emp.morale--;
+			}
+			myCompany.jobSecurity -= 3;
+			break;
+		case 33:
+			eventText = "During a team building exercise you whipped out a guitar and broke into song. " +
+				"It was not your finest hour. Staff morale -1, Job security -3";
+			foreach(Character emp in myCompany.characters) {
+				emp.morale--;
+			}
+			myCompany.jobSecurity -= 3;
+			break;
+		default:
+			break;
+		}
+		return eventText;
 	}
 }

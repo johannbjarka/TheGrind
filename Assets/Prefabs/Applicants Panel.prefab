@@ -65,6 +65,7 @@ GameObject:
   - 114: {fileID: 11459432}
   - 114: {fileID: 11423680}
   - 114: {fileID: 11465066}
+  - 114: {fileID: 11472398}
   m_Layer: 5
   m_Name: Skills Button
   m_TagString: Untagged
@@ -472,8 +473,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11465066}
-        m_MethodName: openApplicantSkills
+      - m_Target: {fileID: 11472398}
+        m_MethodName: getSkills
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11495682}
@@ -703,6 +704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 0}
+  initialAvailableEmployeePanel: {fileID: 0}
   applicantsPanel: {fileID: 0}
   applicantPrefab: {fileID: 0}
   employeePrefab: {fileID: 0}
@@ -710,9 +712,11 @@ MonoBehaviour:
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
   availableEmployeeContentPanel: {fileID: 0}
+  initialAvailableEmployeeContentPanel: {fileID: 0}
   skillsMenuContentPanel: {fileID: 0}
   projectEmployeeContentPanel: {fileID: 0}
   SelectEmployeesCanvas: {fileID: 0}
+  SelectInitialEmployeesCanvas: {fileID: 0}
   RemoveEmployeesCanvas: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 185466, guid: 123bf3b057f05c6408f35644937034c9, type: 2}
@@ -781,6 +785,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 1
   m_VerticalFit: 1
+--- !u!114 &11472398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db0bc4cd89da684c9d923c744e72f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkillsCanvas: {fileID: 0}
+  skills: {fileID: 0}
 --- !u!114 &11475038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -951,6 +968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 0}
+  initialAvailableEmployeePanel: {fileID: 0}
   applicantsPanel: {fileID: 0}
   applicantPrefab: {fileID: 119452}
   employeePrefab: {fileID: 0}
@@ -958,9 +976,11 @@ MonoBehaviour:
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
   availableEmployeeContentPanel: {fileID: 0}
+  initialAvailableEmployeeContentPanel: {fileID: 0}
   skillsMenuContentPanel: {fileID: 0}
   projectEmployeeContentPanel: {fileID: 0}
   SelectEmployeesCanvas: {fileID: 0}
+  SelectInitialEmployeesCanvas: {fileID: 0}
   RemoveEmployeesCanvas: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 0}

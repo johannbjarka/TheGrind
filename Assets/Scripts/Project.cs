@@ -5,17 +5,35 @@ using System.Collections.Generic;
 public class Project : MonoBehaviour {
 
 	public string[] projectNames = {
-		"Project Morpheus",
-		"Help CSI hunt criminals",
+		//AI
+		"DJ Roomba",
+		//Algorithms
 		"Create a compression algorithm",
+		//Databases
+		"Movie Database",
+		//Hacking
+		"Project Morpheus",
+		//Networking
+		"Help CSI hunt criminals",
+		//Web Development
 		"Cryschool"
 	};
 	
 	public string[] projectDescriptions = {
-		"Hack into the matrix to save Neo from certain death.",
-		"Create a GUI interface using Visual Basic to track the criminal's IP address.",
+		//AI
+		"The client needs a UI and search algorithm implementation for a combined music playing " +
+		"and vacuum cleaning robot.",
+		//Algorithms
 		"Gavin Belson the CEO of Hooli needs you to create the best compression algorithm " +
 		"in the world so he can achieve his mission of destroying Pied Piper.",
+		//Databases
+		"The International Federation of Moviemakers wants you to make a movie database. " +
+		"It has to be BCNF compliant.",
+		//Hacking
+		"Hack into the matrix to save Neo from certain death.",
+		//Networking
+		"Create a GUI interface using Visual Basic to track the criminal's IP address.",
+		//Web Development
 		"A university in Iceland has a terrible intranet that needs replacing, make a new intranet for the school."
 	};
 

@@ -10,21 +10,28 @@ public class Project : MonoBehaviour {
 		"DJ Roomba",
 		"Pathfinding for an RTS",
 		//Algorithms
+		"Weather Me This",
 		"Death of a Programmer",
 		"Create a compression algorithm",
 		"Kosaraju says hello",
 		//Databases
+		"Pattern of Data Abuse",
+		"Big Data",
 		"A Good Deed",
 		"Movie Database",
 		//Hacking
+		"All That Glitters Is Not Goldblum",
 		"There Can Be Only One",
 		"Project Morpheus",
 		"Custom UI",
 		//Networking
+		"The Folly of Man",
 		"Skynet",
 		"\"Terrorists win\"",
 		"Help CSI hunt criminals",
 		//Web Development
+		"Find the Wine",
+		"Clone Wars",
 		"Geocities",
 		"CrySchool"
 	};
@@ -37,6 +44,8 @@ public class Project : MonoBehaviour {
 		"PPC is making a new RTS module for it's popular game, VEV Offline, and needs your help " +
 		"to implement the A* algorithm for unit pathfinding. Make it so.",
 		//Algorithms
+		"Icelandic weather has been seen as a riddle for a long time. Now it has been suggested that " +
+		"the problem lies with outdated prediction algorithms. Make them better, for summer is coming.",
 		"A client wants you to create an algorithm that solves the Travelling Salesperson problem " +
 		"with linear time complexity. Good luck with that.",
 		"Gavin Belson the CEO of Hooli needs you to create the best compression algorithm " +
@@ -44,22 +53,35 @@ public class Project : MonoBehaviour {
 		"A walk-in customer wants you to make an implementation of Kosaraju's algorithm " +
 		"to find the strongly connected components of his network of friends.",
 		//Databases
+		"A social networking site has been found guilty by the court of the streets of taking peoples " +
+		"freely given information and using it to make money. Use your database exploit skills to destroy all " +
+		"the data.",
+		"Donald Trump wants you to make the biggest database in the world, most probably to compensate for " +
+		"something.",
 		"A good samaritan wants you to hack into the DEA databases to make them BCNF compliant. " +
 		"For the good of our country, do not fail.",
 		"The International Federation of Moviemakers wants you to make a movie database. " +
 		"It has to be BCNF compliant.",
 		//Hacking
+		"A neurotic scientist wants you to write a computer virus capable of bringing down an alien spacecraft. " +
+		"You know, just in case it's ever needed.",
 		"Connor McLeod has asked for your assistance in rooting out Kurgan's presence on the internet," +
 		" as there can be only one Immortal with a FaceBook page.",
 		"Hack into the matrix to save Neo from certain death.",
 		"An Indian hacker has requested a custom UI for breaking into the FBI database. Make it happen.",
 		//Networking
+		"The machines have taken over, using a sophisticated HTTP exploit. Close the loophole " +
+		"early and you get 5 extra minutes for your coffee break.",
 		"Executives at the Cyberdyne Systems labs are finding it difficult to create an evil " +
 		"supercomputer capable of enslaving humanity through the internet. Help those brothers out.",
 		"Some asshole destroyed the Counter Strike network code. Save the CS community and get it up and " +
 		"running again!",
 		"Create a GUI interface using Visual Basic to track the criminal's IP address.",
 		//Web Development
+		"The Icelandic Government desperatelyneeds to update the publically run liquor store's website. " +
+		"The site's search bar is quite awful, and you need to fix it. This is super serial.",
+		"A venture capitalist douche wants you to make a clone of Candy Crush, cause, you know, money. " +
+		"You don't have to like it.",
 		"The Geocities website hosting service is having trouble with it's terrible default look. Make it more bearable.",
 		"A university in Iceland has a terrible intranet that needs replacing, make a new intranet for the school."
 	};

@@ -42,9 +42,6 @@ public class Company : MonoBehaviour {
 
 	public Canvas gotFiredCanvas;
 	bool gotFiredCanvasIsOpen = false;
-	public GameObject gotFiredPanelPrefab;
-	
-	public Transform gotFiredContentPanel;
 
 	public Canvas MenuCanvas;
 	public Canvas ConfirmationCanvas;
@@ -219,21 +216,8 @@ public class Company : MonoBehaviour {
 	}
 
 	public void firePlayer(string reason){
-		//Instantiate the panel
-		GameObject newGotFiredPanel = Instantiate (gotFiredPanelPrefab) as GameObject;
-		PlayerFiredPanel panel = newGotFiredPanel.GetComponent<PlayerFiredPanel> ();
-		// Destroy any existing children
-		foreach (Transform child in gotFiredContentPanel) {
-			GameObject.Destroy(child.gameObject);
-		}
-		// Set the text
-		panel.explanation.text = reason;
-		// Set the parent so the panel knows where to go
-		newGotFiredPanel.transform.SetParent (gotFiredContentPanel);
-		// Have to set the scale or it will be super large
-		panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-		// Have to set the position for some reason, else the panel will be too low.
-		panel.transform.position = new Vector3(0,2.3f,0);
+		// Set the text.
+		gotFiredCanvas.GetComponent<PlayerFiredPanel> ().explanation.text = reason;
 
 		// Then show the canvas only if it is closed.
 		if(!gotFiredCanvasIsOpen) {

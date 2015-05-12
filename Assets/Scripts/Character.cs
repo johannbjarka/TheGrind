@@ -90,6 +90,7 @@ public class Character : MonoBehaviour {
 		"Neeson",
 		"Ulfkonge"
 	};
+	public int rand;
 	public int salary;
 	public string characterName;
 	public char gender;
@@ -129,20 +130,21 @@ public class Character : MonoBehaviour {
 		if(genderType == 0) {
 			gender = 'M';
 			characterName = firstNames[Random.Range(0, 31)] + " " + lastNames[Random.Range(0, 35)];
-			int rand = Random.Range(10, sprites.Length);
+			rand = Random.Range(10, sprites.Length);
 			anim.runtimeAnimatorController = controllers[rand];
 			sprite = sprites[rand];
 		}
 		else {
 			gender = 'F';
 			characterName = firstNames[Random.Range(22, 48)] + " " + lastNames[Random.Range(0, 35)];
-			int rand = Random.Range(0, 9);
+			rand = Random.Range(0, 9);
 			anim.runtimeAnimatorController = controllers[rand];
 			sprite = sprites[rand];
 		}
 		movSpeed = 0.03f;
 		ID = _ID;
 		_ID++;
+		Debug.Log (rand);
 	}
 	
 	// Update is called once per frame
@@ -183,10 +185,10 @@ public class Character : MonoBehaviour {
 				//transform.Translate (Vector2.right * movSpeed);
 			}
 			//}
-			if(onProject)
-			{
-				transform.position = new Vector3(1000,1000,0); 
-			}
+		}
+		if(onProject)
+		{
+			transform.position = new Vector3(1000,1000,0); 
 		}
 	}
 }

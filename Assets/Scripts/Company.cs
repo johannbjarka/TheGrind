@@ -185,7 +185,7 @@ public class Company : MonoBehaviour {
 		for (int i = 0; i < characters.Count; i++) {
 			if(characters[i].onProject)
 			{
-				tables[i].GetComponent<SpriteRenderer>().sprite = chartables[(i * 5)];// + Random.Range(0,5)];
+				tables[i].GetComponent<SpriteRenderer>().sprite = chartables[characters[i].rand*5];// + Random.Range(0,5)];
 			}
 			else{
 				tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[2];

@@ -55,7 +55,7 @@ public class CreateScrollList : MonoBehaviour {
 
 		foreach(var proj in myCompany.projects) {
 			if(id == proj.ID) {
-				ratio = (float)proj.workEstimate / proj.workAmount;
+				ratio = (float)proj.workEstimate / proj.initialWorkAmount;
 				category = proj.category;
 				break;
 			}
@@ -97,7 +97,7 @@ public class CreateScrollList : MonoBehaviour {
 		
 		foreach(var proj in myCompany.availableProjects) {
 			if(id == proj.ID) {
-				ratio = (float)proj.workEstimate / proj.workAmount;
+				ratio = (float)proj.workEstimate / proj.initialWorkAmount;
 				category = proj.category;
 				break;
 			}
@@ -155,7 +155,7 @@ public class CreateScrollList : MonoBehaviour {
 					newPanel.transform.SetParent (projectEmployeeContentPanel);
 					panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				}
-				ratio = (float)proj.workEstimate / proj.workAmount;
+				ratio = (float)proj.workEstimate / proj.initialWorkAmount;
 				break;
 			}
 		}
@@ -179,7 +179,8 @@ public class CreateScrollList : MonoBehaviour {
 						break;
 					}
 				}
-				ratio = (float)proj.workEstimate / proj.workAmount;
+				// TODO: 
+				ratio = (float)proj.workEstimate / proj.initialWorkAmount;
 				break;
 			}
 		}
@@ -203,7 +204,7 @@ public class CreateScrollList : MonoBehaviour {
 						break;
 					}
 				}
-				ratio = (float)proj.workEstimate / proj.workAmount;
+				ratio = (float)proj.workEstimate / proj.initialWorkAmount;
 				break;
 			}
 		}
@@ -227,7 +228,7 @@ public class CreateScrollList : MonoBehaviour {
 						break;
 					}
 				}
-				ratio = (float)proj.workEstimate / proj.workAmount;
+				ratio = (float)proj.workEstimate / proj.initialWorkAmount;
 				break;
 			}
 		}

@@ -43,6 +43,7 @@ public class Project : MonoBehaviour {
 	public string description;
 	public int deadline;
 	public int workAmount;
+	public int initialWorkAmount;
 	public int workEstimate;
 	public int reward;
 	public int penalty;
@@ -73,6 +74,7 @@ public class Project : MonoBehaviour {
 		} else {
 			workAmount = Random.Range (50, 101);
 		}
+		initialWorkAmount = workAmount;
 		reward = Random.Range (workAmount - 5, workAmount + 6) * 10;
 		penalty = Random.Range (100, 301);
 		category = Random.Range (0, 13);

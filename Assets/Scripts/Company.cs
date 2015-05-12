@@ -88,6 +88,7 @@ public class Company : MonoBehaviour {
 		proj.description = myProject.projectDescriptions[0];
 		proj.deadline = 2;
 		proj.workAmount = 15;
+		proj.initialWorkAmount = proj.workAmount;
 		proj.reward = 200;
 		proj.penalty = 120;
 		proj.expectedQuality = 27;
@@ -100,6 +101,7 @@ public class Company : MonoBehaviour {
 		proj2.description = myProject.projectDescriptions[1];
 		proj2.deadline = 1;
 		proj2.workAmount = 7;
+		proj2.initialWorkAmount = proj2.workAmount;
 		proj2.reward = 100;
 		proj2.penalty = 100;
 		proj2.expectedQuality = 30;
@@ -112,6 +114,7 @@ public class Company : MonoBehaviour {
 		proj3.description = myProject.projectDescriptions[2];
 		proj3.deadline = 3;
 		proj3.workAmount = 27;
+		proj3.initialWorkAmount = proj3.workAmount;
 		proj3.reward = 250;
 		proj3.penalty = 170;
 		proj3.expectedQuality = 40;
@@ -124,6 +127,7 @@ public class Company : MonoBehaviour {
 		proj4.description = myProject.projectDescriptions[3];
 		proj4.deadline = 4;
 		proj4.workAmount = 30;
+		proj4.initialWorkAmount = proj4.workAmount;
 		proj4.reward = 300;
 		proj4.penalty = 300;
 		proj4.expectedQuality = 40;

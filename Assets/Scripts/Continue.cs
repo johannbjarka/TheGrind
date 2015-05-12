@@ -114,6 +114,7 @@ public class Continue : MonoBehaviour {
 		string eventText = "";
 		if(ranEvent == 1) {
 			eventText = callEvent();
+			Debug.Log(eventText);
 		}
 
 		// Employees quit if their morale reaches 0

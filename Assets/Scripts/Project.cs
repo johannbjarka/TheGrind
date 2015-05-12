@@ -6,34 +6,61 @@ public class Project : MonoBehaviour {
 
 	public string[] projectNames = {
 		//AI
+		"General Game Playing",
 		"DJ Roomba",
+		"Pathfinding for an RTS",
 		//Algorithms
+		"Death of a Programmer",
 		"Create a compression algorithm",
+		"Kosaraju says hello",
 		//Databases
+		"A Good Deed",
 		"Movie Database",
 		//Hacking
+		"There Can Be Only One",
 		"Project Morpheus",
+		"Custom UI",
 		//Networking
+		"Skynet",
+		"\"Terrorists win\"",
 		"Help CSI hunt criminals",
 		//Web Development
-		"Cryschool"
+		"Geocities",
+		"CrySchool"
 	};
 	
 	public string[] projectDescriptions = {
 		//AI
+		"Make a program that learns how to play a game without having ever seen that game before. No pressure.",
 		"The client needs a UI and search algorithm implementation for a combined music playing " +
 		"and vacuum cleaning robot.",
+		"PPC is making a new RTS module for it's popular game, VEV Offline, and needs your help " +
+		"to implement the A* algorithm for unit pathfinding. Make it so.",
 		//Algorithms
+		"A client wants you to create an algorithm that solves the Travelling Salesperson problem " +
+		"with linear time complexity. Good luck with that.",
 		"Gavin Belson the CEO of Hooli needs you to create the best compression algorithm " +
 		"in the world so he can achieve his mission of destroying Pied Piper.",
+		"A walk-in customer wants you to make an implementation of Kosaraju's algorithm " +
+		"to find the strongly connected components of his network of friends.",
 		//Databases
+		"A good samaritan wants you to hack into the DEA databases to make them BCNF compliant. " +
+		"For the good of our country, do not fail.",
 		"The International Federation of Moviemakers wants you to make a movie database. " +
 		"It has to be BCNF compliant.",
 		//Hacking
+		"Connor McLeod has asked for your assistance in rooting out Kurgan's presence on the internet," +
+		" as there can be only one Immortal with a FaceBook page.",
 		"Hack into the matrix to save Neo from certain death.",
+		"An Indian hacker has requested a custom UI for breaking into the FBI database. Make it happen.",
 		//Networking
+		"Executives at the Cyberdyne Systems labs are finding it difficult to create an evil " +
+		"supercomputer capable of enslaving humanity through the internet. Help those brothers out.",
+		"Some asshole destroyed the Counter Strike network code. Save the CS community and get it up and " +
+		"running again!",
 		"Create a GUI interface using Visual Basic to track the criminal's IP address.",
 		//Web Development
+		"The Geocities website hosting service is having trouble with it's terrible default look. Make it more bearable.",
 		"A university in Iceland has a terrible intranet that needs replacing, make a new intranet for the school."
 	};
 

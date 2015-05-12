@@ -45,6 +45,9 @@ public class Company : MonoBehaviour {
 	
 	public Transform gotFiredContentPanel;
 
+	public Canvas MenuCanvas;
+	public Canvas ConfirmationCanvas;
+
 	void Awake () {
 		// Create 5 starting employees
 		for(int i = 0; i < 7; i++) {
@@ -146,6 +149,11 @@ public class Company : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			openMenu();
+		}
+
 		budget.totalSalaries = getTotalSalaries();
 		weeks.text = (weeksPassed + 1).ToString();
 		if(budget.getBalance() < 0) {
@@ -182,6 +190,14 @@ public class Company : MonoBehaviour {
 				//tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[i];
 			}
 		}
+	}
+
+	public void openMenu () {
+		MenuCanvas.enabled = !MenuCanvas.enabled;
+	}
+
+	public void openConfirmationPanel () {
+		ConfirmationCanvas.enabled = !ConfirmationCanvas.enabled;
 	}
 
 	public void setTextFields (int monthBal) {

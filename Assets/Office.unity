@@ -12008,6 +12008,7 @@ GameObject:
   - 4: {fileID: 946141423}
   - 114: {fileID: 946141422}
   - 114: {fileID: 946141424}
+  - 114: {fileID: 946141425}
   m_Layer: 0
   m_Name: Company
   m_TagString: Untagged
@@ -12186,6 +12187,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fd1578ebc54003489b12e4af3803639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &946141425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 946141421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2ccb9836cee6d4eb68a9270fbcccf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &946220219

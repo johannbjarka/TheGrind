@@ -120,7 +120,7 @@ RectTransform:
   - {fileID: 1067578870}
   - {fileID: 1669693611}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -596,7 +596,7 @@ RectTransform:
   m_Children:
   - {fileID: 233219088}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -677,8 +677,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1814514145}
-        m_MethodName: StartOffice
+      - m_Target: {fileID: 1814514146}
+        m_MethodName: fadeToOffice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -963,6 +963,7 @@ GameObject:
   - 124: {fileID: 1814514141}
   - 81: {fileID: 1814514140}
   - 114: {fileID: 1814514145}
+  - 114: {fileID: 1814514146}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1034,7 +1035,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
 --- !u!114 &1814514145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1044,6 +1045,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fd1578ebc54003489b12e4af3803639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1814514146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814514139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2ccb9836cee6d4eb68a9270fbcccf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1919578874

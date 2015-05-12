@@ -170,6 +170,7 @@ public class Company : MonoBehaviour {
 			jobSecurity = 100;
 		}
 		else if(jobSecurity <= 0){
+			jobSecurity = 0;
 			firePlayer("Job security too low!");
 		}
 		for (int i = 0; i < characters.Count; i++) {

@@ -39,6 +39,12 @@ public class CreateScrollList : MonoBehaviour {
 			panel.salaryLabel.text = item.salary.ToString();
 			panel.employeeIcon.sprite = item.sprite;
 			panel.ID.text = item.ID.ToString();
+			if(item.onProject) {
+				panel.project.text = item.project;
+			}
+			else {
+				panel.project.text = "None";
+			}
 			newPanel.transform.SetParent (employeeContentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		}
@@ -173,6 +179,7 @@ public class CreateScrollList : MonoBehaviour {
 				foreach(Character emp in myCompany.characters){
 					if(emp.ID == employeeID){
 						emp.onProject = true;
+						emp.project = proj.projName;
 						proj.employees.Add(emp);
 						proj.workEstimate += emp.speed * proj.deadline;
 						Destroy(availableEmployeePanel);
@@ -198,6 +205,7 @@ public class CreateScrollList : MonoBehaviour {
 				foreach(Character emp in myCompany.characters){
 					if(emp.ID == employeeID){
 						emp.onProject = true;
+						emp.project = proj.projName;
 						proj.employees.Add(emp);
 						proj.workEstimate += emp.speed * proj.deadline;
 						Destroy(availableEmployeePanel);
@@ -222,6 +230,7 @@ public class CreateScrollList : MonoBehaviour {
 				foreach(Character emp in proj.employees){
 					if(emp.ID == employeeID){
 						emp.onProject = false;
+						emp.project = "";
 						proj.workEstimate -= emp.speed * proj.deadline;
 						proj.employees.Remove(emp);
 						Destroy(projectEmployeePanel);

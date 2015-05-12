@@ -618,6 +618,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -2835,6 +2836,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -3265,6 +3267,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -3654,6 +3657,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -6036,6 +6040,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -8938,6 +8943,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -10103,6 +10109,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: .0500000007
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -10554,6 +10561,8 @@ MonoBehaviour:
   projects: []
   availableProjects: []
   completedProjects: []
+  tables: []
+  originaltables: []
   partialSalaries: 0
   weeks: {fileID: 339120502}
   balance: {fileID: 1968100219}
@@ -10823,6 +10832,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -12945,6 +12955,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -15001,6 +15012,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -15266,6 +15278,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -19524,6 +19537,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -21329,6 +21343,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -21475,6 +21490,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -22210,6 +22226,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
@@ -23487,6 +23504,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  project: 
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}

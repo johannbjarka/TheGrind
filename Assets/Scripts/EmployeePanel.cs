@@ -10,6 +10,7 @@ public class EmployeePanel : MonoBehaviour {
 	public Text genderLabel;
 	public Text salaryLabel;
 	public Text moraleLabel;
+	public Text project;
 	public Button skillsButton;
 	public Button hireButton;
 	public Button fireButton;

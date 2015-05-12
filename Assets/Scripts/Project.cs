@@ -6,10 +6,13 @@ public class Project : MonoBehaviour {
 
 	public string[] projectNames = {
 		//AI
+		"Ultra Sweet",
+		"Speak!",
 		"General Game Playing",
 		"DJ Roomba",
 		"Pathfinding for an RTS",
 		//Algorithms
+		"His Name Was Doom",
 		"Weather Me This",
 		"Death of a Programmer",
 		"Create a compression algorithm",
@@ -20,6 +23,9 @@ public class Project : MonoBehaviour {
 		"A Good Deed",
 		"Movie Database",
 		//Hacking
+		"Clever Girl",
+		"Help A Nerd",
+		"Show Me The Candy!",
 		"All That Glitters Is Not Goldblum",
 		"There Can Be Only One",
 		"Project Morpheus",
@@ -38,12 +44,18 @@ public class Project : MonoBehaviour {
 	
 	public string[] projectDescriptions = {
 		//AI
+		"Tony Stark is planning on protecting the world with an awesome AI, but he's too lazy to make it himself. " +
+		"Create an ultra-intelligent AI that can subjugate humanity should it ever acquire free will.",
+		"Alan Turing has been trolling the AI community for long enough. Make an AI that passes the Turing test.",
 		"Make a program that learns how to play a game without having ever seen that game before. No pressure.",
 		"The client needs a UI and search algorithm implementation for a combined music playing " +
 		"and vacuum cleaning robot.",
 		"PPC is making a new RTS module for it's popular game, VEV Offline, and needs your help " +
 		"to implement the A* algorithm for unit pathfinding. Make it so.",
 		//Algorithms
+		"Kyle Reese's battle with the Terminator in 1984 has accidentally caused the untimely demise of " +
+		"John Carmack. Save the world of graphics nerds by creating the graphics engine for Doom " +
+		"and sending it back through time to John Romeros PO Box.",
 		"Icelandic weather has been seen as a riddle for a long time. Now it has been suggested that " +
 		"the problem lies with outdated prediction algorithms. Make them better, for summer is coming.",
 		"A client wants you to create an algorithm that solves the Travelling Salesperson problem " +
@@ -63,6 +75,13 @@ public class Project : MonoBehaviour {
 		"The International Federation of Moviemakers wants you to make a movie database. " +
 		"It has to be BCNF compliant.",
 		//Hacking
+		"An old carmudgeon has created a horde of dinosaurs on his island that are trying to eat " +
+		"his grandchildren. He has enlisted your help in hacking into the island's computer system " +
+		"and locking the doors. Fortunately it's a UNIX system, which you know.",
+		"Linus Torvalds has broken his finger and can't micromanage the Linux update system during his " +
+		"recovery. Do his work for him.",
+		"A candy tossing maniac has asked you to create an impossible exam for his course. Hack into " +
+		"his computer to destroy his evil plan.",
 		"A neurotic scientist wants you to write a computer virus capable of bringing down an alien spacecraft. " +
 		"You know, just in case it's ever needed.",
 		"Connor McLeod has asked for your assistance in rooting out Kurgan's presence on the internet," +
@@ -78,7 +97,7 @@ public class Project : MonoBehaviour {
 		"running again!",
 		"Create a GUI interface using Visual Basic to track the criminal's IP address.",
 		//Web Development
-		"The Icelandic Government desperatelyneeds to update the publically run liquor store's website. " +
+		"The Icelandic Government desperately needs to update the publically run liquor store's website. " +
 		"The site's search bar is quite awful, and you need to fix it. This is super serial.",
 		"A venture capitalist douche wants you to make a clone of Candy Crush, cause, you know, money. " +
 		"You don't have to like it.",

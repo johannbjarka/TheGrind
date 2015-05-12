@@ -10,7 +10,7 @@ GameObject:
   - 224: {fileID: 22448092}
   - 222: {fileID: 22267330}
   - 114: {fileID: 11463272}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Deadline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 224: {fileID: 22418740}
   - 222: {fileID: 22248758}
   - 114: {fileID: 11428644}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Reward Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - 114: {fileID: 11466874}
   - 114: {fileID: 11421404}
   - 114: {fileID: 11437660}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text Info Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - 114: {fileID: 11475898}
   - 114: {fileID: 11408454}
   - 114: {fileID: 11485990}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Available Project Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ GameObject:
   - 224: {fileID: 22452040}
   - 222: {fileID: 22263512}
   - 114: {fileID: 11481512}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - 224: {fileID: 22438126}
   - 222: {fileID: 22242020}
   - 114: {fileID: 11406882}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Category
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - 224: {fileID: 22453168}
   - 222: {fileID: 22295382}
   - 114: {fileID: 11456196}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - 222: {fileID: 22288166}
   - 114: {fileID: 11446554}
   - 114: {fileID: 11449214}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - 224: {fileID: 22450912}
   - 222: {fileID: 22215690}
   - 114: {fileID: 11463464}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Penalty Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - 224: {fileID: 22452550}
   - 222: {fileID: 22285976}
   - 114: {fileID: 11446884}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Deadline Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - 224: {fileID: 22426046}
   - 222: {fileID: 22248828}
   - 114: {fileID: 11466800}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Penalty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 22484876}
   - 222: {fileID: 22269552}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   - 114: {fileID: 11440482}
   - 114: {fileID: 11437614}
   - 114: {fileID: 11405318}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Accept Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - 114: {fileID: 11457660}
   - 114: {fileID: 11435728}
   - 114: {fileID: 11424216}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text Scroll Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - 224: {fileID: 22472130}
   - 222: {fileID: 22224780}
   - 114: {fileID: 11416594}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: ID
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - 224: {fileID: 22410114}
   - 222: {fileID: 22234412}
   - 114: {fileID: 11417080}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - 224: {fileID: 22409740}
   - 222: {fileID: 22296680}
   - 114: {fileID: 11405872}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - 224: {fileID: 22425044}
   - 222: {fileID: 22211502}
   - 114: {fileID: 11415644}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Category Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,9 +491,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
+    m_Left: 5
     m_Right: 0
-    m_Top: 0
+    m_Top: -5
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
@@ -832,9 +832,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '*Project Penalty*
-
-'
+  m_Text: '*Project Penalty*'
 --- !u!114 &11466874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1326,8 +1324,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: 130, y: -9.32499695}
-  m_SizeDelta: {x: 242, y: 130}
+  m_AnchoredPosition: {x: 125.5, y: -9.30000019}
+  m_SizeDelta: {x: 251, y: 130}
   m_Pivot: {x: .5, y: 1}
 --- !u!224 &22472130
 RectTransform:

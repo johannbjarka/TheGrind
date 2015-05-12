@@ -38,6 +38,8 @@ public class Company : MonoBehaviour {
 	public Text nextBudget;
 	public Text jobSec;
 
+	ClickSound click;
+
 	public Dictionary<int, string> skills;
 
 	public Canvas gotFiredCanvas;
@@ -143,6 +145,8 @@ public class Company : MonoBehaviour {
 
 		//Initialize weeks
 		weeksPassed = 0;
+
+		click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 	}
 	
 	// Update is called once per frame
@@ -191,11 +195,11 @@ public class Company : MonoBehaviour {
 	}
 
 	public void openMenu () {
+		click.playSound();
 		MenuCanvas.enabled = !MenuCanvas.enabled;
 	}
 
 	public void openConfirmationPanel () {
-		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 		ConfirmationCanvas.enabled = !ConfirmationCanvas.enabled;
 	}

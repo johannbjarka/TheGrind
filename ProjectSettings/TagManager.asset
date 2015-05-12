@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - ClickSound
+  - Music
+  - OfficeSound
+  - Mute
+  - MuteButton
   layers:
   - Default
   - TransparentFX

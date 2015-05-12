@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void StartOffice () {
+		MuteSoundFX mute = GameObject.FindWithTag("Mute").GetComponent<MuteSoundFX>();
+		mute.muteSoundFX();
 		Application.LoadLevel ("Office");
 	}
 

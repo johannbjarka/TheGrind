@@ -298,7 +298,7 @@ public class Continue : MonoBehaviour {
 			break;
 		case 24:
 			eventText = "You went to a baseball game and had a corndog, but you left your personal wallet in your" +
-				"other pants. Thank God for the company credit card. Budget -$10";
+				" other pants. Thank God for the company credit card. Budget -$10";
 			myCompany.budget.monthlyAmount -= 10;
 			break;
 		case 25:

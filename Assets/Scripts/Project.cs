@@ -6,18 +6,22 @@ public class Project : MonoBehaviour {
 
 	public string[] projectNames = {
 		//AI
+		"All Talk, No Walk",
 		"Ultra Sweet",
 		"Speak!",
 		"General Game Playing",
 		"DJ Roomba",
 		"Pathfinding for an RTS",
 		//Algorithms
+		"The Dijkstra's In The Details",
 		"His Name Was Doom",
 		"Weather Me This",
 		"Death of a Programmer",
 		"Create a compression algorithm",
 		"Kosaraju says hello",
 		//Databases
+		"Catch The Creeps",
+		"Keep It Secret, Keep It Safe",
 		"Pattern of Data Abuse",
 		"Big Data",
 		"A Good Deed",
@@ -31,11 +35,13 @@ public class Project : MonoBehaviour {
 		"Project Morpheus",
 		"Custom UI",
 		//Networking
+		"G Is For Genetically Mutated",
 		"The Folly of Man",
 		"Skynet",
 		"\"Terrorists win\"",
 		"Help CSI hunt criminals",
 		//Web Development
+		"Lazy Bum",
 		"Find the Wine",
 		"Clone Wars",
 		"Geocities",
@@ -44,6 +50,9 @@ public class Project : MonoBehaviour {
 	
 	public string[] projectDescriptions = {
 		//AI
+		"Garry Kasparov has been talking shit about Deep Blue all over town, saying he'll kick it's ass if they " +
+		"play another game of chess. Upgrade Deep Blue and organize a game between them to humiliate the Russians " +
+		"once and for all.",
 		"Tony Stark is planning on protecting the world with an awesome AI, but he's too lazy to make it himself. " +
 		"Create an ultra-intelligent AI that can subjugate humanity should it ever acquire free will.",
 		"Alan Turing has been trolling the AI community for long enough. Make an AI that passes the Turing test.",
@@ -53,6 +62,9 @@ public class Project : MonoBehaviour {
 		"PPC is making a new RTS module for it's popular game, VEV Offline, and needs your help " +
 		"to implement the A* algorithm for unit pathfinding. Make it so.",
 		//Algorithms
+		"The Prince of Darkness has created an insanely efficient implementation of Dijkstra's " +
+		"algorithm to find the shortest path through a network. Make one that's better to banish " +
+		"him back to the depths from whence he came.",
 		"Kyle Reese's battle with the Terminator in 1984 has accidentally caused the untimely demise of " +
 		"John Carmack. Save the world of graphics nerds by creating the graphics engine for Doom " +
 		"and sending it back through time to John Romeros PO Box.",
@@ -65,6 +77,10 @@ public class Project : MonoBehaviour {
 		"A walk-in customer wants you to make an implementation of Kosaraju's algorithm " +
 		"to find the strongly connected components of his network of friends.",
 		//Databases
+		"The Interpol database is full of creeps that need to be caught and prosecuted. Unfortunately " +
+		"our client is one of those creeps. Get into the database and expunge his record.",
+		"A seriously shady website owner wants you to make a clone of his database to serve as a backup " +
+		"in case he is shut down. If you don't do it, someone else will do it anyway.",
 		"A social networking site has been found guilty by the court of the streets of taking peoples " +
 		"freely given information and using it to make money. Use your database exploit skills to destroy all " +
 		"the data.",
@@ -89,6 +105,8 @@ public class Project : MonoBehaviour {
 		"Hack into the matrix to save Neo from certain death.",
 		"An Indian hacker has requested a custom UI for breaking into the FBI database. Make it happen.",
 		//Networking
+		"The Umbrella Corporation has asked us to clean up their digital footprint, so that noone can trace " +
+		"all their illegal genetic experiments. Don't go moral on me now!",
 		"The machines have taken over, using a sophisticated HTTP exploit. Close the loophole " +
 		"early and you get 5 extra minutes for your coffee break.",
 		"Executives at the Cyberdyne Systems labs are finding it difficult to create an evil " +
@@ -97,6 +115,8 @@ public class Project : MonoBehaviour {
 		"running again!",
 		"Create a GUI interface using Visual Basic to track the criminal's IP address.",
 		//Web Development
+		"An influential blogger wants to move house to a new website, but is too lazy to make a Wordpress site " +
+		"by himself. Make a website for him that looks just like Wordpress, only it isn't.",
 		"The Icelandic Government desperately needs to update the publically run liquor store's website. " +
 		"The site's search bar is quite awful, and you need to fix it. This is super serial.",
 		"A venture capitalist douche wants you to make a clone of Candy Crush, cause, you know, money. " +

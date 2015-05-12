@@ -7,6 +7,8 @@ public class MonthlyReview : MonoBehaviour {
 	private bool isOpen = false;
 	
 	public void openMonthlyReview () {
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
 		isOpen = !isOpen;
 		monthlyReview.enabled = !monthlyReview.enabled;
 	}

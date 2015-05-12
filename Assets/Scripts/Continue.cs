@@ -28,9 +28,13 @@ public class Continue : MonoBehaviour {
 	public Canvas GotFiredCanvas;
 	public Canvas PerformanceReviewCanvas;
 	public Canvas ProjectFinishedCanvas;
+	ClickSound click;
+
+	void Start() {
+		click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+	}
 
 	public void continueGame () {
-		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 
 		EmployeeCanvas.enabled = false;

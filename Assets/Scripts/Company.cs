@@ -195,6 +195,8 @@ public class Company : MonoBehaviour {
 	}
 
 	public void openConfirmationPanel () {
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
 		ConfirmationCanvas.enabled = !ConfirmationCanvas.enabled;
 	}
 

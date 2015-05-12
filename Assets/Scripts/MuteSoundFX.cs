@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class MuteSoundFX : MonoBehaviour {
 
-	AudioSource officeSound;
+	public AudioSource officeSound;
 	AudioSource clickSound;
 	public Text fontIcon;
 	//Button muteButton;

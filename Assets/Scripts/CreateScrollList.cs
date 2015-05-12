@@ -24,8 +24,11 @@ public class CreateScrollList : MonoBehaviour {
 	public Transform skillsMenuContentPanel;
 	public Transform projectEmployeeContentPanel;
 
+	ClickSound click;
+
 	void Start () {
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
+		click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 	}
 
 	public void PopulateEmployeeList () {
@@ -175,7 +178,6 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void addEmployee(IDPair ids){
-		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
@@ -204,7 +206,6 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void initialAddEmployee(IDPair ids){
-		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
@@ -232,7 +233,6 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void removeEmployee (IDPair ids) {
-		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
@@ -276,7 +276,6 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void closeAvailableEmployeeList () {
-		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 
 		selectEmployeesCanvasIsOpen = !selectEmployeesCanvasIsOpen;
@@ -289,7 +288,6 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void closeInitialAvailableEmployeeList () {
-		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 
 		selectInitialEmployeesCanvasIsOpen = !selectInitialEmployeesCanvasIsOpen;
@@ -309,7 +307,6 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void closeInitialAvailableEmployeeListOnCancel () {
-		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 
 		selectInitialEmployeesCanvasIsOpen = !selectInitialEmployeesCanvasIsOpen;
@@ -336,7 +333,6 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void hire (Text _id){
-		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 		int id = Int32.Parse(_id.text);
 
@@ -354,7 +350,6 @@ public class CreateScrollList : MonoBehaviour {
 
 	public void fire (Text _id){
 		//TODO: Take plant.
-		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 
 		int id = Int32.Parse(_id.text);

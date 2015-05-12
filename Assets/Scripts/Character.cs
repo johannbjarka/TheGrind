@@ -144,7 +144,6 @@ public class Character : MonoBehaviour {
 		movSpeed = 0.03f;
 		ID = _ID;
 		_ID++;
-		Debug.Log (rand);
 	}
 	
 	// Update is called once per frame

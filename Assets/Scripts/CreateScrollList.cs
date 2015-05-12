@@ -73,12 +73,13 @@ public class CreateScrollList : MonoBehaviour {
 				panel.genderLabel.text = item.gender.ToString();
 				panel.moraleLabel.text = item.morale.ToString();
 				panel.speedLabel.text = item.speed.ToString();
-				panel.salaryLabel.text = item.salary.ToString();
 				panel.employeeIcon.sprite = item.sprite;
 				panel.ID.text = item.ID.ToString();
 				panel.ProjectID.text = id.ToString();
 				panel.category.text = myCompany.skills[category];
 				panel.rating.text = item.skills[category].ToString();
+				panel.rating.text = item.skills[category].ToString() + " / 20";
+				panel.requiredSkillBar.sizeDelta = new Vector2(item.skills[category] * 10, 20);
 
 				newPanel.transform.SetParent (availableEmployeeContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -145,12 +146,11 @@ public class CreateScrollList : MonoBehaviour {
 					panel.genderLabel.text = item.gender.ToString();
 					panel.moraleLabel.text = item.morale.ToString();
 					panel.speedLabel.text = item.speed.ToString();
-					panel.salaryLabel.text = item.salary.ToString();
 					panel.employeeIcon.sprite = item.sprite;
 					panel.ID.text = item.ID.ToString();
 					panel.ProjectID.text = id.ToString();
-					panel.category.text = myCompany.skills[proj.category];
-					panel.rating.text = item.skills[proj.category].ToString();
+					panel.rating.text = item.skills[proj.category].ToString() + " / 20";
+					panel.requiredSkillBar.sizeDelta = new Vector2(item.skills[proj.category] * 10, 20);
 
 					newPanel.transform.SetParent (projectEmployeeContentPanel);
 					panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);

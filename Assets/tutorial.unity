@@ -844,7 +844,6 @@ GameObject:
   - 222: {fileID: 1669693615}
   - 114: {fileID: 1669693614}
   - 114: {fileID: 1669693613}
-  - 114: {fileID: 1669693612}
   m_Layer: 5
   m_Name: BudgetButton
   m_TagString: Untagged
@@ -871,18 +870,6 @@ RectTransform:
   m_AnchoredPosition: {x: -160.448654, y: -204.851013}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
---- !u!114 &1669693612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1669693610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe9d0e16d42cc324a97bb7ea27f62d6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  budgetView: {fileID: 0}
 --- !u!114 &1669693613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -922,8 +909,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1669693612}
-        m_MethodName: openBudget
+      - m_Target: {fileID: 1814514145}
+        m_MethodName: StartOffice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

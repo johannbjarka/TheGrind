@@ -40,7 +40,7 @@ public class CreateScrollList : MonoBehaviour {
 			panel.employeeIcon.sprite = item.sprite;
 			panel.ID.text = item.ID.ToString();
 			if(item.onProject) {
-				if(item.project.Length > 9) {
+				if(item.project.Length > 12) {
 					panel.project.text = item.project.Substring(0, 9) + "...";
 				}
 				else {

@@ -54,6 +54,7 @@ public class Continue : MonoBehaviour {
 				// Remove employees from the project
 				foreach(Character emp in myCompany.projects[i].employees) {
 					emp.onProject = false;
+					emp.transform.position = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
 				}
 
 			}
@@ -67,10 +68,10 @@ public class Continue : MonoBehaviour {
 				grade.text = "-";
 				isProjDone.text = "Oh no! You didn't finish in time. The project needed more employees.";
 				projDone.openProjectDone();
-				
 				// Remove employees from the project
 				foreach(Character emp in myCompany.projects[i].employees) {
 					emp.onProject = false;
+					emp.transform.position = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
 				}
 			}
 		}

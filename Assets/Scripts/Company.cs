@@ -19,6 +19,8 @@ public class Company : MonoBehaviour {
 	public List<Project> projects;
 	public List<Project> availableProjects;
 	public List<Project> completedProjects;
+	public List<GameObject> tables;
+	public List<Sprite> originaltables;
 	public int partialSalaries = 0;
 	public Text weeks;
 	public Text balance;
@@ -169,6 +171,15 @@ public class Company : MonoBehaviour {
 		}
 		else if(jobSecurity <= 0){
 			firePlayer("Job security too low!");
+		}
+		for (int i = 0; i < characters.Count; i++) {
+			if(characters[i].onProject)
+			{
+				tables[i].GetComponent<SpriteRenderer>().sprite = tables[20].GetComponent<SpriteRenderer>().sprite;
+			}
+			else{
+				tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[i];
+			}
 		}
 	}
 

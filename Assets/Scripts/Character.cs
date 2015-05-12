@@ -182,6 +182,10 @@ public class Character : MonoBehaviour {
 				//transform.Translate (Vector2.right * movSpeed);
 			}
 			//}
+			if(onProject)
+			{
+				transform.position = new Vector3(1000,1000,0); 
+			}
 		}
 	}
 }

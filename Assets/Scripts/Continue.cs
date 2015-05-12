@@ -15,7 +15,35 @@ public class Continue : MonoBehaviour {
 	public Canvas performanceReview;
 	Company myCompany;
 
+	public Canvas EmployeeCanvas;
+	public Canvas ApplicantCanvas;
+	public Canvas ComputerCanvas;
+	public Canvas ProjectCanvas;
+	public Canvas CurProjectCanvas;
+	public Canvas skillsMenuCanvas;
+	public Canvas SelectEmployeesCanvas;
+	public Canvas SelectInitialEmployeeCanvas;
+	public Canvas RemoveEmployeesCanvas;
+	public Canvas BudgetCanvas;
+	public Canvas GotFiredCanvas;
+	public Canvas PerformanceReviewCanvas;
+	public Canvas ProjectFinishedCanvas;
+
 	public void continueGame () {
+		EmployeeCanvas.enabled = false;
+		ApplicantCanvas.enabled = false;
+		ComputerCanvas.enabled = false;
+		ProjectCanvas.enabled = false;
+		CurProjectCanvas.enabled = false;
+		skillsMenuCanvas.enabled = false;
+		SelectEmployeesCanvas.enabled = false;
+		SelectInitialEmployeeCanvas.enabled = false;
+		RemoveEmployeesCanvas.enabled = false;
+		BudgetCanvas.enabled = false;
+		GotFiredCanvas.enabled = false;
+		PerformanceReviewCanvas.enabled = false;
+		ProjectFinishedCanvas.enabled = false;
+
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
 		

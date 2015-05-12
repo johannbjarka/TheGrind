@@ -10,10 +10,9 @@ public class BarsMenu : MonoBehaviour {
 	public SkillsMenu skills;
 	Company myCompany;
 
-	int[] WidthList;
-
 	// Use this for initialization
 	void Start () {
+		// Fetch necessary game objects.
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		SkillsCanvas = GameObject.Find ("Skills Menu").GetComponent<Canvas> ();
 		skills = GameObject.Find ("Skills Menu").GetComponentInChildren<SkillsMenu> ();

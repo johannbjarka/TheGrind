@@ -175,10 +175,10 @@ public class Company : MonoBehaviour {
 		for (int i = 0; i < characters.Count; i++) {
 			if(characters[i].onProject)
 			{
-				tables[i].GetComponent<SpriteRenderer>().sprite = tables[20].GetComponent<SpriteRenderer>().sprite;
+				//tables[i].GetComponent<SpriteRenderer>().sprite = tables[20].GetComponent<SpriteRenderer>().sprite;
 			}
 			else{
-				tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[i];
+				//tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[i];
 			}
 		}
 	}

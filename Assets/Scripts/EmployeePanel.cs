@@ -16,5 +16,6 @@ public class EmployeePanel : MonoBehaviour {
 	public Text ID;
 	public Text ProjectID;
 	public Text category;
-	public Text rating;	
+	public Text rating;
+	public RectTransform requiredSkillBar;
 }

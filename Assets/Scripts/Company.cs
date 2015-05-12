@@ -19,8 +19,9 @@ public class Company : MonoBehaviour {
 	public List<Project> projects;
 	public List<Project> availableProjects;
 	public List<Project> completedProjects;
-	public List<GameObject> tables;
+	public List<Sprite> chartables;
 	public List<Sprite> originaltables;
+	public List<GameObject> tables;
 	public int partialSalaries = 0;
 	public Text weeks;
 	public Text balance;
@@ -44,6 +45,9 @@ public class Company : MonoBehaviour {
 	public GameObject gotFiredPanelPrefab;
 	
 	public Transform gotFiredContentPanel;
+
+	public Canvas MenuCanvas;
+	public Canvas ConfirmationCanvas;
 
 	void Awake () {
 		// Create 5 starting employees
@@ -146,6 +150,11 @@ public class Company : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			openMenu();
+		}
+
 		budget.totalSalaries = getTotalSalaries();
 		weeks.text = (weeksPassed + 1).ToString();
 		if(budget.getBalance() < 0) {
@@ -176,12 +185,20 @@ public class Company : MonoBehaviour {
 		for (int i = 0; i < characters.Count; i++) {
 			if(characters[i].onProject)
 			{
-				//tables[i].GetComponent<SpriteRenderer>().sprite = tables[20].GetComponent<SpriteRenderer>().sprite;
+				tables[i].GetComponent<SpriteRenderer>().sprite = chartables[(i * 5)];// + Random.Range(0,5)];
 			}
 			else{
-				//tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[i];
+				tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[2];
 			}
 		}
+	}
+
+	public void openMenu () {
+		MenuCanvas.enabled = !MenuCanvas.enabled;
+	}
+
+	public void openConfirmationPanel () {
+		ConfirmationCanvas.enabled = !ConfirmationCanvas.enabled;
 	}
 
 	public void setTextFields (int monthBal) {

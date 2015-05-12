@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3e0287ece970ba0499e2801c24a5fe8f
-timeCreated: 1431389834
+timeCreated: 1431438626
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -61,8 +61,8 @@ TextureImporter:
         y: 196
         width: 88
         height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Char12_1
       rect:
@@ -71,8 +71,8 @@ TextureImporter:
         y: 196
         width: 88
         height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Char12_2
       rect:
@@ -81,18 +81,18 @@ TextureImporter:
         y: 80
         width: 88
         height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Char12_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 143
         y: 20
         width: 88
         height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Char12_4
       rect:
@@ -101,8 +101,8 @@ TextureImporter:
         y: 20
         width: 88
         height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .5, y: .25}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

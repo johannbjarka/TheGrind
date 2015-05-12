@@ -71,6 +71,9 @@ public class CreateProjectScrollList : MonoBehaviour {
 	}
 
 	public void selectProject(Text _id) {
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+
 		myCompany = GameObject.Find ("Company").GetComponent<Company>();
 		int id = Int32.Parse(_id.text);
 		myCompany.selectedProject = id;
@@ -101,12 +104,17 @@ public class CreateProjectScrollList : MonoBehaviour {
 	}
 
 	public void addToProject(Text _id) {
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+
 		int id = Int32.Parse(_id.text);
 		CreateScrollList list = GameObject.Find("Main Camera").GetComponent<CreateScrollList>();
 		list.PopulateAvailableEmployeeList(id);
 	}
 
 	public void removeFromProject(Text _id) {
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
 		int id = Int32.Parse(_id.text);
 		CreateScrollList list = GameObject.Find("Main Camera").GetComponent<CreateScrollList>();
 		list.populateProjectEmployeeList(id);

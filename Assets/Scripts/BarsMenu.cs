@@ -41,6 +41,9 @@ public class BarsMenu : MonoBehaviour {
 				fillSkillBars(appl);
 			}
 		}
+		// Play click sound
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
 	}
 
 	void fillSkillBars (Character person) {
@@ -59,6 +62,8 @@ public class BarsMenu : MonoBehaviour {
 	}
 	public void closeSkills () {
 		SkillsCanvas.enabled = false;
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
 	}
 
 

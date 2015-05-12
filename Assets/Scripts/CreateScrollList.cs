@@ -170,6 +170,9 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void addEmployee(IDPair ids){
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int projectID = Int32.Parse(ids.projectID.text);
 		int employeeID = Int32.Parse(ids.employeeID.text);
@@ -196,6 +199,9 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void initialAddEmployee(IDPair ids){
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int projectID = Int32.Parse(ids.projectID.text);
 		int employeeID = Int32.Parse(ids.employeeID.text);
@@ -221,6 +227,9 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void removeEmployee (IDPair ids) {
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int projectID = Int32.Parse(ids.projectID.text);
 		int employeeID = Int32.Parse(ids.employeeID.text);
@@ -262,6 +271,9 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void closeAvailableEmployeeList () {
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+
 		selectEmployeesCanvasIsOpen = !selectEmployeesCanvasIsOpen;
 		SelectEmployeesCanvas.enabled = !SelectEmployeesCanvas.enabled;
 
@@ -272,6 +284,9 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void closeInitialAvailableEmployeeList () {
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+
 		selectInitialEmployeesCanvasIsOpen = !selectInitialEmployeesCanvasIsOpen;
 		SelectInitialEmployeesCanvas.enabled = !SelectInitialEmployeesCanvas.enabled;
 
@@ -289,6 +304,9 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void closeInitialAvailableEmployeeListOnCancel () {
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+
 		selectInitialEmployeesCanvasIsOpen = !selectInitialEmployeesCanvasIsOpen;
 		SelectInitialEmployeesCanvas.enabled = !SelectInitialEmployeesCanvas.enabled;
 		
@@ -313,6 +331,8 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void hire (Text _id){
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
 		int id = Int32.Parse(_id.text);
 
 		foreach(Character emp in myCompany.applicants){
@@ -329,6 +349,9 @@ public class CreateScrollList : MonoBehaviour {
 
 	public void fire (Text _id){
 		//TODO: Take plant.
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+
 		int id = Int32.Parse(_id.text);
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		foreach(Project proj in myCompany.projects){

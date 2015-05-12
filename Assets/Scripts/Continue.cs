@@ -16,6 +16,9 @@ public class Continue : MonoBehaviour {
 	Company myCompany;
 
 	public void continueGame () {
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
 		

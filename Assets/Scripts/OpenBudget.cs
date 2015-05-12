@@ -9,5 +9,7 @@ public class OpenBudget : MonoBehaviour {
 	public void openBudget () {
 		isOpen = !isOpen;
 		budgetView.enabled = !budgetView.enabled;
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
 	}
 }

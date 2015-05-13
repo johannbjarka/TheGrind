@@ -6,6 +6,7 @@ public class MuteMusic : MonoBehaviour {
 
 	AudioSource music;
 	Button muteButton;
+	public Sprite noMusic;
 
 	// Use this for initialization
 	void Start () {
@@ -21,11 +22,11 @@ public class MuteMusic : MonoBehaviour {
 	public void muteMusic () {
 		if(music.mute) {
 			music.mute = false;
-			muteButton.image.color = Color.white;
+			muteButton.image.overrideSprite = null;
 		}
 		else {
 			music.mute = true;
-			muteButton.image.color = Color.red;
+			muteButton.image.overrideSprite = noMusic;
 		}
 	}
 }

@@ -47,6 +47,12 @@ public class SceneSwitcher : MonoBehaviour {
 			duration = 1.0f
 		};
 		TransitionKit.instance.transitionWithDelegate(winder);
+
+		MuteSoundFX mute = GameObject.FindWithTag("Mute").GetComponent<MuteSoundFX>();
+		if(mute.officeSound.mute) {
+			mute.muteSoundFX();
+		}
+
 		/*
 		var fader = new FadeTransition () {
 			nextScene = Application.loadedLevel == 2 ? 3 : 2,

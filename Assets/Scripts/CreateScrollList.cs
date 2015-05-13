@@ -38,7 +38,9 @@ public class CreateScrollList : MonoBehaviour {
 			panel.nameLabel.text = item.characterName;
 			panel.genderLabel.text = item.gender.ToString();
 			panel.moraleLabel.text = item.morale.ToString();
+			panel.moraleBar.sizeDelta = new Vector2(item.morale * 10, 20);
 			panel.speedLabel.text = item.speed.ToString();
+			panel.speedBar.sizeDelta = new Vector2(item.speed * 10, 20);
 			panel.salaryLabel.text = item.salary.ToString();
 			panel.employeeIcon.sprite = item.sprite;
 			panel.ID.text = item.ID.ToString();

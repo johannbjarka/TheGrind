@@ -14,6 +14,8 @@ public class Continue : MonoBehaviour {
 	public Canvas projectDone;
 	public Canvas performanceReview;
 	Company myCompany;
+	public Text eventText;
+	public Canvas eventCanvas;
 
 	public Canvas EmployeeCanvas;
 	public Canvas ApplicantCanvas;
@@ -149,9 +151,8 @@ public class Continue : MonoBehaviour {
 
 		//Random event
 		int ranEvent = Random.Range(1, 5);
-		string eventText = "";
 		if(ranEvent == 1) {
-			eventText = callEvent();
+			eventText.text = callEvent();
 			Debug.Log(eventText);
 		}
 
@@ -177,10 +178,15 @@ public class Continue : MonoBehaviour {
 		}
 	}
 
+	public void closeEventCanvas () {
+		eventCanvas.enabled = !eventCanvas.enabled;
+	}
+
 	string callEvent() {
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int randEvent = Random.Range(1, 34);
 		string eventText = "";
+		eventCanvas.enabled = !eventCanvas.enabled;
 		
 		switch(randEvent){
 		case 1:

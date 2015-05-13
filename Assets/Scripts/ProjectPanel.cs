@@ -12,4 +12,6 @@ public class ProjectPanel : MonoBehaviour {
 	public Text Category;
 	public Button AcceptButton;
 	public Text ID;
+	public RectTransform progressBar;
+	public Text percentDone;
 }

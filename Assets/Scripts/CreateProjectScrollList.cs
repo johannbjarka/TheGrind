@@ -57,6 +57,13 @@ public class CreateProjectScrollList : MonoBehaviour {
 			panel.Reward.text = project.reward.ToString();
 			panel.Penalty.text = project.penalty.ToString();
 			panel.ID.text = project.ID.ToString();
+			float _ratio = (float)project.workEstimate / project.initialWorkAmount;
+			int ratio = (int)(_ratio * 100);
+			if(ratio > 100) {
+				ratio = 100;
+			}
+			panel.percentDone.text = "Estimate: " + ratio.ToString() + "%";
+			panel.progressBar.sizeDelta = new Vector2(ratio * 4.8f, 30);
 			panel.Category.text = myCompany.getDescription(project.category);
 			newProjectPanel.transform.SetParent (CurrentProjectContentPanel);
 			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);

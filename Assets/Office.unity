@@ -5728,7 +5728,6 @@ GameObject:
   - 222: {fileID: 468844653}
   - 114: {fileID: 468844652}
   - 114: {fileID: 468844651}
-  - 114: {fileID: 468844650}
   m_Layer: 5
   m_Name: Quit Game
   m_TagString: Untagged
@@ -5736,18 +5735,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &468844650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11483240, guid: 8d775aaa8b6a8f34e9111fe65f930db9,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 468844649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd1578ebc54003489b12e4af3803639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &468844651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5788,8 +5775,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 468844650}
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 946141422}
+        m_MethodName: openConfirmationPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20589,8 +20576,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

@@ -216,16 +216,22 @@ public class Project : MonoBehaviour {
 		switch(category){
 		case 0:
 			rand = Random.Range(0, 9);
+			break;
 		case 1:
 			rand = Random.Range(9, 18);
+			break;
 		case 2:
 			rand = Random.Range(18, 27);
+			break;
 		case 3:
 			rand = Random.Range(27, 36);
+			break;
 		case 4:
 			rand = Random.Range(36, 45);
+			break;
 		case 5:
 			rand = Random.Range(45, 54);
+			break;
 		}
 		projName = projectNames[rand];
 		description = projectDescriptions[rand];

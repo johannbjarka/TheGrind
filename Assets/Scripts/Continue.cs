@@ -5,16 +5,26 @@ using UnityEngine.UI;
 
 public class Continue : MonoBehaviour {
 
+	private string[] reason = {
+		"because of your terrible management skills.",
+		"because the office was a hostile environment.",
+		""
+	};
 	public int newBudget;
 	public Text	projName;
 	public Text rewPen;
 	public Text rewPenAmount;
 	public Text grade;
 	public Text isProjDone;
+	public Text hasQuit;
+	public Text detailedQuit;
+	public Sprite quitSprite;
 	public Canvas projectDone;
 	public Canvas performanceReview;
 	Company myCompany;
 
+	public GameObject projectFinishedPanel;
+	public Transform projectFinishedContentPanel;
 	public Canvas EmployeeCanvas;
 	public Canvas ApplicantCanvas;
 	public Canvas ComputerCanvas;
@@ -72,41 +82,53 @@ public class Continue : MonoBehaviour {
 			foreach(Character emp in myCompany.projects[i].employees) {
 				myCompany.projects[i].workAmount -= emp.speed;
 			}
-
-			ProjectDone projDone = GameObject.Find("ProjDone").GetComponent<ProjectDone>();
 			// If the project is finished, add it to completed projects, add the 
 			// reward to the budget and remove it from projects.
 			if(myCompany.projects[i].workAmount <= 0) {
-				myCompany.completedProjects.Add(myCompany.projects[i]);
-				myCompany.budget.projectRewards += myCompany.projects[i].reward;
-				myCompany.month.numberOfProjectsFinished++;
-				projName.text = myCompany.projects[i].projName;
-				rewPen.text = "Reward for project";
-				rewPenAmount.text = myCompany.projects[i].reward.ToString();
-				grade.text = myCompany.projects[i].calcGrade().ToString();
-				isProjDone.text = "Good job! You finished the project in time.";
-				projDone.openProjectDone();
-				// Remove employees from the project
-				foreach(Character emp in myCompany.projects[i].employees) {
-					emp.onProject = false;
-					emp.transform.position = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
+				Debug.Log(myCompany.projects[i].projName);
+				if(!myCompany.projects[i].isFinished) {
+					myCompany.completedProjects.Add(myCompany.projects[i]);
+					myCompany.budget.projectRewards += myCompany.projects[i].reward;
+					myCompany.month.numberOfProjectsFinished++;
+					GameObject newPanel = Instantiate (projectFinishedPanel) as GameObject;
+					ProjectFinishPanel panel = newPanel.GetComponent<ProjectFinishPanel>();
+					panel.projName.text = myCompany.projects[i].projName;
+					panel.rewPen.text = "Reward for project";
+					panel.rewPenAmount.text = myCompany.projects[i].reward.ToString();
+					panel.grade.text = myCompany.projects[i].calcGrade().ToString();
+					panel.isProjDone.text = "Good job! You finished the project in time.";
+					newPanel.transform.SetParent (projectFinishedContentPanel);
+					panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+					panel.transform.position = new Vector3(0, 3.5f, 0);
+					// Remove employees from the project
+					foreach(Character emp in myCompany.projects[i].employees) {
+						emp.onProject = false;
+						emp.transform.position = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
+					}
+					myCompany.projects[i].isFinished = true;
 				}
-
 			}
 			// If a project's deadline has passed and it's not finished we 
 			// remove it from projects and add the penalty to projectPenalties. 
 			if(myCompany.projects[i].deadline == 0 && myCompany.projects[i].workAmount > 0) {
-				myCompany.budget.projectPenalties += myCompany.projects[i].penalty;
-				projName.text = myCompany.projects[i].projName;
-				rewPen.text = "Penalty for project";
-				rewPenAmount.text = myCompany.projects[i].penalty.ToString();
-				grade.text = "-";
-				isProjDone.text = "Oh no! You didn't finish in time. The project needed more employees.";
-				projDone.openProjectDone();
-				// Remove employees from the project
-				foreach(Character emp in myCompany.projects[i].employees) {
-					emp.onProject = false;
-					emp.transform.position = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
+				if(!myCompany.projects[i].isFinished) {
+					myCompany.budget.projectPenalties += myCompany.projects[i].penalty;
+					GameObject newPanel = Instantiate (projectFinishedPanel) as GameObject;
+					ProjectFinishPanel panel = newPanel.GetComponent<ProjectFinishPanel>();
+					panel.projName.text = myCompany.projects[i].projName;
+					panel.rewPen.text = "Penalty for project";
+					panel.rewPenAmount.text = myCompany.projects[i].penalty.ToString();
+					panel.grade.text = "-";
+					panel.isProjDone.text = "Oh no! You didn't finish in time. The project needed more employees.";
+					newPanel.transform.SetParent (projectFinishedContentPanel);
+					panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+					panel.transform.position = new Vector3(0, 3.5f, 0);
+					// Remove employees from the project
+					foreach(Character emp in myCompany.projects[i].employees) {
+						emp.onProject = false;
+						emp.transform.position = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
+					}
+					myCompany.projects[i].isFinished = true;
 				}
 			}
 		}
@@ -157,6 +179,17 @@ public class Continue : MonoBehaviour {
 			if(emp.morale <= 0) {
 				// TODO: send message that employee quit
 				myCompany.characters.Remove(emp);
+
+				hasQuit.text = emp.characterName + " has quit!";
+				if(emp.gender == 'M') {
+					detailedQuit.text = "He quit " + reason[Random.Range(0, reason.Length)];
+				}
+				else {
+					detailedQuit.text = "She quit " + reason[Random.Range(0, reason.Length)];
+				}
+				quitSprite = emp.sprite;
+				EmployeeQuits quit = GameObject.FindWithTag("Quit").GetComponent<EmployeeQuits>();
+				quit.quit();
 			}
 		}
 		if(myCompany.jobSecurity <= 25){
@@ -366,5 +399,9 @@ public class Continue : MonoBehaviour {
 			break;
 		}
 		return eventText;
+	}
+
+	public void destroyPanel () {
+		Destroy(projectFinishedPanel);
 	}
 }

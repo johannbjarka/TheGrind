@@ -137,6 +137,7 @@ public class Project : MonoBehaviour {
 	public int penalty;
 	public int category;
 	public int expectedQuality;
+	public bool isFinished;
 	public List<Character> employees;
 
 	// Use this for initialization
@@ -166,7 +167,8 @@ public class Project : MonoBehaviour {
 		reward = Random.Range (workAmount - 5, workAmount + 6) * 10;
 		penalty = Random.Range (100, 301);
 		category = Random.Range (0, 13);
-		expectedQuality = (int)(((double)deadline / workAmount) * Random.Range(200, 401));*/
+		expectedQuality = (int)(((double)deadline / workAmount) * Random.Range(200, 401));
+		isFinished = false;*/
 		workEstimate = 0;
 		ID = _ID;
 		_ID++;

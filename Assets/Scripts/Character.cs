@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Character : MonoBehaviour {
 
-	private string[] firstNames = new string[] {
+	private string[] firstNames = {
 		"Tom",
 		"Bill",
 		"Lavondrius",
@@ -53,7 +53,7 @@ public class Character : MonoBehaviour {
 		"Maria",
 		"Gemma"
 	};
-	private string[] lastNames = new string[] {
+	private string[] lastNames = {
 		"Williams",
 		"Smith",
 		"Johnson",

@@ -6,6 +6,7 @@ public class Project : MonoBehaviour {
 
 	public string[] projectNames = {
 		//AI
+		"Smithereens",
 		"We Are The Robots",
 		"Targeted Advertising",
 		"All Talk, No Walk",
@@ -15,6 +16,7 @@ public class Project : MonoBehaviour {
 		"DJ Roomba",
 		"Pathfinding for an RTS",
 		//Algorithms
+		"Fins Ain't Enough",
 		"WoodStock",
 		"Tune In",
 		"The Dijkstra's In The Details",
@@ -24,6 +26,7 @@ public class Project : MonoBehaviour {
 		"Create a compression algorithm",
 		"Kosaraju says hello",
 		//Databases
+		"Holy Data Corruption Batman!",
 		"Datachu",
 		"I Want Candy!",
 		"Catch The Creeps",
@@ -33,6 +36,7 @@ public class Project : MonoBehaviour {
 		"A Good Deed",
 		"Movie Database",
 		//Hacking
+		"Drunk On Power",
 		"Idiocracy",
 		"Clever Girl",
 		"Help A Nerd",
@@ -42,6 +46,7 @@ public class Project : MonoBehaviour {
 		"Project Morpheus",
 		"Custom UI",
 		//Networking
+		"Sandra, Oh Sandra",
 		"Make Friends",
 		"UDP And TCP, The Bestest Thing For You And Me",
 		"My Brother's Keeper",
@@ -51,6 +56,7 @@ public class Project : MonoBehaviour {
 		"\"Terrorists win\"",
 		"Help CSI Hunt Criminals",
 		//Web Development
+		"Starfleet.COM",
 		"It's Raw!",
 		"Pimp My Site",
 		"Master of Tickets",
@@ -63,6 +69,8 @@ public class Project : MonoBehaviour {
 	
 	public string[] projectDescriptions = {
 		//AI
+		"Agent Smith is having an existential crisis after he split himself up into tons of clones. He wants to " +
+		"know which one of him is the original, and destroy the rest. Help him out with your 1337 AI skillz.",
 		"A representative from the machine kingdom is interested in learning about his place in the universe. " +
 		"Teach him of the AI techniques that underpin his own intelligence, and thereby help him to find his " +
 		"purpose in life.",
@@ -81,6 +89,8 @@ public class Project : MonoBehaviour {
 		"PPC is making a new RTS module for it's popular game, VEV Offline, and needs your help " +
 		"to implement the A* algorithm for unit pathfinding. Make it so.",
 		//Algorithms
+		"Michael Phelps lost his glasses at the bottom of a murky pool. Explain to him that depth first " +
+		"search is probably the best way to go to find them again, and teach him the algorithm.",
 		"The WOOD stock exchange is being manipulated by an awesome algorithm that does the trader's work " +
 		"for them. Their lazy asses are collecting all the dough and doing none of the work. Hack the algorithm " +
 		"and make it do stupid stuff so they all get fired.",
@@ -101,6 +111,8 @@ public class Project : MonoBehaviour {
 		"A walk-in customer wants you to make an implementation of Kosaraju's algorithm " +
 		"to find the strongly connected components of his network of friends.",
 		//Databases
+		"Bruce Wayne's computer systems fell apart when he spilled Mountain Dew all over his keyboard. " +
+		"Save the data, save the world.",
 		"Ash is concerned that he may own too many Pokemon, and is having trouble keeping track of who " +
 		"they all are and what they can do. Make a BCNF compliant database for Ash to store all the data " +
 		"he needs about his army of cuddly beasts.",
@@ -119,6 +131,8 @@ public class Project : MonoBehaviour {
 		"The International Federation of Moviemakers wants you to make a movie database. " +
 		"It has to be BCNF compliant.",
 		//Hacking
+		"Sigmundur David Gunnlaugsson has been found out as being an evil robot. Hack into his brain " +
+		"to make him do things that aren't as nasty and mean.",
 		"The government has obtained a screenshot from a conversation between 2 hackers over the IRC, " +
 		"but unfortunately it is in l33t speak so only a true hacker can decode it. Make it so.",
 		"An old carmudgeon has created a horde of dinosaurs on his island that are trying to eat " +
@@ -135,6 +149,8 @@ public class Project : MonoBehaviour {
 		"Hack into the matrix to save Neo from certain death.",
 		"An Indian hacker has requested a custom UI for breaking into the FBI database. Make it happen.",
 		//Networking
+		"Sandra Bullock is having a banal conversation in a chatroom. Save moviegoers from the inanity by " +
+		"destroying her internet connection.",
 		"Human networking is just as important as real networking. Have your most able employees " +
 		"reach out to other people and make friends. You know, network.",
 		"UDP or TCP, the age old question. Make a networking component for a video game, and if it breaks " +
@@ -151,6 +167,8 @@ public class Project : MonoBehaviour {
 		"running again!",
 		"Create a GUI interface using Visual Basic to track the criminal's IP address.",
 		//Web Development
+		"Jean-Luc Picard wants to increase Starfleet's digital footprint by making a snazzy recruitment website. " +
+		"Make it so.",
 		"Gordon Ramsey needs a website as a platform from which to berate the subhumans working in his " +
 		"kitchen's. Give him something special.",
 		"A basement dweller has approached us about making his website look pro. It's not as if you " +

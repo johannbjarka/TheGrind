@@ -1842,17 +1842,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf233530d2d7b0147966ce4ea3463be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectPrefab: {fileID: 0}
+  employeePrefab: {fileID: 0}
   newBudget: 0
-  projName: {fileID: 0}
-  rewPen: {fileID: 0}
-  rewPenAmount: {fileID: 0}
-  grade: {fileID: 0}
-  isProjDone: {fileID: 0}
   hasQuit: {fileID: 0}
   detailedQuit: {fileID: 0}
   quitSprite: {fileID: 0}
   projectDone: {fileID: 801940004}
   performanceReview: {fileID: 1342040044}
+  eventText: {fileID: 0}
+  eventCanvas: {fileID: 0}
   projectFinishedPanel: {fileID: 186096, guid: 035434eefa91d464eb3e21d55d7d0eba, type: 2}
   projectFinishedContentPanel: {fileID: 20023545}
   EmployeeCanvas: {fileID: 1510263611}
@@ -4610,7 +4609,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 392322032}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_RenderMode: 1
   m_Camera: {fileID: 461498193}
@@ -12041,6 +12040,7 @@ MonoBehaviour:
   - {fileID: 1097651423}
   - {fileID: 631368285}
   - {fileID: 1853466142}
+  tableFlowers: 
   partialSalaries: 0
   weeks: {fileID: 339120502}
   balance: {fileID: 1968100219}
@@ -12059,6 +12059,7 @@ MonoBehaviour:
   gotFiredCanvas: {fileID: 1522317268}
   MenuCanvas: {fileID: 1400816875}
   ConfirmationCanvas: {fileID: 0}
+  jobSecBar: {fileID: 0}
 --- !u!4 &946141423
 Transform:
   m_ObjectHideFlags: 0
@@ -14358,7 +14359,7 @@ GameObject:
   - 222: {fileID: 1142041310}
   - 114: {fileID: 1142041309}
   m_Layer: 5
-  m_Name: Panel 1
+  m_Name: ContentPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

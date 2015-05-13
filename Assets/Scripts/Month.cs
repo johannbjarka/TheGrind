@@ -21,10 +21,10 @@ public class Month : MonoBehaviour {
 		Company myCompany = gameObject.GetComponent<Company>();
 		int balance = myCompany.budget.getBalance();
 		if(balance < 0){
-			myCompany.jobSecurity += balance / 20;
+			myCompany.jobSecurity += balance / 200;
 		}
 		else{
-			myCompany.jobSecurity += balance / 40;
+			myCompany.jobSecurity += balance / 400;
 		}
 		return balance;
 	}
@@ -62,22 +62,22 @@ public class Month : MonoBehaviour {
 		switch (grade)
 		{
 		case 'A':
-			newAllowance = oldAllowance + 100;
+			newAllowance = oldAllowance + 1000;
 			break;
 		case 'B':
-			newAllowance = oldAllowance + 50;
+			newAllowance = oldAllowance + 500;
 			break;
 		case 'C':
 			newAllowance = oldAllowance;
 			break;
 		case 'D':
-			newAllowance = oldAllowance - 50;
+			newAllowance = oldAllowance - 500;
 			break;
 		case 'E':
-			newAllowance = oldAllowance - 100;
+			newAllowance = oldAllowance - 1000;
 			break;
 		case 'F':
-			newAllowance = oldAllowance - 150;
+			newAllowance = oldAllowance - 1500;
 			break;
 		default:
 			newAllowance = oldAllowance;

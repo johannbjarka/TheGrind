@@ -87,7 +87,6 @@ public class Continue : MonoBehaviour {
 			// If the project is finished, add it to completed projects, add the 
 			// reward to the budget and remove it from projects.
 			if(myCompany.projects[i].workAmount <= 0) {
-				Debug.Log(myCompany.projects[i].projName);
 				if(!myCompany.projects[i].isFinished) {
 					myCompany.completedProjects.Add(myCompany.projects[i]);
 					myCompany.budget.projectRewards += myCompany.projects[i].reward;
@@ -152,10 +151,11 @@ public class Continue : MonoBehaviour {
 			myCompany.setTextFields(monthlyBalance);
 
 			if(myCompany.month.numberOfProjectsFinished == 0){
-				myCompany.firePlayer("You did not finish any projects this month! This is " +
-				                     "UNACCEPTAAAABLEEEEEE! You're FIRED!");
+				//TODO; notify player?
+				myCompany.jobSecurity -= 10;
 			}
-			else if(myCompany.characters.Count == 0){
+
+			if(myCompany.characters.Count == 0){
 				myCompany.firePlayer("You do not have any employees, you can't do this all by yourself! You're FIRED!");
 			}
 			else {
@@ -172,7 +172,6 @@ public class Continue : MonoBehaviour {
 		int ranEvent = Random.Range(1, 5);
 		if(ranEvent == 1) {
 			eventText.text = callEvent();
-			Debug.Log(eventText);
 		}
 
 		//Add new Projects to Available Projects 0-1 each week
@@ -196,11 +195,13 @@ public class Continue : MonoBehaviour {
 
 		}
 
-		int numApplOut = Random.Range(0, 3);
-		
-		for(int i = 0; i < numApplOut; i++) {
-			myCompany.applicants.Remove(myCompany.applicants[0]);
+		if(myCompany.applicants.Count != 0) {
+			int numApplOut = Random.Range(0, 3);
+			for(int i = 0; i < numApplOut; i++) {
+				myCompany.applicants.Remove(myCompany.applicants[0]);
+			}
 		}
+
 
 		// Employees quit if their morale reaches 0
 		foreach(Character emp in myCompany.characters) {

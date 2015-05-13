@@ -22,51 +22,55 @@ public class CreateProjectScrollList : MonoBehaviour {
 	public void PopulateAvailableProjectList () {
 		emptyProjectList ();
 		foreach (var project in myCompany.availableProjects) {
-			GameObject newProjectPanel = Instantiate (availableProjectPanel) as GameObject;
-			ProjectPanel panel = newProjectPanel.GetComponent <ProjectPanel> ();
-			panel.Name.text = project.projName;
-			if(project.deadline == 1) {
-				panel.Deadline.text = "Next week";
+			if(!project.isFinished) {
+				GameObject newProjectPanel = Instantiate (availableProjectPanel) as GameObject;
+				ProjectPanel panel = newProjectPanel.GetComponent <ProjectPanel> ();
+				panel.Name.text = project.projName;
+				if(project.deadline == 1) {
+					panel.Deadline.text = "Next week";
+				}
+				else {
+					panel.Deadline.text = project.deadline.ToString() + " weeks";
+				}
+				panel.Description.text = project.description;
+				panel.Reward.text = project.reward.ToString();
+				panel.Penalty.text = project.penalty.ToString();
+				panel.ID.text = project.ID.ToString();
+				panel.Category.text = myCompany.getDescription(project.category);
+				newProjectPanel.transform.SetParent (AvailableProjectContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 			}
-			else {
-				panel.Deadline.text = project.deadline.ToString() + " weeks";
-			}
-			panel.Description.text = project.description;
-			panel.Reward.text = project.reward.ToString();
-			panel.Penalty.text = project.penalty.ToString();
-			panel.ID.text = project.ID.ToString();
-			panel.Category.text = myCompany.getDescription(project.category);
-			newProjectPanel.transform.SetParent (AvailableProjectContentPanel);
-			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		}
 	}
 
 	public void PopulateCurrentProjectList () {
 		emptyProjectList ();
 		foreach (var project in myCompany.projects) {
-			GameObject newProjectPanel = Instantiate (currentProjectPanel) as GameObject;
-			ProjectPanel panel = newProjectPanel.GetComponent <ProjectPanel> ();
-			panel.Name.text = project.projName;
-			if(project.deadline == 1) {
-				panel.Deadline.text = "Next week";
+			if(!project.isFinished) {
+				GameObject newProjectPanel = Instantiate (currentProjectPanel) as GameObject;
+				ProjectPanel panel = newProjectPanel.GetComponent <ProjectPanel> ();
+				panel.Name.text = project.projName;
+				if(project.deadline == 1) {
+					panel.Deadline.text = "Next week";
+				}
+				else {
+					panel.Deadline.text = project.deadline.ToString() + " weeks";
+				}
+				panel.Description.text = project.description;
+				panel.Reward.text = project.reward.ToString();
+				panel.Penalty.text = project.penalty.ToString();
+				panel.ID.text = project.ID.ToString();
+				float _ratio = (float)project.workEstimate / project.initialWorkAmount;
+				int ratio = (int)(_ratio * 100);
+				if(ratio > 100) {
+					ratio = 100;
+				}
+				panel.percentDone.text = "Estimate: " + ratio.ToString() + "%";
+				panel.progressBar.sizeDelta = new Vector2(ratio * 4.8f, 30);
+				panel.Category.text = myCompany.getDescription(project.category);
+				newProjectPanel.transform.SetParent (CurrentProjectContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 			}
-			else {
-				panel.Deadline.text = project.deadline.ToString() + " weeks";
-			}
-			panel.Description.text = project.description;
-			panel.Reward.text = project.reward.ToString();
-			panel.Penalty.text = project.penalty.ToString();
-			panel.ID.text = project.ID.ToString();
-			float _ratio = (float)project.workEstimate / project.initialWorkAmount;
-			int ratio = (int)(_ratio * 100);
-			if(ratio > 100) {
-				ratio = 100;
-			}
-			panel.percentDone.text = "Estimate: " + ratio.ToString() + "%";
-			panel.progressBar.sizeDelta = new Vector2(ratio * 4.8f, 30);
-			panel.Category.text = myCompany.getDescription(project.category);
-			newProjectPanel.transform.SetParent (CurrentProjectContentPanel);
-			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		}
 	}
 

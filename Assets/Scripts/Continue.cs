@@ -53,7 +53,10 @@ public class Continue : MonoBehaviour {
 
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
-		
+
+		for(int i = 0; i < 20; i++) {
+			myCompany.tableFlowers[i] = Random.Range(0,4);
+		}
 		for(int i = 0; i < myCompany.availableProjects.Count; i++) {
 			myCompany.availableProjects[i].deadline--;
 		}

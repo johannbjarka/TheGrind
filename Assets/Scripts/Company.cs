@@ -22,6 +22,7 @@ public class Company : MonoBehaviour {
 	public List<Sprite> chartables;
 	public List<Sprite> originaltables;
 	public List<GameObject> tables;
+	public int[] tableFlowers;
 	public int partialSalaries = 0;
 	public Text weeks;
 	public Text balance;
@@ -50,7 +51,7 @@ public class Company : MonoBehaviour {
 
 	void Awake () {
 		// Create 5 starting employees
-		for(int i = 0; i < 7; i++) {
+		for(int i = 0; i < 20; i++) {
 			GameObject character;
 			Vector3 pos = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
@@ -84,6 +85,10 @@ public class Company : MonoBehaviour {
 		skills[3] = "Hacking:";
 		skills[4] = "Networking:";
 		skills[5] = "Web Dev:";
+
+		for(int i = 0; i < 20; i++) {
+			tableFlowers[i] = Random.Range(0,4);
+		}
 
 		GameObject projectObj = Instantiate(projectPrefab) as GameObject;
 		Project proj = projectObj.GetComponent<Project>();
@@ -186,10 +191,10 @@ public class Company : MonoBehaviour {
 		for (int i = 0; i < characters.Count; i++) {
 			if(characters[i].onProject)
 			{
-				tables[i].GetComponent<SpriteRenderer>().sprite = chartables[characters[i].rand*5];// + Random.Range(0,5)];
+				tables[i].GetComponent<SpriteRenderer>().sprite = chartables[characters[i].rand*5 + tableFlowers[i]];
 			}
 			else{
-				tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[2];
+				tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[tableFlowers[i]];
 			}
 		}
 	}

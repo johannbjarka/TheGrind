@@ -20,6 +20,7 @@ public class CreateProjectScrollList : MonoBehaviour {
 	}
 
 	public void PopulateAvailableProjectList () {
+		emptyProjectList ();
 		foreach (var project in myCompany.availableProjects) {
 			GameObject newProjectPanel = Instantiate (availableProjectPanel) as GameObject;
 			ProjectPanel panel = newProjectPanel.GetComponent <ProjectPanel> ();
@@ -41,6 +42,7 @@ public class CreateProjectScrollList : MonoBehaviour {
 	}
 
 	public void PopulateCurrentProjectList () {
+		emptyProjectList ();
 		foreach (var project in myCompany.projects) {
 			GameObject newProjectPanel = Instantiate (currentProjectPanel) as GameObject;
 			ProjectPanel panel = newProjectPanel.GetComponent <ProjectPanel> ();

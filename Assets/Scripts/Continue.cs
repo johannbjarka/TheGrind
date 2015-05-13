@@ -181,7 +181,7 @@ public class Continue : MonoBehaviour {
 		int numApplOut = Random.Range(0, 3);
 		
 		for(int i = 0; i < numApplOut; i++) {
-			myCompany.characters.Remove(myCompany.characters[0]);
+			myCompany.applicants.Remove(myCompany.applicants[0]);
 		}
 
 		// Employees quit if their morale reaches 0

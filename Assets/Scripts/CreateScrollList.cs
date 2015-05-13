@@ -32,6 +32,7 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void PopulateEmployeeList () {
+		emptyEmployeeList ();
 		foreach (var item in myCompany.characters) {
 			GameObject newPanel = Instantiate (employeePanel) as GameObject;
 			EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
@@ -262,6 +263,7 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void PopulateApplicantList () {
+		emptyEmployeeList ();
 		foreach (var item in myCompany.applicants) {
 			GameObject newPanel = Instantiate (applicantsPanel) as GameObject;
 			EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();

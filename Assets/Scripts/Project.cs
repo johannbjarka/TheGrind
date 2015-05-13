@@ -201,18 +201,8 @@ public class Project : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		createProject();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	public void createProject () {
-		//employees = new List<Character>();
 		category = Random.Range (0, 6);
-		int rand;
+		int rand = 0;
 		switch(category){
 		case 0:
 			rand = Random.Range(0, 9);
@@ -250,6 +240,11 @@ public class Project : MonoBehaviour {
 		workEstimate = 0;
 		ID = _ID;
 		_ID++;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
 	}
 
 	public char calcGrade () {

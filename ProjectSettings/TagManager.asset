@@ -9,6 +9,7 @@ TagManager:
   - OfficeSound
   - Mute
   - MuteButton
+  - Project
   layers:
   - Default
   - TransparentFX

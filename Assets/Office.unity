@@ -1782,6 +1782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf233530d2d7b0147966ce4ea3463be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectPrefab: {fileID: 182544, guid: 6f230e15763af7a498cd18c92a1ba9d6, type: 2}
+  employeePrefab: {fileID: 176918, guid: 39747858bd7688544a16f3fb2c7d8da2, type: 2}
   newBudget: 0
   projName: {fileID: 1559688637}
   rewPen: {fileID: 921862030}
@@ -8777,60 +8779,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 509a38a5f95280d47867489ec547ebd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &687858673
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 687858675}
-  - 212: {fileID: 687858674}
-  m_Layer: 0
-  m_Name: Skrifstofa
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &687858674
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 687858673}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 034fec964427ba34795c501010b06776, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &687858675
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 687858673}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.7701855, y: -.99611181, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 26
 --- !u!1 &693605863
 GameObject:
   m_ObjectHideFlags: 0

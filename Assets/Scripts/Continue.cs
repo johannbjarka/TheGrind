@@ -13,11 +13,6 @@ public class Continue : MonoBehaviour {
 	public GameObject projectPrefab;
 	public GameObject employeePrefab;
 	public int newBudget;
-	public Text	projName;
-	public Text rewPen;
-	public Text rewPenAmount;
-	public Text grade;
-	public Text isProjDone;
 	public Text hasQuit;
 	public Text detailedQuit;
 	public Sprite quitSprite;
@@ -194,9 +189,11 @@ public class Continue : MonoBehaviour {
 		int numApplIn = Random.Range(0, 3);
 		
 		for(int i = 0; i < numApplIn; i++) {
-			GameObject characterObj = Instantiate(employeePrefab) as GameObject;
+			Vector3 pos = new Vector3(1000, 1000, -100f);
+			GameObject characterObj = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
 			Character newChar = characterObj.GetComponent<Character>();
 			myCompany.applicants.Add(newChar);
+
 		}
 
 		int numApplOut = Random.Range(0, 3);

@@ -9,6 +9,7 @@ public class Tutorial : MonoBehaviour {
 	public GameObject calendarPanel;
 	public GameObject continuePanel;
 	public GameObject endPanel;
+	public GameObject JobSecurityPanel;
 
 	// Use this for initialization
 	void Start () {
@@ -38,8 +39,13 @@ public class Tutorial : MonoBehaviour {
 		continuePanel.SetActive (true);
 	}
 
-	public void endTutorial () {
+	public void getJobSecurityPanel () {
 		continuePanel.SetActive (false);
+		JobSecurityPanel.SetActive (true);
+	}
+
+	public void endTutorial () {
+		JobSecurityPanel.SetActive (false);
 		endPanel.SetActive (true);
 	}
 }

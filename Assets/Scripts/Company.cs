@@ -49,6 +49,8 @@ public class Company : MonoBehaviour {
 	public Canvas MenuCanvas;
 	public Canvas ConfirmationCanvas;
 
+	public RectTransform jobSecBar;
+
 	void Awake () {
 		// Create 5 starting employees
 		for(int i = 0; i < 20; i++) {
@@ -180,6 +182,7 @@ public class Company : MonoBehaviour {
 		allocated.text = budget.monthlyAmount.ToString();
 		monthJobSecurity.text = jobSecurity.ToString();
 		jobSec.text = jobSecurity.ToString();
+		jobSecBar.sizeDelta = new Vector2 (jobSecurity * 2, 20);
 
 		if(jobSecurity > 100){
 			jobSecurity = 100;

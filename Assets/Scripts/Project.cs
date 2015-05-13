@@ -6,6 +6,8 @@ public class Project : MonoBehaviour {
 
 	public string[] projectNames = {
 		//AI
+		"We Are The Robots",
+		"Targeted Advertising",
 		"All Talk, No Walk",
 		"Ultra Sweet",
 		"Speak!",
@@ -13,6 +15,8 @@ public class Project : MonoBehaviour {
 		"DJ Roomba",
 		"Pathfinding for an RTS",
 		//Algorithms
+		"WoodStock",
+		"Tune In",
 		"The Dijkstra's In The Details",
 		"His Name Was Doom",
 		"Weather Me This",
@@ -20,6 +24,8 @@ public class Project : MonoBehaviour {
 		"Create a compression algorithm",
 		"Kosaraju says hello",
 		//Databases
+		"Datachu",
+		"I Want Candy!",
 		"Catch The Creeps",
 		"Keep It Secret, Keep It Safe",
 		"Pattern of Data Abuse",
@@ -27,6 +33,7 @@ public class Project : MonoBehaviour {
 		"A Good Deed",
 		"Movie Database",
 		//Hacking
+		"Idiocracy",
 		"Clever Girl",
 		"Help A Nerd",
 		"Show Me The Candy!",
@@ -35,12 +42,18 @@ public class Project : MonoBehaviour {
 		"Project Morpheus",
 		"Custom UI",
 		//Networking
+		"Make Friends",
+		"UDP And TCP, The Bestest Thing For You And Me",
+		"My Brother's Keeper",
 		"G Is For Genetically Mutated",
 		"The Folly of Man",
 		"Skynet",
 		"\"Terrorists win\"",
-		"Help CSI hunt criminals",
+		"Help CSI Hunt Criminals",
 		//Web Development
+		"It's Raw!",
+		"Pimp My Site",
+		"Master of Tickets",
 		"Lazy Bum",
 		"Find the Wine",
 		"Clone Wars",
@@ -50,6 +63,12 @@ public class Project : MonoBehaviour {
 	
 	public string[] projectDescriptions = {
 		//AI
+		"A representative from the machine kingdom is interested in learning about his place in the universe. " +
+		"Teach him of the AI techniques that underpin his own intelligence, and thereby help him to find his " +
+		"purpose in life.",
+		"A multi-national advertising conglomerate wants to stay ahead of the curve, and wants to start targeting " +
+		"people with advertisements in their daily lives. Write a super sophisticated pattern matching algorithm " +
+		"to recognise people's faces and toss useless adverts at them in the streets.",
 		"Garry Kasparov has been talking shit about Deep Blue all over town, saying he'll kick it's ass if they " +
 		"play another game of chess. Upgrade Deep Blue and organize a game between them to humiliate the Russians " +
 		"once and for all.",
@@ -62,6 +81,11 @@ public class Project : MonoBehaviour {
 		"PPC is making a new RTS module for it's popular game, VEV Offline, and needs your help " +
 		"to implement the A* algorithm for unit pathfinding. Make it so.",
 		//Algorithms
+		"The WOOD stock exchange is being manipulated by an awesome algorithm that does the trader's work " +
+		"for them. Their lazy asses are collecting all the dough and doing none of the work. Hack the algorithm " +
+		"and make it do stupid stuff so they all get fired.",
+		"HAL 9000 is already a sophisticated Artificial Intelligence, but he really wants to be able to sing. " +
+		"Write a super sweet algorithm for HAL so that he may sing his astronaut pals a lullaby.",
 		"The Prince of Darkness has created an insanely efficient implementation of Dijkstra's " +
 		"algorithm to find the shortest path through a network. Make one that's better to banish " +
 		"him back to the depths from whence he came.",
@@ -77,6 +101,10 @@ public class Project : MonoBehaviour {
 		"A walk-in customer wants you to make an implementation of Kosaraju's algorithm " +
 		"to find the strongly connected components of his network of friends.",
 		//Databases
+		"Ash is concerned that he may own too many Pokemon, and is having trouble keeping track of who " +
+		"they all are and what they can do. Make a BCNF compliant database for Ash to store all the data " +
+		"he needs about his army of cuddly beasts.",
+		"Make a database that holds all the candy ever created. Gotta eat it all.",
 		"The Interpol database is full of creeps that need to be caught and prosecuted. Unfortunately " +
 		"our client is one of those creeps. Get into the database and expunge his record.",
 		"A seriously shady website owner wants you to make a clone of his database to serve as a backup " +
@@ -91,6 +119,8 @@ public class Project : MonoBehaviour {
 		"The International Federation of Moviemakers wants you to make a movie database. " +
 		"It has to be BCNF compliant.",
 		//Hacking
+		"The government has obtained a screenshot from a conversation between 2 hackers over the IRC, " +
+		"but unfortunately it is in l33t speak so only a true hacker can decode it. Make it so.",
 		"An old carmudgeon has created a horde of dinosaurs on his island that are trying to eat " +
 		"his grandchildren. He has enlisted your help in hacking into the island's computer system " +
 		"and locking the doors. Fortunately it's a UNIX system, which you know.",
@@ -105,6 +135,12 @@ public class Project : MonoBehaviour {
 		"Hack into the matrix to save Neo from certain death.",
 		"An Indian hacker has requested a custom UI for breaking into the FBI database. Make it happen.",
 		//Networking
+		"Human networking is just as important as real networking. Have your most able employees " +
+		"reach out to other people and make friends. You know, network.",
+		"UDP or TCP, the age old question. Make a networking component for a video game, and if it breaks " +
+		"that's on you!",
+		"Tim Berners Lee has used his 1337 networking skills to steal our client's digital trapper " +
+		"keeper. Defeat him in HTTP battle to retrieve the stolen data.",
 		"The Umbrella Corporation has asked us to clean up their digital footprint, so that noone can trace " +
 		"all their illegal genetic experiments. Don't go moral on me now!",
 		"The machines have taken over, using a sophisticated HTTP exploit. Close the loophole " +
@@ -115,6 +151,12 @@ public class Project : MonoBehaviour {
 		"running again!",
 		"Create a GUI interface using Visual Basic to track the criminal's IP address.",
 		//Web Development
+		"Gordon Ramsey needs a website as a platform from which to berate the subhumans working in his " +
+		"kitchen's. Give him something special.",
+		"A basement dweller has approached us about making his website look pro. It's not as if you " +
+		"have anything better to do.",
+		"A Ticketmaster rival has approached us to create a platform that will be an irresistible " +
+		"alternative to the behemoth retail site. Put your best people on it. Or not.",
 		"An influential blogger wants to move house to a new website, but is too lazy to make a Wordpress site " +
 		"by himself. Make a website for him that looks just like Wordpress, only it isn't.",
 		"The Icelandic Government desperately needs to update the publically run liquor store's website. " +

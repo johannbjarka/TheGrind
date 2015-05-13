@@ -1790,10 +1790,15 @@ MonoBehaviour:
   rewPenAmount: {fileID: 634997574}
   grade: {fileID: 14891017}
   isProjDone: {fileID: 1990865510}
+  hasQuit: {fileID: 0}
+  detailedQuit: {fileID: 0}
+  quitSprite: {fileID: 0}
   projectDone: {fileID: 801940004}
   performanceReview: {fileID: 1342040044}
   eventText: {fileID: 178353514}
   eventCanvas: {fileID: 1721359384}
+  projectFinishedPanel: {fileID: 0}
+  projectFinishedContentPanel: {fileID: 0}
   EmployeeCanvas: {fileID: 1510263611}
   ApplicantCanvas: {fileID: 1211339362}
   ComputerCanvas: {fileID: 894505897}

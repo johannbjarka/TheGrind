@@ -133,7 +133,6 @@ GameObject:
   - 224: {fileID: 22488766}
   - 222: {fileID: 22288166}
   - 114: {fileID: 11446554}
-  - 114: {fileID: 11449214}
   m_Layer: 8
   m_Name: Description
   m_TagString: Untagged
@@ -240,7 +239,7 @@ GameObject:
   - 114: {fileID: 11492840}
   - 114: {fileID: 11457660}
   - 114: {fileID: 11435728}
-  - 114: {fileID: 11424216}
+  - 114: {fileID: 11472216}
   m_Layer: 8
   m_Name: Text Scroll Panel
   m_TagString: Untagged
@@ -502,26 +501,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &11424216
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 184924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1297475563, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
 --- !u!114 &11428644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -560,7 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
-  m_VerticalFit: 0
+  m_VerticalFit: 1
 --- !u!114 &11437614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -704,24 +683,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Deadline:'
---- !u!114 &11449214
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 152852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1679637790, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: 150
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
 --- !u!114 &11456196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -875,6 +836,24 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11472216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: 130
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
 --- !u!114 &11475898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -942,6 +921,8 @@ MonoBehaviour:
   Category: {fileID: 11406882}
   AcceptButton: {fileID: 11437614}
   ID: {fileID: 11416594}
+  progressBar: {fileID: 0}
+  percentDone: {fileID: 0}
 --- !u!114 &11492840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1359,8 +1340,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -120, y: 14}
-  m_SizeDelta: {x: 228.199997, y: 130}
+  m_AnchoredPosition: {x: -124, y: 14.0249996}
+  m_SizeDelta: {x: 228, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22484876
 RectTransform:
@@ -1394,10 +1375,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22476006}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 114, y: -0}
+  m_SizeDelta: {x: 228, y: 289}
   m_Pivot: {x: .5, y: 1}
 --- !u!1001 &100100000
 Prefab:

@@ -314,7 +314,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -50, y: -69}
+  m_AnchoredPosition: {x: -19, y: -69}
   m_SizeDelta: {x: 198, y: 54}
   m_Pivot: {x: 1, y: .5}
 --- !u!114 &14891017
@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 76506336}
   m_HandleRect: {fileID: 76506335}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -4472,7 +4472,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -24.9999886}
+  m_AnchoredPosition: {x: 0, y: -24.9999924}
   m_SizeDelta: {x: 0, y: -50}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &396445883
@@ -7451,7 +7451,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -50, y: -20.8280029}
+  m_AnchoredPosition: {x: -19, y: -21}
   m_SizeDelta: {x: 188, y: 43}
   m_Pivot: {x: 1, y: .5}
 --- !u!1 &636181585
@@ -7800,7 +7800,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1552521388}
   m_HandleRect: {fileID: 1552521387}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -9390,7 +9390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -11844,7 +11844,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 70, y: -21}
+  m_AnchoredPosition: {x: 51, y: -21}
   m_SizeDelta: {x: 209, y: 43}
   m_Pivot: {x: 0, y: .5}
 --- !u!114 &921862030
@@ -17349,7 +17349,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 448863841}
   m_HandleRect: {fileID: 448863840}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -18395,7 +18395,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 699788898}
   m_HandleRect: {fileID: 699788897}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -23486,7 +23486,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1847763969}
   m_HandleRect: {fileID: 1847763968}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -24037,7 +24037,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 70, y: -63.8279991}
+  m_AnchoredPosition: {x: 51, y: -64}
   m_SizeDelta: {x: 209, y: 43}
   m_Pivot: {x: 0, y: .5}
 --- !u!114 &1845448745
@@ -25086,7 +25086,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1961808745}
   m_HandleRect: {fileID: 1961808744}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -26792,7 +26792,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 502917338}
   m_HandleRect: {fileID: 502917337}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

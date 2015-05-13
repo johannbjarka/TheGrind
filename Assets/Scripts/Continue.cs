@@ -10,6 +10,8 @@ public class Continue : MonoBehaviour {
 		"because the office was a hostile environment.",
 		""
 	};
+	public GameObject projectPrefab;
+	public GameObject employeePrefab;
 	public int newBudget;
 	public Text	projName;
 	public Text rewPen;
@@ -22,6 +24,8 @@ public class Continue : MonoBehaviour {
 	public Canvas projectDone;
 	public Canvas performanceReview;
 	Company myCompany;
+	public Text eventText;
+	public Canvas eventCanvas;
 
 	public GameObject projectFinishedPanel;
 	public Transform projectFinishedContentPanel;
@@ -63,7 +67,10 @@ public class Continue : MonoBehaviour {
 
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;
-		
+
+		for(int i = 0; i < 20; i++) {
+			myCompany.tableFlowers[i] = Random.Range(0,4);
+		}
 		for(int i = 0; i < myCompany.availableProjects.Count; i++) {
 			myCompany.availableProjects[i].deadline--;
 		}
@@ -168,10 +175,34 @@ public class Continue : MonoBehaviour {
 
 		//Random event
 		int ranEvent = Random.Range(1, 5);
-		string eventText = "";
 		if(ranEvent == 1) {
-			eventText = callEvent();
+			eventText.text = callEvent();
 			Debug.Log(eventText);
+		}
+
+		//Add new Projects to Available Projects 0-1 each week
+		int numProjects = Random.Range(0, 2);
+
+		for(int i = 0; i < numProjects; i++) {
+			GameObject projectObj = Instantiate(projectPrefab) as GameObject;
+			Project proj = projectObj.GetComponent<Project>();
+			myCompany.availableProjects.Add(proj);
+		}
+
+		//Add new Applicants, Remove old Applicants, 0-2 in 0-2 out.
+
+		int numApplIn = Random.Range(0, 3);
+		
+		for(int i = 0; i < numApplIn; i++) {
+			GameObject characterObj = Instantiate(employeePrefab) as GameObject;
+			Character newChar = characterObj.GetComponent<Character>();
+			myCompany.applicants.Add(newChar);
+		}
+
+		int numApplOut = Random.Range(0, 3);
+		
+		for(int i = 0; i < numApplOut; i++) {
+			myCompany.applicants.Remove(myCompany.applicants[0]);
 		}
 
 		// Employees quit if their morale reaches 0
@@ -207,10 +238,15 @@ public class Continue : MonoBehaviour {
 		}
 	}
 
+	public void closeEventCanvas () {
+		eventCanvas.enabled = !eventCanvas.enabled;
+	}
+
 	string callEvent() {
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int randEvent = Random.Range(1, 34);
 		string eventText = "";
+		eventCanvas.enabled = !eventCanvas.enabled;
 		
 		switch(randEvent){
 		case 1:
@@ -381,7 +417,7 @@ public class Continue : MonoBehaviour {
 			break;
 		case 32:
 			eventText = "During an office party you try to impress your employees by performing an " +
-				"improvised dance routine. You failed. Staff morale -1, Job security -3";
+				"improvised dance routine. You fail. Staff morale -1, Job security -3";
 			foreach(Character emp in myCompany.characters) {
 				emp.morale--;
 			}

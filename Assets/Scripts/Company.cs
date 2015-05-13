@@ -22,6 +22,7 @@ public class Company : MonoBehaviour {
 	public List<Sprite> chartables;
 	public List<Sprite> originaltables;
 	public List<GameObject> tables;
+	public int[] tableFlowers;
 	public int partialSalaries = 0;
 	public Text weeks;
 	public Text balance;
@@ -48,18 +49,20 @@ public class Company : MonoBehaviour {
 	public Canvas MenuCanvas;
 	public Canvas ConfirmationCanvas;
 
+	public RectTransform jobSecBar;
+
 	void Awake () {
-		// Create 5 starting employees
-		for(int i = 0; i < 7; i++) {
+		// Create starting employees
+		for(int i = 0; i < 3; i++) {
 			GameObject character;
-			Vector3 pos = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
+			Vector3 pos = new Vector3(- 8 + Random.value * 10, - 2 + Random.value * 5, 0);
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
 			Character emp = character.GetComponent<Character>();
 			characters.Add(emp);
 		}
 		
-		// Create 5 starting applicants
-		for(int i = 0; i < 8; i++) {
+		// Create starting applicants
+		for(int i = 0; i < 5; i++) {
 			GameObject character;
 			Vector3 pos = new Vector3(1000, 1000, -100f);
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
@@ -72,10 +75,10 @@ public class Company : MonoBehaviour {
 		// Initialize budget
 		budget = gameObject.AddComponent<Budget>() as Budget;
 		budget.totalSalaries = 0;
-		budget.miscCost = 200;
+		budget.miscCost = 2000;
 		budget.projectRewards = 0;
 		budget.projectPenalties = 0;
-		budget.monthlyAmount = 1500;
+		budget.monthlyAmount = 15000;
 
 		skills = new Dictionary<int, string>();
 		skills[0] = "AI:";
@@ -85,10 +88,20 @@ public class Company : MonoBehaviour {
 		skills[4] = "Networking:";
 		skills[5] = "Web Dev:";
 
-		GameObject projectObj = Instantiate(projectPrefab) as GameObject;
-		Project proj = projectObj.GetComponent<Project>();
+		for(int i = 0; i < 20; i++) {
+			tableFlowers[i] = Random.Range(0,4);
+		}
+
+		for(int i = 0; i < 4; i++) {
+			GameObject projectObj = Instantiate(projectPrefab) as GameObject;
+			Project proj = projectObj.GetComponent<Project>();
+			availableProjects.Add(proj);
+		}
+
+
+
 		// Hard code project for alpha test
-		Project myProject = projectPrefab.GetComponent<Project>();
+		/*Project myProject = projectPrefab.GetComponent<Project>();
 		proj.projName = myProject.projectNames[0];
 		proj.description = myProject.projectDescriptions[0];
 		proj.deadline = 2;
@@ -137,7 +150,8 @@ public class Company : MonoBehaviour {
 		proj4.penalty = 300;
 		proj4.expectedQuality = 40;
 		proj4.category = 5;
-		availableProjects.Add(proj4);
+		availableProjects.Add(proj4);*/
+
 		// Initialize month
 		month = gameObject.AddComponent<Month>() as Month;
 		month.numberOfProjectsFinished = 0;
@@ -175,6 +189,7 @@ public class Company : MonoBehaviour {
 		allocated.text = budget.monthlyAmount.ToString();
 		monthJobSecurity.text = jobSecurity.ToString();
 		jobSec.text = jobSecurity.ToString();
+		jobSecBar.sizeDelta = new Vector2 (jobSecurity * 2, 20);
 
 		if(jobSecurity > 100){
 			jobSecurity = 100;
@@ -186,10 +201,10 @@ public class Company : MonoBehaviour {
 		for (int i = 0; i < characters.Count; i++) {
 			if(characters[i].onProject)
 			{
-				tables[i].GetComponent<SpriteRenderer>().sprite = chartables[characters[i].rand*5];// + Random.Range(0,5)];
+				tables[i].GetComponent<SpriteRenderer>().sprite = chartables[characters[i].rand*5 + tableFlowers[i]];
 			}
 			else{
-				tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[2];
+				tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[tableFlowers[i]];
 			}
 		}
 	}

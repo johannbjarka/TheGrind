@@ -25,20 +25,12 @@ public class SceneSwitcher : MonoBehaviour {
 	}
 
 	public void fadeToTutorial () {
-		/*
-		var pixelater = new PixelateTransition() {
+		var fader = new FadeTransition () {
 			nextScene = Application.loadedLevel == 1 ? 2 : 1,
-			finalScaleEffect = PixelateTransition.PixelateFinalScaleEffect.ToPoint,
-			duration = 1.0f
+			fadedDelay = 0.1f,
+			fadeToColor = Color.black
 		};
-		TransitionKit.instance.transitionWithDelegate(pixelater);
-		*/
-
-		var winder = new WindTransition () {
-			nextScene = 2,
-			duration = 1.0f
-		};
-		TransitionKit.instance.transitionWithDelegate(winder);
+		TransitionKit.instance.transitionWithDelegate(fader);
 	}
 
 	public void fadeToOffice () {

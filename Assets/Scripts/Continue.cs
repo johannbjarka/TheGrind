@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Continue : MonoBehaviour {
 
+	public GameObject projectPrefab;
+	public GameObject employeePrefab;
+
 	public int newBudget;
 	public Text	projName;
 	public Text rewPen;
@@ -154,6 +157,31 @@ public class Continue : MonoBehaviour {
 		if(ranEvent == 1) {
 			eventText.text = callEvent();
 			Debug.Log(eventText);
+		}
+
+		//Add new Projects to Available Projects 0-1 each week
+		int numProjects = Random.Range(0, 2);
+
+		for(int i = 0; i < numProjects; i++) {
+			GameObject projectObj = Instantiate(projectPrefab) as GameObject;
+			Project proj = projectObj.GetComponent<Project>();
+			myCompany.availableProjects.Add(proj);
+		}
+
+		//Add new Applicants, Remove old Applicants, 0-2 in 0-2 out.
+
+		int numApplIn = Random.Range(0, 3);
+		
+		for(int i = 0; i < numApplIn; i++) {
+			GameObject characterObj = Instantiate(employeePrefab) as GameObject;
+			Character newChar = characterObj.GetComponent<Character>();
+			myCompany.applicants.Add(newChar);
+		}
+
+		int numApplOut = Random.Range(0, 3);
+		
+		for(int i = 0; i < numApplOut; i++) {
+			myCompany.characters.Remove(myCompany.characters[0]);
 		}
 
 		// Employees quit if their morale reaches 0
@@ -357,7 +385,7 @@ public class Continue : MonoBehaviour {
 			break;
 		case 32:
 			eventText = "During an office party you try to impress your employees by performing an " +
-				"improvised dance routine. You failed. Staff morale -1, Job security -3";
+				"improvised dance routine. You fail. Staff morale -1, Job security -3";
 			foreach(Character emp in myCompany.characters) {
 				emp.morale--;
 			}

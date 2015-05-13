@@ -123,8 +123,8 @@ public class Character : MonoBehaviour {
 			totalskills += skills[i];
 		}
 
-		speed = Random.Range(1, 6);
-		salary = (int)(totalskills * (1.0 + ((speed - 3) / 10.0)));
+		speed = Random.Range(5, 11);
+		salary = (int)(totalskills * 2 * (1.0 + ((speed - 3) / 10.0))) * 10;
 		morale = Random.Range(3, 8);
 		int genderType = Random.Range(0, 2);
 		if(genderType == 0) {

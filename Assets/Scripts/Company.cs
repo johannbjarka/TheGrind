@@ -92,10 +92,16 @@ public class Company : MonoBehaviour {
 			tableFlowers[i] = Random.Range(0,4);
 		}
 
-		GameObject projectObj = Instantiate(projectPrefab) as GameObject;
-		Project proj = projectObj.GetComponent<Project>();
+		for(int i = 0; i < 4; i++) {
+			GameObject projectObj = Instantiate(projectPrefab) as GameObject;
+			Project proj = projectObj.GetComponent<Project>();
+			availableProjects.Add(proj);
+		}
+
+
+
 		// Hard code project for alpha test
-		Project myProject = projectPrefab.GetComponent<Project>();
+		/*Project myProject = projectPrefab.GetComponent<Project>();
 		proj.projName = myProject.projectNames[0];
 		proj.description = myProject.projectDescriptions[0];
 		proj.deadline = 2;
@@ -144,7 +150,8 @@ public class Company : MonoBehaviour {
 		proj4.penalty = 300;
 		proj4.expectedQuality = 40;
 		proj4.category = 5;
-		availableProjects.Add(proj4);
+		availableProjects.Add(proj4);*/
+
 		// Initialize month
 		month = gameObject.AddComponent<Month>() as Month;
 		month.numberOfProjectsFinished = 0;

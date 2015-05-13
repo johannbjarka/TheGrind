@@ -209,24 +209,38 @@ public class Project : MonoBehaviour {
 		
 	}
 
-	void createProject () {
+	public void createProject () {
 		//employees = new List<Character>();
-		/*int rand = Random.Range(0, projectNames.Length);
+		category = Random.Range (0, 6);
+		int rand;
+		switch(category){
+		case 0:
+			rand = Random.Range(0, 9);
+		case 1:
+			rand = Random.Range(9, 18);
+		case 2:
+			rand = Random.Range(18, 27);
+		case 3:
+			rand = Random.Range(27, 36);
+		case 4:
+			rand = Random.Range(36, 45);
+		case 5:
+			rand = Random.Range(45, 54);
+		}
 		projName = projectNames[rand];
 		description = projectDescriptions[rand];
 		deadline = Random.Range (1, 11);
 		if (deadline < 3) {
-			workAmount = Random.Range (5, 21);
+			workAmount = Random.Range (10, 41);
 		} else if (deadline < 6) {
-			workAmount = Random.Range (20, 61);
+			workAmount = Random.Range (41, 121);
 		} else {
-			workAmount = Random.Range (50, 101);
+			workAmount = Random.Range (100, 201);
 		}
 		initialWorkAmount = workAmount;
-		reward = Random.Range (workAmount - 5, workAmount + 6) * 10;
-		penalty = Random.Range (100, 301);
-		category = Random.Range (0, 13);
-		expectedQuality = (int)(((double)deadline / workAmount) * Random.Range(200, 401));*/
+		reward = Random.Range (workAmount - 5, workAmount + 6) * 10 * 10;
+		penalty = Random.Range (100, 301) * 10;
+		expectedQuality = (int)(((double)deadline / workAmount) * 2 * Random.Range(200, 401));
 		workEstimate = 0;
 		ID = _ID;
 		_ID++;

@@ -52,17 +52,17 @@ public class Company : MonoBehaviour {
 	public RectTransform jobSecBar;
 
 	void Awake () {
-		// Create 5 starting employees
-		for(int i = 0; i < 20; i++) {
+		// Create starting employees
+		for(int i = 0; i < 3; i++) {
 			GameObject character;
-			Vector3 pos = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
+			Vector3 pos = new Vector3(- 8 + Random.value * 10, - 2 + Random.value * 5, 0);
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
 			Character emp = character.GetComponent<Character>();
 			characters.Add(emp);
 		}
 		
-		// Create 5 starting applicants
-		for(int i = 0; i < 8; i++) {
+		// Create starting applicants
+		for(int i = 0; i < 5; i++) {
 			GameObject character;
 			Vector3 pos = new Vector3(1000, 1000, -100f);
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
@@ -75,10 +75,10 @@ public class Company : MonoBehaviour {
 		// Initialize budget
 		budget = gameObject.AddComponent<Budget>() as Budget;
 		budget.totalSalaries = 0;
-		budget.miscCost = 200;
+		budget.miscCost = 2000;
 		budget.projectRewards = 0;
 		budget.projectPenalties = 0;
-		budget.monthlyAmount = 1500;
+		budget.monthlyAmount = 15000;
 
 		skills = new Dictionary<int, string>();
 		skills[0] = "AI:";

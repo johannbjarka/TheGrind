@@ -5514,7 +5514,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
 --- !u!1 &1521961172
 GameObject:
   m_ObjectHideFlags: 0

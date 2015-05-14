@@ -87,6 +87,9 @@ public class Month : MonoBehaviour {
 		// Calls calcFinalBalance once to affect the job security
 		if(calcFinalBalance() > 0) {
 			newAllowance -= myCompany.budget.getBalance() / 2;
+			if(newAllowance < 5000) {
+				newAllowance = 5000;
+			}
 		}
 		return newAllowance;
 	}

@@ -186,7 +186,7 @@ public class Continue : MonoBehaviour {
 		}
 
 		//Add new Projects to Available Projects 0-1 each week
-		int numProjects = Random.Range(0, 2);
+		int numProjects = Random.Range(0, 3);
 
 		for(int i = 0; i < numProjects; i++) {
 			GameObject projectObj = Instantiate(projectPrefab) as GameObject;
@@ -196,7 +196,7 @@ public class Continue : MonoBehaviour {
 
 		//Add new Applicants, Remove old Applicants, 0-2 in 0-2 out.
 
-		int numApplIn = Random.Range(0, 3);
+		int numApplIn = Random.Range(0, 4);
 		
 		for(int i = 0; i < numApplIn; i++) {
 			Vector3 pos = new Vector3(1000, 1000, -100f);
@@ -205,8 +205,8 @@ public class Continue : MonoBehaviour {
 			myCompany.applicants.Add(newChar);
 		}
 
-		if(myCompany.applicants.Count > 2) {
-			int numApplOut = Random.Range(0, 3);
+		if(myCompany.applicants.Count > 1) {
+			int numApplOut = Random.Range(0, 2);
 			for(int i = 0; i < numApplOut; i++) {
 				myCompany.applicants.Remove(myCompany.applicants[0]);
 			}

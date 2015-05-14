@@ -8,6 +8,7 @@ using System.Collections.Generic;
 public class CreateScrollList : MonoBehaviour {
 
 	Company myCompany;
+	ProgressBar progBar;
 
 	public GameObject employeePanel;
 	public GameObject availableEmployeePanel;
@@ -29,6 +30,7 @@ public class CreateScrollList : MonoBehaviour {
 	void Start () {
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
 	}
 
 	public void PopulateEmployeeList () {
@@ -80,7 +82,6 @@ public class CreateScrollList : MonoBehaviour {
 			}
 		}
 
-		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
 		progBar.scaleFill(ratio);
 
 		foreach (var item in myCompany.characters) {
@@ -124,8 +125,7 @@ public class CreateScrollList : MonoBehaviour {
 				break;
 			}
 		}
-		
-		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
+
 		progBar.scaleInitialFill(ratio);
 		
 		foreach (var item in myCompany.characters) {
@@ -184,7 +184,6 @@ public class CreateScrollList : MonoBehaviour {
 				break;
 			}
 		}
-		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
 		progBar.scaleRemoveFill(ratio);
 	}
 
@@ -212,7 +211,6 @@ public class CreateScrollList : MonoBehaviour {
 				break;
 			}
 		}
-		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
 		progBar.scaleFill(ratio);
 	}
 
@@ -239,7 +237,6 @@ public class CreateScrollList : MonoBehaviour {
 				break;
 			}
 		}
-		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
 		progBar.scaleInitialFill(ratio);
 	}
 
@@ -266,7 +263,6 @@ public class CreateScrollList : MonoBehaviour {
 				break;
 			}
 		}
-		ProgressBar progBar = GameObject.Find("Main Camera").GetComponent<ProgressBar>();
 		progBar.scaleRemoveFill(ratio);
 	}
 
@@ -365,18 +361,20 @@ public class CreateScrollList : MonoBehaviour {
 	public void fire (Text _id){
 		//TODO: Take plant.
 		click.playSound();
-
+		float ratio = 0.0f;
 		int id = Int32.Parse(_id.text);
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		foreach(Project proj in myCompany.projects){
 			foreach(Character emp in proj.employees){
 				if(emp.ID == id){
+					proj.workEstimate -= emp.speed * proj.deadline;
 					proj.employees.Remove(emp);
 					break;
 				}
 			}
-			break;
+			ratio = (float)proj.workEstimate / proj.initialWorkAmount;
 		}
+
 		foreach(Character emp in myCompany.characters){
 			if(emp.ID == id){
 				myCompany.partialSalaries += (int)(emp.salary * ((myCompany.weeksPassed % 4) / 4.0));

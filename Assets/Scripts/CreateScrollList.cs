@@ -254,6 +254,7 @@ public class CreateScrollList : MonoBehaviour {
 						emp.onProject = false;
 						emp.project = "";
 						proj.workEstimate -= emp.speed * proj.deadline;
+						emp.transform.position = new Vector3(-8 + UnityEngine.Random.value * 10, -2 + UnityEngine.Random.value * 5, 0);
 						proj.employees.Remove(emp);
 						Destroy(projectEmployeePanel);
 						break;
@@ -361,7 +362,6 @@ public class CreateScrollList : MonoBehaviour {
 	public void fire (Text _id){
 		//TODO: Take plant.
 		click.playSound();
-		float ratio = 0.0f;
 		int id = Int32.Parse(_id.text);
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		foreach(Project proj in myCompany.projects){
@@ -372,7 +372,6 @@ public class CreateScrollList : MonoBehaviour {
 					break;
 				}
 			}
-			ratio = (float)proj.workEstimate / proj.initialWorkAmount;
 		}
 
 		foreach(Character emp in myCompany.characters){

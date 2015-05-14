@@ -102,7 +102,7 @@ public class Continue : MonoBehaviour {
 					// Remove employees from the project
 					foreach(Character emp in myCompany.projects[i].employees) {
 						emp.onProject = false;
-						emp.transform.position = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
+						emp.transform.position = new Vector3(-8 + Random.value * 10, -2 + Random.value * 5, 0);
 					}
 					myCompany.projects[i].isFinished = true;
 				}

@@ -227,12 +227,18 @@ public class Project : MonoBehaviour {
 		projName = projectNames[rand];
 		description = projectDescriptions[rand];
 		deadline = Random.Range (1, 11);
-		if (deadline < 3) {
-			workAmount = Random.Range (10, 41);
-		} else if (deadline < 6) {
-			workAmount = Random.Range (41, 121);
+		if (deadline < 2) {
+			workAmount = Random.Range (10, 26);
+		} else if (deadline < 3) {
+			workAmount = Random.Range (20, 41);
+		} else if (deadline < 5) {
+			workAmount = Random.Range (40, 81);
+		} else if (deadline < 7) {
+			workAmount = Random.Range (70, 121);
+		} else if (deadline < 9) {
+			workAmount = Random.Range (110, 161);
 		} else {
-			workAmount = Random.Range (100, 201);
+			workAmount = Random.Range (160, 221);
 		}
 		initialWorkAmount = workAmount;
 		isFinished = false;

@@ -245,7 +245,7 @@ public class Project : MonoBehaviour {
 		reward = Random.Range (workAmount - 5, workAmount + 6) * 10 * 10;
 		//penalty = Random.Range (100, 301) * 10;
 		penalty = (int)(reward * Random.Range(0.2f, 0.5f));
-		expectedQuality = (int)(((double)deadline / workAmount) * 2 * Random.Range(200, 401));
+		expectedQuality = (int)(((double)deadline / workAmount) * 2.5 * Random.Range(200, 401));
 		workEstimate = 0;
 		ID = _ID;
 		_ID++;
@@ -259,7 +259,7 @@ public class Project : MonoBehaviour {
 	public char calcGrade () {
 		int totalQuality = 0;
 		foreach (Character emp in employees) {
-			totalQuality += (int)(emp.skills[this.category] * ((double)emp.speed / 2));
+			totalQuality += (int)(emp.skills[this.category] * ((double)emp.speed / 3.5));
 		}
 		int quality = totalQuality / employees.Count;
 		int ratio = (int)(((double)quality / this.expectedQuality) * 10);

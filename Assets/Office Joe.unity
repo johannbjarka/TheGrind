@@ -745,6 +745,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -1845,15 +1846,13 @@ MonoBehaviour:
   projectPrefab: {fileID: 0}
   employeePrefab: {fileID: 0}
   newBudget: 0
-  hasQuit: {fileID: 0}
-  detailedQuit: {fileID: 0}
-  quitSprite: {fileID: 0}
-  projectDone: {fileID: 801940004}
   performanceReview: {fileID: 1342040044}
   eventText: {fileID: 0}
   eventCanvas: {fileID: 0}
   projectFinishedPanel: {fileID: 186096, guid: 035434eefa91d464eb3e21d55d7d0eba, type: 2}
   projectFinishedContentPanel: {fileID: 20023545}
+  employeeQuitsPanel: {fileID: 0}
+  employeeQuitsContentPanel: {fileID: 0}
   EmployeeCanvas: {fileID: 1510263611}
   ApplicantCanvas: {fileID: 1211339362}
   ComputerCanvas: {fileID: 894505897}
@@ -3076,6 +3075,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -3508,6 +3508,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -3893,6 +3894,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -4609,7 +4611,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 392322032}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_RenderMode: 1
   m_Camera: {fileID: 461498193}
@@ -6585,6 +6587,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -10256,6 +10259,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -11545,6 +11549,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: .0500000007
   sprite: {fileID: 0}
@@ -12323,6 +12328,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -14508,6 +14514,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -16128,6 +16135,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -16461,6 +16469,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -22066,6 +22075,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -23843,6 +23853,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -23991,6 +24002,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -25057,6 +25069,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}
@@ -26344,6 +26357,7 @@ MonoBehaviour:
   ID: 0
   morale: 0
   onProject: 0
+  hasQuit: 0
   project: 
   movSpeed: 0
   sprite: {fileID: 0}

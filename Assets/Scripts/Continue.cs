@@ -92,7 +92,7 @@ public class Continue : MonoBehaviour {
 					GameObject newPanel = Instantiate (projectFinishedPanel) as GameObject;
 					ProjectFinishPanel panel = newPanel.GetComponent<ProjectFinishPanel>();
 					panel.projName.text = myCompany.projects[i].projName;
-					panel.rewPen.text = "Reward for project";
+					panel.rewPen.text = "Reward for project:";
 					panel.rewPenAmount.text = "$" + myCompany.projects[i].reward.ToString();
 					panel.grade.text = myCompany.projects[i].calcGrade().ToString();
 					panel.isProjDone.text = "Good job! You finished the project in time.";

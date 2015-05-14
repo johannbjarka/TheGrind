@@ -45,7 +45,7 @@ public class CreateScrollList : MonoBehaviour {
 				panel.moraleBar.sizeDelta = new Vector2(item.morale * 10, 20);
 				panel.speedLabel.text = item.speed.ToString();
 				panel.speedBar.sizeDelta = new Vector2(item.speed * 10, 20);
-				panel.salaryLabel.text = item.salary.ToString();
+				panel.salaryLabel.text = "$" + item.salary.ToString();
 				panel.employeeIcon.sprite = item.sprite;
 				panel.ID.text = item.ID.ToString();
 				if(item.onProject) {
@@ -277,7 +277,7 @@ public class CreateScrollList : MonoBehaviour {
 			panel.moraleBar.sizeDelta = new Vector2(item.morale * 10, 20);
 			panel.speedLabel.text = item.speed.ToString();
 			panel.speedBar.sizeDelta = new Vector2(item.speed * 10, 20);
-			panel.salaryLabel.text = item.salary.ToString();
+			panel.salaryLabel.text = "$" + item.salary.ToString();
 			panel.employeeIcon.sprite = item.sprite;
 			panel.ID.text = item.ID.ToString();
 			newPanel.transform.SetParent (applicantContentPanel);

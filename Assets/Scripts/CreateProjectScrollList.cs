@@ -33,8 +33,8 @@ public class CreateProjectScrollList : MonoBehaviour {
 					panel.Deadline.text = project.deadline.ToString() + " weeks";
 				}
 				panel.Description.text = project.description;
-				panel.Reward.text = project.reward.ToString();
-				panel.Penalty.text = project.penalty.ToString();
+				panel.Reward.text = "$" + project.reward.ToString();
+				panel.Penalty.text = "$" + project.penalty.ToString();
 				panel.ID.text = project.ID.ToString();
 				panel.Category.text = myCompany.getDescription(project.category);
 				newProjectPanel.transform.SetParent (AvailableProjectContentPanel);
@@ -57,8 +57,8 @@ public class CreateProjectScrollList : MonoBehaviour {
 					panel.Deadline.text = project.deadline.ToString() + " weeks";
 				}
 				panel.Description.text = project.description;
-				panel.Reward.text = project.reward.ToString();
-				panel.Penalty.text = project.penalty.ToString();
+				panel.Reward.text = "$" + project.reward.ToString();
+				panel.Penalty.text = "$" + project.penalty.ToString();
 				panel.ID.text = project.ID.ToString();
 				float _ratio = (float)project.workEstimate / project.initialWorkAmount;
 				int ratio = (int)(_ratio * 100);

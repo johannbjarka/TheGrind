@@ -180,13 +180,13 @@ public class Company : MonoBehaviour {
 			balance.color = Color.black;
 			balance2.color = Color.black;
 		}
-		balance.text = budget.getBalance().ToString();
-		balance2.text = budget.getBalance().ToString();
-		salaries.text = budget.totalSalaries.ToString();
-		misc.text = budget.miscCost.ToString();
-		income.text = budget.projectRewards.ToString();
-		penalties.text = budget.projectPenalties.ToString();
-		allocated.text = budget.monthlyAmount.ToString();
+		balance.text = "$" + budget.getBalance().ToString();
+		balance2.text = "$" + budget.getBalance().ToString();
+		salaries.text = "$" + budget.totalSalaries.ToString();
+		misc.text = "$" + budget.miscCost.ToString();
+		income.text = "$" + budget.projectRewards.ToString();
+		penalties.text = "$" + budget.projectPenalties.ToString();
+		allocated.text = "$" + budget.monthlyAmount.ToString();
 		monthJobSecurity.text = jobSecurity.ToString();
 		jobSec.text = jobSecurity.ToString();
 		jobSecBar.sizeDelta = new Vector2 (jobSecurity * 2, 20);
@@ -221,9 +221,9 @@ public class Company : MonoBehaviour {
 
 	public void setTextFields (int monthBal) {
 		projFinished.text = month.numberOfProjectsFinished.ToString();
-		monthBalance.text = monthBal.ToString();
+		monthBalance.text = "$" + monthBal.ToString();
 		grade.text = month.grade.ToString();
-		nextBudget.text = budget.monthlyAmount.ToString();
+		nextBudget.text = "$" + budget.monthlyAmount.ToString();
 	}
 
 	int getTotalSalaries () {

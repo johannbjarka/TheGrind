@@ -278,21 +278,21 @@ public class Project : MonoBehaviour {
 		myCompany.month.totalQuality += ratio;
 
 		if (ratio >= 9) {
-			myCompany.jobSecurity += 2;
+			myCompany.jobSecurity += 5;
 			return 'A';
 		} else if (ratio == 8) {
-			myCompany.jobSecurity += 1;
+			myCompany.jobSecurity += 2;
 			return 'B';
 		} else if (ratio == 7) {
 			return 'C';
 		} else if (ratio == 6) {
-			myCompany.jobSecurity -= 1;
+			myCompany.jobSecurity -= 2;
 			return 'D';
 		} else if (ratio == 5) {
-			myCompany.jobSecurity -= 2;
+			myCompany.jobSecurity -= 4;
 			return 'E';
 		} else {
-			myCompany.jobSecurity -= 3;
+			myCompany.jobSecurity -= 8;
 			return 'F';
 		}
 	}

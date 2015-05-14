@@ -43,6 +43,7 @@ public class Continue : MonoBehaviour {
 	public Canvas GotFiredCanvas;
 	public Canvas PerformanceReviewCanvas;
 	public Canvas ProjectFinishedCanvas;
+	public Canvas TooManyCanvas;
 	ClickSound click;
 
 	void Start() {
@@ -65,6 +66,7 @@ public class Continue : MonoBehaviour {
 		GotFiredCanvas.enabled = false;
 		PerformanceReviewCanvas.enabled = false;
 		ProjectFinishedCanvas.enabled = false;
+		TooManyCanvas.enabled = false;
 
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;

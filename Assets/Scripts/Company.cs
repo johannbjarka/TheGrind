@@ -53,7 +53,7 @@ public class Company : MonoBehaviour {
 
 	void Awake () {
 		// Create starting employees
-		for(int i = 0; i < 3; i++) {
+		for(int i = 0; i < 5; i++) {
 			GameObject character;
 			Vector3 pos = new Vector3(- 8 + Random.value * 10, - 2 + Random.value * 5, 0);
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;

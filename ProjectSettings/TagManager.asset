@@ -11,6 +11,8 @@ TagManager:
   - MuteButton
   - Quit
   - Project
+  - Watercooler
+  - TooMany
   layers:
   - Default
   - TransparentFX

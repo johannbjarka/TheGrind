@@ -347,15 +347,21 @@ public class CreateScrollList : MonoBehaviour {
 		click.playSound();
 		int id = Int32.Parse(_id.text);
 
-		foreach(Character emp in myCompany.applicants){
-			if(emp.ID == id){
-				myCompany.partialSalaries += (int)(emp.salary * ((4 - (myCompany.weeksPassed % 4)) / 4.0));
-				myCompany.partialSalaries -= emp.salary;
-				myCompany.characters.Add(emp);
-				myCompany.applicants.Remove(emp);
-				emp.gameObject.transform.position = new Vector3(0, 0, 0);
-				Destroy(applicantPrefab);
-				break;
+		if(myCompany.characters.Count == myCompany.maxEmployees) {
+			TooManyEmployees tooMany = GameObject.FindWithTag("TooMany").GetComponent<TooManyEmployees>();
+			tooMany.openTooMany();
+		}
+		else {
+			foreach(Character emp in myCompany.applicants){
+				if(emp.ID == id){
+					myCompany.partialSalaries += (int)(emp.salary * ((4 - (myCompany.weeksPassed % 4)) / 4.0));
+					myCompany.partialSalaries -= emp.salary;
+					myCompany.characters.Add(emp);
+					myCompany.applicants.Remove(emp);
+					emp.gameObject.transform.position = new Vector3(-8 + UnityEngine.Random.value * 10, -2 + UnityEngine.Random.value * 5, 0);
+					Destroy(applicantPrefab);
+					break;
+				}
 			}
 		}
 	}

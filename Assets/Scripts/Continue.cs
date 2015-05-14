@@ -6,8 +6,16 @@ using UnityEngine.UI;
 public class Continue : MonoBehaviour {
 
 	private string[] reason = {
-		"because of your terrible management skills.",
-		"because the office was a hostile environment."
+		"steals some office equipment on the way out.",
+		"drops trou' and moons you.",
+		"tells you to say goodbye to these.",
+		"tells you exactly what you are.",
+		"thanks you for not being like all the others.",
+		"is going back to school.",
+		"wants to travel and concentrate on music.",
+		"didn't like the office's boys club mentality.",
+		"quit because of your terrible management skills.",
+		"felt the office was a hostile environment."
 	};
 	public GameObject projectPrefab;
 	public GameObject employeePrefab;
@@ -219,10 +227,10 @@ public class Continue : MonoBehaviour {
 				EmployeeQuitsPanel panel = newPanel.GetComponent<EmployeeQuitsPanel>();
 				panel.hasQuit.text = myCompany.characters[i].characterName + " has quit!";
 				if(myCompany.characters[i].gender == 'M') {
-					panel.detailedQuit.text = "He quit " + reason[Random.Range(0, reason.Length)];
+					panel.detailedQuit.text = "He " + reason[Random.Range(0, reason.Length)];
 				}
 				else {
-					panel.detailedQuit.text = "She quit " + reason[Random.Range(0, reason.Length)];
+					panel.detailedQuit.text = "She " + reason[Random.Range(0, reason.Length)];
 				}
 				panel.quitImage.sprite = myCompany.characters[i].sprite;
 	

@@ -59,6 +59,8 @@ public class Character : MonoBehaviour {
 		"Gemma"
 	};
 	private string[] lastNames = {
+		"Muzone",
+		"Little",
 		"Barksdale",
 		"Bell",
 		"McNulty",
@@ -138,14 +140,14 @@ public class Character : MonoBehaviour {
 		int genderType = Random.Range(0, 2);
 		if(genderType == 0) {
 			gender = 'M';
-			characterName = firstNames[Random.Range(0, 36)] + " " + lastNames[Random.Range(0, lastNames.Length())];
+			characterName = firstNames[Random.Range(0, 36)] + " " + lastNames[Random.Range(0, lastNames.Length)];
 			rand = Random.Range(10, sprites.Length);
 			anim.runtimeAnimatorController = controllers[rand];
 			sprite = sprites[rand];
 		}
 		else {
 			gender = 'F';
-			characterName = firstNames[Random.Range(27, firstNames.Length())] + " " + lastNames[Random.Range(0, lastNames.Length())];
+			characterName = firstNames[Random.Range(27, firstNames.Length)] + " " + lastNames[Random.Range(0, lastNames.Length)];
 			rand = Random.Range(0, 9);
 			anim.runtimeAnimatorController = controllers[rand];
 			sprite = sprites[rand];

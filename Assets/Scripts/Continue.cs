@@ -107,9 +107,10 @@ public class Continue : MonoBehaviour {
 					myCompany.projects[i].isFinished = true;
 				}
 			}
+
 			// If a project's deadline has passed and it's not finished we 
 			// remove it from projects and add the penalty to projectPenalties. 
-			if(myCompany.projects[i].deadline == 0 && myCompany.projects[i].workAmount > 0) {
+			if(myCompany.projects[i].deadline <= 0 && myCompany.projects[i].workAmount > 0) {
 				if(!myCompany.projects[i].isFinished) {
 					myCompany.budget.projectPenalties += myCompany.projects[i].penalty;
 					GameObject newPanel = Instantiate (projectFinishedPanel) as GameObject;
@@ -137,6 +138,18 @@ public class Continue : MonoBehaviour {
 			   (myCompany.projects[i].deadline == 0)) {
 				
 				myCompany.projects.Remove(myCompany.projects[i]);
+			}
+		}
+
+		foreach(Project proj in myCompany.availableProjects) {
+			if(proj.deadline <= 0) {
+				proj.isFinished = true;
+			}
+		}
+
+		for(int i = 0; i < myCompany.availableProjects.Count; i++) {
+			if(myCompany.availableProjects[i].isFinished) {
+				myCompany.availableProjects.Remove(myCompany.availableProjects[i]);
 			}
 		}
 

@@ -7,16 +7,11 @@ public class Continue : MonoBehaviour {
 
 	private string[] reason = {
 		"because of your terrible management skills.",
-		"because the office was a hostile environment.",
-		""
+		"because the office was a hostile environment."
 	};
 	public GameObject projectPrefab;
 	public GameObject employeePrefab;
 	public int newBudget;
-	public Text hasQuit;
-	public Text detailedQuit;
-	public Sprite quitSprite;
-	public Canvas projectDone;
 	public Canvas performanceReview;
 	Company myCompany;
 	public Text eventText;
@@ -24,6 +19,9 @@ public class Continue : MonoBehaviour {
 
 	public GameObject projectFinishedPanel;
 	public Transform projectFinishedContentPanel;
+
+	public GameObject employeeQuitsPanel;
+	public Transform employeeQuitsContentPanel;
 	public Canvas EmployeeCanvas;
 	public Canvas ApplicantCanvas;
 	public Canvas ComputerCanvas;
@@ -192,33 +190,52 @@ public class Continue : MonoBehaviour {
 			GameObject characterObj = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
 			Character newChar = characterObj.GetComponent<Character>();
 			myCompany.applicants.Add(newChar);
-
 		}
 
-		if(myCompany.applicants.Count != 0) {
+		if(myCompany.applicants.Count > 2) {
 			int numApplOut = Random.Range(0, 3);
 			for(int i = 0; i < numApplOut; i++) {
 				myCompany.applicants.Remove(myCompany.applicants[0]);
 			}
 		}
 
-
 		// Employees quit if their morale reaches 0
-		foreach(Character emp in myCompany.characters) {
-			if(emp.morale <= 0) {
-				// TODO: send message that employee quit
-				myCompany.characters.Remove(emp);
-
-				hasQuit.text = emp.characterName + " has quit!";
-				if(emp.gender == 'M') {
-					detailedQuit.text = "He quit " + reason[Random.Range(0, reason.Length)];
+		for(int i = 0; i < myCompany.characters.Count; i++) {
+			if(myCompany.characters[i].morale <= 0 && !myCompany.characters[i].hasQuit) {
+				GameObject newPanel = Instantiate(employeeQuitsPanel) as GameObject;
+				EmployeeQuitsPanel panel = newPanel.GetComponent<EmployeeQuitsPanel>();
+				panel.hasQuit.text = myCompany.characters[i].characterName + " has quit!";
+				if(myCompany.characters[i].gender == 'M') {
+					panel.detailedQuit.text = "He quit " + reason[Random.Range(0, reason.Length)];
 				}
 				else {
-					detailedQuit.text = "She quit " + reason[Random.Range(0, reason.Length)];
+					panel.detailedQuit.text = "She quit " + reason[Random.Range(0, reason.Length)];
 				}
-				quitSprite = emp.sprite;
-				EmployeeQuits quit = GameObject.FindWithTag("Quit").GetComponent<EmployeeQuits>();
-				quit.quit();
+				panel.quitImage.sprite = myCompany.characters[i].sprite;
+	
+				newPanel.transform.SetParent (employeeQuitsContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+				panel.transform.position = new Vector3(0, -2f, 0);
+
+				myCompany.characters[i].hasQuit = true;
+				// Remove employee from project if he was on one
+				foreach(Project proj in myCompany.projects){
+					foreach(Character emp in proj.employees){
+						if(emp.ID == myCompany.characters[i].ID){
+							proj.employees.Remove(emp);
+							break;
+						}
+					}
+					break;
+				}
+				// Calculate partial salary and remove from the company
+				myCompany.partialSalaries += (int)(myCompany.characters[i].salary * ((myCompany.weeksPassed % 4) / 4.0));
+				myCompany.characters[i].gameObject.transform.position = new Vector3(-1000, -1000, 0);
+			}
+		}
+		for(int i = 0; i < myCompany.characters.Count; i++) {
+			if(myCompany.characters[i].morale <= 0) {
+				myCompany.characters.Remove(myCompany.characters[i]);
 			}
 		}
 		if(myCompany.jobSecurity <= 25){
@@ -436,6 +453,12 @@ public class Continue : MonoBehaviour {
 	}
 
 	public void destroyPanel () {
+		click.playSound();
 		Destroy(projectFinishedPanel);
+	}
+
+	public void destroyQuitPanel () {
+		click.playSound();
+		Destroy(employeeQuitsPanel);
 	}
 }

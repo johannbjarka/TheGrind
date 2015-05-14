@@ -102,6 +102,7 @@ public class Character : MonoBehaviour {
 	private static int _ID = 0;
 	public int morale;
 	public bool onProject = false;
+	public bool hasQuit = false;
 	public string project;
 	public float movSpeed;
 	public Sprite sprite;

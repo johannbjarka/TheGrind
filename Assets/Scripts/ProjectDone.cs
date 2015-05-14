@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class ProjectDone : MonoBehaviour {
 
 	public Canvas projectDone;
-	private bool isOpen = false;
 
 	void Update () {
 		// Hacky way to check if canvas has child elements
@@ -16,12 +15,5 @@ public class ProjectDone : MonoBehaviour {
 		else {
 			projectDone.enabled = true;
 		}
-	}
-	
-	public void openProjectDone () {
-		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
-		click.playSound();
-		isOpen = !isOpen;
-		projectDone.enabled = !projectDone.enabled;
 	}
 }

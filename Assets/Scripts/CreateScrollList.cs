@@ -34,30 +34,32 @@ public class CreateScrollList : MonoBehaviour {
 	public void PopulateEmployeeList () {
 		emptyEmployeeList ();
 		foreach (var item in myCompany.characters) {
-			GameObject newPanel = Instantiate (employeePanel) as GameObject;
-			EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
-			panel.nameLabel.text = item.characterName;
-			panel.genderLabel.text = item.gender.ToString();
-			panel.moraleLabel.text = item.morale.ToString();
-			panel.moraleBar.sizeDelta = new Vector2(item.morale * 10, 20);
-			panel.speedLabel.text = item.speed.ToString();
-			panel.speedBar.sizeDelta = new Vector2(item.speed * 10, 20);
-			panel.salaryLabel.text = item.salary.ToString();
-			panel.employeeIcon.sprite = item.sprite;
-			panel.ID.text = item.ID.ToString();
-			if(item.onProject) {
-				if(item.project.Length > 12) {
-					panel.project.text = item.project.Substring(0, 9) + "...";
+			if(!item.hasQuit) {
+				GameObject newPanel = Instantiate (employeePanel) as GameObject;
+				EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
+				panel.nameLabel.text = item.characterName;
+				panel.genderLabel.text = item.gender.ToString();
+				panel.moraleLabel.text = item.morale.ToString();
+				panel.moraleBar.sizeDelta = new Vector2(item.morale * 10, 20);
+				panel.speedLabel.text = item.speed.ToString();
+				panel.speedBar.sizeDelta = new Vector2(item.speed * 10, 20);
+				panel.salaryLabel.text = item.salary.ToString();
+				panel.employeeIcon.sprite = item.sprite;
+				panel.ID.text = item.ID.ToString();
+				if(item.onProject) {
+					if(item.project.Length > 12) {
+						panel.project.text = item.project.Substring(0, 9) + "...";
+					}
+					else {
+						panel.project.text = item.project;
+					}
 				}
 				else {
-					panel.project.text = item.project;
+					panel.project.text = "None";
 				}
+				newPanel.transform.SetParent (employeeContentPanel);
+				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 			}
-			else {
-				panel.project.text = "None";
-			}
-			newPanel.transform.SetParent (employeeContentPanel);
-			panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 		}
 	}
 
@@ -82,7 +84,7 @@ public class CreateScrollList : MonoBehaviour {
 		progBar.scaleFill(ratio);
 
 		foreach (var item in myCompany.characters) {
-			if(!item.onProject){
+			if(!item.onProject && !item.hasQuit){
 				GameObject newPanel = Instantiate (availableEmployeePanel) as GameObject;
 				EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 
@@ -127,7 +129,7 @@ public class CreateScrollList : MonoBehaviour {
 		progBar.scaleInitialFill(ratio);
 		
 		foreach (var item in myCompany.characters) {
-			if(!item.onProject){
+			if(!item.onProject && !item.hasQuit){
 				GameObject newPanel = Instantiate (initialAvailableEmployeePanel) as GameObject;
 				EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 				
@@ -373,6 +375,7 @@ public class CreateScrollList : MonoBehaviour {
 					break;
 				}
 			}
+			break;
 		}
 		foreach(Character emp in myCompany.characters){
 			if(emp.ID == id){

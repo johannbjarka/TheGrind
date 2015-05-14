@@ -237,7 +237,8 @@ public class Project : MonoBehaviour {
 		initialWorkAmount = workAmount;
 		isFinished = false;
 		reward = Random.Range (workAmount - 5, workAmount + 6) * 10 * 10;
-		penalty = Random.Range (100, 301) * 10;
+		//penalty = Random.Range (100, 301) * 10;
+		penalty = (int)(reward * Random.Range(0.2f, 0.5f));
 		expectedQuality = (int)(((double)deadline / workAmount) * 2 * Random.Range(200, 401));
 		workEstimate = 0;
 		ID = _ID;

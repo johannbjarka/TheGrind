@@ -245,7 +245,7 @@ public class Project : MonoBehaviour {
 		reward = Random.Range (workAmount - 5, workAmount + 6) * 10 * 10;
 		//penalty = Random.Range (100, 301) * 10;
 		penalty = (int)(reward * Random.Range(0.2f, 0.5f));
-		expectedQuality = (int)(((double)deadline / workAmount) * 2.5 * Random.Range(200, 401));
+		expectedQuality = (int)(((double)deadline / workAmount) * 1.9 * Random.Range(295, 305));
 		workEstimate = 0;
 		ID = _ID;
 		_ID++;
@@ -257,15 +257,26 @@ public class Project : MonoBehaviour {
 	}
 
 	public char calcGrade () {
-		int totalQuality = 0;
+		/*int totalQuality = 0;
 		foreach (Character emp in employees) {
 			totalQuality += (int)(emp.skills[this.category] * ((double)emp.speed / 3.5));
 		}
 		int quality = totalQuality / employees.Count;
+		Debug.Log("Expected: " + this.expectedQuality.ToString() + " Actual: " + quality.ToString());
 		int ratio = (int)(((double)quality / this.expectedQuality) * 10);
+		myCompany.month.totalQuality += ratio;*/
 
+		int totalQuality = 0;
+		foreach (Character emp in employees) {
+			totalQuality += emp.skills[this.category];
+		}
+		double qual = (double)totalQuality / employees.Count;
+		//Debug.Log("Expected: " + this.expectedQuality.ToString() + " Actual: " + quality.ToString());
+		//int ratio = (int)(((double)quality / this.expectedQuality) * 10);
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
+		int ratio = (int)(qual / 2);
 		myCompany.month.totalQuality += ratio;
+
 		if (ratio >= 9) {
 			myCompany.jobSecurity += 2;
 			return 'A';

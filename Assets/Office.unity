@@ -1276,7 +1276,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 76506335}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: .99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7991,7 +7991,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1552521387}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: .99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -17567,7 +17567,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 448863840}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: .99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18484,7 +18484,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 699788897}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: .99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -23615,7 +23615,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1847763968}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: .99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -25151,7 +25151,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1961808744}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: .99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -26792,7 +26792,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 502917337}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: .99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -27660,6 +27660,6 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 1.15395689}
+  m_Offset: {x: 0, y: 1.19991815}
   serializedVersion: 2
-  m_Size: {x: 4.80000019, y: .392086387}
+  m_Size: {x: 4.80000019, y: .484008938}

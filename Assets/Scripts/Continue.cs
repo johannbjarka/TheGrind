@@ -245,6 +245,7 @@ public class Continue : MonoBehaviour {
 				foreach(Project proj in myCompany.projects){
 					foreach(Character emp in proj.employees){
 						if(emp.ID == myCompany.characters[i].ID){
+							proj.workEstimate -= emp.speed * proj.deadline;
 							proj.employees.Remove(emp);
 							break;
 						}

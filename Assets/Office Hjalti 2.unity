@@ -1534,6 +1534,7 @@ MonoBehaviour:
   GotFiredCanvas: {fileID: 1522317268}
   PerformanceReviewCanvas: {fileID: 1342040044}
   ProjectFinishedCanvas: {fileID: 1778919328}
+  TooManyCanvas: {fileID: 0}
 --- !u!1 &125381965
 GameObject:
   m_ObjectHideFlags: 0

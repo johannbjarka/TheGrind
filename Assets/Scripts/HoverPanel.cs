@@ -21,7 +21,6 @@ public class HoverPanel : MonoBehaviour {
 
 
 	public void closeHoverPanel() {
-		Debug.Log ("Destroying");
 		GameObject.Destroy (HoverPanelPrefab);
 	}
 }

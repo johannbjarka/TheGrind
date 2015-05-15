@@ -528,6 +528,7 @@ public class CreateScrollList : MonoBehaviour {
 					myCompany.characters.Add(emp);
 					myCompany.applicants.Remove(emp);
 					emp.gameObject.transform.position = new Vector3(-8 + UnityEngine.Random.value * 10, -2 + UnityEngine.Random.value * 5, 0);
+					emp.gameObject.transform.localScale = new Vector2(1,1);
 					Destroy(applicantPrefab);
 					myCompany.IncrementEmployeeNumber();
 					break;

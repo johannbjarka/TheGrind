@@ -23,6 +23,7 @@ public class ComputerMenu : MonoBehaviour {
 	}
 
 	public void openEmployeeRecords () {
+		openComputerMenuPanel ();
 		employeeRecordsIsOpen = !employeeRecordsIsOpen;
 		EmployeeRecordsCanvas.enabled = !EmployeeRecordsCanvas.enabled;
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
@@ -30,6 +31,7 @@ public class ComputerMenu : MonoBehaviour {
 	}
 
 	public void openAvailableProjects () {
+		openComputerMenuPanel ();
 		availableProjectsIsOpen = !availableProjectsIsOpen;
 		AvailableProjectsCanvas.enabled = !AvailableProjectsCanvas.enabled;
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
@@ -37,6 +39,7 @@ public class ComputerMenu : MonoBehaviour {
 	}
 
 	public void openApplicantsMenu () {
+		openComputerMenuPanel ();
 		applicantsMenuIsOpen = !applicantsMenuIsOpen;
 		ApplicantsCanvas.enabled = !ApplicantsCanvas.enabled;
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
@@ -44,6 +47,7 @@ public class ComputerMenu : MonoBehaviour {
 	}
 
 	public void openCurrentProjects () {
+		openComputerMenuPanel ();
 		currentProjectsIsOpen = !currentProjectsIsOpen;
 		CurrentProjectsCanvas.enabled = !CurrentProjectsCanvas.enabled;
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();

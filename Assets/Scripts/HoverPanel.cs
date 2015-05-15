@@ -10,9 +10,12 @@ public class HoverPanel : MonoBehaviour {
 	public Button SkillsButton;
 	public Button FireButton;
 
+	GameObject myCamera;
+	CreateScrollList myList;
 	// Use this for initialization
 	void Start () {
-	
+		myCamera = GameObject.Find ("Main Camera");
+		myList = myCamera.GetComponent<CreateScrollList> ();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +26,11 @@ public class HoverPanel : MonoBehaviour {
 
 	public void closeHoverPanel() {
 		GameObject.Destroy (HoverPanelPrefab);
+	}
+
+	public void fireEmployee() {
+		myList.fire (this.CharacterID);
+		closeHoverPanel ();
 	}
 
 

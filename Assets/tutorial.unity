@@ -212,8 +212,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This button will advance the game by one week! Press this when you have
-    finished delegating projects to employees!
+  m_Text: This button will advance the game by one week. Press this when you have
+    finished delegating projects to employees.
 --- !u!222 &54871811
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1214,7 +1214,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: That's it for the tutorial! We are sure you will get the rest! Have fun,
+  m_Text: That's it for the tutorial. We are sure you will get the rest. Have fun,
     and good luck!
 --- !u!222 &188042166
 CanvasRenderer:
@@ -2721,8 +2721,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is your calendar! This will tell you how many weeks have passed since
-    you started! Be careful of the monthly evaluations!
+  m_Text: This is your calendar. This will tell you how many weeks have passed since
+    you started. Be careful of the monthly evaluations!
 --- !u!222 &558025569
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5383,8 +5383,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is your computer! Here you can look at your employee records, applicants,
-    current projects and available projects!
+  m_Text: This is your computer. Here you can look at your employee records, applicants,
+    current projects and available projects.
 --- !u!222 &1265338236
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5489,7 +5489,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 4}
-  m_SizeDelta: {x: 0, y: -7}
+  m_SizeDelta: {x: -22, y: -6}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1314947461
 MonoBehaviour:
@@ -5517,7 +5517,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: This represents how likely you are to keep your job, if you let this get
-    too low, you might get fired! Watch out!
+    too low, you might get fired!
 --- !u!222 &1314947462
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7591,7 +7591,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -7, y: 7}
   m_SizeDelta: {x: 300, y: 180}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1697779451

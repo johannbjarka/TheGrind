@@ -134,6 +134,7 @@ public class Character : MonoBehaviour {
 		HoverPanel panel = newHoverPanel.GetComponent<HoverPanel> ();
 
 		panel.CharacterName.text = this.characterName;
+		panel.CharacterID.text = this.ID.ToString();
 
 		newHoverPanel.transform.localPosition = new Vector3 (0, 0, 0);
 		panel.transform.SetParent (EmployeePrefabContentPanel);

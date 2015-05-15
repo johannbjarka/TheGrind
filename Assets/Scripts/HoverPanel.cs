@@ -6,6 +6,7 @@ public class HoverPanel : MonoBehaviour {
 
 	public GameObject HoverPanelPrefab;
 	public Text CharacterName;
+	public Text CharacterID;
 	public Button SkillsButton;
 	public Button FireButton;
 
@@ -23,4 +24,6 @@ public class HoverPanel : MonoBehaviour {
 	public void closeHoverPanel() {
 		GameObject.Destroy (HoverPanelPrefab);
 	}
+
+
 }

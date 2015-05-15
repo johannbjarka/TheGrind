@@ -26,7 +26,6 @@ public class CreateScrollList : MonoBehaviour {
 	public Transform projectEmployeeContentPanel;
 	public Transform initialRemoveEmployeeContentPanel;
 
-
 	//public RectTransform progressFill;
 	public Canvas SelectInitialEmployeesCanvas;
 	bool selectInitialEmployeesCanvasIsOpen = false;
@@ -529,6 +528,7 @@ public class CreateScrollList : MonoBehaviour {
 					myCompany.applicants.Remove(emp);
 					emp.gameObject.transform.position = new Vector3(-8 + UnityEngine.Random.value * 10, -2 + UnityEngine.Random.value * 5, 0);
 					emp.gameObject.transform.localScale = new Vector2(1,1);
+					emp.transform.SetParent (myCompany.EmployeePrefabContentPanel);
 					Destroy(applicantPrefab);
 					myCompany.IncrementEmployeeNumber();
 					break;

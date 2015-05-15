@@ -21,22 +21,22 @@ public class CreateProjectScrollList : MonoBehaviour {
 
 	public void PopulateAvailableProjectList () {
 		emptyProjectList ();
-		foreach (var project in myCompany.availableProjects) {
-			if(!project.isFinished) {
+		for (int i = myCompany.availableProjects.Count - 1; i >= 0; i--) {
+			if(!myCompany.availableProjects[i].isFinished) {
 				GameObject newProjectPanel = Instantiate (availableProjectPanel) as GameObject;
 				ProjectPanel panel = newProjectPanel.GetComponent <ProjectPanel> ();
-				panel.Name.text = project.projName;
-				if(project.deadline == 1) {
+				panel.Name.text = myCompany.availableProjects[i].projName;
+				if(myCompany.availableProjects[i].deadline == 1) {
 					panel.Deadline.text = "Next week";
 				}
 				else {
-					panel.Deadline.text = project.deadline.ToString() + " weeks";
+					panel.Deadline.text = myCompany.availableProjects[i].deadline.ToString() + " weeks";
 				}
-				panel.Description.text = project.description;
-				panel.Reward.text = "$" + project.reward.ToString();
-				panel.Penalty.text = "$" + project.penalty.ToString();
-				panel.ID.text = project.ID.ToString();
-				panel.Category.text = myCompany.getDescription(project.category);
+				panel.Description.text = myCompany.availableProjects[i].description;
+				panel.Reward.text = "$" + myCompany.availableProjects[i].reward.ToString();
+				panel.Penalty.text = "$" + myCompany.availableProjects[i].penalty.ToString();
+				panel.ID.text = myCompany.availableProjects[i].ID.ToString();
+				panel.Category.text = myCompany.getDescription(myCompany.availableProjects[i].category);
 				newProjectPanel.transform.SetParent (AvailableProjectContentPanel);
 				panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 			}

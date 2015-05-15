@@ -11,6 +11,8 @@ TagManager:
   - MuteButton
   - Quit
   - Project
+  - Remove Content Panel
+  - Progress Estimate
   layers:
   - Default
   - TransparentFX

@@ -40,6 +40,8 @@ public class CreateScrollList : MonoBehaviour {
 		SelectInitialEmployeesCanvas = GameObject.Find ("SelectEmployees initial").GetComponent<Canvas>();
 		initialAvailableEmployeeContentPanel = GameObject.Find ("Init Available Content Panel").GetComponent<Transform> ();
 		ProgressFill = GameObject.Find ("Main Camera").GetComponent<ProgressBar> ();
+		projectEmployeeContentPanel = GameObject.Find ("Currently On Project Content Panel").GetComponent<Transform> ();
+		availableEmployeeContentPanel = GameObject.Find ("Available Content Panel").GetComponent<Transform> ();
 	}
 
 	public void PopulateEmployeeList () {
@@ -78,7 +80,6 @@ public class CreateScrollList : MonoBehaviour {
 	bool selectEmployeesCanvasIsOpen = false;
 
 	public void PopulateAvailableEmployeeList (int id) {
-		ProgressFill.setProgressTo (0);
 		selectEmployeesCanvasIsOpen = !selectEmployeesCanvasIsOpen;
 		SelectEmployeesCanvas.enabled = !SelectEmployeesCanvas.enabled;
 		float ratio = 0.0f;
@@ -88,6 +89,7 @@ public class CreateScrollList : MonoBehaviour {
 			if(id == proj.ID) {
 				ratio = (float)proj.workEstimate / proj.initialWorkAmount;
 				category = proj.category;
+				ProgressFill.setFinalProgressTo(ratio);
 				break;
 			}
 		}
@@ -120,13 +122,9 @@ public class CreateScrollList : MonoBehaviour {
 	public void PopulateAvailableInitialEmployeeList (int id) {
 		ProgressFill.setProgressTo (0);
 		if (selectInitialEmployeesCanvasIsOpen == false) {
-			Debug.Log ("select initial is now open");
 			selectInitialEmployeesCanvasIsOpen = true;
 			SelectInitialEmployeesCanvas.enabled = true;
-		} else {
-			Debug.Log("Select initial is already open!");
 		}
-
 		float ratio = 0.0f;
 		int category = 0;
 		
@@ -163,12 +161,7 @@ public class CreateScrollList : MonoBehaviour {
 		}
 	}
 
-	public Canvas RemoveEmployeesCanvas;
-	bool removeEmployeesCanvasIsOpen = false;
-
 	public void populateProjectEmployeeList (int id) {
-		removeEmployeesCanvasIsOpen = !removeEmployeesCanvasIsOpen;
-		RemoveEmployeesCanvas.enabled = !RemoveEmployeesCanvas.enabled;
 		float ratio = 0.0f;
 
 		foreach(var proj in myCompany.projects) {
@@ -214,15 +207,31 @@ public class CreateScrollList : MonoBehaviour {
 						proj.employees.Add(emp);
 						proj.workEstimate += emp.speed * proj.deadline;
 						Destroy(availableEmployeePanel);
+
+						GameObject newPanel = Instantiate (projectEmployeePanel) as GameObject;
+						EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
+						panel.nameLabel.text = emp.characterName;
+						panel.genderLabel.text = emp.gender.ToString();
+						panel.moraleLabel.text = emp.morale.ToString();
+						panel.moraleBar.sizeDelta = new Vector2(emp.morale * 10, 20);
+						panel.speedLabel.text = emp.speed.ToString();
+						panel.speedBar.sizeDelta = new Vector2(emp.speed * 10, 20);
+						panel.employeeIcon.sprite = emp.sprite;
+						panel.ID.text = emp.ID.ToString();
+						panel.ProjectID.text = proj.ID.ToString();
+						panel.rating.text = emp.skills[proj.category].ToString() + " / 20";
+						panel.requiredSkillBar.sizeDelta = new Vector2(emp.skills[proj.category] * 10, 20);
+						
+						newPanel.transform.SetParent (projectEmployeeContentPanel);
+						panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 						break;
 					}
 				}
-				// TODO: 
 				ratio = (float)proj.workEstimate / proj.initialWorkAmount;
 				break;
 			}
 		}
-		//progressFill.sizeDelta = new Vector2 (50, ratio);
+		ProgressFill.setFinalProgressTo (ratio);
 	}
 
 	public GameObject initalRemoveEmployeePrefab;
@@ -322,7 +331,6 @@ public class CreateScrollList : MonoBehaviour {
 
 	public void removeEmployee (IDPair ids) {
 		click.playSound();
-
 		Company myCompany = GameObject.Find("Company").GetComponent<Company>();
 		int projectID = Int32.Parse(ids.projectID.text);
 		int employeeID = Int32.Parse(ids.employeeID.text);
@@ -336,6 +344,26 @@ public class CreateScrollList : MonoBehaviour {
 						proj.workEstimate -= emp.speed * proj.deadline;
 						proj.employees.Remove(emp);
 						Destroy(projectEmployeePanel);
+
+						GameObject newPanel = Instantiate (availableEmployeePanel) as GameObject;
+						EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
+						
+						panel.nameLabel.text = emp.characterName;
+						panel.genderLabel.text = emp.gender.ToString();
+						panel.moraleLabel.text = emp.morale.ToString();
+						panel.moraleBar.sizeDelta = new Vector2(emp.morale * 10, 20);
+						panel.speedLabel.text = emp.speed.ToString();
+						panel.speedBar.sizeDelta = new Vector2(emp.speed * 10, 20);
+						panel.employeeIcon.sprite = emp.sprite;
+						panel.ID.text = emp.ID.ToString();
+						panel.ProjectID.text = proj.ID.ToString();
+						panel.category.text = myCompany.skills[proj.category];
+						panel.rating.text = emp.skills[proj.category].ToString();
+						panel.rating.text = emp.skills[proj.category].ToString() + " / 20";
+						panel.requiredSkillBar.sizeDelta = new Vector2(emp.skills[proj.category] * 10, 20);
+						
+						newPanel.transform.SetParent (availableEmployeeContentPanel);
+						panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 						break;
 					}
 				}
@@ -343,7 +371,7 @@ public class CreateScrollList : MonoBehaviour {
 				break;
 			}
 		}
-		//progressFill.sizeDelta = new Vector2 (50, ratio);
+		ProgressFill.setFinalProgressTo (ratio);
 	}
 
 	public void PopulateApplicantList () {
@@ -377,6 +405,23 @@ public class CreateScrollList : MonoBehaviour {
 		}
 	}
 
+	public void closeManageProjectEmployeesPanel() {
+		click.playSound ();
+
+		selectEmployeesCanvasIsOpen = false;
+		SelectEmployeesCanvas.enabled = false;
+
+		foreach (Transform child in availableEmployeeContentPanel) {
+			GameObject.Destroy(child.gameObject);
+		}
+
+		foreach (Transform child in projectEmployeeContentPanel) {
+			GameObject.Destroy(child.gameObject);
+		}
+		CreateProjectScrollList curprojects = GameObject.Find ("Main Camera").GetComponent<CreateProjectScrollList> ();
+		curprojects.PopulateCurrentProjectList ();
+	}
+
 	public void closeInitialAvailableEmployeeList () {
 		click.playSound();
 
@@ -393,10 +438,6 @@ public class CreateScrollList : MonoBehaviour {
 				break;
 			}
 		}
-		
-		/*foreach (Transform child in initialAvailableEmployeeContentPanel) {
-			GameObject.Destroy(child.gameObject);
-		}*/
 	}
 
 	public void closeInitialAvailableEmployeeListOnCancel () {
@@ -424,6 +465,12 @@ public class CreateScrollList : MonoBehaviour {
 
 	public void emptyInitialAvailableEmployeeList() {
 		foreach(Transform child in initialAvailableEmployeeContentPanel) {
+			GameObject.Destroy(child.gameObject);
+		}
+	}
+
+	public void emptyAvailableEmployeeList() {
+		foreach (Transform child in availableEmployeeContentPanel) {
 			GameObject.Destroy(child.gameObject);
 		}
 	}

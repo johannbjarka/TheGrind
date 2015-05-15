@@ -30,7 +30,6 @@ public class Continue : MonoBehaviour {
 	public Canvas skillsMenuCanvas;
 	public Canvas SelectEmployeesCanvas;
 	public Canvas SelectInitialEmployeeCanvas;
-	public Canvas RemoveEmployeesCanvas;
 	public Canvas BudgetCanvas;
 	public Canvas GotFiredCanvas;
 	public Canvas PerformanceReviewCanvas;
@@ -52,7 +51,6 @@ public class Continue : MonoBehaviour {
 		skillsMenuCanvas.enabled = false;
 		SelectEmployeesCanvas.enabled = false;
 		SelectInitialEmployeeCanvas.enabled = false;
-		RemoveEmployeesCanvas.enabled = false;
 		BudgetCanvas.enabled = false;
 		GotFiredCanvas.enabled = false;
 		PerformanceReviewCanvas.enabled = false;

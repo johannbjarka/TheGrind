@@ -477,7 +477,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Accept Project
+  m_Text: Examine Project
 --- !u!114 &11421404
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -337,7 +337,7 @@ GameObject:
   - 114: {fileID: 11458144}
   - 114: {fileID: 11496648}
   m_Layer: 5
-  m_Name: Info Panel 1
+  m_Name: Info Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -758,7 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreLayout: 0
-  m_MinWidth: 489
+  m_MinWidth: 310
   m_MinHeight: 200
   m_PreferredWidth: -1
   m_PreferredHeight: -1
@@ -867,13 +867,13 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 23
+    m_MaxSize: 40
     m_Alignment: 4
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Add to project
+  m_Text: '>'
 --- !u!114 &11477310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -932,22 +932,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProgressFill: {fileID: 0}
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 183642}
   initialAvailableEmployeePanel: {fileID: 0}
   applicantsPanel: {fileID: 0}
   applicantPrefab: {fileID: 0}
   employeePrefab: {fileID: 0}
-  projectEmployeePanel: {fileID: 0}
+  projectEmployeePanel: {fileID: 183642, guid: 022b4c4d9b4848746b86e57f0a5338b9, type: 2}
   employeeContentPanel: {fileID: 0}
   applicantContentPanel: {fileID: 0}
   availableEmployeeContentPanel: {fileID: 0}
   initialAvailableEmployeeContentPanel: {fileID: 0}
   skillsMenuContentPanel: {fileID: 0}
   projectEmployeeContentPanel: {fileID: 0}
-  SelectEmployeesCanvas: {fileID: 0}
+  initialRemoveEmployeeContentPanel: {fileID: 0}
   SelectInitialEmployeesCanvas: {fileID: 0}
-  RemoveEmployeesCanvas: {fileID: 0}
+  SelectEmployeesCanvas: {fileID: 0}
+  initalRemoveEmployeePrefab: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 0}
 --- !u!114 &11481072
@@ -1202,8 +1204,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15, y: -47.4500008}
-  m_SizeDelta: {x: 124.800003, y: 124.800003}
+  m_AnchoredPosition: {x: 10, y: -10}
+  m_SizeDelta: {x: 86, y: 86}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &22403900
 RectTransform:
@@ -1333,7 +1335,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -43.5000038}
+  m_AnchoredPosition: {x: 102.050018, y: -44.5999985}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &22431224
@@ -1405,7 +1407,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -9.99985027, y: -31.2000751}
+  m_AnchoredPosition: {x: -55, y: -46.2000008}
   m_SizeDelta: {x: 180, y: 92.4000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22453156
@@ -1458,8 +1460,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 37.5999985}
+  m_AnchoredPosition: {x: 51, y: 0}
+  m_SizeDelta: {x: -102.099998, y: 37.5999985}
   m_Pivot: {x: .5, y: 1}
 --- !u!224 &22470976
 RectTransform:
@@ -1493,8 +1495,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 180, y: -50}
-  m_SizeDelta: {x: 120, y: 50}
+  m_AnchoredPosition: {x: 89.5500183, y: -46.2000008}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22478530
 RectTransform:
@@ -1510,8 +1512,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 3.79999995}
+  m_SizeDelta: {x: 0, y: 30.2999992}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22480476
 RectTransform:
@@ -1529,7 +1531,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 20}
+  m_SizeDelta: {x: 50, y: 21}
   m_Pivot: {x: 0, y: .5}
 --- !u!224 &22482826
 RectTransform:
@@ -1580,8 +1582,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: .5}
   m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 20}
+  m_AnchoredPosition: {x: 0, y: .625000715}
+  m_SizeDelta: {x: 50, y: 21.25}
   m_Pivot: {x: 0, y: .5}
 --- !u!1001 &100100000
 Prefab:

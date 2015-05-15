@@ -13,6 +13,7 @@ public class Company : MonoBehaviour {
 	public int jobSecurity = 75;
 	public int maxEmployees = 20;
 	public int selectedProject;
+	// Currently active employees
 	public List<Character> characters;
 	public List<Character> applicants;
 	// Currently active projects
@@ -185,6 +186,12 @@ public class Company : MonoBehaviour {
 		salaries.text = "$" + budget.totalSalaries.ToString();
 		misc.text = "$" + budget.miscCost.ToString();
 		income.text = "$" + budget.projectRewards.ToString();
+		if(budget.projectPenalties > 0) {
+			penalties.color = Color.red;
+		}
+		else {
+			penalties.color = Color.black;
+		}
 		penalties.text = "$" + budget.projectPenalties.ToString();
 		allocated.text = "$" + budget.monthlyAmount.ToString();
 		monthJobSecurity.text = jobSecurity.ToString();

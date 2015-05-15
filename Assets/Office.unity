@@ -3447,10 +3447,10 @@ RectTransform:
   - {fileID: 1580383587}
   m_Father: {fileID: 396445882}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -20}
-  m_SizeDelta: {x: 160, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &276593489
 MonoBehaviour:
@@ -4060,11 +4060,11 @@ RectTransform:
   - {fileID: 899796486}
   m_Father: {fileID: 808489681}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: .5}
-  m_AnchorMax: {x: 0, y: .5}
-  m_AnchoredPosition: {x: 15, y: 0}
-  m_SizeDelta: {x: 100, y: 30}
-  m_Pivot: {x: 0, y: .5}
+  m_AnchorMin: {x: 1, y: .5}
+  m_AnchorMax: {x: 1, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 51.0999985, y: 30}
+  m_Pivot: {x: 1, y: .5}
 --- !u!114 &344594024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4084,8 +4084,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: .960784316, g: .960784316, b: .960784316, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: .198529422, g: .198529422, b: .198529422, a: 1}
     m_PressedColor: {r: .784313738, g: .784313738, b: .784313738, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
@@ -4544,6 +4544,7 @@ GameObject:
   - 224: {fileID: 396445882}
   - 222: {fileID: 396445884}
   - 114: {fileID: 396445883}
+  - 114: {fileID: 396445885}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -4599,6 +4600,26 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 396445881}
+--- !u!114 &396445885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 396445881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297475563, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 10
+    m_Right: 10
+    m_Top: 10
+    m_Bottom: 10
+  m_ChildAlignment: 0
+  m_Spacing: 10
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
 --- !u!1 &399121127
 GameObject:
   m_ObjectHideFlags: 0
@@ -4666,7 +4687,7 @@ MonoBehaviour:
   m_Elasticity: .100000001
   m_Inertia: 1
   m_DecelerationRate: .135000005
-  m_ScrollSensitivity: 15
+  m_ScrollSensitivity: 22
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1507860819}
   m_OnValueChanged:
@@ -4896,7 +4917,7 @@ MonoBehaviour:
   m_Elasticity: .100000001
   m_Inertia: 1
   m_DecelerationRate: .135000005
-  m_ScrollSensitivity: 15
+  m_ScrollSensitivity: 22
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1689572580}
   m_OnValueChanged:
@@ -9398,8 +9419,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 290}
+  m_AnchoredPosition: {x: 5.45696821e-12, y: 1.90734863e-06}
+  m_SizeDelta: {x: 273, y: 353}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &764250466
 MonoBehaviour:
@@ -11383,7 +11404,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 5.5999999, y: 13.1000004}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &899796487
 MonoBehaviour:
@@ -11397,20 +11418,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 644aefc7d2c06bb4281161ff8ad36463, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 26
+    m_MaxSize: 40
     m_Alignment: 4
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Close
+  m_Text: X
 --- !u!222 &899796488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11627,7 +11648,7 @@ MonoBehaviour:
   m_Elasticity: .100000001
   m_Inertia: 1
   m_DecelerationRate: .135000005
-  m_ScrollSensitivity: 15
+  m_ScrollSensitivity: 22
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1386292071}
   m_OnValueChanged:
@@ -15114,8 +15135,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 20, y: 20}
-  m_SizeDelta: {x: 160, y: 70}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1147850803
 MonoBehaviour:
@@ -15629,10 +15650,10 @@ RectTransform:
   - {fileID: 1393708176}
   m_Father: {fileID: 396445882}
   m_RootOrder: 1
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: -20}
-  m_SizeDelta: {x: 160, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1193549866
 MonoBehaviour:
@@ -17873,7 +17894,7 @@ MonoBehaviour:
   m_Elasticity: .100000001
   m_Inertia: 1
   m_DecelerationRate: .135000005
-  m_ScrollSensitivity: 15
+  m_ScrollSensitivity: 22
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1095822638}
   m_OnValueChanged:
@@ -18150,7 +18171,7 @@ MonoBehaviour:
   m_Elasticity: .100000001
   m_Inertia: 1
   m_DecelerationRate: .135000005
-  m_ScrollSensitivity: 15
+  m_ScrollSensitivity: 22
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1823607298}
   m_OnValueChanged:
@@ -21724,7 +21745,7 @@ MonoBehaviour:
   m_Elasticity: .100000001
   m_Inertia: 1
   m_DecelerationRate: .135000005
-  m_ScrollSensitivity: 15
+  m_ScrollSensitivity: 22
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 2096317144}
   m_OnValueChanged:
@@ -22152,7 +22173,7 @@ MonoBehaviour:
   m_Elasticity: .100000001
   m_Inertia: 1
   m_DecelerationRate: .135000005
-  m_ScrollSensitivity: 15
+  m_ScrollSensitivity: 22
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 647214643}
   m_OnValueChanged:
@@ -22821,7 +22842,7 @@ MonoBehaviour:
   m_Elasticity: .100000001
   m_Inertia: 1
   m_DecelerationRate: .135000005
-  m_ScrollSensitivity: 15
+  m_ScrollSensitivity: 22
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 944262498}
   m_OnValueChanged:
@@ -25056,10 +25077,10 @@ RectTransform:
   - {fileID: 403875823}
   m_Father: {fileID: 396445882}
   m_RootOrder: 3
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -20, y: 20}
-  m_SizeDelta: {x: 160, y: 70}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1824179790
 MonoBehaviour:

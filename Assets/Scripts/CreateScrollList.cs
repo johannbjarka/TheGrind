@@ -51,7 +51,11 @@ public class CreateScrollList : MonoBehaviour {
 				GameObject newPanel = Instantiate (employeePanel) as GameObject;
 				EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 				panel.nameLabel.text = item.characterName;
-				panel.genderLabel.text = item.gender.ToString();
+				if(item.gender == 'M') {
+					panel.genderLabel.text = item.gender.ToString() + "ale";
+				}else {
+					panel.genderLabel.text = item.gender.ToString() + "emale";
+				}
 				panel.moraleLabel.text = item.morale.ToString();
 				panel.moraleBar.sizeDelta = new Vector2(item.morale * 10, 20);
 				panel.speedLabel.text = item.speed.ToString();
@@ -100,7 +104,11 @@ public class CreateScrollList : MonoBehaviour {
 				EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 
 				panel.nameLabel.text = item.characterName;
-				panel.genderLabel.text = item.gender.ToString();
+				if(item.gender == 'M') {
+					panel.genderLabel.text = item.gender.ToString() + "ale";
+				}else {
+					panel.genderLabel.text = item.gender.ToString() + "emale";
+				}
 				panel.moraleLabel.text = item.morale.ToString();
 				panel.moraleBar.sizeDelta = new Vector2(item.morale * 10, 20);
 				panel.speedLabel.text = item.speed.ToString();
@@ -143,7 +151,11 @@ public class CreateScrollList : MonoBehaviour {
 				EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 				
 				panel.nameLabel.text = item.characterName;
-				panel.genderLabel.text = item.gender.ToString();
+				if(item.gender == 'M') {
+					panel.genderLabel.text = item.gender.ToString() + "ale";
+				}else {
+					panel.genderLabel.text = item.gender.ToString() + "emale";
+				}
 				panel.moraleLabel.text = item.morale.ToString();
 				panel.moraleBar.sizeDelta = new Vector2(item.morale * 10, 20);
 				panel.speedLabel.text = item.speed.ToString();
@@ -170,7 +182,11 @@ public class CreateScrollList : MonoBehaviour {
 					GameObject newPanel = Instantiate (projectEmployeePanel) as GameObject;
 					EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 					panel.nameLabel.text = item.characterName;
-					panel.genderLabel.text = item.gender.ToString();
+					if(item.gender == 'M') {
+						panel.genderLabel.text = item.gender.ToString() + "ale";
+					}else {
+						panel.genderLabel.text = item.gender.ToString() + "emale";
+					}
 					panel.moraleLabel.text = item.morale.ToString();
 					panel.moraleBar.sizeDelta = new Vector2(item.morale * 10, 20);
 					panel.speedLabel.text = item.speed.ToString();
@@ -211,7 +227,11 @@ public class CreateScrollList : MonoBehaviour {
 						GameObject newPanel = Instantiate (projectEmployeePanel) as GameObject;
 						EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 						panel.nameLabel.text = emp.characterName;
-						panel.genderLabel.text = emp.gender.ToString();
+						if(emp.gender == 'M') {
+							panel.genderLabel.text = emp.gender.ToString() + "ale";
+						}else {
+							panel.genderLabel.text = emp.gender.ToString() + "emale";
+						}
 						panel.moraleLabel.text = emp.morale.ToString();
 						panel.moraleBar.sizeDelta = new Vector2(emp.morale * 10, 20);
 						panel.speedLabel.text = emp.speed.ToString();
@@ -259,7 +279,11 @@ public class CreateScrollList : MonoBehaviour {
 						EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 						
 						panel.nameLabel.text = emp.characterName;
-						panel.genderLabel.text = emp.gender.ToString();
+						if(emp.gender == 'M') {
+							panel.genderLabel.text = emp.gender.ToString() + "ale";
+						}else {
+							panel.genderLabel.text = emp.gender.ToString() + "emale";
+						}
 						panel.moraleLabel.text = emp.morale.ToString();
 						panel.moraleBar.sizeDelta = new Vector2(emp.morale * 10, 20);
 						panel.speedLabel.text = emp.speed.ToString();
@@ -305,7 +329,11 @@ public class CreateScrollList : MonoBehaviour {
 						EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 			
 						panel.nameLabel.text = item.characterName;
-						panel.genderLabel.text = item.gender.ToString();
+						if(item.gender == 'M') {
+							panel.genderLabel.text = item.gender.ToString() + "ale";
+						}else {
+							panel.genderLabel.text = item.gender.ToString() + "emale";
+						}
 						panel.moraleLabel.text = item.morale.ToString();
 						panel.moraleBar.sizeDelta = new Vector2(item.morale * 10, 20);
 						panel.speedLabel.text = item.speed.ToString();
@@ -350,7 +378,11 @@ public class CreateScrollList : MonoBehaviour {
 						EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 						
 						panel.nameLabel.text = emp.characterName;
-						panel.genderLabel.text = emp.gender.ToString();
+						if(emp.gender == 'M') {
+							panel.genderLabel.text = emp.gender.ToString() + "ale";
+						}else {
+							panel.genderLabel.text = emp.gender.ToString() + "emale";
+						}
 						panel.moraleLabel.text = emp.morale.ToString();
 						panel.moraleBar.sizeDelta = new Vector2(emp.morale * 10, 20);
 						panel.speedLabel.text = emp.speed.ToString();
@@ -381,7 +413,11 @@ public class CreateScrollList : MonoBehaviour {
 			GameObject newPanel = Instantiate (applicantsPanel) as GameObject;
 			EmployeePanel panel = newPanel.GetComponent <EmployeePanel> ();
 			panel.nameLabel.text = item.characterName;
-			panel.genderLabel.text = item.gender.ToString();
+			if(item.gender == 'M') {
+				panel.genderLabel.text = item.gender.ToString() + "ale";
+			}else {
+				panel.genderLabel.text = item.gender.ToString() + "emale";
+			}
 			panel.moraleLabel.text = item.morale.ToString();
 			panel.moraleBar.sizeDelta = new Vector2(item.morale * 10, 20);
 			panel.speedLabel.text = item.speed.ToString();
@@ -493,6 +529,7 @@ public class CreateScrollList : MonoBehaviour {
 					myCompany.applicants.Remove(emp);
 					emp.gameObject.transform.position = new Vector3(-8 + UnityEngine.Random.value * 10, -2 + UnityEngine.Random.value * 5, 0);
 					Destroy(applicantPrefab);
+					myCompany.IncrementEmployeeNumber();
 					break;
 				}
 			}
@@ -520,6 +557,7 @@ public class CreateScrollList : MonoBehaviour {
 				myCompany.characters.Remove(emp);
 				emp.gameObject.transform.position = new Vector3(-1000, -1000, 0);
 				Destroy(employeePrefab);
+				myCompany.DecrementEmployeeNumber();
 				break;
 			}
 		}

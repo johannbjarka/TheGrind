@@ -40,6 +40,9 @@ public class Company : MonoBehaviour {
 	public Text nextBudget;
 	public Text jobSec;
 
+	public int curNumberofEmps = 0;
+	public Text totalEmployees;
+
 	ClickSound click;
 
 	public Dictionary<int, string> skills;
@@ -52,6 +55,16 @@ public class Company : MonoBehaviour {
 
 	public RectTransform jobSecBar;
 
+	public void IncrementEmployeeNumber() {
+		curNumberofEmps++;
+		totalEmployees.text = curNumberofEmps.ToString ();
+	}
+
+	public void DecrementEmployeeNumber() {
+		curNumberofEmps--;
+		totalEmployees.text = curNumberofEmps.ToString ();
+	}
+
 	void Awake () {
 		// Create starting employees
 		for(int i = 0; i < 5; i++) {
@@ -60,6 +73,7 @@ public class Company : MonoBehaviour {
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
 			Character emp = character.GetComponent<Character>();
 			characters.Add(emp);
+			IncrementEmployeeNumber();
 		}
 		
 		// Create starting applicants
@@ -69,6 +83,7 @@ public class Company : MonoBehaviour {
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
 			Character emp = character.GetComponent<Character>();
 			applicants.Add(emp);
+
 		}
 	}
 	// Use this for initialization

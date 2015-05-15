@@ -136,7 +136,10 @@ public class Character : MonoBehaviour {
 		panel.CharacterName.text = this.characterName;
 		panel.CharacterID.text = this.ID.ToString();
 
-		newHoverPanel.transform.localPosition = new Vector3 (0, 0, 0);
+		var mousex = (Input.mousePosition.x);
+		var mousey = (Input.mousePosition.y);
+		var mouseposition = Camera.main.ScreenToWorldPoint (new Vector3 (mousex, mousey, 0));
+		newHoverPanel.transform.localPosition = new Vector3 (mouseposition.x, mouseposition.y, 0);
 		panel.transform.SetParent (EmployeePrefabContentPanel);
 		newHoverPanel.gameObject.transform.localScale = new Vector3 (1, 1, 1);
 

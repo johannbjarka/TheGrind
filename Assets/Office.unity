@@ -3507,6 +3507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProgressFill: {fileID: 0}
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 0}
   initialAvailableEmployeePanel: {fileID: 0}
@@ -4231,8 +4232,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
-  m_AnchoredPosition: {x: -1.71659995e-05, y: 14.1719999}
-  m_SizeDelta: {x: 111, y: 290}
+  m_AnchoredPosition: {x: -3.05175781e-05, y: 14}
+  m_SizeDelta: {x: 111, y: 290.339996}
   m_Pivot: {x: 1, y: .5}
 --- !u!114 &345174612
 MonoBehaviour:
@@ -5949,6 +5950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProgressFill: {fileID: 461498200}
   employeePanel: {fileID: 181426, guid: 15d7517adf8977a489075fa37dd478d0, type: 2}
   availableEmployeePanel: {fileID: 183642, guid: 0ae08379910711e43a83fb22e46a5ced,
     type: 2}
@@ -5999,9 +6001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df04e3cebbcce34098e18ecfd7241e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressFill: {fileID: 1318152710}
-  removeEmpsFill: {fileID: 1188954708}
-  initialProgressFill: {fileID: 0}
+  projectProgressBar: {fileID: 1148944751}
+  ProgressAmount: {fileID: 1260517712}
 --- !u!1 &468844649
 GameObject:
   m_ObjectHideFlags: 0
@@ -6845,7 +6846,7 @@ GameObject:
   - 114: {fileID: 509706476}
   - 114: {fileID: 509706475}
   m_Layer: 8
-  m_Name: Content Panel
+  m_Name: On Project Content Panel
   m_TagString: Remove Content Panel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8018,8 +8019,6 @@ GameObject:
   - 222: {fileID: 636181591}
   - 114: {fileID: 636181590}
   - 114: {fileID: 636181589}
-  - 114: {fileID: 636181588}
-  - 114: {fileID: 636181587}
   m_Layer: 8
   m_Name: Cancel
   m_TagString: Untagged
@@ -8045,52 +8044,6 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: 25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 0}
---- !u!114 &636181587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 636181585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00e2bbe4e686d54bb28754d5f291fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  availableProjectPanel: {fileID: 0}
-  currentProjectPanel: {fileID: 0}
-  AvailableProjectContentPanel: {fileID: 0}
-  CurrentProjectContentPanel: {fileID: 0}
---- !u!114 &636181588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 636181585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  employeePanel: {fileID: 0}
-  availableEmployeePanel: {fileID: 0}
-  initialAvailableEmployeePanel: {fileID: 0}
-  applicantsPanel: {fileID: 0}
-  applicantPrefab: {fileID: 0}
-  employeePrefab: {fileID: 0}
-  projectEmployeePanel: {fileID: 0}
-  employeeContentPanel: {fileID: 0}
-  applicantContentPanel: {fileID: 0}
-  availableEmployeeContentPanel: {fileID: 0}
-  initialAvailableEmployeeContentPanel: {fileID: 328922105}
-  skillsMenuContentPanel: {fileID: 0}
-  projectEmployeeContentPanel: {fileID: 0}
-  initialRemoveEmployeeContentPanel: {fileID: 0}
-  SelectInitialEmployeesCanvas: {fileID: 806508612}
-  SelectEmployeesCanvas: {fileID: 0}
-  RemoveEmployeesCanvas: {fileID: 0}
-  initalRemoveEmployeePrefab: {fileID: 0}
-  skillsCanvas: {fileID: 0}
-  skillsMenuPrefab: {fileID: 0}
 --- !u!114 &636181589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8130,7 +8083,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 636181588}
+      - m_Target: {fileID: 461498198}
         m_MethodName: closeInitialAvailableEmployeeListOnCancel
         m_Mode: 1
         m_Arguments:
@@ -8142,7 +8095,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 636181587}
+      - m_Target: {fileID: 461498199}
         m_MethodName: deSelectProject
         m_Mode: 1
         m_Arguments:
@@ -11783,6 +11736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProgressFill: {fileID: 0}
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 0}
   initialAvailableEmployeePanel: {fileID: 0}
@@ -12062,7 +12016,7 @@ GameObject:
   - 222: {fileID: 898779044}
   - 114: {fileID: 898779043}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Max Progress
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12079,12 +12033,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1148944751}
+  - {fileID: 1260517711}
   m_Father: {fileID: 345174611}
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: 0}
   m_AnchorMax: {x: .5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 240}
+  m_AnchoredPosition: {x: 0, y: 4.63999939}
+  m_SizeDelta: {x: 50, y: 250}
   m_Pivot: {x: .5, y: 0}
 --- !u!114 &898779043
 MonoBehaviour:
@@ -13229,10 +13184,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1809507730}
   m_RootOrder: 0
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 4, y: 9.53669996e-07}
-  m_SizeDelta: {x: 104, y: 48}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 9.53674316e-07}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &972777097
 MonoBehaviour:
@@ -13259,7 +13214,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Progress estimate
+  m_Text: Progress
 --- !u!222 &972777098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15517,7 +15472,7 @@ RectTransform:
   m_AnchorMin: {x: .5, y: 0}
   m_AnchorMax: {x: .5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 177}
+  m_SizeDelta: {x: 50, y: 125}
   m_Pivot: {x: .5, y: 0}
 --- !u!114 &1148944752
 MonoBehaviour:
@@ -16570,6 +16525,72 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1236479861}
+--- !u!1 &1260517710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1260517711}
+  - 222: {fileID: 1260517713}
+  - 114: {fileID: 1260517712}
+  m_Layer: 5
+  m_Name: Progress Amount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1260517711
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1260517710}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 898779042}
+  m_RootOrder: 1
+  m_AnchorMin: {x: .5, y: 0}
+  m_AnchorMax: {x: .5, y: 1}
+  m_AnchoredPosition: {x: 1.54972076e-06, y: 0}
+  m_SizeDelta: {x: 50, y: 0}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1260517712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1260517710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 644aefc7d2c06bb4281161ff8ad36463, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 50
+--- !u!222 &1260517713
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1260517710}
 --- !u!1 &1261745706
 GameObject:
   m_ObjectHideFlags: 0
@@ -22695,8 +22716,6 @@ GameObject:
   - 222: {fileID: 1687373042}
   - 114: {fileID: 1687373041}
   - 114: {fileID: 1687373040}
-  - 114: {fileID: 1687373039}
-  - 114: {fileID: 1687373038}
   m_Layer: 8
   m_Name: Done
   m_TagString: Untagged
@@ -22722,53 +22741,6 @@ RectTransform:
   m_AnchoredPosition: {x: 100, y: 25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1687373038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1687373036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a00e2bbe4e686d54bb28754d5f291fca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  availableProjectPanel: {fileID: 132778, guid: 4a67f936997060b4590e728d2ea2e7f6,
-    type: 2}
-  currentProjectPanel: {fileID: 175700, guid: bbe5647acc22e194c83637d380cf6cfc, type: 2}
-  AvailableProjectContentPanel: {fileID: 1431888804}
-  CurrentProjectContentPanel: {fileID: 1300103383}
---- !u!114 &1687373039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1687373036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  employeePanel: {fileID: 0}
-  availableEmployeePanel: {fileID: 0}
-  initialAvailableEmployeePanel: {fileID: 0}
-  applicantsPanel: {fileID: 0}
-  applicantPrefab: {fileID: 0}
-  employeePrefab: {fileID: 0}
-  projectEmployeePanel: {fileID: 0}
-  employeeContentPanel: {fileID: 0}
-  applicantContentPanel: {fileID: 0}
-  availableEmployeeContentPanel: {fileID: 0}
-  initialAvailableEmployeeContentPanel: {fileID: 328922105}
-  skillsMenuContentPanel: {fileID: 0}
-  projectEmployeeContentPanel: {fileID: 0}
-  initialRemoveEmployeeContentPanel: {fileID: 0}
-  SelectInitialEmployeesCanvas: {fileID: 806508612}
-  SelectEmployeesCanvas: {fileID: 0}
-  RemoveEmployeesCanvas: {fileID: 0}
-  initalRemoveEmployeePrefab: {fileID: 0}
-  skillsCanvas: {fileID: 0}
-  skillsMenuPrefab: {fileID: 0}
 --- !u!114 &1687373040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22808,7 +22780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1687373039}
+      - m_Target: {fileID: 461498198}
         m_MethodName: closeInitialAvailableEmployeeList
         m_Mode: 1
         m_Arguments:
@@ -22820,7 +22792,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1687373038}
+      - m_Target: {fileID: 461498199}
         m_MethodName: destroyPanel
         m_Mode: 1
         m_Arguments:
@@ -23969,7 +23941,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 46}
+  m_SizeDelta: {x: 0, y: 35.7000008}
   m_Pivot: {x: .5, y: 1}
 --- !u!114 &1809507731
 MonoBehaviour:

@@ -589,6 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProgressFill: {fileID: 0}
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 177144}
   initialAvailableEmployeePanel: {fileID: 183642, guid: 22ea999768386f84c9626298a0679111,

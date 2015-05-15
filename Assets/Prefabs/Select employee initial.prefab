@@ -301,7 +301,7 @@ GameObject:
   - 222: {fileID: 22205938}
   - 114: {fileID: 11454684}
   - 114: {fileID: 11455252}
-  - 114: {fileID: 11433326}
+  - 114: {fileID: 11486636}
   m_Layer: 5
   m_Name: Select employee initial
   m_TagString: Untagged
@@ -355,7 +355,7 @@ GameObject:
   - 114: {fileID: 11495710}
   - 114: {fileID: 11435672}
   - 114: {fileID: 11453638}
-  - 114: {fileID: 11430348}
+  - 114: {fileID: 11450622}
   m_Layer: 5
   m_Name: Add Button
   m_TagString: Untagged
@@ -552,17 +552,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11430348
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c0b09b102fe6c54cb6d34a9754ab5d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11430694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -615,28 +604,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 5
---- !u!114 &11433326
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 183642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a082589d17eb48f44b508b79fe3cc22e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EmployeeName: {fileID: 11426690}
-  EmployeeIcon: {fileID: 11459196}
-  SkillLabel: {fileID: 11430694}
-  SkillAmount: {fileID: 11422000}
-  SkillBar: {fileID: 22431786}
-  SpeedAmount: {fileID: 11412088}
-  SpeedBar: {fileID: 22421628}
-  MoraleAmount: {fileID: 11432936}
-  MoraleBar: {fileID: 22480952}
-  Gender: {fileID: 11404290}
-  AddRemoveButton: {fileID: 11435672}
 --- !u!114 &11435662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -702,7 +669,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11450622}
         m_MethodName: initialAddEmployee
         m_Mode: 2
         m_Arguments:
@@ -775,6 +742,39 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Morale:'
+--- !u!114 &11450622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProgressFill: {fileID: 0}
+  employeePanel: {fileID: 181426, guid: 15d7517adf8977a489075fa37dd478d0, type: 2}
+  availableEmployeePanel: {fileID: 183642}
+  initialAvailableEmployeePanel: {fileID: 0}
+  applicantsPanel: {fileID: 0}
+  applicantPrefab: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  projectEmployeePanel: {fileID: 0}
+  employeeContentPanel: {fileID: 0}
+  applicantContentPanel: {fileID: 0}
+  availableEmployeeContentPanel: {fileID: 0}
+  initialAvailableEmployeeContentPanel: {fileID: 0}
+  skillsMenuContentPanel: {fileID: 0}
+  projectEmployeeContentPanel: {fileID: 0}
+  initialRemoveEmployeeContentPanel: {fileID: 0}
+  SelectInitialEmployeesCanvas: {fileID: 0}
+  SelectEmployeesCanvas: {fileID: 0}
+  RemoveEmployeesCanvas: {fileID: 0}
+  initalRemoveEmployeePrefab: {fileID: 177144, guid: 2d418fb49cac85a49846a35778334d82,
+    type: 2}
+  skillsCanvas: {fileID: 0}
+  skillsMenuPrefab: {fileID: 0}
 --- !u!114 &11451012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -984,6 +984,35 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11486636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab7b90c5f0b2c04f94c1516167f8df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 183642}
+  employeeIcon: {fileID: 11459196}
+  speedLabel: {fileID: 11412088}
+  speedBar: {fileID: 22421628}
+  nameLabel: {fileID: 11426690}
+  genderLabel: {fileID: 11404290}
+  salaryLabel: {fileID: 0}
+  moraleLabel: {fileID: 11432936}
+  moraleBar: {fileID: 22480952}
+  project: {fileID: 0}
+  skillsButton: {fileID: 0}
+  hireButton: {fileID: 0}
+  fireButton: {fileID: 0}
+  ID: {fileID: 11493880}
+  ProjectID: {fileID: 11452720}
+  category: {fileID: 11430694}
+  rating: {fileID: 11422000}
+  requiredSkillBar: {fileID: 22431786}
 --- !u!114 &11493880
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -458,6 +458,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!61 &60291685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1917,7 +1918,7 @@ RectTransform:
   m_LocalScale: {x: .0222392641, y: .0222392641, z: .0222392641}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 549695.188, y: 576638.5}
@@ -2087,6 +2088,67 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 150035471}
+--- !u!1 &155939510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 155939511}
+  - 222: {fileID: 155939513}
+  - 114: {fileID: 155939512}
+  m_Layer: 5
+  m_Name: Employee Prefab Content Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &155939511
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155939510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1419030580}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &155939512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155939510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &155939513
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155939510}
 --- !u!1 &162543153
 GameObject:
   m_ObjectHideFlags: 0
@@ -3492,6 +3554,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!61 &261780882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3861,6 +3924,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!61 &296826156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4005,6 +4069,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!61 &334851326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6945,6 +7010,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!50 &506495028
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -10407,6 +10473,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!61 &803646944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11751,6 +11818,7 @@ MonoBehaviour:
   movSpeed: .0500000007
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!61 &898533484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12282,7 +12350,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 58126897}
   m_HandleRect: {fileID: 58126896}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -12346,7 +12414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f53d3ce11bc94f4ea04a0a02441a743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  employeePrefab: {fileID: 176918, guid: 39747858bd7688544a16f3fb2c7d8da2, type: 2}
+  employeePrefab: {fileID: 143976, guid: 78985d9fbf6271d429f6b5f4454f6620, type: 2}
   projectPrefab: {fileID: 182544, guid: 6f230e15763af7a498cd18c92a1ba9d6, type: 2}
   budget: {fileID: 0}
   month: {fileID: 0}
@@ -12483,6 +12551,8 @@ MonoBehaviour:
   grade: {fileID: 498570548}
   nextBudget: {fileID: 568080141}
   jobSec: {fileID: 162543155}
+  EmployeePrefabCanvas: {fileID: 1419030581}
+  EmployeePrefabContentPanel: {fileID: 155939511}
   curNumberofEmps: 0
   totalEmployees: {fileID: 384903253}
   gotFiredCanvas: {fileID: 1522317268}
@@ -12819,6 +12889,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!224 &959473646
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14470,7 +14541,7 @@ Canvas:
   m_Enabled: 0
   serializedVersion: 2
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 461498193}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
@@ -14626,7 +14697,7 @@ Canvas:
   m_Enabled: 0
   serializedVersion: 2
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 461498193}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
@@ -14806,7 +14877,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1725808374}
   m_HandleRect: {fileID: 1725808373}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -15304,7 +15375,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
 --- !u!1 &1129122861
 GameObject:
   m_ObjectHideFlags: 0
@@ -15635,6 +15706,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!61 &1144703785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16036,7 +16108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
 --- !u!1 &1171180401
 GameObject:
   m_ObjectHideFlags: 0
@@ -17518,6 +17590,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!50 &1296712576
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -18013,6 +18086,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!114 &1313912157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19198,6 +19272,96 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300022, guid: 509a38a5f95280d47867489ec547ebd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1419030579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1419030580}
+  - 223: {fileID: 1419030581}
+  - 114: {fileID: 1419030583}
+  - 114: {fileID: 1419030582}
+  m_Layer: 5
+  m_Name: Employee Prefab Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1419030580
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1419030579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 155939511}
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!223 &1419030581
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1419030579}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_RenderMode: 1
+  m_Camera: {fileID: 461498193}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 1
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!114 &1419030582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1419030579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1419030583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1419030579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
 --- !u!1 &1423920001
 GameObject:
   m_ObjectHideFlags: 0
@@ -23984,7 +24148,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1509473195}
   m_HandleRect: {fileID: 1509473194}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -24470,6 +24634,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!61 &1724357020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25642,7 +25807,7 @@ RectTransform:
   m_LocalScale: {x: .0222392641, y: .0222392641, z: .0222392641}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 12224.8174, y: 12824.0166}
@@ -26718,6 +26883,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!114 &1863691746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26834,6 +27000,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!61 &1872394957
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27690,6 +27857,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!222 &1987266655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28175,7 +28343,7 @@ RectTransform:
   m_LocalScale: {x: .0222392641, y: .0222392641, z: .0222392641}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 549695.188, y: 576638.5}
@@ -29357,6 +29525,7 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
 --- !u!50 &2108217532
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -29706,7 +29875,7 @@ Transform:
   m_LocalScale: {x: 4.38654327, y: 4.08050585, z: 4.08050585}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
 --- !u!61 &2120258717
 BoxCollider2D:
   m_ObjectHideFlags: 0

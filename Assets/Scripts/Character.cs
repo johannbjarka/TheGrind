@@ -119,10 +119,15 @@ public class Character : MonoBehaviour {
 	public Animator anim;
 	SpriteRenderer spriteRend;
 
+	public GameObject employeePrefab;
+
 	void Awake () {
 		anim = GetComponent<Animator> ();
 	}
 
+	public void test() {
+		Debug.Log (employeePrefab.GetComponent<Character>().characterName);
+	}
 	// Use this for initialization
 	void Start () {
 		// Initialize character away from office

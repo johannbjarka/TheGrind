@@ -1706,8 +1706,8 @@ MonoBehaviour:
   ProjectCanvas: {fileID: 2057117603}
   CurProjectCanvas: {fileID: 1171180402}
   skillsMenuCanvas: {fileID: 1680384904}
-  SelectEmployeesCanvas: {fileID: 0}
-  SelectInitialEmployeeCanvas: {fileID: 0}
+  SelectEmployeesCanvas: {fileID: 1067141833}
+  SelectInitialEmployeeCanvas: {fileID: 1084281954}
   BudgetCanvas: {fileID: 85835383}
   GotFiredCanvas: {fileID: 1522317268}
   PerformanceReviewCanvas: {fileID: 1342040044}

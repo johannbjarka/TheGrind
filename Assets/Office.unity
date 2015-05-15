@@ -459,6 +459,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &60291685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3555,6 +3556,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &261780882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3925,6 +3927,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &296826156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4070,6 +4073,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &334851326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7011,6 +7015,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!50 &506495028
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -10474,6 +10479,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &803646944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11819,6 +11825,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &898533484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12414,7 +12421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f53d3ce11bc94f4ea04a0a02441a743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  employeePrefab: {fileID: 143976, guid: 78985d9fbf6271d429f6b5f4454f6620, type: 2}
+  employeePrefab: {fileID: 122258, guid: d5a5a8e5872bb224c9ac604de7f9c0f9, type: 2}
   projectPrefab: {fileID: 182544, guid: 6f230e15763af7a498cd18c92a1ba9d6, type: 2}
   budget: {fileID: 0}
   month: {fileID: 0}
@@ -12890,6 +12897,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!224 &959473646
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15707,6 +15715,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &1144703785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17591,6 +17600,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!50 &1296712576
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -18087,6 +18097,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!114 &1313912157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19324,7 +19335,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
 --- !u!114 &1419030582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24635,6 +24646,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &1724357020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26884,6 +26896,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!114 &1863691746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27001,6 +27014,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &1872394957
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27858,6 +27872,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!222 &1987266655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29526,6 +29541,7 @@ MonoBehaviour:
   sprite: {fileID: 0}
   anim: {fileID: 0}
   employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!50 &2108217532
 Rigidbody2D:
   m_ObjectHideFlags: 0

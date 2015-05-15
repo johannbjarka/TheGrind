@@ -76,7 +76,8 @@ public class Company : MonoBehaviour {
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
 			Character emp = character.GetComponent<Character>();
 			character.transform.SetParent(EmployeePrefabContentPanel);
-			//character.gameObject.transform.localScale = new Vector3(1,1,1);
+			character.gameObject.transform.localScale = new Vector2(44,44);
+			character.gameObject.transform.localPosition = pos;
 			characters.Add(emp);
 			IncrementEmployeeNumber();
 		}

@@ -120,16 +120,30 @@ public class Character : MonoBehaviour {
 	SpriteRenderer spriteRend;
 
 	public GameObject employeePrefab;
+	public GameObject HoverPanelPrefab;
 
+	Company myCompany;
+
+	Transform EmployeePrefabContentPanel;
 	void Awake () {
 		anim = GetComponent<Animator> ();
 	}
 
 	public void test() {
-		Debug.Log (employeePrefab.GetComponent<Character>().characterName);
+		GameObject newHoverPanel = Instantiate (HoverPanelPrefab) as GameObject;
+		HoverPanel panel = newHoverPanel.GetComponent<HoverPanel> ();
+
+		panel.CharacterName.text = this.characterName;
+
+		newHoverPanel.transform.localPosition = new Vector3 (0, 0, 0);
+		panel.transform.SetParent (EmployeePrefabContentPanel);
+		newHoverPanel.gameObject.transform.localScale = new Vector3 (1, 1, 1);
+
 	}
 	// Use this for initialization
 	void Start () {
+		myCompany = GameObject.Find ("Company").GetComponent<Company> ();
+		EmployeePrefabContentPanel = myCompany.EmployeePrefabContentPanel;
 		// Initialize character away from office
 		//transform.position = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
 		int totalskills = 0;

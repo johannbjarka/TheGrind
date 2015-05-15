@@ -77,7 +77,6 @@ public class Company : MonoBehaviour {
 			Character emp = character.GetComponent<Character>();
 			character.transform.SetParent(EmployeePrefabContentPanel);
 			character.gameObject.transform.localScale = new Vector2(44,44);
-			character.gameObject.transform.localPosition = pos;
 			characters.Add(emp);
 			IncrementEmployeeNumber();
 		}

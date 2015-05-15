@@ -49,9 +49,7 @@ public class Continue : MonoBehaviour {
 		click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 	}
 
-	public void continueGame () {
-		click.playSound();
-
+	public void closeEverything() {
 		EmployeeCanvas.enabled = false;
 		ApplicantCanvas.enabled = false;
 		ComputerCanvas.enabled = false;
@@ -65,6 +63,11 @@ public class Continue : MonoBehaviour {
 		PerformanceReviewCanvas.enabled = false;
 		ProjectFinishedCanvas.enabled = false;
 		TooManyCanvas.enabled = false;
+	}
+	public void continueGame () {
+		click.playSound();
+		closeEverything ();
+
 
 		myCompany = GameObject.Find("Company").GetComponent<Company>();
 		myCompany.weeksPassed++;

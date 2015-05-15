@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class ComputerMenu : MonoBehaviour {
-
+	public Continue myContinueClass;
 	public Canvas ComputerMenuCanvas;
 	public Canvas EmployeeRecordsCanvas;
 	public Canvas AvailableProjectsCanvas;
@@ -15,15 +15,26 @@ public class ComputerMenu : MonoBehaviour {
 	bool applicantsMenuIsOpen = false;
 	bool currentProjectsIsOpen = false;
 
+	void Start () {
+
+	}
+
 	public void openComputerMenuPanel () {
-		menuIsOpen = !menuIsOpen;
-		ComputerMenuCanvas.enabled = !ComputerMenuCanvas.enabled;
+		myContinueClass.closeEverything ();
+		menuIsOpen = true;
+		ComputerMenuCanvas.enabled = true;
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 	}
 
+	public void closeComputerPanel() {
+		menuIsOpen = false;
+		ComputerMenuCanvas.enabled = false;
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+	}
 	public void openEmployeeRecords () {
-		openComputerMenuPanel ();
+		closeComputerPanel ();
 		employeeRecordsIsOpen = !employeeRecordsIsOpen;
 		EmployeeRecordsCanvas.enabled = !EmployeeRecordsCanvas.enabled;
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
@@ -31,7 +42,7 @@ public class ComputerMenu : MonoBehaviour {
 	}
 
 	public void openAvailableProjects () {
-		openComputerMenuPanel ();
+		closeComputerPanel ();
 		availableProjectsIsOpen = !availableProjectsIsOpen;
 		AvailableProjectsCanvas.enabled = !AvailableProjectsCanvas.enabled;
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
@@ -39,7 +50,7 @@ public class ComputerMenu : MonoBehaviour {
 	}
 
 	public void openApplicantsMenu () {
-		openComputerMenuPanel ();
+		closeComputerPanel ();
 		applicantsMenuIsOpen = !applicantsMenuIsOpen;
 		ApplicantsCanvas.enabled = !ApplicantsCanvas.enabled;
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
@@ -47,7 +58,7 @@ public class ComputerMenu : MonoBehaviour {
 	}
 
 	public void openCurrentProjects () {
-		openComputerMenuPanel ();
+		closeComputerPanel ();
 		currentProjectsIsOpen = !currentProjectsIsOpen;
 		CurrentProjectsCanvas.enabled = !CurrentProjectsCanvas.enabled;
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();

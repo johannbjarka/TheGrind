@@ -64,4 +64,12 @@ public class ComputerMenu : MonoBehaviour {
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 	}
+
+	public void closeCurrentProjects () {
+		closeComputerPanel ();
+		currentProjectsIsOpen = false;
+		CurrentProjectsCanvas.enabled = false;
+		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
+		click.playSound();
+	}
 }

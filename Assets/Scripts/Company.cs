@@ -29,16 +29,20 @@ public class Company : MonoBehaviour {
 	public Text balance;
 	public Text balance2;
 	public Text salaries;
+	public Text totalSalaries;
 	public Text misc;
 	public Text income;
 	public Text penalties;
+	public Text goal;
 	public Text allocated;
 	public Text projFinished;
-	public Text monthBalance;
+	public Text monthGoal;
+	public Text percentage;
 	public Text monthJobSecurity;
 	public Text grade;
-	public Text nextBudget;
+	public Text nextGoal;
 	public Text jobSec;
+	public Text balanceTag;
 
 	ClickSound click;
 
@@ -79,7 +83,12 @@ public class Company : MonoBehaviour {
 		budget.miscCost = 2000;
 		budget.projectRewards = 0;
 		budget.projectPenalties = 0;
-		budget.monthlyAmount = 15000;
+		budget.monthlyAmount = 10000;
+		budget.totalTotalSalaries = 0;
+		budget.goal = 5000;
+		budget.monthlyGoal = budget.goal;
+		budget.lastBalance = 0;
+		budget.totalFunding = budget.monthlyAmount;
 
 		skills = new Dictionary<int, string>();
 		skills[0] = "AI:";
@@ -176,13 +185,20 @@ public class Company : MonoBehaviour {
 		if(budget.getBalance() < 0) {
 			balance.color = Color.red;
 			balance2.color = Color.red;
+			balanceTag.text = "Loss:";
 		}
 		else {
-			balance.color = Color.black;
+			Color color = Color.gray;
+			color.r = 0.196f;
+			color.g = 0.196f;
+			color.b = 0.196f;
+			balance.color = color;
 			balance2.color = Color.black;
+			balanceTag.text = "Profit:";
 		}
 		balance.text = "$" + budget.getBalance().ToString();
 		balance2.text = "$" + budget.getBalance().ToString();
+		totalSalaries.text = "$" + budget.totalTotalSalaries.ToString();
 		salaries.text = "$" + budget.totalSalaries.ToString();
 		misc.text = "$" + budget.miscCost.ToString();
 		income.text = "$" + budget.projectRewards.ToString();
@@ -190,10 +206,15 @@ public class Company : MonoBehaviour {
 			penalties.color = Color.red;
 		}
 		else {
-			penalties.color = Color.black;
+			Color color = Color.gray;
+			color.r = 0.196f;
+			color.g = 0.196f;
+			color.b = 0.196f;
+			penalties.color = color;
 		}
 		penalties.text = "$" + budget.projectPenalties.ToString();
-		allocated.text = "$" + budget.monthlyAmount.ToString();
+		goal.text = "$" + budget.goal.ToString();
+		allocated.text = "$" + budget.totalFunding.ToString();
 		monthJobSecurity.text = jobSecurity.ToString();
 		jobSec.text = jobSecurity.ToString();
 		jobSecBar.sizeDelta = new Vector2 (jobSecurity * 2, 20);
@@ -228,9 +249,24 @@ public class Company : MonoBehaviour {
 
 	public void setTextFields (int monthBal) {
 		projFinished.text = month.numberOfProjectsFinished.ToString();
-		monthBalance.text = "$" + monthBal.ToString();
 		grade.text = month.grade.ToString();
-		nextBudget.text = "$" + budget.monthlyAmount.ToString();
+		nextGoal.text = "$" + budget.goal;
+	}
+
+	public void setPercentageText() {
+		int ratio = ((int)((budget.getBalance() / (double)budget.goal) * 100));
+		if(ratio <= 0) {
+			percentage.text = "0%";
+		}
+		else {
+			percentage.text = ratio.ToString() + "%";
+		}
+		if(ratio > 100) {
+			jobSecurity += 5;
+		}
+		else if(ratio < 100) {
+			jobSecurity -= 10;
+		}
 	}
 
 	int getTotalSalaries () {
@@ -241,6 +277,21 @@ public class Company : MonoBehaviour {
 			totalSalaries += c.salary;
 		}
 		return totalSalaries;
+	}
+
+	int goalReached() {
+		return (budget.getBalance() - budget.lastBalance) - budget.monthlyGoal;
+	}
+
+	public void getNextGoal () {
+		if(goalReached() < 0) {
+			// Do nothing
+		}
+		else {
+			budget.monthlyGoal = (int)(budget.monthlyGoal * 1.2);
+		}
+		monthGoal.text = "$" + budget.goal.ToString();
+		budget.goal += goalReached() + budget.monthlyGoal;
 	}
 
 	public void firePlayer(string reason){

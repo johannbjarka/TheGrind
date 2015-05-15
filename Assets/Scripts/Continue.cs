@@ -123,6 +123,7 @@ public class Continue : MonoBehaviour {
 			if(myCompany.projects[i].deadline <= 0 && myCompany.projects[i].workAmount > 0) {
 				if(!myCompany.projects[i].isFinished) {
 					myCompany.budget.projectPenalties += myCompany.projects[i].penalty;
+					myCompany.jobSecurity -= 5;
 					GameObject newPanel = Instantiate (projectFinishedPanel) as GameObject;
 					ProjectFinishPanel panel = newPanel.GetComponent<ProjectFinishPanel>();
 					panel.projName.text = myCompany.projects[i].projName;
@@ -169,6 +170,11 @@ public class Continue : MonoBehaviour {
 			int monthlyBalance = myCompany.budget.getBalance();
 			myCompany.month.getGrade();
 			myCompany.budget.monthlyAmount = myCompany.month.getNextAllowance();
+			myCompany.setPercentageText();
+			myCompany.getNextGoal();
+			myCompany.budget.lastBalance = myCompany.budget.getBalance();
+			myCompany.budget.totalFunding += myCompany.budget.monthlyAmount;
+			myCompany.budget.totalTotalSalaries += myCompany.budget.totalSalaries;
 			myCompany.setTextFields(monthlyBalance);
 
 			if(myCompany.month.numberOfProjectsFinished == 0){
@@ -184,8 +190,10 @@ public class Continue : MonoBehaviour {
 			}
 			myCompany.month.numberOfProjectsFinished = 0;
 			myCompany.month.totalQuality = 0;
-			myCompany.budget.projectRewards = 0;
-			myCompany.budget.projectPenalties = 0;
+			/*myCompany.budget.totalFunding += myCompany.budget.monthlyAmount;
+			myCompany.budget.totalTotalSalaries += myCompany.budget.totalSalaries;*/
+			//myCompany.budget.projectRewards = 0;
+			//myCompany.budget.projectPenalties = 0;
 			myCompany.partialSalaries = 0;
 		}
 
@@ -290,18 +298,18 @@ public class Continue : MonoBehaviour {
 		switch(randEvent){
 		case 1:
 			eventText = "You played golf with the CEO this weekend. " +
-				"You kept it cool and lost on purpose. Budget +$1000";
+				"You kept it cool and lost on purpose. Funding +$1000";
 			myCompany.budget.monthlyAmount += 1000;
 			break;
 		case 2:
 			eventText = "The boss invited you on a badass blimp ride. " +
-				"You used company funds to foot the bill. Budget -$2500";
-			myCompany.budget.monthlyAmount -= 2500;
+				"You used company funds to foot the bill. Miscellaneous cost +$2500";
+			myCompany.budget.miscCost += 2500;
 			break;
 		case 3:
 			eventText = "You met the person of your dreams. Flowers and real champagne" +
-				" sure can be expensive. Budget -$1000";
-			myCompany.budget.monthlyAmount -= 1000;
+				" sure can be expensive. Miscellaneous cost +$1000";
+			myCompany.budget.miscCost += 1000;
 			break;
 		case 4:
 			eventText = "The boss came in just before the office closed on Friday" +
@@ -313,16 +321,16 @@ public class Continue : MonoBehaviour {
 		case 5:
 			eventText = "Due to incessant requests, management ordered you to pay for " +
 				"an in depth seminar on appropriate workplace communication. " +
-					"Staff morale +1. Budget -$1000";
+					"Staff morale +1. Miscellaneous cost +$1000";
 			foreach(Character emp in myCompany.characters) {
 				emp.morale++;
 			}
-			myCompany.budget.monthlyAmount -= 1000;
+			myCompany.budget.miscCost += 1000;
 			break;
 		case 6:
 			eventText = "Your friends prank called your boss and left the impression that " +
-				"you're a sexual deviant. Job security -10";
-			myCompany.jobSecurity -= 10;
+				"you're a sexual deviant. Job security -5";
+			myCompany.jobSecurity -= 5;
 			break;
 		case 7:
 			eventText = "Your kid got into a fight at school. You left early to cheer her " +
@@ -331,19 +339,19 @@ public class Continue : MonoBehaviour {
 			break;
 		case 8:
 			eventText = "The office security camera caught a hobo on tape breaking into " +
-				"the office and doing his business in the flower pots. Cleanup was a priority. Budget -$500";
-			myCompany.budget.monthlyAmount -= 500;
+				"the office and doing his business in the flower pots. Cleanup was a priority. Miscellaneous cost +$500";
+			myCompany.budget.miscCost += 500;
 			break;
 		case 9:
 			eventText = "The office was ransacked over the weekend. The thieves made off with " +
-				"a red Swingline stapler and three PCs. Budget -$1000";
-			myCompany.budget.monthlyAmount -= 1000;
+				"a red Swingline stapler and three PCs. Miscellaneous cost +$1000";
+			myCompany.budget.miscCost += 1000;
 			break;
 		case 10:
 			eventText = "You went with your boss to Las Vegas for a conference. He went to a strip joint " +
 				"but you didn't want to partake. As punishment he used your departments budget to foot the bill. " +
-					"Budget -$1500";
-			myCompany.budget.monthlyAmount -= 1500;
+					"Miscellaneous cost +$1500";
+			myCompany.budget.miscCost += 1500;
 			break;
 		case 11:
 			eventText = "You went all in at the staff party on Friday. Your drunken advances " +
@@ -399,7 +407,7 @@ public class Continue : MonoBehaviour {
 			myCompany.jobSecurity += 5;
 			break;
 		case 21:
-			eventText = "You managed to sell excess paper on the black market. Budget +$500";
+			eventText = "You managed to sell excess paper on the black market. Funding +$500";
 			myCompany.budget.monthlyAmount += 500;
 			break;
 		case 22:
@@ -410,8 +418,8 @@ public class Continue : MonoBehaviour {
 			break;
 		case 24:
 			eventText = "You went to a baseball game and had a corndog, but you left your personal wallet in your" +
-				" other pants. Thank God for the company credit card. Budget -$10";
-			myCompany.budget.monthlyAmount -= 10;
+				" other pants. Thank God for the company credit card. Miscellaneous cost +$10";
+			myCompany.budget.miscCost += 10;
 			break;
 		case 25:
 			eventText = "You went on a date and spilled an ice cream cone on your shoes. " +

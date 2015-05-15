@@ -17,18 +17,6 @@ public class Month : MonoBehaviour {
 	
 	}
 
-	public int calcFinalBalance () {
-		Company myCompany = gameObject.GetComponent<Company>();
-		int balance = myCompany.budget.getBalance();
-		if(balance < 0){
-			myCompany.jobSecurity += balance / 300;
-		}
-		else{
-			myCompany.jobSecurity += balance / 800;
-		}
-		return balance;
-	}
-
 	public void getGrade () {
 		Company myCompany = gameObject.GetComponent<Company>();
 		int ratio = 0;
@@ -85,11 +73,11 @@ public class Month : MonoBehaviour {
 		}
 
 		// Calls calcFinalBalance once to affect the job security
-		if(calcFinalBalance() > 0) {
-			newAllowance -= myCompany.budget.getBalance() / 10;
-			/*if(newAllowance < 0) {
+		if(myCompany.budget.getBalance() > 0) {
+			newAllowance -= myCompany.budget.getOldBalance() / 10;
+			if(newAllowance < 0) {
 				newAllowance = 0;
-			}*/
+			}
 		}
 		return newAllowance;
 	}

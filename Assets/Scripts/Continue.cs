@@ -237,8 +237,8 @@ public class Continue : MonoBehaviour {
 		//Add new Applicants, Remove old Applicants, 0-3 in 0-2 out.
 
 		int numApplIn = Random.Range(0, 4);
-
-		if(myCompany.maxApplicants >= myCompany.applicants.Count) {
+		Debug.Log("Apps count" + myCompany.applicants.Count);
+		if(myCompany.maxApplicants <= myCompany.applicants.Count) {
 			numApplIn = 0;
 		}
 

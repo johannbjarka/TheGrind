@@ -122,11 +122,25 @@ public class Company : MonoBehaviour {
 		for(int i = 0; i < 20; i++) {
 			tableFlowers[i] = Random.Range(0,4);
 		}
+		// Create starting projects
+		bool isNotListed = true;
 
 		for(int i = 0; i < 4; i++) {
 			GameObject projectObj = Instantiate(projectPrefab) as GameObject;
 			Project proj = projectObj.GetComponent<Project>();
-			availableProjects.Add(proj);
+			isNotListed = true;
+			for(int j = 0; j < availableProjects.Count; j++) {
+				if(proj.projName == availableProjects[j].projName) {
+					isNotListed = false;
+					i--;
+				}
+			}
+			if(isNotListed) {
+				availableProjects.Add(proj);
+			}
+			else {
+				Destroy(proj);
+			}
 		}
 
 		// Initialize month

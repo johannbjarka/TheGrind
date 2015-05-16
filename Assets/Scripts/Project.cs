@@ -200,8 +200,7 @@ public class Project : MonoBehaviour {
 	public bool isFinished;
 	public List<Character> employees;
 
-	// Use this for initialization
-	void Start () {
+	void Awake () {
 		category = Random.Range (0, 6);
 		int rand = 0;
 		switch(category){
@@ -249,6 +248,11 @@ public class Project : MonoBehaviour {
 		workEstimate = 0;
 		ID = _ID;
 		_ID++;
+	}
+
+	// Use this for initialization
+	void Start () {
+
 	}
 	
 	// Update is called once per frame

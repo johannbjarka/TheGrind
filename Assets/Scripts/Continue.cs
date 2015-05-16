@@ -191,10 +191,6 @@ public class Continue : MonoBehaviour {
 			}
 			myCompany.month.numberOfProjectsFinished = 0;
 			myCompany.month.totalQuality = 0;
-			/*myCompany.budget.totalFunding += myCompany.budget.monthlyAmount;
-			myCompany.budget.totalTotalSalaries += myCompany.budget.totalSalaries;*/
-			//myCompany.budget.projectRewards = 0;
-			//myCompany.budget.projectPenalties = 0;
 			myCompany.partialSalaries = 0;
 		}
 
@@ -204,7 +200,7 @@ public class Continue : MonoBehaviour {
 			eventText.text = callEvent();
 		}
 
-		//Add new Projects to Available Projects 0-1 each week
+		//Add new Projects to Available Projects 0-2 each week
 		int numProjects;
 		if(myCompany.availableProjects.Count == 0) {
 			numProjects = Random.Range(1, 3);
@@ -232,6 +228,9 @@ public class Continue : MonoBehaviour {
 			}
 			if(isNotListed) {
 				myCompany.availableProjects.Add(proj);
+			}
+			else {
+				Destroy(proj);
 			}
 		}
 

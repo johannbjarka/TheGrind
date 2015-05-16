@@ -522,8 +522,6 @@ public class CreateScrollList : MonoBehaviour {
 		else {
 			foreach(Character emp in myCompany.applicants){
 				if(emp.ID == id){
-					//Add training cost
-					myCompany.budget.totalTotalSalaries += 1000;
 
 					myCompany.partialSalaries += (int)(emp.salary * ((4 - (myCompany.weeksPassed % 4)) / 4.0));
 					myCompany.partialSalaries -= emp.salary;
@@ -538,6 +536,8 @@ public class CreateScrollList : MonoBehaviour {
 				}
 			}
 		}
+		//Add training cost
+		myCompany.budget.totalTotalSalaries += 1000;
 	}
 
 	public void reject (Text _id) {

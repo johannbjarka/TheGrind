@@ -13,6 +13,10 @@ TagManager:
   - Project
   - Watercooler
   - TooMany
+  - Remove Content Panel
+  - Progress Estimate
+  - Cash
+  - Yell
   layers:
   - Default
   - TransparentFX

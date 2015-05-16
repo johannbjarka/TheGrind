@@ -234,10 +234,18 @@ public class Continue : MonoBehaviour {
 			}
 		}
 
-		//Add new Applicants, Remove old Applicants, 0-2 in 0-2 out.
+		//Add new Applicants, Remove old Applicants, 0-3 in 0-2 out.
 
 		int numApplIn = Random.Range(0, 4);
-		
+
+		if(myCompany.maxApplicants >= myCompany.applicants.Count) {
+			numApplIn = 0;
+		}
+
+		if(myCompany.applicants.Count == 0) {
+			numApplIn = Random.Range(1, 4);
+		}
+
 		for(int i = 0; i < numApplIn; i++) {
 			Vector3 pos = new Vector3(1000, 1000, -100f);
 			GameObject characterObj = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;

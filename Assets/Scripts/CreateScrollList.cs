@@ -537,6 +537,19 @@ public class CreateScrollList : MonoBehaviour {
 		}
 	}
 
+	public void reject (Text _id) {
+		click.playSound();
+		int id = Int32.Parse(_id.text);
+
+		foreach(Character emp in myCompany.applicants) {
+			if(emp.ID == id) {
+				myCompany.applicants.Remove(emp);
+				Destroy(applicantPrefab);
+				break;
+			}
+		}
+	}
+
 	public void fire (Text _id){
 		//TODO: Take plant.
 		click.playSound();

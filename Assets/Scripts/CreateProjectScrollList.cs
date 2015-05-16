@@ -112,6 +112,7 @@ public class CreateProjectScrollList : MonoBehaviour {
 			if(myCompany.selectedProject == proj.ID) {
 				foreach(Character emp in proj.employees) {
 					emp.onProject = false;
+					emp.transform.position = new Vector3(-8 + UnityEngine.Random.value * 10, -2 + UnityEngine.Random.value * 5, 0);
 				}
 				proj.workEstimate = 0;
 				proj.employees.Clear();

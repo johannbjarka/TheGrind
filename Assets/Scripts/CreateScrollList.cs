@@ -270,6 +270,7 @@ public class CreateScrollList : MonoBehaviour {
 						emp.onProject = false;
 						emp.project = "";
 						proj.workEstimate -= emp.speed * proj.deadline;
+						emp.transform.position = new Vector3(-8 + UnityEngine.Random.value * 10, -2 + UnityEngine.Random.value * 5, 0);
 						proj.employees.Remove(emp);
 						Destroy(initalRemoveEmployeePrefab);
 

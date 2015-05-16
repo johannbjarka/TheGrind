@@ -205,12 +205,34 @@ public class Continue : MonoBehaviour {
 		}
 
 		//Add new Projects to Available Projects 0-1 each week
-		int numProjects = Random.Range(0, 3);
+		int numProjects;
+		if(myCompany.availableProjects.Count == 0) {
+			numProjects = Random.Range(1, 3);
+		}
+		else {
+			numProjects = Random.Range(0, 3);
+		}
 
+		bool isNotListed = true;
 		for(int i = 0; i < numProjects; i++) {
 			GameObject projectObj = Instantiate(projectPrefab) as GameObject;
 			Project proj = projectObj.GetComponent<Project>();
-			myCompany.availableProjects.Add(proj);
+			isNotListed = true;
+			for(int j = 0; j < myCompany.availableProjects.Count; j++) {
+				if(myCompany.availableProjects[j].projName == proj.projName) {
+					isNotListed = false;
+					i--;
+				}
+			}
+			for(int j = 0; j < myCompany.projects.Count; j++) {
+				if(myCompany.projects[j].projName == proj.projName) {
+					isNotListed = false;
+					i--;
+				}
+			}
+			if(isNotListed) {
+				myCompany.availableProjects.Add(proj);
+			}
 		}
 
 		//Add new Applicants, Remove old Applicants, 0-2 in 0-2 out.
@@ -385,7 +407,7 @@ public class Continue : MonoBehaviour {
 			myCompany.jobSecurity += 5;
 			break;
 		case 16:
-			eventText = "You were sued by your bosses secretary. Your light flirting was obviously not as well " +
+			eventText = "You were sued by your boss' secretary. Your light flirting was obviously not as well " +
 				"received as you had hoped. You settle out of court. Job security -10";
 			myCompany.jobSecurity -= 10;
 			break;

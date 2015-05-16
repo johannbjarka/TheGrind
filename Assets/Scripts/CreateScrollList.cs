@@ -25,7 +25,7 @@ public class CreateScrollList : MonoBehaviour {
 	public Transform skillsMenuContentPanel;
 	public Transform projectEmployeeContentPanel;
 	public Transform initialRemoveEmployeeContentPanel;
-
+	
 	//public RectTransform progressFill;
 	public Canvas SelectInitialEmployeesCanvas;
 	bool selectInitialEmployeesCanvasIsOpen = false;

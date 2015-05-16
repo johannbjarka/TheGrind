@@ -460,6 +460,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &60291685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1952,7 +1954,6 @@ MonoBehaviour:
   skillsMenuCanvas: {fileID: 1680384904}
   SelectEmployeesCanvas: {fileID: 336322696}
   SelectInitialEmployeeCanvas: {fileID: 806508612}
-  RemoveEmployeesCanvas: {fileID: 1278373878}
   BudgetCanvas: {fileID: 85835383}
   GotFiredCanvas: {fileID: 1522317268}
   PerformanceReviewCanvas: {fileID: 1342040044}
@@ -3587,6 +3588,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &261780882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4020,6 +4023,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &296826156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4109,6 +4114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProgressFill: {fileID: 0}
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 0}
   initialAvailableEmployeePanel: {fileID: 0}
@@ -4122,9 +4128,10 @@ MonoBehaviour:
   initialAvailableEmployeeContentPanel: {fileID: 0}
   skillsMenuContentPanel: {fileID: 0}
   projectEmployeeContentPanel: {fileID: 0}
-  SelectEmployeesCanvas: {fileID: 1278373878}
+  initialRemoveEmployeeContentPanel: {fileID: 0}
   SelectInitialEmployeesCanvas: {fileID: 0}
-  RemoveEmployeesCanvas: {fileID: 0}
+  SelectEmployeesCanvas: {fileID: 1278373878}
+  initalRemoveEmployeePrefab: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 0}
 --- !u!114 &300634599
@@ -4418,6 +4425,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &334851326
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6282,6 +6291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8f8e52bb1421a42aeb194f00a1a44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myContinueClass: {fileID: 0}
   ComputerMenuCanvas: {fileID: 894505897}
   EmployeeRecordsCanvas: {fileID: 1510263611}
   AvailableProjectsCanvas: {fileID: 2057117603}
@@ -6382,6 +6392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProgressFill: {fileID: 0}
   employeePanel: {fileID: 181426, guid: 15d7517adf8977a489075fa37dd478d0, type: 2}
   availableEmployeePanel: {fileID: 183642, guid: 0ae08379910711e43a83fb22e46a5ced,
     type: 2}
@@ -6397,9 +6408,10 @@ MonoBehaviour:
   initialAvailableEmployeeContentPanel: {fileID: 328922105}
   skillsMenuContentPanel: {fileID: 0}
   projectEmployeeContentPanel: {fileID: 183449418}
-  SelectEmployeesCanvas: {fileID: 336322696}
+  initialRemoveEmployeeContentPanel: {fileID: 0}
   SelectInitialEmployeesCanvas: {fileID: 806508612}
-  RemoveEmployeesCanvas: {fileID: 1278373878}
+  SelectEmployeesCanvas: {fileID: 336322696}
+  initalRemoveEmployeePrefab: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 185466, guid: 123bf3b057f05c6408f35644937034c9, type: 2}
 --- !u!114 &461498199
@@ -6429,9 +6441,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df04e3cebbcce34098e18ecfd7241e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressFill: {fileID: 1318152710}
-  removeEmpsFill: {fileID: 1188954708}
-  initialProgressFill: {fileID: 788951385}
+  projectProgressBar: {fileID: 0}
+  ProgressAmount: {fileID: 0}
+  FinalProjectProgressBar: {fileID: 0}
+  FinalProgressAmount: {fileID: 0}
 --- !u!1 &468844649
 GameObject:
   m_ObjectHideFlags: 0
@@ -7125,6 +7138,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!50 &506495028
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -8629,6 +8644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProgressFill: {fileID: 0}
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 0}
   initialAvailableEmployeePanel: {fileID: 0}
@@ -8642,9 +8658,10 @@ MonoBehaviour:
   initialAvailableEmployeeContentPanel: {fileID: 328922105}
   skillsMenuContentPanel: {fileID: 0}
   projectEmployeeContentPanel: {fileID: 0}
-  SelectEmployeesCanvas: {fileID: 0}
+  initialRemoveEmployeeContentPanel: {fileID: 0}
   SelectInitialEmployeesCanvas: {fileID: 806508612}
-  RemoveEmployeesCanvas: {fileID: 0}
+  SelectEmployeesCanvas: {fileID: 0}
+  initalRemoveEmployeePrefab: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 0}
 --- !u!114 &636181589
@@ -11276,6 +11293,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &803646944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12467,6 +12486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProgressFill: {fileID: 0}
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 0}
   initialAvailableEmployeePanel: {fileID: 0}
@@ -12480,9 +12500,10 @@ MonoBehaviour:
   initialAvailableEmployeeContentPanel: {fileID: 0}
   skillsMenuContentPanel: {fileID: 0}
   projectEmployeeContentPanel: {fileID: 0}
-  SelectEmployeesCanvas: {fileID: 336322696}
+  initialRemoveEmployeeContentPanel: {fileID: 0}
   SelectInitialEmployeesCanvas: {fileID: 0}
-  RemoveEmployeesCanvas: {fileID: 0}
+  SelectEmployeesCanvas: {fileID: 336322696}
+  initalRemoveEmployeePrefab: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 0}
 --- !u!1 &894505893
@@ -12692,6 +12713,8 @@ MonoBehaviour:
   movSpeed: .0500000007
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &898533484
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13319,6 +13342,10 @@ MonoBehaviour:
   nextGoal: {fileID: 568080141}
   jobSec: {fileID: 162543155}
   balanceTag: {fileID: 1601862045}
+  EmployeePrefabCanvas: {fileID: 0}
+  EmployeePrefabContentPanel: {fileID: 0}
+  curNumberofEmps: 0
+  totalEmployees: {fileID: 0}
   gotFiredCanvas: {fileID: 1522317268}
   MenuCanvas: {fileID: 1400816875}
   ConfirmationCanvas: {fileID: 793339423}
@@ -13587,6 +13614,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!224 &959473646
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16256,6 +16285,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &1144703785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18006,6 +18037,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!50 &1296712576
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -18340,6 +18373,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!114 &1313912157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23468,6 +23503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 055bab6ba5575aa458d7e69c9f152ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ProgressFill: {fileID: 0}
   employeePanel: {fileID: 0}
   availableEmployeePanel: {fileID: 0}
   initialAvailableEmployeePanel: {fileID: 0}
@@ -23481,9 +23517,10 @@ MonoBehaviour:
   initialAvailableEmployeeContentPanel: {fileID: 328922105}
   skillsMenuContentPanel: {fileID: 0}
   projectEmployeeContentPanel: {fileID: 0}
-  SelectEmployeesCanvas: {fileID: 0}
+  initialRemoveEmployeeContentPanel: {fileID: 0}
   SelectInitialEmployeesCanvas: {fileID: 806508612}
-  RemoveEmployeesCanvas: {fileID: 0}
+  SelectEmployeesCanvas: {fileID: 0}
+  initalRemoveEmployeePrefab: {fileID: 0}
   skillsCanvas: {fileID: 0}
   skillsMenuPrefab: {fileID: 0}
 --- !u!114 &1687373040
@@ -23968,6 +24005,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &1724357020
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26054,6 +26093,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!114 &1863691746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26203,6 +26244,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!61 &1872394957
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27039,6 +27082,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!222 &1987266655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28682,6 +28727,8 @@ MonoBehaviour:
   movSpeed: 0
   sprite: {fileID: 0}
   anim: {fileID: 0}
+  employeePrefab: {fileID: 0}
+  HoverPanelPrefab: {fileID: 0}
 --- !u!50 &2108217532
 Rigidbody2D:
   m_ObjectHideFlags: 0

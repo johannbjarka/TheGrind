@@ -237,7 +237,6 @@ public class Continue : MonoBehaviour {
 		//Add new Applicants, Remove old Applicants, 0-3 in 0-2 out.
 
 		int numApplIn = Random.Range(0, 4);
-		Debug.Log("Apps count" + myCompany.applicants.Count);
 		if(myCompany.maxApplicants <= myCompany.applicants.Count) {
 			numApplIn = 0;
 		}
@@ -292,11 +291,12 @@ public class Continue : MonoBehaviour {
 				}
 				// Calculate partial salary and remove from the company
 				myCompany.partialSalaries += (int)(myCompany.characters[i].salary * ((myCompany.weeksPassed % 4) / 4.0));
-				myCompany.characters[i].gameObject.transform.position = new Vector3(-1000, -1000, 0);
+				myCompany.DecrementEmployeeNumber();
 			}
 		}
 		for(int i = 0; i < myCompany.characters.Count; i++) {
 			if(myCompany.characters[i].morale <= 0) {
+				myCompany.characters[i].gameObject.transform.position = new Vector3(-1000, -1000, 0);
 				myCompany.characters.Remove(myCompany.characters[i]);
 			}
 		}

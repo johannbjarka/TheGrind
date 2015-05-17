@@ -230,7 +230,7 @@ public class Company : MonoBehaviour {
 					" weeks and a profit of $" + PlayerPrefs.GetInt("mostMoney").ToString() + ".";
 		}
 		else {
-			calendarText.text = "So far you've made it" + (weeksPassed + 1).ToString() + "weeks and your current profit is $" 
+			calendarText.text = "So far you've made it " + (weeksPassed + 1).ToString() + " weeks and your current profit is $" 
 				+ budget.getBalance().ToString() + ". Your record is " + PlayerPrefs.GetInt("highScore").ToString() +
 					" weeks and a profit of $" + PlayerPrefs.GetInt("mostMoney").ToString() + ".";
 		}

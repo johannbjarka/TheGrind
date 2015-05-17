@@ -260,11 +260,32 @@ public class Company : MonoBehaviour {
 		else {
 			percentage.text = ratio.ToString() + "%";
 		}
-		if(ratio > 100) {
-			jobSecurity += 5;
+		if(ratio > 200) {
+			jobSecurity += 9;
+		}
+		else if(ratio > 150) {
+			jobSecurity += 6;
+		}
+		else if(ratio > 100) {
+			jobSecurity += 3;
+		}
+		else if(ratio < 50) {
+			jobSecurity -= 15;
+		}
+		else if(ratio < 60) {
+			jobSecurity -= 12;
+		}
+		else if(ratio < 70) {
+			jobSecurity -= 9;
+		}
+		else if(ratio < 80) {
+			jobSecurity -= 7;
+		}
+		else if(ratio < 90) {
+			jobSecurity -= 5;
 		}
 		else if(ratio < 100) {
-			jobSecurity -= 10;
+			jobSecurity -= 3;
 		}
 	}
 

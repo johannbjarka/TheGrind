@@ -47,6 +47,7 @@ public class HoverPanel : MonoBehaviour {
 				emp.morale++;
 			}
 		}
+		closeHoverPanel ();
 	}
 
 	public void yellAt() {
@@ -70,6 +71,7 @@ public class HoverPanel : MonoBehaviour {
 				}
 			}
 		}
+		closeHoverPanel ();
 	}
 
 }

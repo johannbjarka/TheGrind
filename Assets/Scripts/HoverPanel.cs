@@ -10,6 +10,10 @@ public class HoverPanel : MonoBehaviour {
 	public Text CharacterID;
 	public Button SkillsButton;
 	public Button FireButton;
+	public RectTransform moraleBar;
+	public RectTransform speedBar;
+	public Text moraleLabel;
+	public Text speedLabel;
 	Company myCompany;
 
 	GameObject myCamera;
@@ -23,7 +27,15 @@ public class HoverPanel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		int ID = Int32.Parse(this.CharacterID.text);
+		foreach(var emp in myCompany.characters) {
+			if(emp.ID == ID) {
+				speedLabel.text = emp.speed.ToString();
+				speedBar.sizeDelta = new Vector2(emp.speed * 10, 20);
+				moraleLabel.text = emp.morale.ToString();
+				moraleBar.sizeDelta = new Vector2(emp.morale * 10, 20);
+			}
+		}
 	}
 
 
@@ -47,7 +59,7 @@ public class HoverPanel : MonoBehaviour {
 				emp.morale++;
 			}
 		}
-		closeHoverPanel ();
+		//closeHoverPanel ();
 	}
 
 	public void yellAt() {
@@ -71,7 +83,7 @@ public class HoverPanel : MonoBehaviour {
 				}
 			}
 		}
-		closeHoverPanel ();
+		//closeHoverPanel ();
 	}
 
 }

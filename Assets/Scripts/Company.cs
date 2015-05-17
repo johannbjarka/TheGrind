@@ -44,6 +44,7 @@ public class Company : MonoBehaviour {
 	public Text nextGoal;
 	public Text jobSec;
 	public Text balanceTag;
+	public Text calendarText;
 
 	public Canvas EmployeePrefabCanvas;
 	public Transform EmployeePrefabContentPanel;
@@ -217,6 +218,17 @@ public class Company : MonoBehaviour {
 				tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[tableFlowers[i]];
 			}
 		}
+		storeHighScore();
+		if(weeksPassed == 0) {
+			calendarText.text = "So far you've made it 1 week and your current profit is $" 
+				+ budget.getBalance().ToString() + ". Your record is " + PlayerPrefs.GetInt("highScore").ToString() +
+					" weeks and a profit of $" + PlayerPrefs.GetInt("mostMoney").ToString() + ".";
+		}
+		else {
+			calendarText.text = "So far you've made it" + (weeksPassed + 1).ToString() + "weeks and your current profit is $" 
+				+ budget.getBalance().ToString() + ". Your record is " + PlayerPrefs.GetInt("highScore").ToString() +
+					" weeks and a profit of $" + PlayerPrefs.GetInt("mostMoney").ToString() + ".";
+		}
 	}
 
 	public void openMenu () {
@@ -284,6 +296,18 @@ public class Company : MonoBehaviour {
 		if(!gotFiredCanvasIsOpen) {
 			gotFiredCanvas.enabled = !gotFiredCanvas.enabled;
 			gotFiredCanvasIsOpen = !gotFiredCanvasIsOpen;
+		}
+	}
+
+	public void storeHighScore() {
+		int oldHighScore = PlayerPrefs.GetInt("highScore", 0);
+		if(weeksPassed + 1 > oldHighScore) {
+			PlayerPrefs.SetInt("highScore", weeksPassed + 1);
+		}
+
+		int oldMostProfit = PlayerPrefs.GetInt("mostMoney", 0);
+		if(budget.getBalance() > oldMostProfit) {
+			PlayerPrefs.SetInt("mostMoney", budget.getBalance());
 		}
 	}
 

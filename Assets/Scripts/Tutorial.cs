@@ -4,7 +4,8 @@ using System.Collections;
 public class Tutorial : MonoBehaviour {
 
 	public GameObject welcomePanel;
-	public GameObject budgetPanel;
+	public GameObject goalPanel;
+	public GameObject moneyPanel;
 	public GameObject computerPanel;
 	public GameObject calendarPanel;
 	public GameObject continuePanel;
@@ -19,13 +20,17 @@ public class Tutorial : MonoBehaviour {
 	void Update () {
 	}
 
-	public void startTutorial () {
+	public void getGoalPanel() {
 		welcomePanel.SetActive (false);
-		budgetPanel.SetActive (true);
+		goalPanel.SetActive (true);
 	}
 
+	public void getMoneyPanel() {
+		goalPanel.SetActive (false);
+		moneyPanel.SetActive (true);
+	}
 	public void getComputerPanel () {
-		budgetPanel.SetActive (false);
+		moneyPanel.SetActive (false);
 		computerPanel.SetActive (true);
 	}
 

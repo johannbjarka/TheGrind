@@ -132,13 +132,10 @@ public class CreateScrollList : MonoBehaviour {
 			selectInitialEmployeesCanvasIsOpen = true;
 			SelectInitialEmployeesCanvas.enabled = true;
 		}
-		float ratio = 0.0f;
 		int category = 0;
 		
 		foreach(var proj in myCompany.availableProjects) {
 			if(id == proj.ID) {
-				ratio = (float)proj.workEstimate / proj.initialWorkAmount;
-				//progressFill.sizeDelta = new Vector2(50, ratio);
 				category = proj.category;
 				break;
 			}
@@ -173,7 +170,6 @@ public class CreateScrollList : MonoBehaviour {
 	}
 
 	public void populateProjectEmployeeList (int id) {
-		float ratio = 0.0f;
 
 		foreach(var proj in myCompany.projects) {
 			if(id == proj.ID) {
@@ -199,11 +195,9 @@ public class CreateScrollList : MonoBehaviour {
 					newPanel.transform.SetParent (projectEmployeeContentPanel);
 					panel.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 				}
-				ratio = (float)proj.workEstimate / proj.initialWorkAmount;
 				break;
 			}
 		}
-		//progressFill.sizeDelta = new Vector2 (50, ratio);
 	}
 
 	public void addEmployee(IDPair ids){

@@ -8,27 +8,23 @@ public class ComputerMenu : MonoBehaviour {
 	public Canvas AvailableProjectsCanvas;
 	public Canvas ApplicantsCanvas;
 	public Canvas CurrentProjectsCanvas;
-
-	bool menuIsOpen = false;
+	
 	bool employeeRecordsIsOpen = false;
 	bool availableProjectsIsOpen = false;
 	bool applicantsMenuIsOpen = false;
 	bool currentProjectsIsOpen = false;
 
 	void Start () {
-
 	}
 
 	public void openComputerMenuPanel () {
 		myContinueClass.closeEverything ();
-		menuIsOpen = true;
 		ComputerMenuCanvas.enabled = true;
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();
 	}
 
 	public void closeComputerPanel() {
-		menuIsOpen = false;
 		ComputerMenuCanvas.enabled = false;
 		ClickSound click = GameObject.FindWithTag("ClickSound").GetComponent<ClickSound>();
 		click.playSound();

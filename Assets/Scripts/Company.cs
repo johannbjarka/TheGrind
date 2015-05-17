@@ -64,6 +64,9 @@ public class Company : MonoBehaviour {
 
 	public RectTransform jobSecBar;
 
+	public RectTransform goalBar;
+	public Text goalText;
+
 	public void IncrementEmployeeNumber() {
 		curNumberofEmps++;
 		totalEmployees.text = curNumberofEmps.ToString ();
@@ -201,6 +204,8 @@ public class Company : MonoBehaviour {
 		monthJobSecurity.text = jobSecurity.ToString();
 		jobSec.text = jobSecurity.ToString();
 		jobSecBar.sizeDelta = new Vector2 (jobSecurity * 2, 20);
+		goalText.text = Mathf.Min(100, ((int)(budget.getBalance() / (double)budget.goal * 100))).ToString();
+		goalBar.sizeDelta = new Vector2(Mathf.Min(150f, ((int)(budget.getBalance()/ (double)budget.goal * 100)) * 1.5f), 20f);
 
 		if(jobSecurity > 100){
 			jobSecurity = 100;

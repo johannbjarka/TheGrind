@@ -37,7 +37,9 @@ public class EmployeePanel : MonoBehaviour {
 				speedBar.sizeDelta = new Vector2(emp.speed * 10, 20);
 				moraleLabel.text = emp.morale.ToString();
 				moraleBar.sizeDelta = new Vector2(emp.morale * 10, 20);
-				salaryLabel.text = "$" + emp.salary.ToString();
+				if(salaryLabel != null) {
+					salaryLabel.text = "$" + emp.salary.ToString();
+				}
 			}
 		}
 	}

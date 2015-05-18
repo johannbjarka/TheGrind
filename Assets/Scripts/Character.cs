@@ -118,9 +118,10 @@ public class Character : MonoBehaviour {
 	public Sprite sprite;
 	public Animator anim;
 	SpriteRenderer spriteRend;
-
+	public int firedint;
 	public GameObject employeePrefab;
 	public GameObject HoverPanelPrefab;
+	public int CompPos;
 
 	Company myCompany;
 
@@ -146,6 +147,7 @@ public class Character : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
+		firedint = 0;
 		myCompany = GameObject.Find ("Company").GetComponent<Company> ();
 		EmployeePrefabContentPanel = myCompany.EmployeePrefabContentPanel;
 		// Initialize character away from office
@@ -178,6 +180,13 @@ public class Character : MonoBehaviour {
 		movSpeed = 0.03f;
 		ID = _ID;
 		_ID++;
+		for(int i = 0; i < myCompany.characters.Count; i++) {
+			if(ID == myCompany.characters[i].ID)
+			{
+				CompPos = i;
+				break;
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -192,36 +201,30 @@ public class Character : MonoBehaviour {
 			} else {
 				mov1 = false;
 			}
-			anim.SetInteger ("Direction", dir);
-			anim.SetBool ("Moving", mov1);
-			anim.IsInTransition (0);
-			//if (mov1 == true) {
-			//if (dir == 0) {
-			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_South")){
-				//rigid.AddForce(-(Vector2.up * movSpeed));
-				transform.position += -Vector3.up * movSpeed;
-				//transform.Translate (-Vector2.up * movSpeed);
-			} //else if (dir == 1) {
-			else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_West")){
-				//rigid.AddForce(-Vector2.right * movSpeed);
-				transform.position += -Vector3.right * movSpeed;
-				//transform.Translate (-Vector2.right * movSpeed);
-			} else //if (dir == 2) {
-			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_North")){
-				//rigid.AddForce(Vector2.up * movSpeed);
-				transform.position += Vector3.up * movSpeed;
-				//transform.Translate (Vector2.up * movSpeed);
-			} else// if (dir == 3) {
-			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_East")){
-				//rigid.AddForce(Vector2.right * movSpeed);
-				transform.position += Vector3.right * movSpeed;
-				//transform.Translate (Vector2.right * movSpeed);
+			if(firedint == 0){
+				anim.SetInteger ("Direction", dir);
+				anim.SetBool ("Moving", mov1);
+				anim.IsInTransition (0);
 			}
-			//}
+			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_South")){
+				transform.position += -Vector3.up * movSpeed;
+			} 
+			else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_West")){
+				transform.position += -Vector3.right * movSpeed;
+			} 
+			else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_North")){
+				transform.position += Vector3.up * movSpeed;
+			} 
+			else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_East")){
+				transform.position += Vector3.right * movSpeed;
+			}
+			else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Fired") && firedint < 1003){
+				firedint++;
+			}
+			if(firedint >= 1000){
+				transform.position = new Vector3(1000, 1000, 0);
+			}
 		}
-		if(onProject)
-		{
-			transform.position = new Vector3(1000,1000,0); 
-		}
+
 	}
 }

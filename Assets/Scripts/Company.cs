@@ -217,6 +217,13 @@ public class Company : MonoBehaviour {
 				tables[i].GetComponent<SpriteRenderer>().sprite = originaltables[tableFlowers[i]];
 			}
 		}
+		foreach (Character emp in characters) {
+			if (emp.onProject) {
+				emp.transform.position = new Vector3 (1000, 1000, 0); 
+			} else {
+				tables[emp.CompPos].GetComponent<SpriteRenderer> ().sprite = originaltables [emp.CompPos + tableFlowers [emp.CompPos]];
+			}
+		}
 	}
 
 	public void openMenu () {

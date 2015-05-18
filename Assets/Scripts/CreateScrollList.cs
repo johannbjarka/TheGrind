@@ -572,13 +572,22 @@ public class CreateScrollList : MonoBehaviour {
 		foreach(Character emp in myCompany.characters){
 			if(emp.ID == id){
 				//Severance package
+				//myCompany.tables[emp.ID].GetComponent<SpriteRenderer>().sprite = myCompany.originaltables[myCompany.tableFlowers[emp.ID]];
+
 				myCompany.budget.totalTotalSalaries += emp.salary;
 
 				myCompany.partialSalaries += (int)(emp.salary * ((myCompany.weeksPassed % 4) / 4.0));
-				myCompany.characters.Remove(emp);
-				emp.gameObject.transform.position = new Vector3(-1000, -1000, 0);
+				if(emp.onProject)
+				{
+					emp.onProject = false;
+					emp.transform.position = new Vector3(-8 + UnityEngine.Random.value*10, -2 + UnityEngine.Random.value*5, 0);
+				}
+				emp.GetComponent<Animator>().SetBool("Fired", true);
+
+				//emp.gameObject.transform.position = new Vector3(-1000, -1000, 0);
 				Destroy(employeePrefab);
 				myCompany.DecrementEmployeeNumber();
+				myCompany.characters.Remove(emp);
 				break;
 			}
 		}

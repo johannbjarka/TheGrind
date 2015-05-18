@@ -142,7 +142,14 @@ public class Character : MonoBehaviour {
 		newHoverPanel.transform.localPosition = new Vector3 (mouseposition.x, mouseposition.y, 0);
 		panel.transform.SetParent (EmployeePrefabContentPanel);
 		newHoverPanel.gameObject.transform.localScale = new Vector3 (1, 1, 1);
-
+		if(this.gender == 'M') {
+			HelloMan hm = GameObject.FindWithTag("HelloMan").GetComponent<HelloMan>();
+			hm.playSound();
+		}
+		else {
+			HelloGirl hg = GameObject.FindWithTag("HelloGirl").GetComponent<HelloGirl>();
+			hg.playSound();
+		}
 	}
 	// Use this for initialization
 	void Start () {

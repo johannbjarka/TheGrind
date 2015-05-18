@@ -9,6 +9,8 @@ public class MuteSoundFX : MonoBehaviour {
 	AudioSource waterCoolerSound;
 	AudioSource yell;
 	AudioSource cash;
+	AudioSource helloMan;
+	AudioSource helloGirl;
 	public Text fontIcon;
 	//Button muteButton;
 	
@@ -19,6 +21,8 @@ public class MuteSoundFX : MonoBehaviour {
 		waterCoolerSound = GameObject.FindWithTag("Watercooler").GetComponent<AudioSource>();
 		yell = GameObject.FindWithTag("Yell").GetComponent<AudioSource>();
 		cash = GameObject.FindWithTag("Cash").GetComponent<AudioSource>();
+		helloMan = GameObject.FindWithTag("HelloMan").GetComponent<AudioSource>();
+		helloGirl = GameObject.FindWithTag("HelloGirl").GetComponent<AudioSource>();
 		muteSoundFX();
 	}
 	
@@ -35,6 +39,8 @@ public class MuteSoundFX : MonoBehaviour {
 			waterCoolerSound.mute = false;
 			yell.mute = false;
 			cash.mute = false;
+			helloMan.mute = false;
+			helloGirl.mute = false;
 		}
 		else {
 			fontIcon.text = "\uf026";
@@ -43,6 +49,8 @@ public class MuteSoundFX : MonoBehaviour {
 			waterCoolerSound.mute = true;
 			yell.mute = true;
 			cash.mute = true;
+			helloMan.mute = true;
+			helloGirl.mute = true;
 		}
 	}
 }

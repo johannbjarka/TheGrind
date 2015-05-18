@@ -43,10 +43,12 @@ public class CreateProjectScrollList : MonoBehaviour {
 		}
 	}
 
+	public GameObject noProjectPrefab;
+
 	public void PopulateCurrentProjectList () {
 		if (myCompany.projects.Count == 0) {
 			// Display shortcut to available projects
-			Debug.Log("No Projects");
+
 		} else {
 			emptyProjectList ();
 			foreach (var project in myCompany.projects) {

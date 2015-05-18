@@ -4,6 +4,9 @@ using System.Collections;
 public class Tutorial : MonoBehaviour {
 
 	public GameObject welcomePanel;
+	public GameObject HoverPanel;
+	public GameObject HoverPanelIntro;
+	public GameObject HoverPanelPanel;
 	public GameObject goalPanel;
 	public GameObject moneyPanel;
 	public GameObject computerPanel;
@@ -20,8 +23,19 @@ public class Tutorial : MonoBehaviour {
 	void Update () {
 	}
 
-	public void getGoalPanel() {
+	public void getHoverPanel() {
 		welcomePanel.SetActive (false);
+		HoverPanel.SetActive (true);
+	}
+
+	public void startHoverIntro() {
+		HoverPanelIntro.SetActive (false);
+		HoverPanelPanel.SetActive (true);
+	}
+	
+
+	public void getGoalPanel() {
+		HoverPanel.SetActive (false);
 		goalPanel.SetActive (true);
 	}
 

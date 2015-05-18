@@ -300,13 +300,13 @@ public class Continue : MonoBehaviour {
 				myCompany.characters.Remove(myCompany.characters[i]);
 			}
 		}
-		if(myCompany.jobSecurity <= 25){
+		if(myCompany.jobSecurity <= 19){
 			int rand = Random.Range(1, 100);
 			if(rand > 80){
 				myCompany.firePlayer("You're pretty terrible at this, you have been replaced by a monkey with a typewriter!");
 			}
 		}
-		else if(myCompany.jobSecurity <= 50){
+		else if(myCompany.jobSecurity <= 35){
 			int rand = Random.Range(1, 100);
 			if(rand > 95){
 				myCompany.firePlayer("We have decided to restructure the company, you have been fired to " +

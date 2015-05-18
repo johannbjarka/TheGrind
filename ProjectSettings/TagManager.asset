@@ -17,6 +17,8 @@ TagManager:
   - Progress Estimate
   - Cash
   - Yell
+  - HelloGirl
+  - HelloMan
   layers:
   - Default
   - TransparentFX

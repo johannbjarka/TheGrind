@@ -312,8 +312,8 @@ public class Company : MonoBehaviour {
 		}
 		monthGoal.text = "$" + budget.goal.ToString();
 		budget.goal += goalReached() + budget.monthlyGoal;
-		if(budget.goal < 0) {
-			budget.goal = 0;
+		if(budget.goal < 1000) {
+			budget.goal = 1000;
 		}
 	}
 

@@ -123,8 +123,8 @@ PlayerSettings:
   iOSLaunchScreenCustomXibPath: 
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Code/The Grind/The Grind/user.keystore
+  AndroidKeyaliasName: the grind
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 0

@@ -54,7 +54,7 @@ public class HoverPanel : MonoBehaviour {
 
 		int ID = Int32.Parse(this.CharacterID.text);
 		foreach(var emp in myCompany.characters) {
-			if(emp.ID == ID) {
+			if(emp.ID == ID && emp.morale < 10) {
 				emp.salary += 250;
 				emp.morale++;
 			}

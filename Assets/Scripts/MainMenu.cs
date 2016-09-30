@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
@@ -11,12 +12,12 @@ public class MainMenu : MonoBehaviour {
 
 	public void StartGame () {
 		click.playSound();
-		Application.LoadLevel ("Tutorial");
+		SceneManager.LoadScene ("Tutorial");
 	}
 
 	public void StartContext () {
 		click.playSound();
-		Application.LoadLevel ("ContextScreen");
+        SceneManager.LoadScene("ContextScreen");
 	}
 
 	public void StartOffice () {
@@ -25,7 +26,7 @@ public class MainMenu : MonoBehaviour {
 		if(mute.officeSound.mute) {
 			mute.muteSoundFX();
 		}
-		Application.LoadLevel ("Office");
+        SceneManager.LoadScene("Office");
 	}
 
 	public void QuitGame () {

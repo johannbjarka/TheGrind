@@ -81,12 +81,15 @@ public class Company : MonoBehaviour {
 		// Create starting employees
 		for(int i = 0; i < 5; i++) {
 			GameObject character;
-			Vector3 pos = new Vector3(- 8 + Random.value * 10, - 2 + Random.value * 5, 0);
+			Vector3 pos = Random.insideUnitSphere;
+            pos.z = 0;
+            
 			character = Instantiate(employeePrefab, pos, Quaternion.identity) as GameObject;
 			Character emp = character.GetComponent<Character>();
 			character.transform.SetParent(EmployeePrefabContentPanel);
 			character.gameObject.transform.localScale = new Vector2(44,44);
-			character.gameObject.transform.position = new Vector3(-8 + UnityEngine.Random.value * 10, -2 + UnityEngine.Random.value * 5, 0);
+			// character.gameObject.transform.position = new Vector3(-8 + UnityEngine.Random.value * 10, -2 + UnityEngine.Random.value * 5, 0);
+
 			characters.Add(emp);
 			IncrementEmployeeNumber();
 		}

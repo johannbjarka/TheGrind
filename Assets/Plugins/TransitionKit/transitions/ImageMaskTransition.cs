@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Prime31.TransitionKit;
+using UnityEngine.SceneManagement;
 
 
 /// <summary>
@@ -44,7 +45,7 @@ namespace Prime31.TransitionKit
 			transitionKit.material.SetTexture( "_MaskTex", maskTexture );
 
 			if( nextScene >= 0 )
-				Application.LoadLevelAsync( nextScene );
+				SceneManager.LoadSceneAsync( nextScene );
 
 			// this does the zoom/rotation
 			yield return transitionKit.StartCoroutine( transitionKit.tickProgressPropertyInMaterial( duration, false ) );

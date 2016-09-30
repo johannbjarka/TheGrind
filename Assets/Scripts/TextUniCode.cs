@@ -10,7 +10,7 @@ namespace UnityEngine.UI
 		private bool disableDirty = false;
 		private Regex regexp = new Regex( @"\\u(?<Value>[a-zA-Z0-9]{4})" );
 		
-		protected override void OnFillVBO( List<UIVertex> vbo )
+		protected override void OnPopulateMesh( VertexHelper vbo )
 		{
 			string cache = this.text;
 			
@@ -18,7 +18,7 @@ namespace UnityEngine.UI
 			
 			this.text = this.Decode( this.text );
 			
-			base.OnFillVBO( vbo );
+			base.OnPopulateMesh( vbo );
 			
 			this.text = cache;
 			

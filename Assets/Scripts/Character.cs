@@ -155,9 +155,10 @@ public class Character : MonoBehaviour {
 	void Start () {
 		myCompany = GameObject.Find ("Company").GetComponent<Company> ();
 		EmployeePrefabContentPanel = myCompany.EmployeePrefabContentPanel;
-		// Initialize character away from office
-		//transform.position = new Vector3(-8+Random.value*10, -2+Random.value*5, 0);
-		int totalskills = 0;
+        // Initialize character away from office
+        // transform.position = new Vector3(-8 + Random.value * 10, -2 + Random.value * 5, 0);
+
+        int totalskills = 0;
 
 		for (int i = 0; i < skills.Length; i++) {
 			skills[i] = Random.Range(1, 21);
@@ -167,6 +168,7 @@ public class Character : MonoBehaviour {
 		speed = Random.Range(5, 11);
 		salary = (int)(totalskills * 2 * (1.0 + ((speed - 3) / 10.0))) * 10;
 		morale = Random.Range(3, 8);
+
 		int genderType = Random.Range(0, 2);
 		if(genderType == 0) {
 			gender = 'M';
@@ -174,8 +176,7 @@ public class Character : MonoBehaviour {
 			rand = Random.Range(10, sprites.Length);
 			anim.runtimeAnimatorController = controllers[rand];
 			sprite = sprites[rand];
-		}
-		else {
+		} else {
 			gender = 'F';
 			characterName = firstNames[Random.Range(27, firstNames.Length)] + " " + lastNames[Random.Range(0, lastNames.Length)];
 			rand = Random.Range(0, 9);
@@ -202,33 +203,20 @@ public class Character : MonoBehaviour {
 			anim.SetInteger ("Direction", dir);
 			anim.SetBool ("Moving", mov1);
 			anim.IsInTransition (0);
-			//if (mov1 == true) {
-			//if (dir == 0) {
+
 			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_South")){
-				//rigid.AddForce(-(Vector2.up * movSpeed));
 				transform.position += -Vector3.up * movSpeed;
-				//transform.Translate (-Vector2.up * movSpeed);
-			} //else if (dir == 1) {
-			else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_West")){
-				//rigid.AddForce(-Vector2.right * movSpeed);
+			} else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_West")){
 				transform.position += -Vector3.right * movSpeed;
-				//transform.Translate (-Vector2.right * movSpeed);
-			} else //if (dir == 2) {
-			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_North")){
-				//rigid.AddForce(Vector2.up * movSpeed);
+			} else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_North")){
 				transform.position += Vector3.up * movSpeed;
-				//transform.Translate (Vector2.up * movSpeed);
-			} else// if (dir == 3) {
-			if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_East")){
-				//rigid.AddForce(Vector2.right * movSpeed);
+			} else if(anim.GetCurrentAnimatorStateInfo(0).IsName("Char_Walk_East")){
 				transform.position += Vector3.right * movSpeed;
-				//transform.Translate (Vector2.right * movSpeed);
 			}
-			//}
 		}
 		if(onProject)
 		{
-			transform.position = new Vector3(1000,1000,0); 
+			transform.position = new Vector3(1000, 1000, 0); 
 		}
 	}
 }

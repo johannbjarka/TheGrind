@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using Prime31.TransitionKit;
+using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour {
 
@@ -17,7 +18,7 @@ public class SceneSwitcher : MonoBehaviour {
 
 	public void fadeToContext () {
 		var fader = new FadeTransition () {
-			nextScene = Application.loadedLevel == 0 ? 1 : 0,
+			nextScene = SceneManager.GetActiveScene() == SceneManager.GetSceneAt(0) ? 1 : 0,
 			fadedDelay = 0.1f,
 			fadeToColor = Color.black
 		};
@@ -26,7 +27,7 @@ public class SceneSwitcher : MonoBehaviour {
 
 	public void fadeToTutorial () {
 		var fader = new FadeTransition () {
-			nextScene = Application.loadedLevel == 1 ? 2 : 1,
+			nextScene = SceneManager.GetActiveScene().name == "ContextScreen" ? 2 : 1,
 			fadedDelay = 0.1f,
 			fadeToColor = Color.black
 		};
@@ -45,14 +46,6 @@ public class SceneSwitcher : MonoBehaviour {
 			mute.muteSoundFX();
 		}
 
-		/*
-		var fader = new FadeTransition () {
-			nextScene = Application.loadedLevel == 2 ? 3 : 2,
-			fadedDelay = 0.1f,
-			fadeToColor = Color.black
-		};
-		TransitionKit.instance.transitionWithDelegate(fader);
-		*/
 	}
 
 	public void fadeToNextWeek () {
